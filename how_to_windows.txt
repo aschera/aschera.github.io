@@ -1,0 +1,64 @@
+Christina@Fibo MINGW64 ~
+$ git clone https://github.com/aschera/aschera.github.io
+Cloning into 'aschera.github.io'...
+remote: Counting objects: 92, done.
+remote: Compressing objects: 100% (86/86), done.
+Unpacking objects:   2% (2/92remote: Total 92 (delta 50), reused 0 (delta 0), pa                                                                             ck-reused 0
+Unpacking objects: 100% (92/92), done.
+
+Christina@Fibo MINGW64 ~
+$ cd aschera.github.io
+
+Christina@Fibo MINGW64 ~/aschera.github.io (master)
+$ echo "hello world" > test.html
+
+Christina@Fibo MINGW64 ~/aschera.github.io (master)
+$ git add --all
+warning: LF will be replaced by CRLF in test.html.
+The file will have its original line endings in your working directory.
+
+Christina@Fibo MINGW64 ~/aschera.github.io (master)
+$ git commit -m "initital commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <(null)>) not allowed
+
+Christina@Fibo MINGW64 ~/aschera.github.io (master)
+$ git config --global user.email "aschera@gmail.com"
+
+Christina@Fibo MINGW64 ~/aschera.github.io (master)
+$ git config --global user.name "aschera"
+
+Christina@Fibo MINGW64 ~/aschera.github.io (master)
+$ git commit -m "initital commit"
+[master 5c8fbf4] initital commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.html
+
+Christina@Fibo MINGW64 ~/aschera.github.io (master)
+$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 273 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/aschera/aschera.github.io
+   dba04a4..5c8fbf4  master -> master
+Branch master set up to track remote branch master from origin.
+
+Christina@Fibo MINGW64 ~/aschera.github.io (master)
+$ ^C
+
+Christina@Fibo MINGW64 ~/aschera.github.io (master)
+$
+

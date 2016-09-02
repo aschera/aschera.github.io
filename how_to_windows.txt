@@ -1,3 +1,6 @@
+<html>
+<body>
+<p>
 Christina@Fibo MINGW64 ~
 $ git clone https://github.com/aschera/aschera.github.io
 Cloning into 'aschera.github.io'...
@@ -62,3 +65,6 @@ $ ^C
 Christina@Fibo MINGW64 ~/aschera.github.io (master)
 $
 
+</p>
+</body>
+</html>

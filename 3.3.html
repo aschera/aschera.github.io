@@ -1,1 +1,126 @@
-Gör en ny version av tabell-övningen 2.3 eller 2.4, som använder nästlade div i stället för table. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>3.3</title>
+<style>
+		.rTable {
+		    	display: table;
+		    	width: 100%;
+			margin-left:auto; 
+    			margin-right:auto;
+		}
+		.rTableRow {
+		    	display: table-row;
+			width: 100%;
+			margin-left:auto; 
+    			margin-right:auto;
+		}
+		.rTableHeading {
+		    	display: table-header-group;
+		    	background-color: #ddd;
+		}
+		.rTableCell, .rTableHead {
+		    	display: table-cell;
+		    	padding: 3px 10px;
+		    	border: 1px solid #999999;
+		}
+		.rTableHeading {
+		    	display: table-header-group;
+		    	background-color: #ddd;
+		    	font-weight: bold;
+		}
+		.rTableFoot {
+		    	display: table-footer-group;
+		    	font-weight: bold;
+		    	background-color: #ddd;
+		}
+		.rTableBody {
+		    	display: table-row-group;
+		}
+.menu {
+    border-style: dashed;
+    border-color: brown;
+    border-width: 2px;
+    background-color:#ffd966;
+    text-align: center;
+    font-weight:bold;
+}
+
+
+.dot {
+    border-style: dotted;
+    border-color: grey;
+    border-width: 2px;
+}
+
+.yellow {
+    background-color:yellow;
+}
+.grey{
+    background-color:lightgrey;
+}
+.brown{
+    background-color:#dfbf9f;
+}
+
+.right {
+    text-align: right;
+}
+.center {
+    text-align: center;
+}
+    
+</style>
+</head>
+<body>
+
+<h2>Övning 3.3</h2>
+
+<div class="center">Kula, damer, OS 2016</div>
+
+				 <div class="rTable">
+
+				<div class="rTableRow">
+					<div class="rTableHead menu"><span style="font-weight: bold;">Idrottare</span></div>
+				 	<div class="rTableHead menu"><span style="font-weight: bold;">Resultat</span></div>
+				 	<div class="rTableHead menu"><span style="font-weight: bold;">Placering</span></div>
+				 	<div class="rTableHead menu"><span style="font-weight: bold;">Land</span></div>
+				 </div>
+
+				 <div class="rTableRow">
+				 <div class="rTableCell dot">Michelle Carter</div>
+				 <div class="rTableCell dot">20,63m</div>
+				 <div class="rTableCell yellow center">1</div>
+				 <div class="rTableCell dot right">USA</div>
+				 
+				 </div>
+
+				 <div class="rTableRow">
+				 <div class="rTableCell dot">Valerie Adams</div>
+				 <div class="rTableCell dot">20,42m</div>
+				 <div class="rTableCell grey center">2</div>
+				 <div class="rTableCell dot right">Nya Zeeland</div>
+				 </div>
+
+				<div class="rTableRow">
+				 <div class="rTableCell dot">Anita Marton</div>
+				 <div class="rTableCell dot">19,87m</div>
+				 <div class="rTableCell brown center">3</div>
+				 <div class="rTableCell dot right">Ungern</div>
+				 </div>
+
+				<div class="rTableRow">
+				 <div class="rTableCell dot">Gong Lijiao</div>
+				 <div class="rTableCell dot">19,39</div>
+				 <div class="rTableCell center">4</div>
+				 <div class="rTableCell dot right">Kina</div>
+				
+				 </div>
+
+				</div>
+				
+
+  
+</body>
+</html> 

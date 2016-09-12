@@ -1,0 +1,56 @@
+/* CSS Document */
+body{padding:0px; margin:0px; background:#fff; font:Tahoma, sans-serif;}
+div, p, ul, h2, h3, h4, img{padding:0px; margin:0px;}
+
+.clear {clear: both; margin: 0px; height:0}
+
+a {color: white;}
+
+a:link, a:visited {
+        background-color: black;
+        font-size: 20px
+        padding: 1px 2px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+        
+    a:hover, a:active { background-color: red;}
+
+.headline{font:10px/14px Tahoma, Geneva, sans-serif; color:#868e36; font-weight:bold}
+.headline2{font:10px/14px Tahoma, Geneva, sans-serif; color:#9d1263; font-weight:bold}
+
+#container{width:685px; position:relative; margin:0 auto;}
+
+/* menu */
+.menu {width="192" height="92"}
+
+ul {overflow-x:hidden; white-space:nowrap;  height: 2em; width: 100%; border-top: 1px;} 
+li {display:inline; background-color:hotpink;}
+
+/* HEADER */
+
+#header{width:685px; height:238px; background: url(../images/b_header.jpg) 0 0 no-repeat; position:relative;}
+
+#header img#slogan2{position:absolute; top:76px; left:19px}
+
+/* content */
+
+#content{width:685px; position:relative; background:#FFF}
+
+#leftPan{width:179px; float:left; margin:26px 39px 0 19px; display:inline}
+#rightPan{width:436px; float:left; margin:17px 0 0 0;}
+
+#welcome h2{height:40px; position:relative; background:url(../images/h_welcome.gif) 0 0 no-repeat; margin-bottom:8px}
+#welcome img{margin:0 0 16px 4px }
+#welcome p{margin-left:4px; margin-right:12px}
+#welcome p.headline{margin-bottom:15px}
+
+#featured h2{height:38px; position:relative; background:url(../images/h_prod.gif) 0 0 no-repeat; margin-bottom:6px}
+#featured p.headline{margin-bottom:5px}
+.featItem{width:116px; float:left; margin-right:44px}
+.featItem#i03{margin-right:0}
+.featItem img{margin-bottom:15px}
+
+.clear#end{height:20px}
+

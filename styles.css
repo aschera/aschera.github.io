@@ -22,9 +22,9 @@ a:link, a:visited {
 
 #container{width:685px; position:relative; margin:0 auto;}
 
-.ff {width: 120px; background-color:hotpink;}
-.fg {width: 120px; background-color:white;}
-.gg {height:120px;}
+.ff {width: 120px; background-color:hotpink; border: black 1px solid;}
+.fg {width: 120px; background-color:white; border: black 1px solid;}
+.gg {height:120px; border: black 1px solid;}
 
 /* menu */
 .menu {width="192" height="92"}

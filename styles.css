@@ -41,16 +41,6 @@ li {display:inline; background-color:hotpink;}
 #leftPan{width:179px; float:left; margin:26px 39px 0 19px; display:inline}
 #rightPan{width:436px; float:left; margin:17px 0 0 0;}
 
-#welcome h2{height:40px; position:relative; background:url(../images/h_welcome.gif) 0 0 no-repeat; margin-bottom:8px}
-#welcome img{margin:0 0 16px 4px }
-#welcome p{margin-left:4px; margin-right:12px}
-#welcome p.headline{margin-bottom:15px}
-
-#featured h2{height:38px; position:relative; background:url(../images/h_prod.gif) 0 0 no-repeat; margin-bottom:6px}
-#featured p.headline{margin-bottom:5px}
-.featItem{width:116px; float:left; margin-right:44px}
-.featItem#i03{margin-right:0}
-.featItem img{margin-bottom:15px}
 
 .clear#end{height:20px}
 

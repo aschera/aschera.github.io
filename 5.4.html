@@ -29,35 +29,56 @@
   <div id="header"></div>
   <div id="content">
     <div id="leftPan">
-        <p> 
-          <form action="/my-handling-form-page" method="post" class="l">
 
+          
+      </div>
+    </div>
+    <div id="rightPan">
+        <p class="headline">
+        
+        </p>
+        
+  <form action="/my-handling-form-page" method="post" class="l">
+<legend><h2>Payment</h2></legend>
           <div>
-        <label for="name">Name:</label>
-<br>
-        <input type="text" id="name" name="user_name" placeholder="Your name" class="ff"/>
+        <label for="fname">Name:</label><p>
+        <input type="text" id="fname" name="user_name" placeholder="First name" class="ff"/>
+        <input type="text" id="lname" name="user_name" placeholder="Last name" class="ff"/>
+              </p>
             </div>
             <div>
-        <label for="mail">E-mail:</label>
-<br>
-        <input type="email" id="mail" name="user_email" placeholder="Your E-mail" class="ff"/>
+        <label for="payment">Payment method:</label><p>
+        <select name="payment" form="pay" class="ff"/>
+  <option value="Visa">Visa</option>
+  <option value="Master">MasterCard</option>
+  <option value="PayPal">Paypal</option>
+                </p></select>
             </div>
-            <div>
-        <label for="msg">Message:</label>
-        <textarea id="msg" name="user_message" placeholder="Write something here" class="ff"></textarea>
+             <div>
+        <label for="msg">Expiration date:</label><p>
+  
+  <input type="date" name="exday" class="ff"></p>
             </div>
-    
+        <div>
+            <label for="email">Email:</label><p>
+            <input type="email" name="email" placeholder="Your Email" class="ff"></p>
+            </div>
+        <div>
+<label for="fename">Credit card number:</label><p>
+        <input type="text" id="fename" name="user_name" placeholder="" class="ff"/>
+            </p>
+        </div>
+     <div>
+  <input type="checkbox" name="v" value="v" class="ff"> I agree to the terms.<br>
+  <input type="checkbox" name="b" value="b" class="ff"> I want to receive a confirmatiuon email. 
+        
+    </div>
             <div class="button">
         <button type="submit" class="sub">Submit</button>
 
             </div>
 <br>
 </form>
-          
-      </div>
-    </div>
-    <div id="rightPan">
-        <p class="headline">Here comes information about products</p>
     
         <div class="clear"></div>
       </div>

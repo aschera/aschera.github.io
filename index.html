@@ -1,135 +1,133 @@
 <!DOCTYPE html>
 <html lang="eng">
-
 <head>
-  <meta charset="utf-8">
-  <title>Christina Bögh</title>
-  
-    <style>
-    body {
-        background: white }
-        
-    .sectiona {
-        background: black;
-        color: White;
-        border-radius: 1em;
-        padding: 1em;
-        position: fixed;
-        top: 0,1%;
-        left: 0,1%;
-        width: 100px;
-        height: 600px;
-        }
-        
-    .sectionb {
-        background: black;
-        color: White;
-        border-radius: 1em;
-        padding: 1em;
-        position: fixed;
-        top: 1%;
-        left: 150px;
-        width: 800px;
-        height: 600px;
-        }
-        
-    a:link, a:visited {
-        background-color: hotpink;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-    }
-        
-    a:hover, a:active {
-    background-color: red;
-    }
+<style>
 
-    .footer{font-size:10px;}
-        
-    </style>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+@media (min-width: 600px) and (max-width: 1050px) {
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: column wrap;
+  justify-content: space-around;
+}
+
+.flex-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+}
+
+.flex-item {
+  background: hotpink;
+  border: 1px black solid;
+  padding: 1px;
+  width: 100px;
+  height: 50px;
+  margin-top: 5px;
+  
+  line-height: 50px;
+  color: black;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+}
+
+.header {
+  padding: 1px;
+  width: 100%;
+  height: 50px;
+  margin-top: 1px;
+  
+  line-height: 50px;
+  color: black;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+}
+
+a {color:black; font-size:15px; text-decoration:none;}
+
+</style>
 </head>
 
 <body>
-<section class="sectiona">
 
-<table>
-<tr>
-<th>
-<span><h1>Index</h1></span>
-<span><h4>Övelser HTML/CSS</h4></span>
-</th>
-</tr>
-<tr>
-<th>
-<span><a href="oevning1.html">1.3</a></span>
-</th>
-</tr>
-<tr>
-<th>
-<span><a href="2.2.html">2.2</a></span>
-</th>
-</tr>
-<tr>
-<th>
-<span><a href="2.3.html">2.3</a></span>
-</th>
-</tr>
-<tr>
-<th>
-<span><a href="2.4.html">2.4</a></span>
-</th>
-</tr>
-<tr>
-<th>
-<span><a href="3.2.html">3.2</a></span>
-</th>
-</tr>
-<tr>
-<th>
-<span><a href="3.3.html">3.3</a></span>
-</th>
-</tr>
-<tr>
-<th>
-<span><a href="4.2.html">4.2</a></span>
-</th>
-</tr>
-<tr>
-<th>
-<span><a href="5.1.html">5.1</a></span>
-</th>
-</tr>
-<tr>
-<th>
-<span><a href="5.4.html">5.4</a></span>
-</th>
-</tr>
-<tr>
-<th>
-<span><a href="6.3.html">6.3</a></span>
-</th>
-</tr>
-<tr>
-<th>
-<span><a href="7a.html">7.a</a></span>
-</th>
-</tr>
-<tr>
-<th>
-<span class="footer">@Christina Bögh</span>
-</th>
-</tr>
+<div class="header">
+<div><span>&Ouml;velser HTML/CSS</span></div>
+<div>
 
-<!--
-How to Git - Windows - <a href="how_to_windows.html">Link</a>.
--->
+</div>
 
-</table>
-</section>
-    
-<section class="sectionb"><img src="#"></section>
+<div class="flex-container">
+
+<div class="flex-list">
+  <div class="flex-item"><span><a href="oevning1.html">1.3</a></span></div>
+  <div class="flex-item"><span><a href="2.2.html">2.2</a></span></div>
+  <div class="flex-item"><span><a href="2.3.html">2.3</a></span></div>
+  <div class="flex-item"><span><a href="2.4.html">2.4</a></span></div>
+
+</div>
+
+<div class="flex-list">
+  <div class="flex-item"><span><a href="3.2.html">3.2</a></span></div>
+  <div class="flex-item"><span><a href="3.3.html">3.3</a></span></div>
+  <div class="flex-item"><span><a href="4.2.html">4.2</a></span></div>
+  <div class="flex-item"><span><a href="5.1.html">5.1</a></span></div>
+
+</div>
+
+<div class="flex-list">
+  <div class="flex-item"><span><a href="5.4.html">5.4</a></span></div>
+  <div class="flex-item"><span><a href="6.3.html">6.3</a></span></div>
+  <div class="flex-item"><span><a href="7a.html">7.a</a></span></div>
+  <div class="flex-item"><span><a href="7b.html">7.b</a></span></div>
+</div>
+
+<div class="flex-list">
+  <div class="flex-item"><span><a href="#.html">#</a></span></div>
+  <div class="flex-item"><span><a href="#.html">#</a></span></div>
+  <div class="flex-item"><span><a href="#.html">#</a></span></div>
+  <div class="flex-item"><span><a href="#.html">#</a></span></div>
+</div>
+</div>
+
+
 </body>
-
 </html>

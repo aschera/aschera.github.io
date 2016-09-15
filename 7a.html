@@ -1,0 +1,172 @@
+<DOCTYPE! html>
+<html>
+<head>
+<title>7a 1.3</title>
+<style>
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+@media (min-width: 600px) and (max-width: 1050px) {
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: column wrap;
+  justify-content: space-around;
+}
+}
+
+.flex-item {
+  background: tomato;
+  border: 1px black solid;
+  padding: 1px;
+  width: 100px;
+  height: 100px;
+  margin-top: 5px;
+  
+  line-height: 100px;
+  color: black;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+}
+
+.header {
+  border: 1px black solid;
+  padding: 1px;
+  width: 100%;
+  height: 50px;
+  margin-top: 1px;
+  
+  line-height: 50px;
+  color: black;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+}
+
+@media (max-width: 600px){
+.header {
+  background: white;
+}
+
+#white {color:black;}
+
+#yellow {
+    color:black;
+    display:none;
+}
+#green {
+    color:black;
+    display:none;
+}
+#red {
+    color:black;
+    display:none;
+}
+}
+
+@media (min-width: 601px) and (max-width: 750px){
+.header {
+  background: yellow;
+}
+
+#white {
+    color:black;
+    display:none;
+}
+#yellow{color:black;}
+
+#green {
+    color:black;
+    display:none;
+}
+#red {
+    color:black;
+    display:none;
+}
+}
+@media (min-width: 751px)and (max-width: 900px){
+.header {
+  background: red;
+}
+#white {
+    color:black;
+    display:none;
+}
+#yellow {
+    color:black;
+    display:none;
+}
+#red {color:black;}
+
+#green {
+    color:black;
+    display:none;
+}
+}
+@media (min-width: 901px){
+.header {
+  background: green;
+}
+#white {
+    color:black;
+    display:none;
+}
+#yellow {
+    color:black;
+    display:none;
+}
+#green {color:black;}
+
+#red {
+    color:black;
+    display:none;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="name1">
+This is 
+<span id="white">white</span>
+<span id="yellow">yellow</span>
+<span id="red">red</span>
+<span id="green">green</span>
+<div>
+
+</div>
+
+<div class="flex-container">
+  <div class="flex-item">1</div>
+  <div class="flex-item">2</div>
+  <div class="flex-item">3</div>
+</div>
+
+
+</body>
+</html>

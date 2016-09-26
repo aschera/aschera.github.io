@@ -1,0 +1,161 @@
+
+<DOCTYPE! html>
+<html>
+<head>
+<title>home</title>
+<style>
+/* Layout */
+
+* {box-sizing: border-box}
+
+/* flexbox1 */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* valeur par défaut */
+}
+    
+/* flexbox2 */
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* valeur par défaut */
+}
+
+section {
+  width: 32%;
+  height: 32%;
+}
+
+/* other stuff*/
+
+body {
+	margin: 1em;
+	background: #fff;
+	font-family: "Century Gothic", helvetica, arial, sans-serif;
+	font-size: 1em;
+}
+section {
+	padding: 10px;
+	margin: 0;
+	border-radius: 1px;
+	color: #fff;
+}
+    
+/*the boxes*/ 
+    
+.firstrow:nth-child(1) {    /*first*/ 
+    background:url("beach1.jpg");
+    background-size: cover;
+}
+.firstrow:nth-child(2) {   /*second*/ 
+  	background:url("beach2.jpg");
+    background-size: cover;
+}
+.firstrow:nth-child(3) {    /*third*/
+  	background:url("beach5.jpg");
+    background-size: cover;
+}
+.secondrow:nth-child(1) {   /*fourth*/ 
+  	background:url("beach4.jpg");
+    background-size: cover;
+}
+.secondrow:nth-child(2) {    /*fifth*/
+  	background:url("beach3.jpg");
+    background-size: cover;
+}
+.secondrow:nth-child(3) {    /*sixth*/
+    background:url("beach6.jpg");
+    background-size: cover;
+}
+.names {                      /*names*/
+    background-size: cover;
+    height: 50px;
+    background-color: navy;
+    padding-top: 0;
+}
+
+.c {
+    position: relative;
+    }
+    
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<section class="firstrow">
+    <div class="c">    
+
+    </div>
+</section>
+<section class="firstrow">
+    <div class="c"> 
+     
+    </div>
+</section>
+<section class="firstrow">
+    <div class="c">  
+
+    </div>
+</section>
+</div>
+    
+<div class="container">
+<section class="names">
+   <span>Blue lagoon</span>
+    <br>
+<span><img src="view_button.jpg" width=50%;></span>
+</section>
+<section class="names">
+   <span>Just in paradise</span>
+    <br>
+<span><img src="view_button.jpg" width=50%;></span>
+</section>
+<section class="names">
+   <span>Seacove</span>
+    <br>
+<span><img src="view_button.jpg" width=50%;></span>
+</section>
+</div>    
+    
+
+<br>
+    
+<div class="container">
+<section class="secondrow">
+    <div class="c" >    
+    </div>
+</section>
+<section class="secondrow">
+    <div class="c">    
+    </div>
+</section>
+<section class="secondrow">
+    <div class="c">    
+    </div>
+</section>
+</div>
+    
+<div class="container">
+<section class="names">
+<span>Gourmet delight</span>
+    <br>
+<span><img src="view_button.jpg" width=50%;></span>
+</section>
+<section class="names">
+    <span>Simple Oasis</span>
+    <br>
+<span><img src="view_button.jpg" width=50%;></span>
+</section>
+<section class="names">
+   <span>Paradise villa</span>
+    <br>
+<span><img src="view_button.jpg" width=50%;></span>
+</section>
+</div>  
+    
+</body>
+    
+</html>

@@ -12,14 +12,14 @@
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: stretch; /* valeur par défaut */
+  align-items: stretch; 
 }
     
 /* flexbox2 */
 .container1 {
   display: flex;
   justify-content: space-between;
-  align-items: stretch; /* valeur par défaut */
+  align-items: stretch; 
 }
 
 section {
@@ -42,7 +42,7 @@ section {
 	color: #fff;
 }
     
-/*the boxes*/ 
+/*the image boxes*/ 
     
 .firstrow:nth-child(1) {    /*first*/ 
     background:url("beach1.jpg");
@@ -79,6 +79,78 @@ section {
     position: relative;
     }
     
+.text {
+  position: relative;
+  top: -10%;
+  right: 100%
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+    
+    
+/*the view this villa buttons*/ 
+    
+.img_z {
+    position: fixed;
+    z-index: +3;
+    right: 0px;
+    left: 24%;
+    top: 5%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+}
+    
+.img_u {
+    position: fixed;
+    z-index: +3;
+    right: 0px;
+    left: 57%;
+    top: 5%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+}  
+    
+.img_o {
+    position: fixed;
+    z-index: +3;
+    right: 0px;
+    left: 90%;
+    top: 5%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+}
+
+.img_n {
+    position: fixed;
+    z-index: +3;
+    right: 0px;
+    left: 24%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+}
+    
+.img_h {
+    position: fixed;
+    z-index: +3;
+    right: 0px;
+    left: 57%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+}  
+    
+.img_f {
+    position: fixed;
+    z-index: +3;
+    right: 0px;
+    left: 90%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+}
+    
 </style>
 </head>
 
@@ -106,17 +178,17 @@ section {
 <section class="names">
    <span>Blue lagoon</span>
     <br>
-<span><img src="view_button.jpg" width=50%;></span>
+<span class="text"><img src="view_button.jpg" class="img_z"></span>
 </section>
 <section class="names">
    <span>Just in paradise</span>
     <br>
-<span><img src="view_button.jpg" width=50%;></span>
+<span class="text"><img src="view_button.jpg" class="img_u"></span>
 </section>
 <section class="names">
    <span>Seacove</span>
     <br>
-<span><img src="view_button.jpg" width=50%;></span>
+<span class="text"><img src="view_button.jpg" class="img_o"></span>
 </section>
 </div>    
     
@@ -142,17 +214,17 @@ section {
 <section class="names">
 <span>Gourmet delight</span>
     <br>
-<span><img src="view_button.jpg" width=50%;></span>
+<span class="text"><img src="view_button.jpg" class="img_n"></span>
 </section>
 <section class="names">
     <span>Simple Oasis</span>
     <br>
-<span><img src="view_button.jpg" width=50%;></span>
+<span class="text"><img src="view_button.jpg" class="img_h"></span>
 </section>
 <section class="names">
    <span>Paradise villa</span>
     <br>
-<span><img src="view_button.jpg" width=50%;></span>
+<span class="text"><img src="view_button.jpg" class="img_f"></span>
 </section>
 </div>  
     

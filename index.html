@@ -18,38 +18,34 @@
   font-weight: bold;
   text-align: center;
 }
-
 .wrapper > * {
   padding: 10px;
   flex: 1 100%;
 }
-
 .header {
   background: #0E0B16;
   min-height: 200px;
 }
-
 .footer {
   background: #0E0B16;
     min-height: 50px;
 }
-
 .main {
   text-align: left;
   background: #4717F6;
     width: 60%;
+    min-width: 500px;
 }
-
 .aside-1 {
   background: #A239CA;
     max-width: 215px;
 }
-
 .aside-2 {
   background: #A239CA;
     max-width: 215px;
 }
-    article{background-color:#E7DFDD; }
+    
+.article {background-color:#E7DFDD; padding:5px; }
     
 /* Small screens */
 @media all and (max-width: 500px) {  
@@ -57,7 +53,7 @@
     .wrapper {flex-direction: column; padding:14px;}
     .main   { flex: 3 0px; }
     .aside-1 { order: 2; min-width: 300px;} 
-    .main    { order: 1; min-width: 100px; }
+    .main    { order: 1; min-width: 500px; }
     .aside-2 { order: 3; min-width: 300px;}
     .footer  { order: 4; min-width: 100px; }
     .aside { flex: 1 auto; min-width: 100px; }
@@ -65,12 +61,10 @@
     min-height: 50px;}
     .over {min-width: 118px;}  
 }
-
     
 @media all and (min-width: 500px) {
   .aside { flex: 1 auto; }
 }
-
 @media all and (min-width: 500px) {
   .main    { flex: 3 0px; }
   .aside-1 { order: 1; } 
@@ -78,12 +72,10 @@
   .aside-2 { order: 3; }
   .footer  { order: 4; }
 }
-
 body {
   padding: 2em; 
     background-color: #E7DFDD;
 }
-
 .flex-list {
   padding: 0;
   margin: 0;
@@ -133,7 +125,7 @@ body {
   text-align: center;
 }
     
-.flex-item { background: lightcyan;
+.flex-item { background: #E7DFDD;
   border: 1px #0E0B16 solid;
   padding: 1px;
   width: 100px;
@@ -149,14 +141,19 @@ body {
   text-align: center;
     }
     
-a {color:#0E0B16; font-size:15px; text-decoration:none;}
+a {color:#0E0B16; font-size:15px; text-decoration:none; font-family: 'Architects Daughter', cursive}
     
 .flex-item:hover {
   background-color: #0E0B16;
     font-family: 'Architects Daughter', cursive;
     color: #E7DFDD;
 }
-    
+
+    a:hover{
+    font-family: 'Architects Daughter', cursive;
+    color: #4717F6;}
+
+        
 .over {
   padding: 1px;
   font-family: 'Architects Daughter', cursive;
@@ -170,7 +167,6 @@ a {color:#0E0B16; font-size:15px; text-decoration:none;}
   font-size: 1em;
   text-align: center;
 }
-
 </style>
 </head>
 
@@ -181,29 +177,32 @@ a {color:#0E0B16; font-size:15px; text-decoration:none;}
 <div class="wrapper">
     <header class="header over"><div class="logo">FrontEnd</div></header>
   <article class="main">
-
+      
+<div class="article">
+    
 <h2>JavaScript</h2>
 
-    <h3>Kurslitteratur</h3> <br />
-      
-Eloq "Eloquent JavaScript", http://eloquentjavascript.net/index.html , av Marijn Haverbeke<br />
-Primär kurslitteratur.<br />
-      <br />
-YDKJS    "You Don't Know JS", https://github.com/getify/You-Dont-Know-JS , Kyle Simpson. <br />
-      Sekundär kurslitteratur.<br />
-      
-      <br />
+<h3>Kurslitteratur</h3> 
+    
+<ul>  
+<li><a href="http://eloquentjavascript.net/index.html" target="_blanck">Eloquent JavaScript</a> by Marijn Haverbeke.</li>
+<li><a href="https://github.com/getify/You-Dont-Know-JS" target="_blanck">You Don't Know JS</a> by Kyle Simpson.</li>
+</ul>  
       <h3>Resurser</h3>
-http://jsforcats.com/    JavaScript For Cats<br />
-https://www.codecademy.com/learn/..    CodeAcademy-kurs<br />
-https://code.tutsplus.com/tutorials/..    Best way to learn JavaScript<br />
-http://blog.teamtreehouse.com/mas..    Artikel om hur man använder konsolen<br />
-https://developer.mozilla.org/en-US/..    Expressions och operators på MDN<br />
-https://blockly-games.appspot.com/    Spel som lär ut JavaScript-programmering<br />
-http://lightbot.com/hocflash.html    Spel som lär ut programmering<br />
-https://code.tutsplus.com/tutorials/th..    "The best way to learn JavaScript"<br />
-https://developer.mozilla.org/en-US..    Översikt av JavaScript för vana programmerare<br />
+<ul>
+<li><a href="http://jsforcats.com/">JavaScript For Cats</a></li>
+<li><a href="https://www.codecademy.com/learn/" target="_blanck">CodeAcademy-kurs</a></li>
+<li><a href="https://code.tutsplus.com/tutorials/" target="_blanck">Best way to learn JavaScript</a></li>
+<li><a href="http://blog.teamtreehouse.com/mas" target="_blanck">Article about the consolce</a></li>
+<li><a href="https://developer.mozilla.org/en-US/" target="_blanck">Expressions and operators on MDN</a></li>
+<li><a href="https://blockly-games.appspot.com/" target="_blanck">Blockly-games</a></li>
+<li><a href="http://lightbot.com/hocflash.html" target="_blanck">Lightbot games</a></li>
+<li><a href="https://code.tutsplus.com/tutorials/th" target="_blanck">The best way to learn JavaScript</a></li>
+<li><a href="https://developer.mozilla.org/en-US" target="_blanck">Shared knowledgefor the Open Web</a></li> 
+</ul>
       
+
+  </div>    
   </article>
     
 <aside class="aside aside-1">

@@ -1,0 +1,128 @@
+Breakfast - Top Down
+
+
+    1Make breakfast
+---
+    2.1Organise Kitchen
+    2.2Prepare food
+    2.3Serve
+---
+    3Organise Kitchen
+        3.1Clean surfaces.
+		3.1a: take cloth
+		3.1b: hold underwateruntil wet
+		3.1c: queeze out excess water.
+		3.1d: take cloth and wipe table clean.
+        3.2Get out plates,glasses, knives
+		3.2a: take from cupboard and place on table-seats
+        3.3Get out food
+		3.3a:get : break, milk, butter, eggs, cheese from fridge
+			 and place on table.
+		3.3b: get salt and place on table.
+    4Prepare food
+        4.1Toast bread
+		4.1a : put toast bread on toaster.
+		4.1b : turn on toaster 2 minutes.
+		4.1c : turn bread around.
+		4.1d: turn on toaster 2 minutes.
+		4.1e: put bread on plates.
+        4.2Boil eggs
+		4.1a: get bowl from cupboard.
+		4.1b: fill 50% with water.
+		4.1c: add some vinegear and oil.
+		4.1d: put on stove and turn on max heat.
+		4.1e: turn on egg-clock 10 minutes.
+		4.1f: turn off stove.
+		4.1g: take bowl and holdunder cold water for 2 minutes.
+		4.1h: take eggs out and place on table.
+  
+---------------------------------------------------------------------------------------------------
+
+Go to school - top down
+
+Walk to the tram
+Ride the tram
+walk to school
+
+---
+
+Walk to the tram
+	put on clothes
+	leave home
+	close and lock the door
+	go down stairs
+	walk to the tram station	
+Ride the tram
+	wait for tram number 4
+	Get on tram
+	Find a seat
+	Sit and wait until correct stop
+	get out
+walk to school
+	Cross the street 
+	walk to schoolbuilding
+	open door
+	take the elevator up to correct level
+	open door to school
+	
+---
+
+1Walk to the tram
+	1.1 put on clothes
+
+		1.1.A. Get clothes
+			Go to closet.
+			Open door.
+			Go in.
+			Turn on light.
+			Choose clothes (pants, socks,underwear, shirt/pullower)
+			Grab clothes.
+			Turn off light
+			Leave closet
+			Close closet door.
+
+		1.1.B. Get dresed
+			Take off Pyjamans
+			Put on clothes.
+
+		1.1.C. Get ready
+			Go to bathroom.
+			Turn on light.
+			Brush teeth
+			Comb hair.
+			Wash face.
+
+	1.2 leave home.
+		1.2.A. Put on jacket and shoes.
+		1.2.B. Turn off all lights.
+		1.2.C. Grab handbag and keys.
+		1.2.D. Open the front door.
+		1.2.E. close and lock the door with the keys.
+
+	1.3 go down stairs
+		1.3.A. Walk down stairs.
+		1.3.B. Open door.
+		1.3.C: go outside.
+
+	1.4 walk to the tram station
+		1.4.A. Walk 800m towards tram station.
+		1.4.B. Enter tramstation.
+		1.4.C. To down the stairs to track A	
+2Ride the tram
+	2.1 wait for tram number 4
+	2.2 Get on tram
+	2.3 Find a seat
+	2.4 Sit and wait until correct stop
+	2.5 get out
+
+3walk to school
+	3.1 Cross the street 
+	3.2 walk to schoolbuilding
+	3.3 open door
+	3.4 take the elevator up to correct level
+	3.5 open door to school
+	
+	
+
+
+

@@ -1,7 +1,7 @@
-
 <script type="text/javascript">
 
 var number = prompt("Please enter a number from 1 to 10", ""); 
+
 if ((number < 11) && (number > 0)) { 
     console.log(number); 
     document.write(number); 
@@ -14,3 +14,4 @@ if ((number < 11) && (number > 0)) {
 } 
 
 </script>
+

@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+  <meta charset="utf-8">
+  <title>2a.B</title>
+
 <script type="text/javascript">
 
 var number = prompt("Please enter a number from 1 to 10", ""); 
@@ -14,4 +21,14 @@ if ((number < 11) && (number > 0)) {
 } 
 
 </script>
+
+</head>
+
+<body>
+      
+</body>
+
+</html>
+
+
 

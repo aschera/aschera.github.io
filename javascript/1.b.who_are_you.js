@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Who are you?</title>
+
 
 <script type="text/javascript">
 
@@ -8,6 +15,16 @@ var place = prompt("What city do you come from?", "");
 var color = prompt("What is your favorite color?", "");
 
 
-console.log('Welcome', name,',', 'from', place, ',', 'with the favourite color', color, ".");
+//console.log('Welcome', name,',', 'from', place, ',', 'with the favourite color', color, ".");
+document.write('Welcome', name,',', 'from', place, ',', 'with the favourite color', color, ".");
 
 </script>
+
+
+</head>
+    
+<body>
+
+                                        
+</body>
+</html>

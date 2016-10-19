@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>vocals</title>
+
+
+<script type="text/javascript">
+
+var string = prompt("Which word would you like to try?", "");
+    
+//turn the input into a string
+var string = string.toString();
+    
+var vocals = "aeiouy"; //define vocals
+ 
+var letters = '';
+    
+for (var i = 0; i <= string.length; i++) { //loop through sentence
+    
+    // check to see if letter is vocal
+    if (vocals.indexOf(string.substring(i, i+1))<=-1 && string.substring(i, i+1)!=" ") { 
+     
+    }
+    else {
+        letters += string.substring(i, i+1);
+    }
+}
+
+document.write("You wrote: ", string, "\n", "This word has ", letters.length, " vocals. ", "those are: ", letters)
+</script>
+
+
+</head>
+    
+<body>
+
+                                        
+</body>
+</html>

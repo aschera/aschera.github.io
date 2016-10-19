@@ -7,27 +7,30 @@
 
 <script type="text/javascript">
 
-<script type="text/javascript">
+var choice = prompt('Please choose a song! (1-4)');
+    
+    if( choice < 1 || choice > 4 ) {
+	   document.write(choice + ' is not a number between 1 and 4!')
+        }
 
-	var text;
-	var number = prompt("Which drink would you like Sir? 1,2 or 3?", "")	
-		switch(number) {
-    			case "1":
-        			text = "Excellent choice! Martini is good for your soul.";
-        			break;
-    			case "2":
-       				text = "Daiquiri is my favorite too!";
-        			break;
-    			case "3":
-        			text = "Cosmopolitan is delicious!";
-        			break;
-    			default:
-        			text = "I have never heard of that one..";
+switch( choice ) { // ===
+	case '1': document.write('Wicked game');
+		break;
+	case '2': document.write('Goldfinger');
+		break;
+	case '3': document.write('Bla Bla Bla');
+		break;
+	case '4': document.write('Dance with the Devil');
+		break;
+	default: document.write('Ave Maria');
+		break;
 }
-</script>
+
+    
 </script>
 
 </head>
+    
 <body>
 </body>
 </html>

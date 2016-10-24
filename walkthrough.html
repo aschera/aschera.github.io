@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en">
 <head>
-    <title>My CV</title>
+    <title>walktrough</title>
 <style>
 
 /* //////////////////////////////////////////////////////////////////// */  
@@ -163,8 +163,8 @@ a {color:#0E0B16; font-size:15px; text-decoration:none;e;}
   font-size: 1em;
   text-align: center;
 }
-    code {color:#A239CA }
-    
+    code {color:#A239CA; font-size: 1.5em; }
+     .coding{background-color: /* #4717F6 */ #0e0b16; color:#e7dfdd; padding: 3px;}    
     
     
     
@@ -317,7 +317,7 @@ li.selected a { background-color: #4717F6;}
     img {
         max-width:100%;
     }
-   
+
 </style>
 </head>
 
@@ -332,7 +332,7 @@ li.selected a { background-color: #4717F6;}
     
             <div class="container">
             <ul id="nav" class="menuBar">
-                <li class="selected"><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#s1">HTML/CSS</a>
  
                     <span id="s1"></span>
@@ -405,7 +405,7 @@ li.selected a { background-color: #4717F6;}
                 </li>
                 <li><a href="#">About</a></li>
                 <li><a href="resources.html">resources</a></li>
-                <li><a href="walkthrough.html">Walkthroughs</a></li>
+                <li  class="selected"><a href="walkthrough.html">Walkthroughs</a></li>
             
             </ul>
         </div>
@@ -421,10 +421,86 @@ li.selected a { background-color: #4717F6;}
     
 <article class="main">
     
-  <img src="1autumn-steps.jpg" alt=".">  
+  <div class="article">
+    <h2>Examples</h2>
+      <br />
+    <h3>How to capitalize the first word in a string - Solution 1</h3>
+      <br /><br />
+<div  class="coding">
+<code>
+function capitalize(str) { <br /><br />
+    </code>
+    <code>
+  str = str.toLowerCase().split(' '); <br />
+    </code>
     
-<div class="article">
+The string str is being converted to all lower case first. <br />Then the string is split into words.<br /> (' ') means that the program splits at each instance of a space.<br /> Every new word is put into an array(object). <br />str is no longer a type string.<br /><br />
     
+        <code>
+  for (var i = 0; i < str.length; i++) {  
+               </code>     <br />            
+     Looping through the items of the list until we reach the end ( str.length).<br /><br />                 
+            
+  <code> str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); </code><br />
+   
+    At each iteration [i] the character at position 0, the first character, is capitalized. <br />Then to this character the rest is added. <br />slice(1) indicates that the slice that should be added starts at position 1, and since no endslice-position is added it takes the whole bit/word. <br /><br />
+    
+    <code>}
+  return str.join(' ');<br />
+}
+capitalize("aBout mY houSE");</code><br /><br /><br />
+</code>            
+Output: => 'About My House'    
+</div>    
+
+  
+
+</div>
+      
+  <div class="article">
+      <br />
+    <h3>How to capitalize the first word in a string - Solution 2</h3>
+      <br /><br />
+<div  class="coding">
+<code>
+function capitalize(string) {
+</code><br />
+    function definition<br /><br />
+<code>
+    var uCString = " ";<br />
+    let shouldCapitalize = true;
+</code><br />
+    declaring variables<br /><br />
+    
+    
+<code>
+&nbsp;&nbsp;&nbsp;&nbsp;  for (var i = 0; i < string.length; i++) {  
+               </code>     <br /> 
+    Looping through the items of the list until we reach the end ( str.length).<br /><br />
+    
+       &nbsp;&nbsp;&nbsp;&nbsp; <code>if(shouldCapitalize) {uCString += string.charAt(i).toUpperCase();}</code>     <br /> 
+    bbbbb<br /><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;    <code>else {uCString += string.charAt(i).toLowerCase();}</code>     <br /> 
+    bbbbb<br /><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;  <code>if(string.charAt(i) == " ") {
+            shouldCapitalize = true;
+        }</code>     <br /> 
+    bbbbb<br /><br />
+     &nbsp;&nbsp;&nbsp;&nbsp;  <code> else {
+            shouldCapitalize = false;}<br /> 
+    }<br /> 
+</code>
+    bbbbb<br /><br />
+    <code>
+    return uCString;<br /> 
+}capitalize("aBout mY houSE");<br /> 
+        </code><br /> 
+    <br />
+Output: => 'About My House'
+</div>    
+
+  
+
 </div>
 
     

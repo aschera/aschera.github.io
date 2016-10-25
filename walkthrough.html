@@ -322,7 +322,12 @@ li.selected a { background-color: #4717F6;}
 </head>
 
 <body>
+    
+<!-- //////////////////////////////////////////////////////////////////// */  
+    
+    /* MENU */
 
+/* //////////////////////////////////////////////////////////////////// -->  
 
     
 <div class="wrapper">
@@ -412,7 +417,7 @@ li.selected a { background-color: #4717F6;}
     
 <!-- //////////////////////////////////////////////////////////////////// */  
     
-    /* MENU */
+    /* MAIN */
 
 /* //////////////////////////////////////////////////////////////////// -->  
    
@@ -437,8 +442,7 @@ function capitalize(str) { <br /><br />
 The string str is being converted to all lower case first. <br />Then the string is split into words.<br /> (' ') means that the program splits at each instance of a space.<br /> Every new word is put into an array(object). <br />str is no longer a type string.<br /><br />
     
         <code>
-  for (var i = 0; i < str.length; i++) {  
-               </code>     <br />            
+  for (var i = 0; i < str.length; i++) {  </code><br />            
      Looping through the items of the list until we reach the end ( str.length).<br /><br />                 
             
   <code> str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); </code><br />
@@ -474,18 +478,25 @@ function capitalize(string) {
     
     
 <code>
-&nbsp;&nbsp;&nbsp;&nbsp;  for (var i = 0; i < string.length; i++) {  
-               </code>     <br /> 
+&nbsp;&nbsp;&nbsp;&nbsp;  for (var i = 0; i < string.length; i++) {  </code><br /> 
     Looping through the items of the list until we reach the end ( str.length).<br /><br />
     
        &nbsp;&nbsp;&nbsp;&nbsp; <code>if(shouldCapitalize) {uCString += string.charAt(i).toUpperCase();}</code>     <br /> 
-    bbbbb<br /><br />
+    
+    If this round of the iteration was true for shouldCapitalize (if charAt(i) is a space) then the next round of iteration, 
+    which is now, should capitalize the next letter: which is the first letter of the new word. <br /><br />
+    
     &nbsp;&nbsp;&nbsp;&nbsp;    <code>else {uCString += string.charAt(i).toLowerCase();}</code>     <br /> 
-    bbbbb<br /><br />
+    
+    Otherwise just make sure the letter is lowercase in stead.<br /><br />
+    
       &nbsp;&nbsp;&nbsp;&nbsp;  <code>if(string.charAt(i) == " ") {
             shouldCapitalize = true;
         }</code>     <br /> 
-    bbbbb<br /><br />
+    
+    Even though this if-clause in under the others, it gets run at the same time as the others. If the condition becomes true, 
+    the next round of iteration will trigger the other if-else statements and either capitalize the next letter or not.<br /><br />
+    
      &nbsp;&nbsp;&nbsp;&nbsp;  <code> else {
             shouldCapitalize = false;}<br /> 
     }<br /> 

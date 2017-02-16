@@ -13,47 +13,33 @@
 <style>
     
     div {border-style: solid}
-    
-    #1 {}
-    
-    #2 {}
-    
-    #3 {}
-    
-    
-    
+  
 </style>
     
 <script>
     
-    //foursquare
+    //foursquare needs id!
     //client id:RHPTHZQRVD1O3M0AX3SREE4QJWLPPAEIFJAOGZHTTWT12A4W
     // client secret: U4SDRN4NDPX3EZSXSIK44ZZCWIT01FGS54PE3EGF2VSYD53X
-    
-    //link: https://api.foursquare.com/v2/venues/search?v=20161016&ll=41.878114%2C%20-87.629798&query=coffee&intent=checkin&client_id=RHPTHZQRVD1O3M0AX3SREE4QJWLPPAEIFJAOGZHTTWT12A4W&client_secret=U4SDRN4NDPX3EZSXSIK44ZZCWIT01FGS54PE3EGF2VSYD53X
-    
-    
- 
-    var lat = 41.878114;
-    var lng = -87.629798;
     
 		window.addEventListener('load', function() {
 			let button = document.getElementById('button');
 			button.addEventListener('click', function() {
 				// DOM-element som vi kommer att behöva
-				let svar = document.getElementById('1');
-				
+				let status = document.getElementById('1');
+				let res = document.getElementById('2');
+                let all_json = document.getElementById('3');
 				
 				// URL 
-				let url = 'link: https://api.foursquare.com/v2/venues/search?';
+				let url = 'https://api.foursquare.com/v2/venues/search?';
                 
-                
-                https://api.foursquare.com/v2/venues/search?v=20161016&ll=41.878114%2C%20-87.629798&query=coffee&intent=checkin&client_id=RHPTHZQRVD1O3M0AX3SREE4QJWLPPAEIFJAOGZHTTWT12A4W&client_secret=U4SDRN4NDPX3EZSXSIK44ZZCWIT01FGS54PE3EGF2VSYD53X
                 
                 //date
                 url += 'v=' + '20170216' + '&';
                 
-                //where
+                // coordinates
+                var lat = 41.878114;
+                var lng = -87.629798;
 				url += 'll=' + lat + ',' + lng + '&';
 
                 //radius
@@ -77,9 +63,21 @@
                         
 						// AJAX success
 						let json = JSON.parse(ajax.responseText);
-						
-                        svar.innerHTML = 'good';
-						
+						status.innerHTML = 'good';
+
+                        //res.innerHTML = 'response is: ' + json.response.venues ;
+                        
+                        for (i = 0; i < json.response.venues.length; i++ ) {
+                            
+                        var node = document.createElement("LI");                 
+                        var textnode = document.createTextNode('name: ' + json.response.venues[i].name + ', phone: ' + json.response.venues[i].contact.phone + ', location: ' + json.response.venues[i].location.address);         
+                        node.appendChild(textnode);                              
+                        document.getElementById("list").appendChild(node);     
+                        }
+                        
+                        
+						console.log(`${ajax.responseText}`);
+                        all_json.innerHTML = ajax.responseText;
 					}
 					else if( ajax.status != 200 ) {
 						svar.innerHTML = 'Error';
@@ -97,32 +95,34 @@
 	<div id="page-wrap">
 
         <header>
-		  Header
+		 <h2>Foursquare</h2>
 		</header>
 		
 		<section id="main-content">
+            
+            <div> Testvalues: <br>
+                lat = 41.878114 <br>
+                long = -87.629798 <br>
+                categoryId = 'coffee'
+            </div>
      <button id="button">Click me</button>
             <div id="1">
-                1
+                status
             </div>
             
             <div id="2">
-                2
+                result
+                <ul id="list"></ul>
             </div>
             
             <div id="3">
-                3
+                json
             </div>
             
 		</section>
 		
 	</div>
-	
-	<footer>
-	  
-	</footer>
 
-	
 
 </body>
 

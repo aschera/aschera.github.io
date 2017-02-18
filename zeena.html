@@ -33,9 +33,7 @@ zar.addEventListener("click", function(){
     
     //lägg till query
      url += 'q=' + 'chicken';
-    
-    
-    //http://food2fork.com/api/search?key={990f87c99cc60e687a4cb68ba77d179d%20&q=chicken 
+
 	
 var xReq= new XMLHttpRequest();
 xReq.open('GET',url);
@@ -50,14 +48,14 @@ xReq.onload = function(){
 	xReq.send();
 });
 
-function addHtml(data){
+/* function addHtml(data){
 	var htmlText= "";
 	
 	for (i = 0; i < data.length; i++){
 		htmlText += data[i].svar;
 	}
 	info.insertAdjacentHTML('beforeend',htmlText);
-};
+}; */
     
     </script>
 	</body>

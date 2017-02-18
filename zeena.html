@@ -23,16 +23,15 @@
 var svar = document.getElementById("svar");
 zar.addEventListener("click", function(){
     
-    // jag testat med denna api: http://food2fork.com/about/api
-    // API Key: 990f87c99cc60e687a4cb68ba77d179d 
+    // jag testat med wikipedia
+    // https://www.mediawiki.org/wiki/API:Main_page
     
-    //exempel url: http://food2fork.com/api/search?key={API_KEY}&q=shredded%20chicken
+    //exempel url: https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json
     
     // Skapa URL med querystring
-    var url = 'https://food2fork.com/api/search?';
+    var url = 'https://www.mediawiki.org/w/api.php ';
 	
-    //lägg till login
-    url += 'key=' + '990f87c99cc60e687a4cb68ba77d179d';
+    
 
 
 	
@@ -52,6 +51,9 @@ zar.addEventListener("click", function(){
 					}
 				};
 				ajax.send();
+});
+		});
+		
 
 /* function addHtml(data){
 	var htmlText= "";
@@ -61,7 +63,7 @@ zar.addEventListener("click", function(){
 	}
 	info.insertAdjacentHTML('beforeend',htmlText);
 }; */
-			})
+			
     </script>
 	</body>
 </html>

@@ -38,18 +38,22 @@ zar.addEventListener("click", function(){
      url += 'q=' + 'shredded chicken';
 
 	
-var xReq= new XMLHttpRequest();
-xReq.open('GET',url);
-xReq.onload = function(){
-	var xData = JSON.parse(xReq.responseText);
-	
-	addHtml(xData);
-	svar.innerHTML = xData;
-	
-};
-  
-	xReq.send();
-});
+		let ajax = new XMLHttpRequest();
+				ajax.open('get', url);
+				ajax.onreadystatechange = function() {
+					if( ajax.status == 200 && ajax.readyState == 4 ) {
+                        
+						// AJAX success
+						let json = JSON.parse(ajax.responseText);
+						svar.innerHTML = ajax.responseText;
+						console.log(`${ajax.responseText}`);
+
+					}
+					else if( ajax.status != 200 ) {
+						svar.innerHTML = 'Error';
+					}
+				};
+				ajax.send();
 
 /* function addHtml(data){
 	var htmlText= "";

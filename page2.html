@@ -12,7 +12,12 @@
     
 <style>
     
-    div {border-style: solid}
+    #values {border-style: solid}
+	#1 {border-style: solid}
+	#2 {border-style: solid}
+    #3 {border-style: solid}
+    #4 {border-style: solid}
+    #5 {border-style: solid}
   
 </style>
     
@@ -22,17 +27,25 @@
     //client id:RHPTHZQRVD1O3M0AX3SREE4QJWLPPAEIFJAOGZHTTWT12A4W
     // client secret: U4SDRN4NDPX3EZSXSIK44ZZCWIT01FGS54PE3EGF2VSYD53X
     
-		window.addEventListener('load', function() {
+    // Google needs id!
+    // AIzaSyDqlDUN18gi5vXn7lqtHJXUCwnqmKkjNXk
+    
+		window.addEventListener('load', function() {   // so shit loads and then runs.
+            
+            
 			let button = document.getElementById('button');
 			button.addEventListener('click', function() {
-				// DOM-element som vi kommer att behöva
+                
+				// DOM-element to display results in.
 				let status = document.getElementById('1');
 				let res = document.getElementById('2');
                 let all_json = document.getElementById('3');
-				
-				// URL 
-				let url = 'https://api.foursquare.com/v2/venues/search?';
                 
+                
+				
+				
+// URL Foursquare
+				let url = 'https://api.foursquare.com/v2/venues/search?';
                 
                 //date
                 url += 'v=' + '20170216' + '&';
@@ -47,15 +60,13 @@
                 url += 'radius=' + radius + '&';
                 
                 //what
-                let categoryId = 'coffee' + '&';
+                let categoryId = 'restaurant' + '&';
 				url += 'query=' + categoryId;
                 
                 //identification
                 url += 'client_id=RHPTHZQRVD1O3M0AX3SREE4QJWLPPAEIFJAOGZHTTWT12A4W&client_secret=U4SDRN4NDPX3EZSXSIK44ZZCWIT01FGS54PE3EGF2VSYD53X';
                 
-				
-				
-				// AJAX request
+				// AJAX request Foursquare
 				let ajax = new XMLHttpRequest();
 				ajax.open('get', url);
 				ajax.onreadystatechange = function() {
@@ -63,30 +74,56 @@
                         
 						// AJAX success
 						let json = JSON.parse(ajax.responseText);
-						status.innerHTML = 'good';
+						status.innerHTML = 'foursquare good';
 
                         //res.innerHTML = 'response is: ' + json.response.venues ;
                         
                         for (i = 0; i < json.response.venues.length; i++ ) {
                             
                         var node = document.createElement("LI");                 
-                        var textnode = document.createTextNode('name: ' + json.response.venues[i].name + ', phone: ' + json.response.venues[i].contact.phone + ', location: ' + json.response.venues[i].location.address);         
+                        var textnode = document.createTextNode('name: ' + json.response.venues[i].name + '. Adress: ' + json.response.venues[i].location.address + '. Count: ' + json.response.venues[i].stats.checkinsCount);         
                         node.appendChild(textnode);                              
                         document.getElementById("list").appendChild(node);     
                         }
                         
                         
-						console.log(`${ajax.responseText}`);
+						//console.log(`${ajax.responseText}`);
                         all_json.innerHTML = ajax.responseText;
 					}
 					else if( ajax.status != 200 ) {
-						svar.innerHTML = 'Error';
+						status.innerHTML = 'Error';
 					}
 				};
 				ajax.send();
+                
+                
+
 			});
+
 		});
+                  
 	</script>
+
+    <script>
+   
+        var lat = 41.878114;           
+        var lng = -87.629798;
+        
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('5'), {
+          center: {lat, lng},
+          zoom: 8
+        
+        });
+          let status2 = document.getElementById('4');
+          status2.innerHTML = ' Google good';
+      }
+            
+    </script>
+        <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqlDUN18gi5vXn7lqtHJXUCwnqmKkjNXk&callback=initMap">
+    </script>
 
 <body>
 
@@ -95,32 +132,37 @@
 	<div id="page-wrap">
 
         <header>
-		 <h2>Foursquare</h2>
+		 <h2>Foursquare -- Google</h2>
 		</header>
 		
 		<section id="main-content">
             
-            <div> Testvalues: <br>
+            <div id='values'> Testvalues: <br>
+                Chicago <br>
                 lat = 41.878114 <br>
                 long = -87.629798 <br>
-                categoryId = 'coffee'
+                categoryId = 'restaurant'
             </div>
-     <button id="button">Click me</button>
+     <button id="button" onclick="initMap()">Click me</button>
             <div id="1">
-                status
+                status Foursquare
             </div>
-            
+            <div id="4">
+                status Google
+            </div>
             <div id="2">
-                result
+                result Foursquare
                 <ul id="list"></ul>
             </div>
+                <div id="5" style="max-width:50%;height:400px;"> result Google </div>
             
             <div id="3">
-                json
+                json Foursquare
             </div>
+
             
 		</section>
-		
+	
 	</div>
 
 

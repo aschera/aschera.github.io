@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -9,6 +10,10 @@
 	<!--[if IE]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <script src="foursquare.js"></script>
+    <!--<script src="country.js"></script> -->
+  
     
 <style>
     
@@ -21,108 +26,39 @@
   
 </style>
     
-<script>
-    
-    //foursquare needs id!
-    //client id:RHPTHZQRVD1O3M0AX3SREE4QJWLPPAEIFJAOGZHTTWT12A4W
-    // client secret: U4SDRN4NDPX3EZSXSIK44ZZCWIT01FGS54PE3EGF2VSYD53X
-    
-    // Google needs id!
-    // AIzaSyDqlDUN18gi5vXn7lqtHJXUCwnqmKkjNXk
-    
-		window.addEventListener('load', function() {   // so shit loads and then runs.
-            
-            
-			let button = document.getElementById('button');
-			button.addEventListener('click', function() {
+    <script> // URL REST countries API
+    // We need this to find the capital city of the country we find.
+    // and also the latitude and longtitude for the google map
+    // it needs to be here, so it loads before the other scripts.
+        
+				let url2 = 'https://restcountries.eu/rest/v1/name/';
                 
-				// DOM-element to display results in.
-				let status = document.getElementById('1');
-				let res = document.getElementById('2');
-                let all_json = document.getElementById('3');
+                // where?
+                url2 += result_country.name;
                 
-                
-				
-				
-// URL Foursquare
-				let url = 'https://api.foursquare.com/v2/venues/search?';
-                
-                //date
-                url += 'v=' + '20170216' + '&';
-                
-                // coordinates
-                var lat = 41.878114;
-                var lng = -87.629798;
-				url += 'll=' + lat + ',' + lng + '&';
-
-                //radius
-                let radius = 200;
-                url += 'radius=' + radius + '&';
-                
-                //what
-                let categoryId = 'restaurant' + '&';
-				url += 'query=' + categoryId;
-                
-                //identification
-                url += 'client_id=RHPTHZQRVD1O3M0AX3SREE4QJWLPPAEIFJAOGZHTTWT12A4W&client_secret=U4SDRN4NDPX3EZSXSIK44ZZCWIT01FGS54PE3EGF2VSYD53X';
-                
-				// AJAX request Foursquare
-				let ajax = new XMLHttpRequest();
-				ajax.open('get', url);
-				ajax.onreadystatechange = function() {
-					if( ajax.status == 200 && ajax.readyState == 4 ) {
+				// AJAX request REST countries
+				let ajax2 = new XMLHttpRequest();
+				ajax2.open('get', url2);
+				ajax2.onreadystatechange = function() {
+					if( ajax2.status == 200 && ajax2.readyState == 4 ) {
                         
-						// AJAX success
-						let json = JSON.parse(ajax.responseText);
-						status.innerHTML = 'foursquare good';
-
-                        //res.innerHTML = 'response is: ' + json.response.venues ;
-                        
-                        for (i = 0; i < json.response.venues.length; i++ ) {
+                        let json2 = JSON.parse(ajax2.responseText);
                             
-                        var node = document.createElement("LI");                 
-                        var textnode = document.createTextNode('name: ' + json.response.venues[i].name + '. Adress: ' + json.response.venues[i].location.address + '. Count: ' + json.response.venues[i].stats.checkinsCount);         
-                        node.appendChild(textnode);                              
-                        document.getElementById("list").appendChild(node);     
-                        }
+                        // City
+                        result_country.city = json2[0].capital;
                         
+                        // lat/lng
+                        result_country.lat = json2[0].latlng[0];
+                        result_country.lng = json2[0].latlng[1];
                         
-						//console.log(`${ajax.responseText}`);
-                        all_json.innerHTML = ajax.responseText;
+                        console.log(json2[0].latlng[0]);
+
 					}
-					else if( ajax.status != 200 ) {
-						status.innerHTML = 'Error';
+					else if( ajax2.status != 200 ) {
+						
 					}
 				};
-				ajax.send();
-                
-                
-
-			});
-
-		});
-                  
-	</script>
-
-    <script>
-   
-        var lat = 41.878114;           
-        var lng = -87.629798;
-        
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('5'), {
-          center: {lat, lng},
-          zoom: 8
-        
-        });
-          let status2 = document.getElementById('4');
-          status2.innerHTML = ' Google good';
-      }
-            
-    </script>
-        <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqlDUN18gi5vXn7lqtHJXUCwnqmKkjNXk&callback=initMap">
+				ajax2.send();  
     </script>
 
 <body>
@@ -136,19 +72,10 @@
 		</header>
 		
 		<section id="main-content">
-            
-            <div id='values'> Testvalues: <br>
-                Chicago <br>
-                lat = 41.878114 <br>
-                long = -87.629798 <br>
-                categoryId = 'restaurant'
-            </div>
+
      <button id="button" onclick="initMap()">Click me</button>
             <div id="1">
                 status Foursquare
-            </div>
-            <div id="4">
-                status Google
             </div>
             <div id="2">
                 result Foursquare
@@ -164,7 +91,25 @@
 		</section>
 	
 	</div>
+    
+    <!-- Google needs id!
+    AIzaSyDqlDUN18gi5vXn7lqtHJXUCwnqmKkjNXk -->
+    
+<script> // Google API for the map. 
+// Needs to be here too, so it lopads properly.
+    
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById("5"), {
+          center: {lat: result_country.lat, lng: result_country.lng},
+          scrollwheel: false,
+          zoom: 8
+        });
+      }
 
+</script> Google 2nd API script.
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqlDUN18gi5vXn7lqtHJXUCwnqmKkjNXk&callback=initMap"
+    async defer></script>
 
 </body>
 

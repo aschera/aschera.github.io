@@ -19,7 +19,11 @@
 
 
 
-<script> // URL REST countries API
+<script> 
+//test country
+    var result_country = {name: 'Sweden', lat:41.878114, lng:-87.629798, city: 'Tallin'};
+
+// URL REST countries API
     // We need this to find the capital city of the country we find.
     // and also the latitude and longtitude for the google map
     // it needs to be here, so it loads before the other scripts.
@@ -80,10 +84,10 @@
 							 </div>
 							 <div class="col-lg-6">
 								 <div class="panel panel-default">
-										<div id="map_box" class="panel-body">
+										<div  class="panel-body">
 											<div class="panel-body">
 									      <div class="panel panel-dfault">
-												  <div class="panel-body">
+												  <div id="map_box" class="panel-body">
 														<p><h3> Map <img src="africamap.png" alt="..." class="img-thumbnail"></h3></p>
 													</div><!--/panel body3 -->
 												</div><!-- /panel3 for map-->
@@ -256,5 +260,4 @@
     async defer></script>
   </body>
 </html>
-
 

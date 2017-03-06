@@ -1,0 +1,500 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <title>resources</title>
+<style>
+
+/* //////////////////////////////////////////////////////////////////// */  
+    
+    /* MAIN */
+
+/* //////////////////////////////////////////////////////////////////// */  
+html {
+background-color: #fff;
+height: 100%;
+}
+body {
+font: 0.75em/1.5em;
+}  
+   
+.wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;  
+  
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  
+  font-weight: bold;
+  text-align: center;
+}
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+.header {
+  background: ;
+  min-height: 60px;
+}
+.footer {
+  background: #0E0B16;
+    min-height: 50px;
+}
+.main {
+  text-align: left;
+  /* background: #4717F6; */
+    width: 60%;
+    min-width: 500px;
+}
+.aside-1 {
+  background: #A239CA;
+    max-width: 215px;
+}
+.aside-2 {
+  background: #A239CA;
+    max-width: 215px;
+}
+    
+.article {background-color:#E7DFDD; padding:5px;margin-top: 5px; }
+    
+/* Small screens */
+@media all and (max-width: 500px) {  
+/* On small screens, we are no longer using row direction but column */ 
+    .wrapper {flex-direction: column; padding:14px;}
+    .main   { flex: 3 0px; }
+    .aside-1 { order: 2; min-width: 350px;} 
+    .main    { order: 1; min-width: 500px; }
+    .aside-2 { order: 3; min-width: 350px;}
+    .footer  { order: 4; min-width: 100px; }
+    .aside { flex: 1 auto; min-width: 100px; }
+    .flex-item {min-width: 100px;
+    min-height: 50px;}
+    .over {min-width: 118px;}  
+}
+    
+@media all and (min-width: 500px) {
+  .aside { flex: 1 auto; }
+
+}
+body {
+  padding: 2em; 
+    background-color: #E7DFDD;
+}
+.flex-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+    justify-content: flex-end;
+}
+    
+.flex-list1 {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+    justify-content: flex-start;
+}
+ 
+.flex-item1 {
+  margin-right: 2px;
+  background: #0E0B16; color:#E7DFDD;
+  border: 1px #0E0B16 solid;
+  padding: 1px;
+  width: 20px;
+  height: 50px;
+  margin-top: 5px;
+  
+  line-height: 50px;
+  color: #E7DFDD;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+}
+    
+.flex-item { background: #E7DFDD;
+  border: 1px #0E0B16 solid;
+  padding: 1px;
+  width: 100px;
+  height: 50px;
+  margin-top: 5px;
+  margin-right: 2px;
+  
+  line-height: 50px;
+  color: #0E0B16;
+  font-weight: bold;
+  font-size: 0.80em;
+  text-align: center;
+    }
+    
+a {color:#0E0B16; font-size:15px; text-decoration:none;e;}
+    
+.flex-item:hover {
+  background-color: #0E0B16;
+    color: #E7DFDD;
+}
+    a:hover{
+    color: #4717F6;}
+        
+.over {
+  padding: 1px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: #;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+}
+    code {color:#A239CA }
+    
+    
+    
+    
+/* //////////////////////////////////////////////////////////////////// */  
+    
+    /* MENU */
+
+/* //////////////////////////////////////////////////////////////////// */  
+    
+* {
+margin: 0;
+padding: 0;
+}
+    
+
+.container {
+
+    margin-top: 30px;
+}
+
+/* common and top level styles */
+#nav span {
+    display: none;
+}
+#nav, #nav ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+#nav {
+    background-color: #F5F5F5;
+    border-bottom: 5px solid #333333;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+#nav ul.subs {
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    color: #333333;
+    display: none;
+    left: 0;
+    padding: 2%;
+    position: absolute;
+    top: 54px;
+    width: 96%;
+}
+#nav > li {
+    border-bottom: 5px solid transparent;
+    float: left;
+    margin-bottom: -5px;
+    text-align: left;
+    -moz-transition: all 300ms ease-in-out 0s;
+    -ms-transition: all 300ms ease-in-out 0s;
+    -o-transition: all 300ms ease-in-out 0s;
+    -webkit-transition: all 300ms ease-in-out 0s;
+    transition: all 300ms ease-in-out 0s;
+}
+#nav li a {
+    display: block;
+    text-decoration: none;
+    -moz-transition: color 400ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
+    -ms-transition: color 400ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
+    -o-transition: color 400ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
+    -webkit-transition: color 400ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
+    transition: color 400ms ease-in-out 0s, background-color 450ms ease-in-out 0s;
+    white-space: normal;
+}
+#nav > li > a {
+    color: #333333;
+    display: block;
+    font-size: 1.3em;
+    line-height: 49px;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+#nav > li:hover > a, #nav > a:hover {
+    background-color: #4717F6;
+    color: #FFFFFF;
+}
+
+    
+/* ACTIVE LINK */  
+li.selected a { background-color: #4717F6;}
+#nav > li.selected > a { background-color: #4717F6; color:#FFFFFF; }
+    
+
+/* submenu */
+#nav li:hover ul.subs {
+    display: block;
+}
+#nav ul.subs > li {
+    display: inline-block;
+    float: none;
+    padding: 10px 1%;
+    vertical-align: top;
+    width: 33%;
+}
+#nav ul.subs > li a {
+    color: #777777;
+    line-height: 20px;
+}
+#nav ul li a:hover {
+    color: #F55856;
+}
+#nav ul.subs > li > a {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+#nav ul.subs > li li {
+    float: none;
+    padding-left: 8px;
+    -moz-transition: padding 150ms ease-out 0s;
+    -ms-transition: padding 150ms ease-out 0s;
+    -o-transition: padding 150ms ease-out 0s;
+    -webkit-transition: padding 150ms ease-out 0s;
+    transition: padding 150ms ease-out 0s;
+}
+#nav ul.subs > li li:hover {
+    padding-left: 15px;
+}
+
+/* responsive rules */
+@media all and (max-width : 710px) {
+    #nav > li {
+        float: none;
+        border-bottom: 0;
+        margin-bottom: 0;
+    }
+    #nav ul.subs {
+        position: relative;
+        top: 0;
+    }
+    #nav li:hover ul.subs {
+        display: none;
+    }
+    #nav li #s1:target + ul.subs,
+    #nav li #s2:target + ul.subs {
+        display: block;
+    }
+
+    #nav ul.subs > li {
+        display: block;
+        width: auto;
+    }
+}
+    
+    
+    img {
+        max-width:100%;
+    }
+     .coding{background-color: /* #4717F6 */ #0e0b16; color:#e7dfdd; padding:3px;}   
+ 
+</style>
+</head>
+
+<body>
+
+
+    
+<div class="wrapper">
+    <header class="over"><div><h1>FrontEnd</h1></div></header>
+    
+    
+    
+            <div class="container">
+            <ul id="nav" class="menuBar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#s1">HTML/CSS</a>
+ 
+                    <span id="s1"></span>
+                    <ul class="subs">
+                        <li><a href="#">O E V N I N G A R </a>
+                            <ul>
+                               <li><a href="oevning1.html" target="_blank">1.3</a></li> 
+                                <li><a href="2.2.html" target="_blank">2.2</a></li> 
+                                <li><a href="2.3.html" target="_blank">2.3</a></li> 
+                                <li><a href="2.4.html" target="_blank">2.4</a></li> 
+                                <li><a href="3.2.html" target="_blank">3.2</a></li> 
+                                <li><a href="3.3.html" target="_blank">3.3</a></li> 
+                                <li><a href="5.1.html" target="_blank">5.1</a></li> 
+                                <li><a href="5.4.html" target="_blank">5.4</a></li> 
+                                <li><a href="6.3.html" target="_blank">6.3</a></li> 
+                                <li><a href="7a.html" target="_blank">7.3</a></li> 
+                                
+                                
+                            </ul>
+                        </li>
+                        <li><a href="#">E X T R A S</a>
+                            <ul>
+                                <li><a href="http://www.csszengarden.com/071/" target="_blank">original ZEN</a></li> 
+                                <li><a href="4.2.html" target="_blank">4.2 - My ZEN</a></li> 
+                                <li><a href="zen2/7.b.html" target="_blank">7.6</a></li> 
+                                <li><a href="https://sebastianes.github.io/projekt-html-grupp2/master/home.html" target="_blank">Project</a> </li> 
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#s2">JavaScript</a>
+                    <span id="s2"></span>
+                    <ul class="subs">
+                        <li><a href="#">S l i d e s</a>
+                            <ul>
+                                <li><a href="javascript/1b.html" target="_blank">1.a.B/1.C</a></li>
+                                <li><a href="javascript/1e.html" target="_blank">1.a.E - Blocky</a></li>
+                                <li><a href="javascript/1bb.html" target="_blank">1.b.B</a></li>
+                                <li><a href="javascript/2ab.html" target="_blank">2.a.B</a></li>
+                                <li><a href="javascript/2ac.html" target="_blank">2.a.C</a></li>
+                                <li><a href="javascript/2ad.html" target="_blank">2.a.D</a></li>
+                                <li><a href="javascript/3.lightbot.html" target="_blank">3. - Lightbot</a></li>
+                
+                            </ul>
+                        </li>
+                        
+                        <li><a href="#">B O O K</a>
+                            <ul>
+                                <li><a href="javascript/looping_triangle.html" target="_blank">Loop Triangle</a></li>
+                                <li><a href="javascript/fizzbuzz.html" target="_blank">FizzBuzz</a></li>
+                                <li><a href="javascript/chess.html" target="_blank">Chess Board</a></li>
+                            
+                            </ul>
+                        </li>
+                        
+                        <li><a href="#">O E V N I N G A R </a>
+                            <ul>
+                                <li><a href="javascript/1.a.fahrenheit.html" target="_blank">1. Fahrenheit</a></li>
+                                <li><a href="javascript/1.b.who_are_you.html" target="_blank">1. Who are u?</a></li>
+                                <li><a href="javascript/1.c.random_number.html" target="_blank">1. Guess a number</a></li>
+                                <li><a href="javascript/1.d.sum.html" target="_blank">1. Sum</a></li>
+                                <li><a href="javascript/1.e.around.html" target="_blank">1. Reverse string</a></li>
+                                <li><a href="javascript/1.f.vocals.html" target="_blank">1. Vocals</a></li>
+                                <li><a href="javascript/1.g.primtal.html" target="_blank">1. Prime</a></li>
+                            
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">About</a></li>
+                <li class="selected"><a href="#">resources</a></li>
+                <li><a href="walkthrough.html">Walkthroughs</a></li>
+            
+            </ul>
+        </div>
+    
+<!-- //////////////////////////////////////////////////////////////////// */  
+    
+    /* MENU */
+
+/* //////////////////////////////////////////////////////////////////// -->  
+   
+    
+    
+    
+<article class="main">
+   
+<div class="article">
+    
+</div>
+    
+<div class="article">    
+<h2>JavaScript</h2>
+<br />
+
+<div class="coding">
+<h3>Kurslitteratur</h3> 
+<br />
+<ul>  
+<li ><a href="http://eloquentjavascript.net/index.html" target="_blanck" style="color:#4717F6">Eloquent JavaScript</a> by Marijn Haverbeke.</li>
+<li><a href="https://github.com/getify/You-Dont-Know-JS" target="_blanck" style="color:#4717F6">You Don't Know JS</a> by Kyle Simpson.</li>
+</ul>  
+    <br /><br />
+      <h3>Resurser</h3>
+<ul>
+<li><a href="http://jsforcats.com/">JavaScript For Cats</a></li>
+<li><a href="https://www.codecademy.com/learn/" target="_blank" style="color:#4717F6">CodeAcademy-kurs</a></li>
+<li><a href="https://code.tutsplus.com/tutorials/" target="_blank" style="color:#4717F6">Best way to learn JavaScript</a></li>
+<li><a href="http://blog.teamtreehouse.com/mas" target="_blank" style="color:#4717F6">Article about the console</a></li>
+<li><a href="https://developer.mozilla.org/en-US/" target="_blank" style="color:#4717F6">Expressions and operators on MDN</a></li>
+<li><a href="https://blockly-games.appspot.com/" target="_blank" style="color:#4717F6">Blockly-games</a></li>
+<li><a href="http://lightbot.com/hocflash.html" target="_blank" style="color:#4717F6">Lightbot games</a></li>
+<li><a href="https://code.tutsplus.com/tutorials/th" target="_blank" style="color:#4717F6">The best way to learn JavaScript</a></li>
+<li><a href="https://developer.mozilla.org/en-US" target="_blank" style="color:#4717F6">Shared knowledgefor the Open Web</a></li> 
+</ul>
+    
+</div>      
+</div>
+    
+<div class="article">
+    
+<h2>HTML CSS</h2>
+
+      <h3>Resurser</h3>
+<ul>
+<li><a href="https://www.codecademy.com/">Codeacademy</a></li>
+<li><a href="http://www.freecodecamp.com/" target="_blanck">Freecodecamp</a></li>
+<li><a href="http://porkforge.mardby.se/" target="_blanck">CSS tasks</a></li>
+<li><a href="http://htmledit.squarefree.com/ " target="_blanck">Real-time HTML editor.</a></li>
+<li><a href="https://jsbin.com/" target="_blanck">Dela/snabbpublicera HTML</a></li>   
+<li><a href="http://www.w3schools.com/" target="_blanck">W3Schools</a></li>
+<li><a href="http://html5doctor.com/" target="_blanck">HTML5-doktorn har en referens för alla HTML-element.</a></li>
+<li><a href="https://developer.mozilla.org/en-US/" target="_blanck">Mozilla Developer Network.</a></li>
+<li><a href="http://getbootstrap.com/" target="_blanck">Bootstrap</a></li> 
+<li><a href="https://validator.w3.org/" target="_blanck">W3C Markup Validatior/a></li> 
+<li><a href="http://caniuse.com/# " target="_blanck">Can I use?</a></li> 
+<li><a href="http://www.csszengarden.com/" target="_blanck">CSS-inspiration</a></li> 
+<li><a href="http://porkforge.mardby.se/" target="_blanck">Selektorer för CSS (och jQuery)</a></li> 
+<li><a href="https://www.w3.org/Style/Examp" target="_blanck">Avancerad styling av tabeller med pseudoklasser</a></li> 
+<li><a href="http://html-color-codes.info/" target="_blanck">HTML colors</a></li> 
+<li><a href="http://learnlayout.com/" target="_blanck">CSS layout</a></li>
+<li><a href="https://css-tricks.com/snippets/css" target="_blanck">A Complete Guide to Flexbox</a></li>
+<li><a href="http://flexboxin5.com/" target="_blanck">Flexbox demo</a></li>
+<li><a href="http://cssmediaqueries.com/what" target="_blanck">What are CSS Media Queries</a></li>
+
+</ul>
+   
+</div>
+    
+</article>
+    
+<!-- //////////////////////////////////////////////////////////////////// */  
+    
+    /* F O O T E R */
+
+/* //////////////////////////////////////////////////////////////////// -->  
+    
+  <footer class="footer over">by Christina B&ouml;gh</footer>
+</div>
+
+    
+</body>
+</html>

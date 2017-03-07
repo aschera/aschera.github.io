@@ -6,11 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
     <title>innlämning 1</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <!-- API -->
+    <script src="view_book.js"></script>
+    <script src="add_book.js"></script>
+    <script src="statusbar.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,193 +25,72 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-<style>
-/* Stuff to reverse the order of the list so the last element comes first */
-ul {
-    transform: rotate(180deg);
-}
-ul > li {
-    transform: rotate(-180deg);
-    
-    
-.table-text-center th, .table-text-center td {
-    text-align: center;
-}
-   
-</style>
+
+    <style>
+            /* Stuff to reverse the order of the list so the last element comes first */
+        
+        ul {
+            transform: rotate(180deg);
+        }
+        
+        ul>li {
+            transform: rotate(-180deg);
+            .table-text-center th,
+            .table-text-center td {
+                text-align: center;
+            }
+            th {height: 3em;}
+    </style>
     <script>
-        // server not responding function
+        // server not responding function - popup annoyance
         function myFunction() {
-        confirm("The server didnt respond. Please Try again!");
+            confirm("The server didnt respond. Please Try again!");
         }
     </script>
-    <script>
-        // Add a book
-        window.addEventListener('load', function() { // so shit loads and then runs.
-            let button = document.getElementById('button');
-            let author = document.getElementById('author').value;
-            let title = document.getElementById('title').value;
-
-            button.addEventListener('click', function() {
-
-                // url to access server
-                let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=insert&key=KA2zP';
-                
-                url+= '&title=' + title + '&author=' + author;
-                console.log(url);
-                // AJAX request 
-                let ajax = new XMLHttpRequest();
-
-                ajax.open('post', url);
-  
-                ajax.onreadystatechange = function() {
-                    
-                let status = '';
-
-                    if (ajax.status == 200 && ajax.readyState == 4) {
-                        //parse string to object
-                        let json = JSON.parse(ajax.responseText);
-
-                        // check is status = error
-                        if (json.status !== 'error') {
-                            console.log('server is all good!');
-                            
-                            // response for success looks like this: 
-                            //Object { status: "success", id: 115 }
-                            status = 'good';
-
-                            console.log(json);
-                            
-
-                        } else {
-                            console.log('server is no good');
-                            myFunction();
-                        }
-
-                    } else if (ajax.status != 200) {
-                        // AJAX failiure report
-                        console.log('ajax error');
-                    }
-
-                };  //end ajax
-            ajax.send();
-                
-            } // button event listener done
-        
-        )}); // window event listener done
-    </script>
-    
-    <script>
-        // View book data
-        window.addEventListener('load', function() { // so shit loads and then runs.
-            let button_view = document.getElementById('button2');
-            
-            button_view.addEventListener('click', function() {
-
-                // url to access server
-                let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=select&key=KA2zP';
-
-                // AJAX request 
-                let ajax2 = new XMLHttpRequest();
-
-                ajax2.open('get', url);
-  
-                ajax2.onreadystatechange = function() {
-   
-
-                    if (ajax2.status == 200 && ajax2.readyState == 4) {
-                        //parse string to object
-                        let json2 = JSON.parse(ajax2.responseText);
-
-                        // check is status = error
-                        if (json2.status !== 'error') {
-                            console.log('server is all good!');
-                            
-                            for (i=0; i < json2.data.length; i++) {
-                                
-                            var node = document.createElement("LI");
-                            
-                            node.className += " list-group-item";
-                                
-                            var textnode = document.createTextNode('id: ' + json2.data[i].id + ', title:  ' + json2.data[i].title  + ', Author:  ' + json2.data[i].author  + ', updated:  ' + json2.data[i].updated + '.');         
-                            node.appendChild(textnode);                              
-                            document.getElementById("books").appendChild(node);
-                         
-                            }
-                            
-                            console.log(ajax2.responseText);
-                            
-
-                        } else {
-                            console.log('server is no good');
-                            console.log(json2);
-                            myFunction();
-                        }
-
-                    } else if (ajax2.status != 200) {
-                        // AJAX failiure report
-                        console.log('ajax error');
-                    }
-
-                };  //end ajax
-            ajax2.send();
-                
-            } // button event listener done
-        
-        )}); // window event listener done
-    </script>
-    
-    
-    
-
 </head>
-
 <body>
     <div class="container">
         <h2>Table</h2>
-       
+        <button onclick="location.reload();">Reload page</button>
         <div class="table-responsive table-bordered table-condensed">
             <table class="Book options">
-                    <tr>
-                        <th style="height:2em;">Add book</th>
-                    
-                    </tr>
-                
-                     <tr>
-                        <th style="height:1em;">
-                            <div class="form-group" style="height:2em; padding-left: 5px; padding-right:5px;">
-                            <input  type="text" class="form-control" placeholder="Author" id="author">
-                            </div>
-                        </th>
-                        <th style="height:1em;">
-                            <div class="form-group" style="height:2em;">
+                <tr>
+                    <th style="height:2em;"><h2>Add book</h2></th>
+                </tr>
+                <tr>
+                    <th style="height:8em;">
+                        <div class="form-group" style="height:2em; padding-left: 5px; padding-right:5px;">
+                            <label for="author">Book Author:</label>
+                            <input type="text" class="form-control" placeholder="First Lastname" id="author">
+                        </div>
+                    </th>
+                    <th style="height:8em; ">
+                        <div class="form-group" style="height:2em;">
+                            <label for="title">Book title:</label>
                             <input type="text" class="form-control" placeholder="Title" id="title" height="200px">
-                            </div>
-                        </th>
-                        
-                    </tr>
-                    <tr>
-                        <th style="height:2em; padding-left:5px; "><button type="button" class="btn btn-default btn-sm" id='button'>Add</button></th>
-               
-                    <tr>
-                        <th style="height:2em;"><br><br>View books</th>
-                    </tr>
-               
-                    <tr> 
-                        <th style="height:2em; padding-left:5px; "><button type="button" class="btn btn-default btn-sm" id='button2'>View</button></th>
-         
-
-                    </tr>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th style="height:8em;  padding-left:5px; "><button type="button" class="btn btn-default btn-sm" id='button'>Add</button></th>
+                    
+                    <th style="height:8em; padding-left:5px; ">
+                        <label for="status_field">Status:</label>
+                        <section id="status_field"></section>
+                    </th>
+                </tr>
+                <tr>
+                    <th style=" height:8em; "><br><br><h2>View books</h2></th>
+                </tr>
+                <tr>
+                    <th style=" height:8em; padding-left:5px; "><button type="button" class="btn btn-default btn-sm" id='button2'>View</button></th>
+                </tr>
             </table>
             <br>
             <ul class="list-group" id="books"></ul>
-                        
+
         </div>
     </div>
-
-    
-    
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

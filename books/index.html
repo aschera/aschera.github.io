@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>innlämning 1</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+        // Add a book
+        window.addEventListener('load', function() { // so shit loads and then runs.
+            let button = document.getElementById('button');
+            let author = document.getElementById('author').value;
+            let title = document.getElementById('title').value;
+
+            button.addEventListener('click', function() {
+
+                    // url to access server
+                    let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=insert&key=KA2zP';
+
+                    url += '&title=' + title + '&author=' + author;
+                    console.log(url);
+                    // AJAX request 
+                    let ajax = new XMLHttpRequest();
+
+                    ajax.open('post', url);
+
+                    ajax.onreadystatechange = function() {
+
+                        let status = '';
+
+                        if (ajax.status == 200 && ajax.readyState == 4) {
+                            //parse string to object
+                            let json = JSON.parse(ajax.responseText);
+
+                            // check is status = error
+                            if (json.status !== 'error') {
+                                console.log('server is all good!');
+
+                                // response for success looks like this: 
+                                //Object { status: "success", id: 115 }
+                                status = 'good';
+
+                                console.log(json);
+
+
+                            } else {
+                                console.log('server is no good');
+                                myFunction();
+                            }
+
+                        } else if (ajax.status != 200) {
+                            // AJAX failiure report
+                            console.log('ajax error');
+                        }
+
+                    }; //end ajax
+                    ajax.send();
+
+                } // button event listener done
+
+            )
+        }); // window event listener done
+    </script>
+
+    <script>
+        // View book data
+        window.addEventListener('load', function() { // so shit loads and then runs.
+            let button_view = document.getElementById('button2');
+
+            button_view.addEventListener('click', function() {
+
+                    // url to access server
+                    let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=select&key=KA2zP';
+
+                    // AJAX request 
+                    let ajax2 = new XMLHttpRequest();
+
+                    ajax2.open('get', url);
+
+                    ajax2.onreadystatechange = function() {
+
+
+                        if (ajax2.status == 200 && ajax2.readyState == 4) {
+                            //parse string to object
+                            let json2 = JSON.parse(ajax2.responseText);
+
+                            // check is status = error
+                            if (json2.status !== 'error') {
+                                console.log('server is all good!');
+
+                                for (i = 0; i < json2.data.length; i++) {
+
+                                    var node = document.createElement("LI");
+                                    var textnode = document.createTextNode(json2.data[i].id + ' ' + json2.data[i].title + ' ' + json2.data[i].author + ' ' + json2.data[i].updated);
+                                    node.appendChild(textnode);
+                                    document.getElementById("books").appendChild(node);
+
+                                }
+
+                                console.log(ajax2.responseText);
+
+
+                            } else {
+                                console.log('server is no good');
+                                console.log(json2);
+                                myFunction();
+                            }
+
+                        } else if (ajax2.status != 200) {
+                            // AJAX failiure report
+                            console.log('ajax error');
+                        }
+
+                    }; //end ajax
+                    ajax2.send();
+
+                } // button event listener done
+
+            )
+        }); // window event listener done
+    </script>
+
+    <script>
+        // server not responding function
+        function myFunction() {
+            confirm("The server didnt respond. Please Try again!");
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Table</h2>
+
+        <div class="table-responsive">
+            <table class="Book options">
+                <tr>
+                    <th>Add book</th>
+
+                    <th><button id='button'>Add</button></th>
+
+                    <th>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Author" id="author">
+                        </div>
+
+                    </th>
+
+                    <th>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Title" id="title" height="200px">
+                        </div>
+
+                    </th>
+                </tr>
+
+                <tr>
+                    <th>View books</th>
+
+                    <th><button id='button2'>View</button></th>
+
+                    <th>
+
+                    </th>
+
+                </tr>
+            </table>
+            <ul id="books"></ul>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+</body>
+
+</html>

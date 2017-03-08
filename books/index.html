@@ -8,7 +8,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title>innlämning 1</title>
-
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -26,73 +28,113 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-            /* Stuff to reverse the order of the list so the last element comes first */
-        
-        ul {
-            transform: rotate(180deg);
-        }
-        
-        ul>li {
-            transform: rotate(-180deg);
-            .table-text-center th,
-            .table-text-center td {
-                text-align: center;
-            }
-            th {height: 3em;}
-    </style>
+
     <script>
         // server not responding function - popup annoyance
         function myFunction() {
             confirm("The server didnt respond. Please Try again!");
         }
     </script>
+    
+    
+    
+    
 </head>
 <body>
-    <div class="container">
-        <h2>Table</h2>
-        <button onclick="location.reload();">Reload page</button>
-        <div class="table-responsive table-bordered table-condensed">
+    <div class="container"> <!-- title and intro-->
+        
+        <div class="row">
+              <div class="col-lg-12" style=" background-color:rgba(255,0,0,0.2); vertical-align: bottom; height:10em; ">
+                    <div style=" float:middle; text-align:center;">
+                    <h3 style="color:white;">Add, find and delete books</h3>
+                        <button onclick="location.reload();">Reload page</button>
+                    </div>
+             </div> <!--Col end--> 
+        </div><!--row end-->
+        
+        <div class="row" >
+              <div class="col-lg-12" style="color:white;  background-color:rgba(255,0,0,0.5); vertical-align: bottom; height: 100%;">
+                <p>You can here add a new book. View all the books currently stored in the database and delete a book.</p>
+              </div> <!--Col end-->
+        </div><!--row end-->
+    </div> <!--Container end-->
+    
+    <br><br>
+    
+    <div class="container"> <!-- Add books container-->
+        <div class="row">
+              <div class="col-lg-12" style=" background-color:rgba(255,0,0,0.2); vertical-align: bottom; height: 25em;">
+      
+        
+        <div class="table-responsive table-condensed">
             <table class="Book options">
                 <tr>
-                    <th style="height:2em;"><h2>Add book</h2></th>
+                    <th style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);"><h2>Add book</h2></th>
                 </tr>
                 <tr>
                     <th style="height:8em;">
-                        <div class="form-group" style="height:2em; padding-left: 5px; padding-right:5px;">
+                        <div class="form-group" style="color:white; background-color:rgba(230,0,0,0.5); height:2em; margin-right:5px;">
                             <label for="author">Book Author:</label>
                             <input type="text" class="form-control" placeholder="First Lastname" id="author">
                         </div>
                     </th>
                     <th style="height:8em; ">
-                        <div class="form-group" style="height:2em;">
+                        <div class="form-group" style=" color:white; margin-left:5px; background-color:rgba(230,0,0,0.5); height:2em;">
                             <label for="title">Book title:</label>
                             <input type="text" class="form-control" placeholder="Title" id="title" height="200px">
                         </div>
                     </th>
                 </tr>
+                </table>
+        </div> <!--table end-->
+        <div class="table-responsive table-condensed">
+            <table class="Book options">
                 <tr>
-                    <th style="height:8em;  padding-left:5px; "><button type="button" class="btn btn-default btn-sm" id='button'>Add</button></th>
-                    
-                    <th style="height:8em; padding-left:5px; ">
-                        <label for="status_field">Status:</label>
-                        <section id="status_field"></section>
+                    <th style="height:8em; width:215px;">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-default btn-sm" id='button'>Add</button>
+                        </div>
+                    </th>
+                    <th style="height:8em; width:215px; padding-left:10px;">
+                        <div class="form-group">
+                            <label for="title" style="color:white;">Status:</label>
+                            <section id="status_field"></section>
+                        </div>
                     </th>
                 </tr>
-                <tr>
-                    <th style=" height:8em; "><br><br><h2>View books</h2></th>
-                </tr>
-                <tr>
-                    <th style=" height:8em; padding-left:5px; "><button type="button" class="btn btn-default btn-sm" id='button2'>View</button></th>
-                </tr>
+                </table>
+        </div> <!--table end-->        
+        </div><!--Col end-->
+        </div><!--row end-->
+    </div> <!--Container end-->
+    
+    <br><br>
+    
+    <div class="container"> <!-- View books container-->
+        <div class="row">
+              <div class="col-lg-12" style=" background-color:rgba(255,0,0,0.2); vertical-align: bottom; height: 100%;">
+                  
+                  
+        <div class="table-responsive table-condensed">
+                <table class="Book options">
+                    <tr>
+                        <th style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);"><h2>View books</h2></th>
+                    </tr>
+                    <tr>
+                        <th style=" height:8em; padding-left:5px; "><button type="button" class="btn btn-default btn-sm" id='button2'>View</button></th>
+                    </tr> 
             </table>
-            <br>
-            <ul class="list-group" id="books"></ul>
-
-        </div>
-    </div>
-
-
+            </div> <!--table end-->
+    <br>
+        <div class="row">
+              <div class="col-lg-12" style="  background-color:rgba(255,0,0,0.2); vertical-align: bottom; height: 100%;">
+                <ul class="list-group" id="books"></ul>
+              </div> <!--Col end-->
+        </div><!--row end-->
+    </div> <!--Container end-->
+    </div><!--Col end-->
+        </div><!--row end-->
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 

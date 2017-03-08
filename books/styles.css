@@ -1,0 +1,19 @@
+/* The background image */
+body {background-image: url(2726594.jpg); background-repeat: no-repeat; background-size:auto; background-attachment:fixed;}
+
+
+
+
+
+
+
+
+/* Stuff to reverse the order of the list so the last element comes first */
+        
+ul {transform: rotate(180deg);}
+        
+ul > li {transform: rotate(-180deg);}
+
+.table-text-center th,.table-text-center td {text-align: center;}
+
+th {height: 3em;}

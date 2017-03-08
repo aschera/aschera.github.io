@@ -28,26 +28,21 @@
 
                         // check is status = error
                         if (json.status !== 'error') {
-                            console.log('server is all good!');
-                            
-                            // response for success looks like this: 
-                            //Object { status: "success", id: 115 }
-                            status = 'good';
 // status message - Server OK
-                            printm('OK');
+                            printm(json.status);
                             console.log(json);
-                            
-
+       
                         } else {
-                            console.log('server is no good');
+// status message - Server Bad
+                            console.log(json);
+                            printm(json.status +', ' + json.message);
                             myFunction();
                         }
 
-                    } else if (ajax.status != 200) {
-                        // AJAX failiure report
-                        console.log('ajax error');
+                    } else if (ajax.status != 200) {  
 // status message - Server Bad
-                             printm('BAD');
+                             console.log(json);
+                             printm(json.status +', ' + json.message);
                              myFunction();
                     }
 

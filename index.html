@@ -187,11 +187,11 @@
             
             <!-- START PANEL -->
             
-            <a style="color: #BCC0BF;" href="http://hexagoninfulleffect.com/2012/05/22/sun-in-cancer-moon-in-aries-the-cage-fighter-the-crab-of-war/" target="_blank"><div class="cover-item" style="background-image: url(img/starsign.jpg)"></div></a>
+            <a style="color: #BCC0BF;" href="http://hexagoninfulleffect.com/2012/05/22/sun-in-cancer-moon-in-aries-the-cage-fighter-the-crab-of-war/" target="_blank"><div class="cover-item" style="background-image: url(img/cancer.1.jpg)"></div></a>
             
-            <a style="color: #BCC0BF;" href="https://marissabaker.wordpress.com/2014/03/31/infj-dark-side/" target="_blank"><div class="cover-item" style="background-image: url(img/infj-rage.jpg)"></div></a>
+            <a style="color: #BCC0BF;" href="https://marissabaker.wordpress.com/2014/03/31/infj-dark-side/" target="_blank"><div class="cover-item" style="background-image: url(img/infj.jpg)"></div></a>
             
-            <a style="color: #BCC0BF;" href="https://www.axiomsoftware.com/disc/interpretations/disc-interpretation-high-d-s-c.php" target="_blank"><div class="cover-item" style="background-image: url(img/Dc.png)"></div></a>
+            <a style="color: #BCC0BF;" href="http://www.discprofiles.com/blog/2013/03/understanding-our-c-style-colleagues-and-friends/" target="_blank"><div class="cover-item" style="background-image: url(img/CD.png)"></div></a>
             
             <a style="color: #BCC0BF;" href="" target="_blank"><div class="cover-item" style="background-image: url(img/)"></div></a>
             
@@ -246,7 +246,7 @@
         <div class="container">
             <div class="row">
                  <div class="col-lg-12 text-center">
-                    Something good
+                    
                     <!--<a href="#" class="btn btn-lg btn-light">Click Me!</a>
                     <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>-->
                 </div> 
@@ -256,11 +256,7 @@
 
     <!-- Map -->
     <section id="contact" class="map">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Göteborg,+Angered+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-        <br />
-        <small>
-            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Göteborg,+Angered+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-        </small>
+       
     </section>
 
     <!-- Footer -->
@@ -372,6 +368,27 @@
         // Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
     </script>
+    
+        <!-- Google needs id!
+    AIzaSyDqlDUN18gi5vXn7lqtHJXUCwnqmKkjNXk -->
+    
+<script> // Google API for the map. 
+// Needs to be here too, so it lopads properly.
+    
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById("contact"), {
+          center: {lat: 57.70716, lng: 11.96679},
+          scrollwheel: false,
+          zoom: 12
+        });
+      }
+
+</script> Google 2nd API script.
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqlDUN18gi5vXn7lqtHJXUCwnqmKkjNXk&callback=initMap"
+    async defer></script>
+
+
 
 </body>
 

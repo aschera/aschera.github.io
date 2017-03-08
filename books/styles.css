@@ -3,9 +3,12 @@ body {background-image: url(2726594.jpg); background-repeat: no-repeat; backgrou
 
 
 
-
-
-
+#form-control {
+  width: 200px; 
+}
+#form-control1 {
+  width: 200px; 
+}
 
 
 /* Stuff to reverse the order of the list so the last element comes first */

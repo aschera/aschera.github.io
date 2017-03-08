@@ -12,14 +12,18 @@
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <!--API-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <!--Bootstrap-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
-    <!-- API -->
+    <!-- scripts -->
     <script src="view_book.js"></script>
     <script src="add_book.js"></script>
     <script src="statusbar.js"></script>
+    <script src="goodreads.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -63,22 +67,22 @@
     
     <div class="container"> <!-- Add books container-->
         <div class="row">
-              <div class="col-lg-12" style=" background-color:rgba(255,0,0,0.2); vertical-align: bottom; height: 25em;">
+              <div class="col-lg-5" style="background-color:rgba(255,0,0,0.2); vertical-align: bottom; height: 25em;"><!--Col 6 with add books starts -->
       
         
         <div class="table-responsive table-condensed">
             <table class="Book options">
                 <tr>
-                    <th style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);"><h2>Add book</h2></th>
+                    <th style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);"><h2>Add book to database</h2></th>
                 </tr>
                 <tr>
-                    <th style="height:8em;">
+                    <th style="height:8em; width:50%;">
                         <div class="form-group" style="color:white; background-color:rgba(230,0,0,0.5); height:2em; margin-right:5px;">
                             <label for="author">Book Author:</label>
                             <input type="text" class="form-control" placeholder="First Lastname" id="author">
                         </div>
                     </th>
-                    <th style="height:8em; ">
+                    <th style="height:8em; width:50%; ">
                         <div class="form-group" style=" color:white; margin-left:5px; background-color:rgba(230,0,0,0.5); height:2em;">
                             <label for="title">Book title:</label>
                             <input type="text" class="form-control" placeholder="Title" id="title" height="200px">
@@ -98,13 +102,58 @@
                     <th style="height:8em; width:215px; padding-left:10px;">
                         <div class="form-group">
                             <label for="title" style="color:white;">Status:</label>
-                            <section id="status_field"></section>
+                            <section id="status_field_v"></section>
                         </div>
                     </th>
                 </tr>
                 </table>
         </div> <!--table end-->        
-        </div><!--Col end-->
+        </div><!--Col 6 with add books end-->
+        
+        <div class="col-lg-5" style="margin-left:10em;  background-color:rgba(255,0,0,0.2); vertical-align: bottom; height: 25em;"><!--Col 6 with search goodreads starts -->
+      
+        
+        <div class="table-responsive table-condensed">
+            <table class="Book options">
+                <tr>
+                    <th style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);"><h2>Search Goodreads API</h2></th>
+                </tr>
+                <tr>
+                    <th style="height:8em;">
+                        <div class="form-group" style="color:white; background-color:rgba(230,0,0,0.5); height:2em; margin-right:5px;">
+                        <section id="book_reviews">g</section>    
+                        </div>
+                    </th>
+                    <th style="height:8em; ">
+                        <div class="form-group" style=" color:white; margin-left:5px; background-color:rgba(230,0,0,0.5); height:2em;">
+                            
+                        </div>
+                    </th>
+                </tr>
+                </table>
+        </div> <!--table end-->
+        <div class="table-responsive table-condensed">
+            <table class="Book options">
+                <tr>
+                    <th style="height:8em; width:215px;">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-default btn-sm" id='search_g'>Search</button>
+                        </div>
+                    </th>
+                    <th style="height:8em; width:215px; padding-left:10px;">
+                        <div class="form-group">
+                            <label for="title" style="color:white;">Status:</label>
+                            <section id="status_field_s"></section>
+                        </div>
+                    </th>
+                </tr>
+                </table>
+        </div> <!--table end-->        
+        </div><!--Col 6  with search goodreads end-->
+            
+            
+            
+            
         </div><!--row end-->
     </div> <!--Container end-->
     
@@ -118,7 +167,7 @@
         <div class="table-responsive table-condensed">
                 <table class="Book options">
                     <tr>
-                        <th style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);"><h2>View books</h2></th>
+                        <th style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);"><h2>View books saved on database</h2></th>
                     </tr>
                     <tr>
                         <th style=" height:8em; padding-left:5px; "><button type="button" class="btn btn-default btn-sm" id='button2'>View</button></th>

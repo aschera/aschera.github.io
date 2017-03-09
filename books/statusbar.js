@@ -6,8 +6,8 @@ function printm(m) {
   
   if( list.length === 0) { 
       let e = document.createElement('pre');
-        e.style.backgroundColor = 'rgba(255,0,0,0.5)';
-        e.style.color = 'white';
+        e.style.backgroundColor = '#9f4636';
+        e.style.color = '#f1dcc9';
         e.innerText = m;
         con.appendChild(e);
     } else if (list.length > 0) {
@@ -25,8 +25,8 @@ function currentBook(title,author) {
   
   if( list.length === 0) { 
       let e = document.createElement('pre');
-        e.style.backgroundColor = 'rgba(255,0,0,0.5)';
-        e.style.color = 'white';
+        e.style.backgroundColor = '#9f4636';
+        e.style.color = '#f1dcc9';
         e.innerText = title + ' ' + author;
         con.appendChild(e);
     } else if (list.length > 0) {

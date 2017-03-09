@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- #42313A   #6c2d2c   #9f4636  #f1dcc9 -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,7 +48,7 @@
     <div class="container"> <!-- title and intro-->
         
         <div class="row"> 
-              <div class="col-lg-12" style=" background-color:rgba(255,0,0,0.2); vertical-align: bottom; height:10em; ">
+              <div class="col-lg-12" style=" background-color:#42313A; vertical-align: bottom; height:10em; ">
                     <div style=" float:middle; text-align:center;">
                     <h3 style="color:white;">Add, find and delete books</h3>
                         <button onclick="location.reload();">Reload page</button>
@@ -57,8 +57,14 @@
         </div><!--row end-->
         
         <div class="row" >
-              <div class="col-lg-12" style="color:white;  background-color:rgba(255,0,0,0.5); vertical-align: bottom; height: 100%;">
+              <div class="col-lg-12" style="color:white; background-color:#42313A; vertical-align: bottom; height: 100%;">
                 <p>You can here add a new book. View all the books currently stored in the database and delete a book.</p>
+                  
+                  <p>
+                  <!--status-->
+                   <label for="status_field_v" style=" border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">Status:</label>
+                    <section id="status_field_v"></section>
+                  </p>
               </div> <!--Col end-->
         </div><!--row end-->
     </div> <!--Container end-->
@@ -68,26 +74,26 @@
     <div class="container"> <!-- Book title and author fields and buttons for add and search-->
         
         <div class="row"> 
-              <div class="col-lg-12" style=" background-color:rgba(255,0,0,0.2); vertical-align: bottom; height:7em; ">
-                    <h2 style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);">Enter book author and title</h2>
+              <div class="col-lg-12" style=" background-color:#42313A; vertical-align: bottom; height:7em; ">
+                    <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">Enter book author and title</h2>
              </div> <!--Col end--> 
         </div><!--row end-->
         <div class="row"> 
-              <div class="col-lg-6" style=" background-color:rgba(255,0,0,0.2); vertical-align: bottom; height:7em; ">
-                   <label style="color:white; background-color:rgba(230,0,0,0.5); height:2em; margin-right:5px;" for="author">Book Author:</label>
+              <div class="col-lg-6" style=" background-color:#42313A; vertical-align: bottom; height:7em; ">
+                   <label style="border-radius: 8px; color:white; background-color:#6c2d2c; height:2em; margin-right:5px;padding:5px;" for="author">Book Author:</label>
                     <input type="text" class="form-control" placeholder="Mary Peterson" id="author">
              </div> <!--Col end--> 
-             <div class="col-lg-6" style=" background-color:rgba(255,0,0,0.2); vertical-align: bottom; height:7em; ">
-                   <label style="color:white; background-color:rgba(230,0,0,0.5); height:2em; margin-right:5px;" for="title">Book title:</label>
+             <div class="col-lg-6" style=" background-color:#42313A; vertical-align: bottom; height:7em; ">
+                   <label style="border-radius: 8px; color:white; background-color:#6c2d2c; height:2em; margin-right:5px; padding:5px;" for="title">Book title:</label>
                    <input type="text" class="form-control" placeholder="Snail has lunch" id="title" height="200px">
              </div> <!--Col end--> 
         </div><!--row end-->
         <div class="row"> 
-              <div class="col-lg-12" style=" background-color:rgba(255,0,0,0.2); vertical-align: bottom; height:9em; ">
+              <div class="col-lg-12" style=" background-color:#42313A; vertical-align: bottom; height:9em; ">
                   <button type="button" class="btn btn-default btn-sm" id='button'>Add this book</button>
                   <br><br>
 <!--selected book-->
-                   <label for="title" style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);">The last book you have added:</label>
+                   <label for="title" style=" border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">The last book you have added:</label>
                     <section id="status_field_selection" style="color:white;"></section>
                   
                   
@@ -99,23 +105,19 @@
         <div class="container"> <!-- Buttons for add and search-->
         
         <div class="row"> 
-              <div class="col-lg-12" style=" background-color:rgba(255,0,0,0.2); vertical-align: bottom; height:7em; ">
-                    <h2 style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);">Search for a book</h2>
+              <div class="col-lg-12" style=" background-color:#42313A; vertical-align: bottom; height:7em; ">
+                    <h2 style="color:white; padding:5px; height:2em; background-color:#6c2d2c;">Search for a book</h2>
              </div> <!--Col end--> 
         </div><!--row end-->
         <div class="row"> 
-            <div class="col-lg-6" style=" background-color:rgba(255,0,0,0.2); vertical-align: bottom; ">
-<!--status-->
-                   <label for="status_field_v" style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);">Status:</label>
-                    <section id="status_field_v"></section>
- 
-                 
+            <div class="col-lg-12" style=" background-color:#42313A; vertical-align: bottom; ">
+     
              </div> <!--Col end--> 
-              <div class="col-lg-6" style=" background-color:rgba(255,0,0,0.2); vertical-align: bottom; ">
+              <div class="col-lg-12" style=" background-color:#42313A; vertical-align: bottom; ">
     
                   <button type="button" style="margin-bottom:5px;" class="btn btn-default btn-sm" onclick="mySecret('book_reviews')" id='search_g'>Search</button>
 <!--review-->    <br>
-                 <section ><label for="book_reviews" style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);">Results:</label><pre  style="display:none; color:white; background-color:rgba(255,0,0,0.5);" id="book_reviews"></pre></section>
+                 <section ><label for="book_reviews" style="color:white; padding:5px; height:2em; background-color:#6c2d2c;">Results:</label><pre  style="display:none; color:white; background-color:#9f4636;" id="book_reviews"></pre></section>
              </div> <!--Col end--> 
 
         </div><!--row end-->
@@ -132,13 +134,13 @@
     
     <div class="container"> <!-- View books container-->
         <div class="row">
-              <div class="col-lg-12" style=" background-color:rgba(255,0,0,0.2); vertical-align: bottom; height: 100%;">
+              <div class="col-lg-12" style=" background-color:#42313A;; vertical-align: bottom; height: 100%;">
                   
                   
         <div class="table-responsive table-condensed">
                 <table class="Book options">
                     <tr>
-                        <th style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);"><h2>View books saved on database</h2></th>
+                        <th style="color:white; padding:5px; height:2em; background-color:#6c2d2c;"><h2>View books saved on database</h2></th>
                     </tr>
                     <tr>
                         <th style=" height:8em; padding-left:5px; "><button type="button" class="btn btn-default btn-sm" id='button2'>View</button></th>
@@ -147,7 +149,7 @@
             </div> <!--table end-->
     <br>
         <div class="row">
-              <div class="col-lg-12" style="  background-color:rgba(255,0,0,0.2); vertical-align: bottom; height: 100%;">
+              <div class="col-lg-12" style="  background-color:#6c2d2c; vertical-align: bottom; height: 100%;">
                 <ul class="list-group" id="books"></ul>
               </div> <!--Col end-->
         </div><!--row end-->

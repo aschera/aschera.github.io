@@ -89,9 +89,6 @@ function everythingElse() {
 
         url += 'client_id=RHPTHZQRVD1O3M0AX3SREE4QJWLPPAEIFJAOGZHTTWT12A4W&client_secret=U4SDRN4NDPX3EZSXSIK44ZZCWIT01FGS54PE3EGF2VSYD53X';
 
-            https://api.foursquare.com/v2/venues/search?v=20170221&limit=&near=&restaurant&query=client_id=RHPTHZQRVD1O3M0AX3SREE4QJWLPPAEIFJAOGZHTTWT12A4W&client_secret=U4SDRN4NDPX3EZSXSIK44ZZCWIT01FGS54PE3EGF2VSYD53X    
-
-        // AJAX request Foursquare
 
     console.log('hello');
 

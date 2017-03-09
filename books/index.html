@@ -23,7 +23,7 @@
     <script src="view_book.js"></script>
     <script src="add_book.js"></script>
     <script src="statusbar.js"></script>
-    <script src="goodreads.js"></script>
+    <!--<script src="google_books.js"></script>-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -116,12 +116,12 @@
         <div class="table-responsive table-condensed">
             <table class="Book options">
                 <tr>
-                    <th style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);"><h2>Search Goodreads API</h2></th>
+                    <th style="color:white; padding:5px; height:2em; background-color:rgba(230,0,0,0.5);"><h2>Search Book API</h2></th>
                 </tr>
                 <tr>
                     <th style="height:8em;">
                         <div class="form-group" style="color:white; background-color:rgba(230,0,0,0.5); height:2em; margin-right:5px;">
-                        <section id="book_reviews">g</section>    
+                        <section id="book_reviews"></section>    
                         </div>
                     </th>
                     <th style="height:8em; ">
@@ -137,7 +137,7 @@
                 <tr>
                     <th style="height:8em; width:215px;">
                         <div class="form-group">
-                            <button type="button" class="btn btn-default btn-sm" id='search_g'>Search</button>
+                            <button type="button" class="btn btn-default btn-sm" onclick="loadDoc()" id='search_g'>Search</button>
                         </div>
                     </th>
                     <th style="height:8em; width:215px; padding-left:10px;">
@@ -187,6 +187,35 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+    
+    <script>
+let author = 'Ernest%20Cline';
+ let title = 'Ready%20Player%20One';
+                
+ // Get the reviews for a book given a title string
+ let url = 'https://www.goodreads.com/book/title.jsonp?key=UbcveEn4lwZc7stWIyiWQ&author=';  
+
+console.log(url);
+
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+function myFunction(xml) {
+  
+  var xmlDoc = xml.responseXML;
+  console.log(xmlDoc);
+}
+</script>
+    
+    
 </body>
 
 </html>

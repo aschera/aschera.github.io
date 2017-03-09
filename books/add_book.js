@@ -29,7 +29,7 @@
                         // check is status = error
                         if (json.status !== 'error') {
 // status message - Server OK
-                            printm(json.status);
+                            printm(json);
                             console.log(json);
        
                         } else {

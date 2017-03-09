@@ -19,11 +19,7 @@
                 let url = 'https://www.googleapis.com/books/v1/volumes?q=';
                 
                 url+= title + '+' + author;
-             
-                //When creating a query, list search terms separated by a '+', in the form q=term1+term2_term3.
-                
-                
-                
+   
                 // AJAX request 
                 let ajax = new XMLHttpRequest();
 

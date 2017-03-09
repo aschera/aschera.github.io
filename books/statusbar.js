@@ -1,8 +1,7 @@
 // status bar text function
 function printm(m) {
-    
 
-  let con = document.getElementById('status_field');
+  let con = document.getElementById('status_field_v');
   let list = con.getElementsByTagName('pre');
   
   if( list.length === 0) { 

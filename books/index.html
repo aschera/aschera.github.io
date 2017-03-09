@@ -193,8 +193,10 @@ let author = 'Ernest%20Cline';
  let title = 'Ready%20Player%20One';
                 
  // Get the reviews for a book given a title string
- let url = 'https://www.goodreads.com/book/title.jsonp?key=UbcveEn4lwZc7stWIyiWQ&author=';  
-
+ let url = 'https://www.goodreads.com/search/index.xml?key=UbcveEn4lwZc7stWIyiWQ&q=';  
+        
+ url+= title;
+        
 console.log(url);
 
 

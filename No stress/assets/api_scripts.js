@@ -223,7 +223,7 @@ function everythingElse() {
         let svar3x = document.getElementById('weather3');
 	let weatherHeader = document.getElementById('weather-header');					
             
-        let urlx='http://api.openweathermap.org/data/2.5/weather?';
+        let urlx='https://api.openweathermap.org/data/2.5/weather?';
         urlx += 'q=' + result_country.city +',uk&APPID=5d224fafcdf9102b03d9243837eb00d4' + '&units=metric'
 
         //AJAX request
@@ -237,7 +237,7 @@ function everythingElse() {
                 var main= object.main;
 
                 var weatherIcon = data.icon;
-                var iconURL = 'http://www.openweathermap.org/img/w/'+weatherIcon+'.png';
+                var iconURL = 'https://www.openweathermap.org/img/w/'+weatherIcon+'.png';
 
                 let img = document.createElement('img');
                 img.src=iconURL;
@@ -260,7 +260,7 @@ function everythingElse() {
         let wiki = document.getElementById('wiki_box');
         let wikiHeader = document.getElementById('wiki-heading');
 
-        let url3 = 'http://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles=';
+        let url3 = 'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles=';
 
 
         //city

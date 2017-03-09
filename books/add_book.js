@@ -29,21 +29,24 @@
                         // check is status = error
                         if (json.status !== 'error') {
 // status message - Server OK
-                            printm(json);
+                            let title = document.getElementById('title').value;
+                            let author = document.getElementById('author').value;
+                            printm('The book: '+title+' by '+author+' was added.');
+                            currentBook(title,author);
                             console.log(json);
        
                         } else {
 // status message - Server Bad
                             console.log(json);
                             printm(json.status +', ' + json.message);
-                            myFunction();
+                            
                         }
 
                     } else if (ajax.status != 200) {  
 // status message - Server Bad
                              console.log(json);
-                             printm(json.status +', ' + json.message);
-                             myFunction();
+                             printm('server error');
+                             
                     }
 
                 };  //end ajax

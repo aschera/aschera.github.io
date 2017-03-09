@@ -6,15 +6,11 @@
             
             let book_search_field = document.getElementById('book_reviews');
             
-            let author = document.getElementById('author').value;
             
-            let title = document.getElementById('title').value;
 
             button.addEventListener('click', function() {
-                
-                // MAKE tests to see if values are met!!!!
-                
-                
+           let author = document.getElementById('author').value;
+            let title = document.getElementById('title').value;
                 // url to access server
                 let url = 'https://www.googleapis.com/books/v1/volumes?q=';
                 
@@ -30,12 +26,20 @@
                     if (ajax.status == 200 && ajax.readyState == 4) {
                         
                         let json = JSON.parse(ajax.responseText);
-                            console.log(json);
-                        book_search_field.innerHTML = json.items[0].volumeInfo.title + ' by ' + json.items[0].volumeInfo.authors;
+                        console.log(json.items.length);
+                        for (i=0; i<json.items.length;i++){
+                            
+                            let e = document.createElement('pre');
+                            
+                            e.innerHTML = json.items[i].volumeInfo.title + ' by ' + json.items[i].volumeInfo.authors;
+                            
+                            book_search_field.appendChild(e);
+                        }
+                        
+                        printm('You found books matching your query');
 
                     } else if (ajax.status != 200) {  
-
-                             console.log(ajax.responseText);
+                            printm('server error, try again');
                            
                     }
 

@@ -2,17 +2,21 @@
         // Add a book
         window.addEventListener('load', function() { // so shit loads and then runs.
             let button = document.getElementById('button');
-            let author = document.getElementById('author').value;
-            let title = document.getElementById('title').value;
+            
+            
+            
 
             button.addEventListener('click', function() {
                 
+            let author = document.getElementById('author').value;
+            let title = document.getElementById('title').value; 
                 
                 // url to access server
-                let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=insert&key=KA2zP';
+                let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=insert&key=sHx2P';
                 
                 url+= '&title=' + title + '&author=' + author;
                 console.log(url);
+                
                 // AJAX request 
                 let ajax = new XMLHttpRequest();
 
@@ -29,15 +33,15 @@
                         // check is status = error
                         if (json.status !== 'error') {
 // status message - Server OK
-                            let title = document.getElementById('title').value;
-                            let author = document.getElementById('author').value;
+                           
+                            console.log(json);
                             printm('The book: '+title+' by '+author+' was added.');
                             currentBook(title,author);
-                            console.log(json);
+                            
        
                         } else {
 // status message - Server Bad
-                            console.log(json);
+                            
                             printm(json.status +', ' + json.message);
                             
                         }

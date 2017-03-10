@@ -4,6 +4,8 @@
                 // url to access server
 				let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?requestKey';
                 
+//current key; sHx2P
+
 				// AJAX request 
 				let ajax = new XMLHttpRequest();
 				ajax.open('get', url);

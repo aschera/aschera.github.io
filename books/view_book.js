@@ -6,7 +6,7 @@
             button_view.addEventListener('click', function() {
 
                 // url to access server
-                let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=select&key=KA2zP';
+                let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=select&key=sHx2P';
 
                 // AJAX request 
                 let ajax2 = new XMLHttpRequest();
@@ -26,13 +26,14 @@
                             console.log('server is all good!');
                             
     // status message - Server OK
-                             printm('OK');
+                             printm('You are now viewing a list of all the books stored.');
  
                             for (i=0; i < json2.data.length; i++) {
                                 
                             var node = document.createElement("LI");
                             node.className += " list-group-item";
-                                
+                               console.log('title is:' + json2.data[i].title); 
+                               
                             var textnode = document.createTextNode('id: ' + json2.data[i].id + ', title:  ' + json2.data[i].title  + ', Author:  ' + json2.data[i].author  + ', updated:  ' + json2.data[i].updated + '.');         
                             node.appendChild(textnode);                              
                             document.getElementById("books").appendChild(node);

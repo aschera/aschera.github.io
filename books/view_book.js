@@ -1,3 +1,7 @@
+var something = '';
+
+
+
 
         // View book data
         window.addEventListener('load', function() { // so shit loads and then runs.
@@ -32,12 +36,23 @@
                                 
                             var node = document.createElement("LI");
                             node.className += " list-group-item";
-                               console.log('title is:' + json2.data[i].title); 
+                            node.id += 'ckeck' + i;;
+                                
+                                var checkbox = document.createElement('input');
+                                checkbox.type = "checkbox";
+                                checkbox.value = 1;
+                                checkbox.name = "todo[]";
                                
-                            var textnode = document.createTextNode('id: ' + json2.data[i].id + ', title:  ' + json2.data[i].title  + ', Author:  ' + json2.data[i].author  + ', updated:  ' + json2.data[i].updated + '.');         
-                            node.appendChild(textnode);                              
+                            node.appendChild(checkbox);
+                                
+                                
+                            var textnode = document.createTextNode(' id: ' + json2.data[i].id + ', title:  ' + json2.data[i].title  + ', Author:  ' + json2.data[i].author  + ', updated:  ' + json2.data[i].updated + '.');         
+                            node.appendChild(textnode); 
+                              
                             document.getElementById("books").appendChild(node);
-                         
+                            
+                            something = node.id;
+                                console.log(something);
                             }
                             
                             console.log(ajax2.responseText);
@@ -60,6 +75,11 @@
                 };  //end ajax
             ajax2.send();
                 
+                
+//delete element
+function deleteListitem() {  
+	document.getElementById(something).outerHTML = "";
+};
             } // button event listener done
         
         )}); // window event listener done

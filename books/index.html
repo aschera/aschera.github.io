@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- #42313A   #6c2d2c   #9f4636  #f1dcc9 -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,14 +9,14 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title>innlämning 1</title>
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
+
     <!--API-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
+
     <!--Bootstrap-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -40,132 +41,109 @@
             confirm("The server didnt respond. Please Try again!");
         }
     </script>
-    
-    
-    
-    
+
+
+
+
 </head>
-<body>
-    <div class="container"> <!-- title and intro-->
-        
-        <div class="row"> 
-              <div class="col-lg-12" style=" background-color:#42313A; vertical-align: bottom; height:10em; ">
-                    <div style=" float:middle; text-align:center;">
+
+<body style="margin-left:20px; margin-right:20px; ">
+    <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
+        <!-- title and intro-->
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12" style=" background-color:#42313A; vertical-align: bottom; height:10em; ">
+                <div style=" float:middle; text-align:center;">
                     <h3 style="color:white;">Add, find and delete books</h3>
-                        <button onclick="location.reload();">Reload page</button>
-                    </div>
-             </div> <!--Col end--> 
-        </div><!--row end-->
-        
-        <div class="row" >
-              <div class="col-lg-12" style="color:white; background-color:#42313A; vertical-align: bottom; height: 100%;">
+                    <button onclick="location.reload();">Reload page</button>
+                </div>
+            </div>
+            <!--Col end-->
+        </div>
+        <!--row end-->
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 " style="color:white; background-color:#42313A; vertical-align: bottom; height: 100%;">
                 <p>You can here add a new book. View all the books currently stored in the database and delete a book.</p>
-                  
-                  <p>
-                  <!--status-->
-                   <label for="status_field_v" style=" border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">Status:</label>
-                    <section id="status_field_v"></section>
-                  </p>
-              </div> <!--Col end-->
-        </div><!--row end-->
-    </div> <!--Container end-->
-    
-    <br><br>
-    
-    <div class="container"> <!-- Book title and author fields and buttons for add and search-->
-        
-        <div class="row"> 
-              <div class="col-lg-12" style=" background-color:#42313A; vertical-align: bottom; height:7em; ">
-                    <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">Enter book author and title</h2>
-             </div> <!--Col end--> 
-        </div><!--row end-->
-        <div class="row"> 
-              <div class="col-lg-6" style=" background-color:#42313A; vertical-align: bottom; height:7em; ">
-                   <label style="border-radius: 8px; color:white; background-color:#6c2d2c; height:2em; margin-right:5px;padding:5px;" for="author">Book Author:</label>
-                    <input type="text" class="form-control" placeholder="Mary Peterson" id="author">
-             </div> <!--Col end--> 
-             <div class="col-lg-6" style=" background-color:#42313A; vertical-align: bottom; height:7em; ">
-                   <label style="border-radius: 8px; color:white; background-color:#6c2d2c; height:2em; margin-right:5px; padding:5px;" for="title">Book title:</label>
-                   <input type="text" class="form-control" placeholder="Snail has lunch" id="title" height="200px">
-             </div> <!--Col end--> 
-        </div><!--row end-->
-        <div class="row"> 
-              <div class="col-lg-12" style=" background-color:#42313A; vertical-align: bottom; height:9em; ">
-                  <button type="button" class="btn btn-default btn-sm" id='button'>Add this book</button>
-                  <br><br>
-<!--selected book-->
-                   <label for="title" style=" border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">The last book you have added:</label>
-                    <section id="status_field_selection" style="color:white;"></section>
-                  
-                  
-             </div> <!--Col end--> 
-        </div><!--row end-->
 
-        </div> <!--Container end-->
+                <p>
+                    <!--status-->
+                    
+                    <section id="status_field_v"><pre>Status</pre></section>
+                </p>
+            </div>
+            <!--Col end-->
+        </div>
+        <!--row end-->
+    </div>
+    <!--Container end-->
+
     <br><br>
-        <div class="container"> <!-- Buttons for add and search-->
-        
-        <div class="row"> 
-              <div class="col-lg-12" style=" background-color:#42313A; vertical-align: bottom; height:7em; ">
-                    <h2 style="color:white; padding:5px; height:2em; background-color:#6c2d2c;">Search for a book</h2>
-             </div> <!--Col end--> 
-        </div><!--row end-->
-        <div class="row"> 
-            <div class="col-lg-12" style=" background-color:#42313A; vertical-align: bottom; ">
+
+    <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
+        <!-- Book title and author fields and buttons for add and search-->
+
+        <div class="row" style=" background-color:#42313A;">
+            <div class="col-lg-4 col-md-12 col-sm-12" style=" background-color:#42313A; vertical-align: bottom;">
+                <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">Add a new book</h2>
+                <h5 style="color:white;">You can here add a specific book to the database. <br>Specify title / author and press the Add button.</h5>
+                
+                <button type="button" class="btn btn-default btn-sm" id='button'>ADD</button>
+                <br>
+                <br>
+                <label style="border-radius: 8px; color:white; background-color:#6c2d2c; height:2em; margin-right:5px;padding:5px;" for="author">Book Author:</label>
+                <input type="text" class="form-control" placeholder="Mary Peterson" id="author">
+                <br>
+                <label style="border-radius: 8px; color:white; background-color:#6c2d2c; height:2em; margin-right:5px; padding:5px;" for="title">Book title:</label>
+                <input type="text" class="form-control" placeholder="Snail has lunch" id="title" height="200px">
+                <br>
+                <br>
+                <label for="title" style=" border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">The last book you have added:</label>
+                <section id="status_field_selection" style="color:white;"></section>
+            </div>
+            <!--Col end-->
+            
+            <div class="col-lg-4 col-md-12 col-sm-12" style=" background-color:#42313A; vertical-align: bottom;">
+                <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">Search for a book</h2>
+                <h5 style="color:white;">If you are unsure about a title or author, search in Googles book database. <br>Specify title or author (or both) and press the search button. </h5>
+                
+                
+                <button type="button" style="margin-bottom:5px;" class="btn btn-default btn-sm" onclick="mySecret('book_reviews')" id='search_g'>SEARCH</button>
+                
+                <!--review-->
+                <br><br>
+                <section>
+                    <pre style="display:none; color:white; background-color:#9f4636;" id="book_reviews"></pre>
+                </section>
+            </div>
+            <!--Col end-->
+            
+            <div class="col-lg-4 col-md-12 col-sm-12" style=" background-color:#42313A; vertical-align: bottom;">
+                <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">View saved books</h2>
+                <h5 style="color:white;">If you are unsure about a title or author, search in Googles book database. <br>Specify title or author (or both) and press the search button. </h5>
+                
+                <button type="button" class="btn btn-default btn-sm" id='button2'>VIEW</button>
+
+                <button type="button" class="btn btn-default btn-sm" id='delete'>DELETE</button>
+                <br>
+                <br>
+                <div class="col-lg-12" style="vertical-align: bottom; height: 100%;">
+                        <ul class="list-group" id="books" ></ul>
+                </div>
+                
+            </div>
+            <!--Col end-->
+            
+        </div>
+        <!--row end-->
      
-             </div> <!--Col end--> 
-              <div class="col-lg-12" style=" background-color:#42313A; vertical-align: bottom; ">
-    
-                  <button type="button" style="margin-bottom:5px;" class="btn btn-default btn-sm" onclick="mySecret('book_reviews')" id='search_g'>Search</button>
-<!--review-->    <br>
-                 <section ><label for="book_reviews" style="color:white; padding:5px; height:2em; background-color:#6c2d2c;">Results:</label><pre  style="display:none; color:white; background-color:#9f4636;" id="book_reviews"></pre></section>
-             </div> <!--Col end--> 
+    </div>
+    <!--Container end-->
 
-        </div><!--row end-->
 
-    </div> <!--Container end-->
-    
-    <br><br>
-
-                        
-      
-                        
-
-    <br><br>
-    
-    <div class="container"> <!-- View books container-->
-        <div class="row">
-              <div class="col-lg-12" style=" background-color:#42313A;; vertical-align: bottom; height: 100%;">
-                  
-                  
-        <div class="table-responsive table-condensed">
-                <table class="Book options">
-                    <tr>
-                        <th style="color:white; padding:5px; height:2em; background-color:#6c2d2c;"><h2>View books saved on database</h2></th>
-                    </tr>
-                    <tr>
-                        <th style=" height:8em; padding-left:5px; ">
-                            <button type="button" class="btn btn-default btn-sm" id='button2'>View all</button>
-                        </th>
-                        <th style=" height:8em; padding-left:5px; ">
-                            <button type="button" class="btn btn-default btn-sm" id='delete'>Delete entry</button>
-                        </th>
-                    </tr> 
-            </table>
-            </div> <!--table end-->
-    <br>
-        <div class="row">
-              <div class="col-lg-12" style="  background-color:#6c2d2c; vertical-align: bottom; height: 100%;">
-                <ul class="list-group" id="books"></ul>
-              </div> <!--Col end-->
-        </div><!--row end-->
-    </div> <!--Container end-->
-    </div><!--Col end-->
-        </div><!--row end-->
-    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  
+
 </body>
 
 </html>

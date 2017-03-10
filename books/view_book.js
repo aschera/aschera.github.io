@@ -38,13 +38,14 @@ var something = '';
                             node.className += " list-group-item";
                             node.id += 'ckeck' + i;;
                                 
-                                var checkbox = document.createElement('input');
-                                checkbox.type = "checkbox";
-                                checkbox.value = 1;
-                                checkbox.name = "todo[]";
-                               
+                                var checkbox = document.createElement("INPUT");
+                                checkbox.setAttribute("type", "radio");
+                                checkbox.value = node.id;
+                                checkbox.name = 'views';
+                                 
                             node.appendChild(checkbox);
-                                
+                            node.style.backgroundColor = '#9f4636';
+                            node.style.color = '#f1dcc9';    
                                 
                             var textnode = document.createTextNode(' id: ' + json2.data[i].id + ', title:  ' + json2.data[i].title  + ', Author:  ' + json2.data[i].author  + ', updated:  ' + json2.data[i].updated + '.');         
                             node.appendChild(textnode); 
@@ -52,7 +53,7 @@ var something = '';
                             document.getElementById("books").appendChild(node);
                             
                             something = node.id;
-                                console.log(something);
+                            
                             }
                             
                             console.log(ajax2.responseText);
@@ -63,8 +64,8 @@ var something = '';
                             console.log(json2);
                             
         // status message - Server BAD
-                            printm('BAD');
-                            myFunction();
+                            printm(json2.message);
+                            //myFunction();
                         }
 
                     } else if (ajax2.status != 200) {

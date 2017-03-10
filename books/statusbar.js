@@ -27,7 +27,7 @@ function currentBook(title,author) {
       let e = document.createElement('pre');
         e.style.backgroundColor = '#9f4636';
         e.style.color = '#f1dcc9';
-        e.innerText = title + ' ' + author;
+        e.innerText = title + ' by ' + author;
         con.appendChild(e);
     } else if (list.length > 0) {
         document.getElementsByTagName('pre')[0].innerHTML = title + ' ' + author;

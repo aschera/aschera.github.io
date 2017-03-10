@@ -1,0 +1,84 @@
+
+<!-- saved from url=(0043)file:///C:/Users/Christina/Downloads/7.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7</title>
+<script>
+var count = 0;
+
+function addText() { //this adds text from text area to the list.
+  count++;
+
+  let text = document.getElementById('text').value;
+  var node = document.createElement("LI");
+	node.id = 'li' + count;
+  var textnode = document.createTextNode(text);  
+  node.appendChild(textnode);                        
+  document.getElementById("list").appendChild(node);	
+};
+
+
+var something = '';
+window.addEventListener('load', function() { // so shit loads and then runs.
+
+// this takes an item from the list and changes the textarea value to it
+
+function getEventTarget(e) { // general even fucntion
+    e = e || window.event;
+	something = e.target || e.srcElement;
+    return e.target || e.srcElement; 
+}
+
+
+var ul = document.getElementById('list');
+	ul.onclick = function(event) {
+	    var target = getEventTarget(event);
+	    var result = target.innerHTML;
+	    target.style.backgroundColor = color();
+	    document.getElementById('text').value = result;	
+};
+});
+
+function color() { // change color
+var items = Array('red','blue','green','yellow','pink','brown','white','black','purple','lightgrey','azure');
+var item = items[Math.floor(Math.random()*items.length)];
+return item;
+};
+
+function editText() { // edit text
+let text = document.getElementById('text').value;
+        something.innerHTML = text;	
+};
+
+function deleteListitem() {  //delete li element
+	var elem = something.id;
+	
+	document.getElementById(elem).outerHTML = "";
+};
+
+</script>
+</head>
+
+<body>
+
+<textarea rows="4" cols="50" id="text">text
+</textarea> 
+<br>
+
+<button id="button" onclick="addText()">Add</button>
+<button id="button" onclick="editText()">update</button>
+<button id="button" onclick="deleteListitem()">delete</button>
+
+<br>
+<ul id="list">
+<li>my list</li>
+</ul>
+
+
+
+
+
+
+</body></html>

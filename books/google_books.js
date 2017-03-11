@@ -10,7 +10,12 @@
 
             button.addEventListener('click', function() {
            let author = document.getElementById('author').value;
-            let title = document.getElementById('title').value;
+           let title = document.getElementById('title').value;
+                
+            if(author.length === 0  & title.length === 0) {
+                printm('Please specify a title and author before you search!');
+            } else {
+                
                 // url to access server
                 let url = 'https://www.googleapis.com/books/v1/volumes?q=';
                 
@@ -22,7 +27,7 @@
                 ajax.open('GET', url);
   
                 ajax.onreadystatechange = function() {
-           
+                   
                     if (ajax.status == 200 && ajax.readyState == 4) {
                         
                         let json = JSON.parse(ajax.responseText);
@@ -39,12 +44,20 @@
                         printm('You found books matching your query');
 
                     } else if (ajax.status != 200) {  
-                            printm('server error, try again');
+                        printm('Error! Try again.');
                            
                     }
 
                 };  //end ajax
             ajax.send();
+            
+            };
+                
+                
+                
+        
+                
+                    
                 
             } // button event listener done
         

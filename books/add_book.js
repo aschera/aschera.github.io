@@ -1,11 +1,9 @@
 
+
         // Add a book
         window.addEventListener('load', function() { // so shit loads and then runs.
             let button = document.getElementById('button');
-            
-            
-            
-
+     
             button.addEventListener('click', function() {
                 
             let author = document.getElementById('author').value;
@@ -34,7 +32,10 @@
                         if (json.status !== 'error') {
 // status message - Server OK
                            
-                            console.log(json);
+                            let listen = document.getElementById('books');
+                            console.log(listen);
+                            listen.getElementsByTagName('li').outerHTML = "";
+                            
                             printm('The book: '+title+' by '+author+' was added.');
                             currentBook(title,author);
                             

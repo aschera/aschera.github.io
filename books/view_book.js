@@ -36,15 +36,18 @@ window.addEventListener('load', function() { // so shit loads and then runs.
 
                             var node = document.createElement("LI");
                             node.className += " list-group-item";
-                            node.id += 'check' + i;;
-
+                            node.id += 'check' + i;
+                            
+                            
+                            // add a checkbox to every item.
                             var checkbox = document.createElement("INPUT");
                             checkbox.setAttribute("type", "radio");
                             checkbox.onclick = "handleClick()";
                             checkbox.value = node.id;
                             checkbox.name = 'views';
-
                             node.appendChild(checkbox);
+                            
+                            
                             node.style.backgroundColor = '#9f4636';
                             node.style.color = '#f1dcc9';
 

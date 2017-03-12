@@ -9,8 +9,8 @@
             
 
             button.addEventListener('click', function() {
-           let author = document.getElementById('author').value;
-           let title = document.getElementById('title').value;
+           let author = document.getElementById('S_author').value;
+           let title = document.getElementById('S_title').value;
                 
             if(author.length === 0  & title.length === 0) {
                 printm('Please specify a title and author before you search!');

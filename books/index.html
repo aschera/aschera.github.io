@@ -47,6 +47,7 @@
 
 <script>
     // fcuntion to switch from one tab to another
+    
 function openCity(cityName) {
     var i;
     var x = document.getElementsByClassName("city");
@@ -173,7 +174,7 @@ function openCity(cityName) {
                 <!--review-->
                 
                 <section>
-                    <pre style="display:none; color:white; background-color:#9f4636;" id="book_reviews"></pre>
+                    <pre style="display:none; color:white; background-color:#9f4636;" id="book_reviews">Result</pre>
                 </section>
             </div>
             <!--Col end-->
@@ -190,9 +191,9 @@ function openCity(cityName) {
       <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
         <!-- Book title and author fields and buttons for add and search-->
 
-        <div class="row" style=" background-color:#42313A;">
+        <div class="row" style=" background-color:#42313A; min-height:25em;">
 
-            <div class="col-lg-5 col-md-12 col-sm-12" style=" background-color:#42313A; vertical-align: bottom; min-height:25em;">
+            <div class="col-lg-5 col-md-12 col-sm-12" style=" background-color:#42313A; vertical-align: bottom; ">
                 <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">View saved books</h2>
                 <h5 style="color:white;">If you are unsure about a title or author, search in Googles book database. <br>Specify title or author (or both) and press the search button. </h5>
                 
@@ -205,9 +206,10 @@ function openCity(cityName) {
             
             <div class="col-lg-7 col-md-12 col-sm-12" style=" background-color:#42313A; vertical-align: bottom; ">
                 <!--View-->
-                
+                <br>
                 <div class="col-lg-12" style="vertical-align: bottom; height: 100%;">
-                        <ul class="list-group" id="books" ></ul>
+                    
+                        <ul class="list-group" id="books" style="padding:9.5px; display:none;"><li>Result</li></ul>
                 </div>
             </div>
             <!--Col end-->

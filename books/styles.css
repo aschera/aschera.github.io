@@ -12,10 +12,34 @@ body {background-image: url(2726594.jpg); background-repeat: no-repeat; backgrou
 
 
 /* Stuff to reverse the order of the list so the last element comes first */
+
+.list-group-item {
+  
+  background-color: #9f4636;
+}
         
-ul {transform: rotate(180deg);}
-        
-ul > li {transform: rotate(-180deg);}
+ul {
+    transform: rotate(180deg); 
+    list-style-type: none;
+    margin-top: 10px;
+    border-radius: 8px;
+    }
+#books {background-color: #9f4636; 
+    color = '#f1dcc9';}        
+ul > li {
+        transform: rotate(-180deg);
+        display: block;
+        padding: 9.5px;
+        margin: 0 0 10px;
+        font-size: 13px;
+        line-height: 1.42857143;
+        color: #333;
+        word-break: break-all;
+        word-wrap: break-word;
+        background-color: #9f4636; 
+        color = '#f1dcc9';
+        border: 1px solid #ccc;
+        border-radius: 4px;}
 
 .table-text-center th,.table-text-center td {text-align: center;}
 

@@ -1,8 +1,6 @@
 var something = '';
 
 
-
-
 // View book data
 window.addEventListener('load', function() { // so shit loads and then runs.
     let button_view = document.getElementById('button2');
@@ -31,6 +29,9 @@ window.addEventListener('load', function() { // so shit loads and then runs.
 
                         // status message - Server OK
                         printm('You are now viewing a list of all the books stored.');
+                        
+                        let listen = document.getElementById('books');
+                        listen.style.display = 'block';
 
                         for (i = 0; i < json2.data.length; i++) {
 
@@ -48,8 +49,19 @@ window.addEventListener('load', function() { // so shit loads and then runs.
                             node.appendChild(checkbox);
                             
                             
-                            node.style.backgroundColor = '#9f4636';
-                            node.style.color = '#f1dcc9';
+                            node.style.backgroundColor = '#f1dcc9';
+                            node.style.fontSize = '13px'
+                            node.style.height = '3em';
+                            node.style.lineHeight ='1.42857143';
+                            node.style.padding ='5px';
+                            node.style.marginBottom ='10px';
+                            node.style.marginTop ='2px';
+                            node.style.marginLeft ='5px';
+                            node.style.marginRight ='5px';
+                            node.style.wordBreak ='break-all';
+                            node.style.wordWrap = 'normal';
+                            node.style.display = 'block';
+  
 
                             var textnode = document.createTextNode(' id: ' + json2.data[i].id + ', title:  ' + json2.data[i].title + ', Author:  ' + json2.data[i].author + ', updated:  ' + json2.data[i].updated + '.');
                             node.appendChild(textnode);

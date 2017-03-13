@@ -1,14 +1,14 @@
 
 
+
         // Check google books
         window.addEventListener('load', function() { // so shit loads and then runs.
             let button = document.getElementById('search_g');
             
             let book_search_field = document.getElementById('book_reviews');
-            
-            
-
+      
             button.addEventListener('click', function() {
+                
            let author = document.getElementById('S_author').value;
            let title = document.getElementById('S_title').value;
                 
@@ -38,6 +38,7 @@
                             
                             e.innerHTML = json.items[i].volumeInfo.title + ' by ' + json.items[i].volumeInfo.authors;
                             
+                       
                             book_search_field.appendChild(e);
                         }
                         

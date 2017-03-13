@@ -57,6 +57,86 @@ function openCity(cityName) {
     document.getElementById(cityName).style.display = "block";  
 }
 </script>
+    
+    <script>
+      window.addEventListener('load', function() { // so shit loads and then runs.
+          
+    function getEventTarget(e) { 
+    e = e || window.event;
+	something = e.target || e.srcElement;
+    return e.target || e.srcElement; 
+}
+    
+    var ul = document.getElementById('book_reviews');
+	ul.onclick = function(event) {
+	    var target = getEventTarget(event);
+	    var result = target.innerHTML;
+	    console.log(result);
+        
+        
+        substring = "by";
+        let wow = result.indexOf(substring);
+	    console.log(wow);
+        
+        let titleH = result.substring((0),(wow-1));
+            
+        
+        console.log(titleH);
+        let authorH = result.substring((wow+1),(result.length));
+        console.log(authorH);
+        
+        
+                // url to access server
+                let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=insert&key=sHx2P';
+                
+                url+= '&title=' + titleH + '&author=' + authorH;
+                console.log(url);
+                
+                // AJAX request 
+                let ajax = new XMLHttpRequest();
+
+                ajax.open('post', url);
+  
+                ajax.onreadystatechange = function() {
+                    
+                let status = '';
+
+                    if (ajax.status == 200 && ajax.readyState == 4) {
+                        //parse string to object
+                        let json = JSON.parse(ajax.responseText);
+
+                        // check is status = error
+                        if (json.status !== 'error') {
+// status message - Server OK
+                           
+                            
+                            
+                      printm('The book: '+titleH+' by '+authorH+' was added.');
+       
+                        } else {
+// status message - Server Bad
+                            
+                            printm(json.status +', ' + json.message);
+                            
+                        }
+
+                    } else if (ajax.status != 200) {  
+// status message - Server Bad
+                             console.log(json);
+                             printm('server error');
+                             
+                    }
+
+                };  //end ajax
+            ajax.send(); 
+          
+      }; // end listener
+                 
+      });
+ 
+               
+
+    </script>
 
 
 </head>
@@ -93,18 +173,17 @@ function openCity(cityName) {
     </div>
     <!--Container end-->
     
-    
+    <br>
 <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
         <!--menu-->
-
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12" style=" background-color:#42313A; vertical-align: bottom;">
-  <button class="w3-bar-item w3-button" onclick="openCity('addBook')">Add a new book</button>
-  <button class="w3-bar-item w3-button" onclick="openCity('searchBook')">Search a book</button>
-  <button class="w3-bar-item w3-button" onclick="openCity('viewBook')">View saved books</button>
-</div> <!--Col end-->
+    <div class="row" style="min-height:5em; background-color:#42313A; vertical-align: bottom;">
+        <div class="col-lg-12 col-md-12 col-sm-12" style=" background-color:#42313A; vertical-align: bottom;">
+          <button  style="background-color:#f1dcc9;border-radius:3px; padding:5px; border-color:#6c2d2c; color:#6c2d2c" onclick="openCity('addBook')">Add a new book</button>
+          <button  style="background-color:#f1dcc9;border-radius:3px; padding:5px; border-color:#6c2d2c; color:#6c2d2c" onclick="openCity('searchBook')">Search a book</button>
+          <button  style="background-color:#f1dcc9;border-radius:3px; padding:5px; border-color:#6c2d2c; color:#6c2d2c" onclick="openCity('viewBook')">View saved books</button>
+        </div> <!--Col end-->
     </div> <!--row end-->
-    </div><!--Container end-->
+</div><!--Container end-->
             
     
     
@@ -128,7 +207,7 @@ function openCity(cityName) {
                 
                 <br>
                 
-                <button type="button" class="btn btn-default btn-sm" id='button'>ADD</button>
+                <button type="button" class="btn btn-success btn-sm" id='button'>ADD</button>
                 
                 
                 <!-- <label for="title" style=" border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">The last book you have added:</label>
@@ -165,7 +244,7 @@ function openCity(cityName) {
                 
                 <br>
                 
-                <button type="button" style="margin-bottom:5px;" class="btn btn-default btn-sm" onclick="mySecret('book_reviews')" id='search_g'>SEARCH</button>
+                <button type="button" style="margin-bottom:5px;" class="btn-success btn-sm" onclick="mySecret('book_reviews')" id='search_g'>SEARCH</button>
         
             </div>
             <!--Col end-->
@@ -174,7 +253,7 @@ function openCity(cityName) {
                 <!--review-->
                 
                 <section>
-                    <pre style="display:none; color:white; background-color:#9f4636;" id="book_reviews">Result</pre>
+                    <pre style="display:none; color:white; background-color:#9f4636;" id="book_reviews"></pre>
                 </section>
             </div>
             <!--Col end-->
@@ -197,9 +276,9 @@ function openCity(cityName) {
                 <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">View saved books</h2>
                 <h5 style="color:white;">If you are unsure about a title or author, search in Googles book database. <br>Specify title or author (or both) and press the search button. </h5>
                 
-                <button type="button" class="btn btn-default btn-sm" id='button2'>VIEW</button>
+                <button type="button" class="btn-success btn-sm" id='button2'>VIEW</button>
 
-                <button type="button" class="btn btn-default btn-sm" id='delete'>DELETE</button>
+                <button type="button" class="btn-danger btn-sm" id='delete'>DELETE</button>
               
             </div>
             <!--Col end-->
@@ -209,7 +288,7 @@ function openCity(cityName) {
                 <br>
                 <div class="col-lg-12" style="vertical-align: bottom; height: 100%;">
                     
-                        <ul class="list-group" id="books" style="padding:9.5px; display:none;"><li>Result</li></ul>
+                        <ul class="list-group" id="books" style="padding:9.5px; display:none;"></ul>
                 </div>
             </div>
             <!--Col end-->

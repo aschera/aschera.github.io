@@ -37,7 +37,7 @@
                             listen.getElementsByTagName('li').outerHTML = "";
                             
                             printm('The book: '+title+' by '+author+' was added.');
-                            currentBook(title,author);
+          
                             
        
                         } else {

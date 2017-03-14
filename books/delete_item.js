@@ -11,7 +11,7 @@ deletion.addEventListener('click', function() {
 
     let element = document.getElementById(res).innerText; // the li that is selected
     var number = parseFloat(element.match(/-*[0-9]+/));  // the id number in that li
-
+	element.style.backgroundColor = 'red';
 	
     
     

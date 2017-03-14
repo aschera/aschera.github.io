@@ -32,7 +32,8 @@ window.addEventListener('load', function() { // so shit loads and then runs.
                         
                         let listen = document.getElementById('books');
                         listen.style.display = 'block';
-
+				
+			
                         for (i = 0; i < json2.data.length; i++) {
 
                             var node = document.createElement("LI");
@@ -87,6 +88,7 @@ window.addEventListener('load', function() { // so shit loads and then runs.
                 } else if (ajax2.status != 200) {
                     // AJAX failiure report
                     console.log('ajax error');
+printm(json2.status + ' : ' + json2.message);
                 }
 
             }; //end ajax

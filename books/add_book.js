@@ -7,7 +7,12 @@
             button.addEventListener('click', function() {
                 
             let author = document.getElementById('author').value;
-            let title = document.getElementById('title').value; 
+            let title = document.getElementById('title').value;
+
+		if(author === '' && title ==='') {
+			printm('Please enter a title and an author first!');
+		}
+		else { 
                 
                 // url to access server
                 let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=insert&key=sHx2P';
@@ -56,6 +61,7 @@
 
                 };  //end ajax
             ajax.send();
+} // end else
                 
             } // button event listener done
         

@@ -11,7 +11,7 @@ deletion.addEventListener('click', function() {
 
     let element = document.getElementById(res).innerText; // the li that is selected
     var number = parseFloat(element.match(/-*[0-9]+/));  // the id number in that li
-	element.style.backgroundColor = 'red';
+	
 	
     
     
@@ -21,7 +21,7 @@ deletion.addEventListener('click', function() {
     // url to access server
             let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=delete&key=sHx2P';
     
-            url+= 'id=' + number;
+            url+= '&id=' + number;
        console.log(url);
             // AJAX request 
             let ajax2 = new XMLHttpRequest();
@@ -39,13 +39,14 @@ deletion.addEventListener('click', function() {
                     if (json2.status !== 'error') {
 
                         // status message - Server OK
-                        printm(json2.status + ' : ' + json2.message);
+			let book = document.getElementById(res).innerText;
+                        printm(json2.status + ', You have deleted the book: ' + book);
                         
                         document.getElementById(res).outerHTML = ""; // delete from view list
 
                     } else {
                         console.log('server is no good');
-                        console.log(json2);
+                        
 
                         // status message - Server BAD
                         printm(json2.status + ' : ' + json2.message);

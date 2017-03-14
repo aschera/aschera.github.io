@@ -52,9 +52,13 @@ function openCity(cityName) {
     var i;
     var x = document.getElementsByClassName("city");
     for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
+       x[i].style.display = "none";
+	x[i].style.color = "red";
+  
     }
-    document.getElementById(cityName).style.display = "block";  
+    let tab = document.getElementById(cityName);
+	tab.style.display = "block";  
+	
 }
 </script>
     
@@ -182,7 +186,7 @@ function openCity(cityName) {
 <div id="centeredmenu">
 <span>Menu</span>
 <ul>
-          <li><a href="#" onclick="openCity('addBook')">Add a new book</a></li>
+          <li><a  class="active" href="#" onclick="openCity('addBook')">Add a new book</a></li>
           <li><a href="#" onclick="openCity('searchBook')">Search for a book</a></li>
           <li><a href="#" onclick="openCity('viewBook')">View saved books</a></li>
 </div> <!--center end-->
@@ -254,7 +258,7 @@ function openCity(cityName) {
                 
                 <section>
 <p style="color:white; display:hidden;" id="instruction_add">Click on a title to add a book to the database!"</p>
-                    <pre style="display:none; color:white; background-color:#9f4636;" id="book_reviews"></pre>
+                    <pre style="display:none; color:white; border:none;background-color:#9f4636;" id="book_reviews"></pre>
                 </section>
             </div>
             <!--Col end-->
@@ -278,7 +282,7 @@ function openCity(cityName) {
                 <h5 style="color:white;">If you are unsure about a title or author, search in Googles book database. <br>Specify title or author (or both) and press the search button. </h5>
                 
                 <button type="button" class="btn-success btn-sm" id='button2'>VIEW</button>
-
+		<button type="button" class="btn-danger btn-sm" id='change'>CHANGE</button>
                 <button type="button" class="btn-danger btn-sm" id='delete'>DELETE</button>
               
             </div>

@@ -195,7 +195,8 @@ th {height: 3em;}
    background:#6c2d2c;
    color:#fff;
 }
-#centeredmenu ul li a.active,
+
+
 #centeredmenu ul li a.active:hover {
    color:black;
    background:#000;

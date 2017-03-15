@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- #42313A   #6c2d2c   #9f4636  #f1dcc9 -->
+<!-- #c5d5cb; hellblau    #9fa8a3;  grau   #e3e0cf; beige-->
 
 <head>
     <meta charset="utf-8">
@@ -45,10 +45,9 @@
         <!-- title and intro-->
 
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12" style=" background-color:#42313A; vertical-align: bottom; height:10em; ">
+            <div class="col-lg-12 col-md-12 col-sm-12 bg" style=" vertical-align: bottom; height:10em; ">
                 <div style=" float:middle; text-align:center;">
-                    <h3 style="color:white;">Great books</h3>
-                    <button onclick="location.reload();">Reload page</button>
+                    
                 </div>
             </div>
             <!--Col end-->
@@ -56,7 +55,7 @@
         <!--row end-->
 
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 " style="color:white; background-color:#42313A; vertical-align: bottom; height: 100%;">
+            <div class="col-lg-12 col-md-12 col-sm-12 " style="color:white; background-color:#c5d5cb; vertical-align: bottom; height: 100%;">
                 <p>You can here add a new book. View all the books currently stored in the database and delete a book.</p>
                 <br>
                 <p>
@@ -74,14 +73,14 @@
     <br>
 <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
         <!--menu-->
-    <div class="row" style="min-height:5em; background-color:#42313A; vertical-align: bottom;">
-        <div class="col-lg-12 col-md-12 col-sm-12" style=" background-color:#42313A; vertical-align: bottom;">
+    <div class="row" style="min-height:5em; background-color:#c5d5cb; vertical-align: bottom;">
+        <div class="col-lg-12 col-md-12 col-sm-12" style=" background-color:#c5d5cb; vertical-align: bottom;">
 <div id="centeredmenu">
-<span>Menu</span>
+
 <ul>
-          <li><a  class="active" href="#" onclick="openCity('addBook')">Add a new book</a></li>
-          <li><a href="#" onclick="openCity('searchBook')">Search for a book</a></li>
-          <li><a href="#" onclick="openCity('viewBook')">View saved books</a></li>
+    <li><a href="#" onclick="openCity('viewBook')">View saved books</a></li>
+    <li><a href="#" onclick="openCity('searchBook')">Search for a book</a></li>
+    <li><a href="#" onclick="openCity('addBook')">Add a new book</a></li>
 </div> <!--center end-->
         </div> <!--Col end-->
     </div> <!--row end-->
@@ -93,12 +92,12 @@
       <div class="container-fluid" style=" margin-left:20px; margin-right:20px; min-width:450px; ">
         <!-- Book title and author fields and buttons for add and search-->
 
-        <div class="row" style=" background-color:#42313A;">
-            <div class="col-lg-5 col-md-12 col-sm-12" style=" padding-left:15px;  margin-left:15px; background-color:#6c2d2c; vertical-align: bottom; min-height:25em;">
-                <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">Add a new book</h2>
+        <div class="row" style=" background-color:#c5d5cb;">
+            <div class="col-lg-5 col-md-12 col-sm-12" style=" padding-left:15px;  margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em;">
+                <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#9fa8a3;">Add a new book</h2>
                 <h5 style="color:white;">You can here add a specific book to the database. <br>Specify title / author and press the Add button.</h5>
                 
-                
+                <div class="bg_menu">
                 <label id='labelA' for="author">Author</label>
                 <input type="text" class="form-control"  placeholder="Mary Peterson" id="author">
                 
@@ -106,35 +105,42 @@
                 <label id='labelB' for="title">Title</label>
                 <input type="text" class="form-control" placeholder="Snail has lunch" id="title" height="200px">
                 
-                <button type="button" class="btn btn-success btn-sm" id='button' ><strong>+</strong></button>
+                <button type="button" class="btn-success btn-sm" id='button'>ADD</button>
+                </div>
                 
-                
-                <!-- <label for="title" style=" border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">The last book you have added:</label>
+                <!-- <label for="title" style=" border-radius: 8px; color:white; padding:5px; height:2em; background-color:#9fa8a3;">The last book you have added:</label>
                 <section id="status_field_selection" style="color:white;"></section>
                 -->
+                  
+            </div>
+            <!--Col end-->
+            <div class="col-lg-7 col-md-12 col-sm-12" style=" background-color:#c5d5cb; vertical-align: bottom;">
+                <!--review-->
+                <br>
                 
             </div>
             <!--Col end-->
-            
-           
+        
             
         </div>
         <!--row end-->
-     
+  
     </div>
     <!--Container end-->
+   
 </div> <!-- Add end -->
 
 <div id="searchBook" class="w3-container city" style="display:none"> <!-- START SEARCH -->
       <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
         <!-- Book title and author fields and buttons for add and search-->
 
-        <div class="row" style=" background-color:#42313A;">
-            <div class="col-lg-5 col-md-12 col-sm-12" style="padding-left:15px;  margin-left:15px; background-color:#6c2d2c; vertical-align: bottom; min-height:25em;">
+        <div class="row" style=" background-color:#c5d5cb;">
+            <div class="col-lg-5 col-md-12 col-sm-12" style="padding-left:15px;  margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em;">
             
-                <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">Search for a book</h2>
+                <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#9fa8a3;">Search for a book</h2>
                 <h5 style="color:white;">If you are unsure about a title or author, search in Googles book database. <br>Specify title or author (or both) and press the search button. </h5>
                 
+                <div class="bg_menu">
                 <label id='labelC' for="author">Author</label>
                 <input type="text" class="form-control" style="max-width=40px;" placeholder="Mary Peterson" id="S_author">
                 
@@ -143,14 +149,15 @@
                 
                 <button type="button" class="btn-success btn-sm" onclick="mySecret('book_reviews')" id='search_g'>SEARCH</button>
         
+                </div>
             </div>
             <!--Col end-->
             
-            <div class="col-lg-7 col-md-12 col-sm-12" style=" background-color:#42313A; vertical-align: bottom;">
+            <div class="col-lg-7 col-md-12 col-sm-12" style=" background-color:#c5d5cb; vertical-align: bottom;">
                 <!--review-->
-                
+                <br>
                 <section>
-<p style="color:white; display:hidden;" id="instruction_add">Click on a title to add a book to the database!"</p>
+
                     <pre style="display:none; color:white; border:none;background-color:#9f4636;" id="book_reviews"></pre>
                 </section>
             </div>
@@ -168,20 +175,21 @@
       <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
         <!-- Book title and author fields and buttons for add and search-->
 
-        <div class="row" style=" background-color:#42313A; min-height:25em;">
+        <div class="row" style=" background-color:#c5d5cb; min-height:25em;">
 
-            <div class="col-lg-5 col-md-12 col-sm-12" style=" padding-left:15px;  margin-left:15px;background-color:#6c2d2c; vertical-align: bottom; min-height:25em;">
-                <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">View saved books</h2>
+            <div class="col-lg-5 col-md-12 col-sm-12" style=" padding-left:15px;  margin-left:15px;background-color:#9fa8a3; vertical-align: bottom; min-height:25em;">
+                <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#9fa8a3;">View saved books</h2>
                 <h5 style="color:white;">If you are unsure about a title or author, search in Googles book database. <br>Specify title or author (or both) and press the search button. </h5>
                 
+                <div class="bg_menu">
                 <button type="button" class="btn-success btn-sm" id='button2'>VIEW</button>
 		<button type="button" class="btn-danger btn-sm" id='change'>CHANGE</button>
                 <button type="button" class="btn-danger btn-sm" id='delete'>DELETE</button>
-              
+                </div>
             </div>
             <!--Col end-->
             
-            <div class="col-lg-7 col-md-12 col-sm-12" style=" background-color:#42313A; vertical-align: bottom; ">
+            <div class="col-lg-7 col-md-12 col-sm-12" style=" background-color:#c5d5cb; vertical-align: bottom; ">
                 <!--View-->
                 <br>
                 <div class="col-lg-12" style="vertical-align: bottom; height: 100%;">

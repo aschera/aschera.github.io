@@ -25,8 +25,6 @@ window.addEventListener('load', function() { // so shit loads and then runs.
                     // check is status = error
                     if (json2.status !== 'error') {
 
-                        console.log('server is all good!');
-
                         // status message - Server OK
                         printm('You are now viewing a list of all the books stored.');
                         
@@ -52,7 +50,7 @@ window.addEventListener('load', function() { // so shit loads and then runs.
                             
                             node.style.backgroundColor = '#f1dcc9';
                             node.style.fontSize = '13px'
-                            node.style.height = '3em';
+                            node.style.height = '3.5em';
                             node.style.lineHeight ='1.42857143';
                             node.style.padding ='5px';
                             node.style.marginBottom ='10px';
@@ -62,7 +60,8 @@ window.addEventListener('load', function() { // so shit loads and then runs.
                             node.style.wordBreak ='break-all';
                             node.style.wordWrap = 'normal';
                             node.style.display = 'block';
-  
+                            node.style.overflowX = 'scroll';
+                           
 
                             var textnode = document.createTextNode(' id: ' + json2.data[i].id + ', title:  ' + json2.data[i].title + ', Author:  ' + json2.data[i].author + ', updated:  ' + json2.data[i].updated + '.');
                             node.appendChild(textnode);
@@ -72,9 +71,6 @@ window.addEventListener('load', function() { // so shit loads and then runs.
                             //  save this items id in the global variable.
                             //something = node.id;
                         }
-
-                        console.log(ajax2.responseText);
-
 
                     } else {
                         console.log('server is no good');

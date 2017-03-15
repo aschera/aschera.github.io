@@ -37,113 +37,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-    <script>
-        // server not responding function - popup annoyance
-        function myFunction() {
-            confirm("The server didnt respond. Please Try again!");
-        }
-    </script>
-
-<script>
-    // fcuntion to switch from one tab to another
-    
-function openCity(cityName) {
-    var i;
-    var x = document.getElementsByClassName("city");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
-	x[i].style.color = "red";
-  
-    }
-    let tab = document.getElementById(cityName);
-	tab.style.display = "block";  
-	
-}
-</script>
-    
-    <script>
-      window.addEventListener('load', function() { // so shit loads and then runs.
-          
-    function getEventTarget(e) { 
-    e = e || window.event;
-	something = e.target || e.srcElement;
-    return e.target || e.srcElement; 
-}
-    
-    var ul = document.getElementById('book_reviews');
-	ul.onclick = function(event) {
-	    var target = getEventTarget(event);
-	    var result = target.innerHTML;
-		
-	    console.log(result);
-        
-        
-        substring = "by";
-        let wow = result.indexOf(substring);
-	    console.log(wow);
-        
-        let titleH = result.substring((0),(wow-1));
-            
-        
-        console.log(titleH);
-        let authorH = result.substring((wow+3),(result.length));
-        console.log(authorH);
-        
-        
-                // url to access server
-                let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=insert&key=sHx2P';
-                
-                url+= '&title=' + titleH + '&author=' + authorH;
-                console.log(url);
-                
-                // AJAX request 
-                let ajax = new XMLHttpRequest();
-
-                ajax.open('post', url);
-  
-                ajax.onreadystatechange = function() {
-                    
-                let status = '';
-
-                    if (ajax.status == 200 && ajax.readyState == 4) {
-                        //parse string to object
-                        let json = JSON.parse(ajax.responseText);
-
-                        // check is status = error
-                        if (json.status !== 'error') {
-// status message - Server OK
-                           
-                         target.style.backgroundColor = '#5cb85c';   
-                            
-                      printm('The book: '+titleH+' by '+authorH+' was added.');
-       
-                        } else {
-// status message - Server Bad
-                            
-                            printm(json.status +', ' + json.message);
-                            
-                        }
-
-                    } else if (ajax.status != 200) {  
-// status message - Server Bad
-                             console.log(json);
-                             printm('server error');
-                             
-                    }
-
-                };  //end ajax
-            ajax.send(); 
-          
-      }; // end listener
-                 
-      });
- 
-               
-
-    </script>
-
-
 </head>
 
 <body style="margin-left:20px; margin-right:20px; ">
@@ -197,11 +90,11 @@ function openCity(cityName) {
     
     
 <div id="addBook" class="w3-container city"> <!-- START ADD -->
-      <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px; ">
+      <div class="container-fluid" style=" margin-left:20px; margin-right:20px; min-width:450px; ">
         <!-- Book title and author fields and buttons for add and search-->
 
         <div class="row" style=" background-color:#42313A;">
-            <div class="col-lg-5 col-md-12 col-sm-12" style=" background-color:#6c2d2c; vertical-align: bottom; min-height:25em;">
+            <div class="col-lg-5 col-md-12 col-sm-12" style=" padding-left:15px;  margin-left:15px; background-color:#6c2d2c; vertical-align: bottom; min-height:25em;">
                 <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">Add a new book</h2>
                 <h5 style="color:white;">You can here add a specific book to the database. <br>Specify title / author and press the Add button.</h5>
                 
@@ -237,7 +130,7 @@ function openCity(cityName) {
         <!-- Book title and author fields and buttons for add and search-->
 
         <div class="row" style=" background-color:#42313A;">
-            <div class="col-lg-5 col-md-12 col-sm-12" style=" background-color:#6c2d2c; vertical-align: bottom; min-height:25em;">
+            <div class="col-lg-5 col-md-12 col-sm-12" style="padding-left:15px;  margin-left:15px; background-color:#6c2d2c; vertical-align: bottom; min-height:25em;">
             
                 <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">Search for a book</h2>
                 <h5 style="color:white;">If you are unsure about a title or author, search in Googles book database. <br>Specify title or author (or both) and press the search button. </h5>
@@ -277,7 +170,7 @@ function openCity(cityName) {
 
         <div class="row" style=" background-color:#42313A; min-height:25em;">
 
-            <div class="col-lg-5 col-md-12 col-sm-12" style=" background-color:#6c2d2c; vertical-align: bottom; min-height:25em;">
+            <div class="col-lg-5 col-md-12 col-sm-12" style=" padding-left:15px;  margin-left:15px;background-color:#6c2d2c; vertical-align: bottom; min-height:25em;">
                 <h2 style="border-radius: 8px; color:white; padding:5px; height:2em; background-color:#6c2d2c;">View saved books</h2>
                 <h5 style="color:white;">If you are unsure about a title or author, search in Googles book database. <br>Specify title or author (or both) and press the search button. </h5>
                 
@@ -293,7 +186,7 @@ function openCity(cityName) {
                 <br>
                 <div class="col-lg-12" style="vertical-align: bottom; height: 100%;">
                     
-                        <ul class="list-group" id="books" style="padding:9.5px; display:none;"></ul>
+                        <ul class="list-group" id="books" style=" padding:9.5px; display:none;"></ul>
                 </div>
             </div>
             <!--Col end-->

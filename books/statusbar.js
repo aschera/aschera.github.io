@@ -40,3 +40,24 @@ function currentBook(title,author) {
 function mySecret(ele) {
     document.getElementById(ele).style.display = "block";
 }
+
+
+// server not responding function - popup annoyance
+function myFunction() {
+    confirm("The server didnt respond. Please Try again!");
+}
+
+
+// fucntion to switch from one menu tab to another
+function openCity(cityName) {
+    var i;
+    var x = document.getElementsByClassName("city");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+	x[i].style.color = "red";
+  
+    }
+    let tab = document.getElementById(cityName);
+	tab.style.display = "block";  
+	
+}

@@ -279,6 +279,14 @@ th {height: 3em;}
 #V_bg_color {
     vertical-align: bottom; 
     background-color:#9fa8a3;
-display: none;}
+    display: none;}
 
 #input_fields {display:none;}
+
+#T_bg_color {
+    vertical-align: bottom; 
+    background-color:#9fa8a3;
+    display: none;
+    margin-left:15px;
+    }
+

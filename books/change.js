@@ -61,3 +61,44 @@ var changeHandler = (function initChangeHandler() {
 })();
 
 document.addEventListener('change', changeHandler, false);
+
+
+
+
+
+
+
+
+
+/*********************************************************************************************** */
+// click and write on spans
+
+
+    
+    
+        
+        function clickChange() { 
+            
+        var elts = document.getElementsByClassName('editable');
+    
+        for (var i = 0; i < elts.length; ++i) {
+            
+        let itme = elts[i].innerText;
+        
+        elts[i].innerHTML = '<input type="text" value=" ' + itme + ' "/>';
+        
+        }
+        
+        
+    }
+
+    
+
+
+/*var textInputElement = document.getElementById('textInput');
+      nameDivElement = document.getElementById('nameDiv');
+      textInputElement.addEventListener('keyup', function(){
+        var text = textInputElement.value;
+        nameDivElement.innerHTML = text;
+      });
+      */

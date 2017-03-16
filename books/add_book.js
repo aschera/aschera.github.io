@@ -117,7 +117,7 @@ window.addEventListener('load', function() { // so shit loads and then runs.
                         if (json.status !== 'error') {
 // status message - Server OK
                            
-                         target.style.backgroundColor = '#5cb85c';   
+                         target.style.backgroundColor = '#9fa8a3';   
                             
                       printm('The book: '+titleH+' by '+authorH+' was added.');
                         

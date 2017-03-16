@@ -58,7 +58,6 @@ window.addEventListener('load', function() { // so shit loads and then runs.
                             var checkbox = document.createElement("INPUT");
                             checkbox.setAttribute("type", "radio");
                             checkbox.onclick = "handleClick()";
-                            checkbox.onclick="handleClick(this);"
                             checkbox.value = node.id;
                             checkbox.name = 'views';
                             node.appendChild(checkbox);
@@ -70,7 +69,7 @@ window.addEventListener('load', function() { // so shit loads and then runs.
                             node.style.lineHeight ='1.42857143';
                             
 
-                            var textnode = document.createTextNode(' id: ' + json2.data[i].id + ', title:  ' + json2.data[i].title + ', Author:  ' + json2.data[i].author);
+                            var textnode = document.createTextNode(' id: ' + json2.data[i].id + ', title:  ' + json2.data[i].title + ', Author:  ' + json2.data[i].author + ', updated:  ' + json2.data[i].updated + '.');
                             node.appendChild(textnode);
 
                             document.getElementById("books").appendChild(node);

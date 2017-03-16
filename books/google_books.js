@@ -42,6 +42,11 @@
                             book_search_field.appendChild(e);
                         }
                         
+                        let row_color = document.getElementById('R_bg_color');
+                        row_color.style.display = 'block';
+                        row_color.style.backgroundColor = '#9fa8a3';
+                        row_color.style.marginLeft = '15px';
+                        
                         printm('You found books matching your query');
 
                     } else if (ajax.status != 200) {  

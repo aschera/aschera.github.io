@@ -45,7 +45,8 @@
                             listen.getElementsByTagName('li').outerHTML = "";
                             
                             printm('The book: '+title+' by '+author+' was added.');
-          
+                            document.getElementById('title').value = '';
+                            document.getElementById('author').value = '';
                             
        
                         } else {
@@ -119,6 +120,7 @@ window.addEventListener('load', function() { // so shit loads and then runs.
                          target.style.backgroundColor = '#5cb85c';   
                             
                       printm('The book: '+titleH+' by '+authorH+' was added.');
+                        
        
                         } else {
 // status message - Server Bad

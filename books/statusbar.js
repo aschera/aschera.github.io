@@ -6,7 +6,7 @@ function printm(m) {
   
   if( list.length === 0) { 
       let e = document.createElement('pre');
-        e.style.backgroundColor = '#9f4636';
+        e.style.backgroundColor = '#9fa8a3';
         e.style.color = '#f1dcc9';
         e.innerText = m;
         con.appendChild(e);
@@ -25,7 +25,7 @@ function currentBook(title,author) {
   
   if( list.length === 0) { 
       let e = document.createElement('pre');
-        e.style.backgroundColor = '#9f4636';
+        e.style.backgroundColor = '#9fa8a3';
         e.style.color = '#f1dcc9';
         e.innerText = title + ' by ' + author;
         con.appendChild(e);

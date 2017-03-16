@@ -30,6 +30,7 @@
     <script src="statusbar.js"></script>
     <script src="google_books.js"></script>
     <script src="delete_item.js"></script>
+    <script src="change.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,7 +58,7 @@
 
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 " style="background-color:#c5d5cb; vertical-align: bottom; height: 100%;">
-                <p>You can here add a new book. View all the books currently stored in the database and delete a book.</p>
+                <h3 style=" float:middle; text-align:center;">Easily catalog your home library - create your personal book database</h3>
                 <br>
               
                     <!--status-->
@@ -99,13 +100,15 @@
                 <h2 style="border-radius: 8px; color: black; padding:5px; height:2em; background-color:#9fa8a3;">Add a new book</h2>
                 <h4 style="color:black;">You can here add a specific book to the database. <br>Specify title / author and press the Add button.</h4>
                 
+                <br>
+                
                 <div class="bg_menu">
                 <label id='labelA' for="author">Author</label>
-                <input type="text" class="form-control"  placeholder="Mary Peterson" id="author">
+                <input type="text" class="form-control"  placeholder="" id="author">
                 
                 
                 <label id='labelB' for="title">Title</label>
-                <input type="text" class="form-control" placeholder="Snail has lunch" id="title" >
+                <input type="text" class="form-control" placeholder="" id="title" >
                 
                 <button type="button" class="btn-success btn-sm" id='button'>ADD</button>
                 </div>
@@ -141,13 +144,13 @@
             
                 <h2 style="color: black; border-radius: 8px; padding:5px; height:2em; background-color:#9fa8a3;">Search for a book</h2>
                 <h4 style="color:black;">If you are unsure about a title or author, search in Googles book database. <br>Specify title or author (or both) and press the search button. </h4>
-                
+                <br>
                 <div class="bg_menu">
                 <label id='labelC' for="author">Author</label>
-                <input type="text" class="form-control" style="max-width=40px;" placeholder="Mary Peterson" id="S_author">
+                <input type="text" class="form-control" style="max-width=40px;" placeholder="" id="S_author">
                 
                 <label id='labelD' for="title">Title</label>
-                <input type="text" style="max-width=40px;" class="form-control" placeholder="Snail has lunch" id="S_title" >
+                <input type="text" style="max-width=40px;" class="form-control" placeholder="" id="S_title" >
                 
                 <button type="button" class="btn-success btn-sm" onclick="mySecret('book_reviews')" id='search_g'>SEARCH</button>
         
@@ -182,18 +185,18 @@
                 
                 <h2 style="border-radius: 8px; color:black; padding:5px; height:2em; background-color:#9fa8a3;">View saved books</h2>
                 <h4 id="heading_view" style="color:black;">Here you can view all the books that are saved. <br>Press View button to start. </h4>
-                
+                <br>
                 <div class="bg_menu">
                     
                 <div id="input_fields"> 
-                <h4 id="heading_view" style="color:black;">To change or delete a book, choose it from the list.<br>Then press the delete or change button.</h4>
-                    
+                <h4 id="heading_view" style=" margin-left: 5px; padding-top:5px; color:black;">To change or delete a book, choose it from the list.<br>Then press the delete or change button.</h4>
+                    <br>
                 <label id='labelE' for="author">Author</label>
-                <input type="text" class="form-control" style="max-width=40px;" placeholder="Mary Peterson" id="V_author">
+                <input type="text" class="form-control" style="max-width=40px;" placeholder="" id="V_author">
                 
                 <label id='labelF' for="title">Title</label>
-                <input type="text" style="max-width=40px;" class="form-control" placeholder="Snail has lunch" id="V_title" >
-                    
+                <input type="text" style="max-width=40px;" class="form-control" placeholder="" id="V_title" >
+                 
                 <button type="button" class="btn-danger btn-sm" id='change'>CHANGE</button>
                 <button type="button" class="btn-danger btn-sm" id='delete'>DELETE</button>    
                 </div>       

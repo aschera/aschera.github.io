@@ -11,11 +11,7 @@ deletion.addEventListener('click', function() {
 
     let element = document.getElementById(res).innerText; // the li that is selected
     var number = parseFloat(element.match(/-*[0-9]+/));  // the id number in that li
-	
-	
-    
-    
-    
+
     //////////////////   AJAX ///////////////////////////////////////
     
     // url to access server
@@ -39,10 +35,12 @@ deletion.addEventListener('click', function() {
                     if (json2.status !== 'error') {
 
                         // status message - Server OK
-			let book = document.getElementById(res).innerText;
+			             let book = document.getElementById(res).innerText;
                         printm(json2.status + ', You have deleted the book: ' + book);
                         
                         document.getElementById(res).outerHTML = ""; // delete from view list
+                        document.getElementById('V_title').value = '';
+                        document.getElementById('V_author').value = '';
 
                     } else {
                         console.log('server is no good');

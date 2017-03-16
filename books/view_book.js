@@ -28,8 +28,23 @@ window.addEventListener('load', function() { // so shit loads and then runs.
                         // status message - Server OK
                         printm('You are now viewing a list of all the books stored.');
                         
+                        
+                        // Hide some, show others!
+                        //show!
                         let listen = document.getElementById('books');
                         listen.style.display = 'block';
+                        let row_color = document.getElementById('V_bg_color');
+                        row_color.style.display = 'block';
+                        
+                        let fields = document.getElementById('input_fields');
+                        fields.style.display = 'block';
+                       
+                        
+                         //hide!
+                        let theViewButton = document.getElementById('button2');
+                        theViewButton.style.display = 'none';
+                        let thetitle = document.getElementById('heading_view');
+                        thetitle.style.display = 'none';
 				
 			
                         for (i = 0; i < json2.data.length; i++) {
@@ -46,22 +61,13 @@ window.addEventListener('load', function() { // so shit loads and then runs.
                             checkbox.value = node.id;
                             checkbox.name = 'views';
                             node.appendChild(checkbox);
-                            
-                            
-                            node.style.backgroundColor = '#f1dcc9';
-                            node.style.fontSize = '13px'
-                            node.style.height = '3.5em';
-                            node.style.lineHeight ='1.42857143';
-                            node.style.padding ='5px';
-                            node.style.marginBottom ='10px';
-                            node.style.marginTop ='2px';
-                            node.style.marginLeft ='5px';
-                            node.style.marginRight ='5px';
-                            node.style.wordBreak ='break-all';
-                            node.style.wordWrap = 'normal';
-                            node.style.display = 'block';
+                          
                             node.style.overflowX = 'scroll';
-                           
+                            node.style.backgroundColor = '#e3e0cf';
+                            node.style.fontSize = '1em'
+                            
+                            node.style.lineHeight ='1.42857143';
+                            
 
                             var textnode = document.createTextNode(' id: ' + json2.data[i].id + ', title:  ' + json2.data[i].title + ', Author:  ' + json2.data[i].author + ', updated:  ' + json2.data[i].updated + '.');
                             node.appendChild(textnode);

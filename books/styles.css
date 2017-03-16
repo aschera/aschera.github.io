@@ -1,13 +1,20 @@
+* {
+font-family: 'Gudea', sans-serif;}
+
 /* the label and input and buttons */
 
-#labelA {border-radius: 4px; color:white; background-color:#c5d5cb; height:2em; margin-left:2px; min-width:60px; margin-right:2px; padding:2px;display: inline;
+#labelA {border-radius: 4px; color:black; background-color:#c5d5cb; height:2em; margin-left:2px; min-width:60px; margin-right:2px; padding:2px;display: inline;
 }
 
-#labelB {border-radius: 4px; color:white; background-color:#c5d5cb; height:2em; margin-left:2px; margin-top: 5px; min-width:60px; margin-right:2px; padding:2px;display: inline;}
+#labelB {border-radius: 4px; color:black; background-color:#c5d5cb; height:2em; margin-left:2px; margin-top: 5px; min-width:60px; margin-right:2px; padding:2px;display: inline;}
 
-#labelC {border-radius: 4px; color:white; background-color:#c5d5cb; height:2em; margin-left:2px; min-width:60px; margin-right:2px; padding:2px;display: inline;}
+#labelC {border-radius: 4px; color:black; background-color:#c5d5cb; height:2em; margin-left:2px; min-width:60px; margin-right:2px; padding:2px;display: inline;}
 
-#labelD {border-radius: 4px; color:white; background-color:#c5d5cb; height:2em; margin-left:2px; margin-top: 5px;  min-width:60px; margin-right:2px; padding:2px;display: inline;}
+#labelD {border-radius: 4px; color:black; background-color:#c5d5cb; height:2em; margin-left:2px; margin-top: 5px;  min-width:60px; margin-right:2px; padding:2px;display: inline;}
+
+#labelE {border-radius: 4px; color:black; background-color:#c5d5cb; height:2em; margin-left:2px; min-width:60px; margin-right:2px; padding:2px;display: inline;}
+
+#labelF {border-radius: 4px; color:black; background-color:#c5d5cb; height:2em; margin-left:2px; margin-top: 5px;  min-width:60px; margin-right:2px; padding:2px;display: inline;}
 
 
 #author {
@@ -17,7 +24,7 @@
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #555;
+    color: #000;
     background-color: #e3e0cf;
     background-image: none;
     border: 1px solid #ccc;
@@ -62,6 +69,32 @@
     border: 1px solid #ccc;
     border-radius: 4px;}
 
+#V_author {
+    display: inline;
+    width: 25%;
+    height:2em;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #e3e0cf;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;}
+
+#V_title {
+    display: inline;
+    width: 25%;
+    height:2em;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #e3e0cf;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;}
+
 #search_g{margin-bottom: 5px;
     margin-top: 5px;
     min-width: 60px;
@@ -77,6 +110,7 @@
 
 #button2{margin-bottom: 5px;
     margin-top: 5px;
+    margin-left: 5px;
     min-width: 60px;
     background-color: #e3e0cf;
     border-color: #000;color:#000;}
@@ -121,7 +155,7 @@ ul {
     list-style-type: none;
     margin-top: 10px;
     border-radius: 8px;
-    max-width:100%;
+    
     white-space:nowrap;
     
     }
@@ -140,14 +174,14 @@ ul > li {
         display: block;
         padding: 9.5px;
         margin: 0 0 10px;
-        font-size: 13px;
+        font-size: 1em;
         line-height: 1.42857143;
         color: #333;
         word-break: break-all;
         word-wrap: break-word;
         background-color: #c5d5cb;
         
-        border: 1px solid black;
+        border: 2px solid black;
         border-radius: 4px;}
 
 .table-text-center th,.table-text-center td {text-align: center;}
@@ -206,10 +240,16 @@ th {height: 3em;}
    float:left;
    list-style:none;
    margin:5px;
-   padding:2px;
+   padding:1px;
    position:relative;
    left:50%;
    right:50%;
+   font-weight: bold;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   -webkit-box-shadow: #5C7591 2px 2px 2px;
+   -moz-box-shadow: #5C7591 2px 2px 2px; 
+    box-shadow: #5C7591 2px 2px 2px;
 }
 #centeredmenu ul li a {
    display:block;
@@ -234,3 +274,10 @@ th {height: 3em;}
 
 
 .bg_menu {background-color:#c5d5cb;}
+
+#V_bg_color {
+    vertical-align: bottom; 
+    background-color:#9fa8a3;
+display: none;}
+
+#input_fields {display:none;}

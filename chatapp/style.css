@@ -1,0 +1,24 @@
+ 
+    body {
+      font-family: 'HelveticaNeue-Light';
+      background-color: #283018;
+    }
+    .msg {
+      background-color: #efefef;
+    }
+    #username, #text {
+      margin: 5px 0px;
+    }
+    #post {
+      padding: 0.5em 1em;
+      background-color: #50b1ff;
+      border: none;
+      color: #FFF;
+    }
+  
+.page-header {color:#aa863a; text-align:center;}
+
+#results {background-color: #283018; margin: 1em; padding: 1em;}
+
+#username{color:#aa863a;}
+#text {color:#aa863a;}

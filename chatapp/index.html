@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- #c5d5cb; hellblau    #9fa8a3;  grau   #e3e0cf; beige-->
+<!-- #729f98 green    #283018 darkgreen     #aa863a orange -->
 
 <head>
     <meta charset="utf-8">
@@ -9,50 +9,61 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title>innlämning 2</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="grid.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
- 
-    <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
     
-     <style>
-    body {
-      font-family: 'HelveticaNeue-Light';
-    }
-    .msg {
-      margin: 10px 0;
-      padding: 10px;
-      width: 400px;
-      background-color: #efefef;
-    }
-    #username, #text {
-      margin: 5px 0px;
-    }
-    #post {
-      padding: 0.5em 1em;
-      background-color: #50b1ff;
-      border: none;
-      color: #FFF;
-    }
-  </style>
+    
+    <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet">
+    
+    
 </head>
 
 <body style="margin-left:20px; margin-right:20px; ">
+<div class="container">
+
+      <div class="page-header">
+        <h1>Chatapp</h1>
+        <p class="lead">Do you want to talk?</p>
+      </div>
+
     
+      <div class="row" style="background-color:#729f98; padding:1em;">
+        <div class="col-md-4" style="background-color:#283018; padding:1em; margin:1em;" >
+            <input id="username" type="text" placeholder="Name"><br/>
+            <input id="text" type="text" placeholder="Message"><br/>
+            <button id="post">Post</button><br/>
+          
+        </div>
+        <div class="col-md-4">
     
-  <input id="username" type="text" placeholder="Name"><br/>
-  <input id="text" type="text" placeholder="Message"><br/>
-  <button id="post">Post</button><br/>
-  <div id="results"></div>
+            <div id="results"></div>
+          
+        </div>
+      </div>
+
+</div>  <!-- end container -->
+ 
     
-    
-    
- <script>
+<script>
     var myFirebase = new Firebase('https://mein-chat.firebaseio.com/');
 </script>
        <script>
@@ -67,19 +78,19 @@
       myFirebase.push({username:msgUser, text:msgText});
       textInput.value = "";
     });
-           
-           
-           
-var startListening = function() {
+    var startListening = function() {
       myFirebase.on('child_added', function(snapshot) {
         var msg = snapshot.val();
       
-        var msgUsernameElement = document.createElement("b");
-        msgUsernameElement.textContent = msg.username;
+        //name
+        var msgUsernameElement = document.createElement("strong");
+        msgUsernameElement.textContent = msg.username + ' wrote: ';
         
+        //message
         var msgTextElement = document.createElement("p");
         msgTextElement.textContent = msg.text;
   
+        //box t hold the name and message
         var msgElement = document.createElement("div");
         msgElement.appendChild(msgUsernameElement);
         msgElement.appendChild(msgTextElement);
@@ -92,7 +103,7 @@ var startListening = function() {
 
     // Begin listening for data
     startListening();
-           
+
 </script>
 
 </body>

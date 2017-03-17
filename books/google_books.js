@@ -82,6 +82,8 @@ let book_clear = document.getElementById('search_c');
         y.style.display= 'none';
         let showI = document.getElementById('click_add');
         showI.style.display = 'none';
+        let clearB = document.getElementById('search_c');
+        clearB.style.display = 'none';
         printm('You have cleared the list');
     });                   
                                    

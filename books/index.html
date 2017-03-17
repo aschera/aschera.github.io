@@ -44,7 +44,7 @@
 
 </head>
 
-<body style="margin-left:20px; margin-right:20px; ">
+<body style="margin-left:20px; margin-right:20px; min-width:530px;">
     
     <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
         <!-- title and intro-->
@@ -99,7 +99,7 @@
         <!-- Book title and author fields and buttons for add and search-->
 
         <div class="row" style=" background-color:#c5d5cb;">
-            <div class="col-lg-5 col-md-12 col-sm-12 round" style=" padding-left:15px;  margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em;">
+            <div class="col-lg-5 col-md-12 col-sm-12 round" style=" padding-left:15px;  margin-right:15px; margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em;">
                 
                 <h2 style="border-radius: 8px; color: black; padding:5px; height:2em; background-color:#9fa8a3;">Add a new book</h2>
                 <h4 style="color:black;">You can here add a specific book to the database. <br>Specify title / author and press the Add button.</h4>
@@ -113,8 +113,9 @@
                 
                 <label id='labelB' for="title">Title</label>
                 <input type="text" class="form-control" placeholder="" id="title" >
-                
-                <button type="button" title="Click here to add a book to the database." class=" btn-success btn-sm" id='button' class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip">ADD</button>
+                <br>
+                <button type="button" title="Click here to add a book to the database." class=" btn-success btn-sm" id='button' class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip" style="margin-left:5px;">
+                    <i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">playlist_add</i></button>
                
                 </div>
                 
@@ -145,7 +146,7 @@
         <!-- Book title and author fields and buttons for add and search-->
 
         <div class="row" style=" background-color:#c5d5cb;">
-            <div class="col-lg-5 col-md-12 col-sm-12 round" style="padding-left:15px;  margin-bottom: 19px; margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em;">
+            <div class="col-lg-5 col-md-12 col-sm-12 round" style="padding-left:15px; margin-right:15px;  margin-bottom: 19px; margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em;">
             
                 <h2 style="color: black; border-radius: 8px; padding:5px; height:2em; background-color:#9fa8a3;">Search for a book</h2>
                 <h4 style="color:black;">If you are unsure about a title or author, search in Googles book database. <br>Specify title or author (or both) and press the search button. </h4>
@@ -158,9 +159,9 @@
                 <label id='labelD' for="title">Title</label>
                 <input type="text" style="max-width=40px;" class="form-control" placeholder="" id="S_title" >
                 
-                
-                <button type="button" title="Click here to search for books matching your query." class="btn-success btn-sm inner" onclick="mySecret('book_reviews')" id='search_g'>SEARCH</button>
-                <button type="button" title="Click here to clear this list." class="btn-success btn-sm inner" onclick="" id='search_c'>CLEAR</button>
+                <br>
+                <button type="button" title="Click here to search for books matching your query." class="btn-success btn-sm" onclick="mySecret('book_reviews')" id='search_g'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">search </i> </button>
+                <button type="button" title="Click here to clear this list." class="btn-success btn-sm" onclick="" id='search_c'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">visibility_off </i></button>
                     
                 </div>
                 <br>
@@ -172,7 +173,7 @@
             </div>
             <!--Col end-->
             
-            <div class="col-lg-6 col-md-12 col-sm-12 round" id="R_bg_color">
+            <div class="col-lg-6 col-md-12 col-sm-12 round" id="R_bg_color" style="margin-right:15px;">
                 <!--review-->
               <br>
                 
@@ -197,7 +198,7 @@
 
         <div class="row" style=" background-color:#c5d5cb; min-height:25em;">
 
-            <div class="col-lg-5 col-md-12 col-sm-12 round " style=" padding-left:15px;  margin-left:15px; margin-bottom: 0px; padding-bottom:0px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em;">
+            <div class="col-lg-5 col-md-12 col-sm-12 round " style=" padding-left:15px; margin-right:15px; margin-left:15px; margin-bottom: 0px; padding-bottom:0px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em;">
                 
                 <h2 style="border-radius: 8px; color:black; padding:5px; height:2em; background-color:#9fa8a3;">View saved books</h2>
                 <h4 id="heading_view" style="color:black;">Here you can view all the books that are saved. <br>Press View button to start. </h4>

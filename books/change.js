@@ -1,3 +1,5 @@
+var current_id_book = ''; 
+
 /* radio check listener */
 
 var changeHandler = (function initChangeHandler() {
@@ -48,8 +50,11 @@ var changeHandler = (function initChangeHandler() {
         let element = document.getElementById(the_li).innerText; // the li that is selected
         
         let new_id = element.substring(5, element.indexOf(','));
+        current_id_book = new_id;
         let new_title = element.substring( element.indexOf("e:") + 3, element.indexOf(" A") + -1 );
-        let new_author = element.substring( element.indexOf("r:") + 3, element.length );
+        let new_author = element.substring( element.indexOf("r:") + 3, element.indexOf("updated:") -2 );
+        console.log(new_title);
+        console.log(new_author);
         
         document.getElementById('V_title').value = new_title;
         document.getElementById('V_author').value = new_author;
@@ -62,43 +67,83 @@ var changeHandler = (function initChangeHandler() {
 
 document.addEventListener('change', changeHandler, false);
 
+/************************************************************************************************* */
+
+// Change the book api call.
 
 
 
+        window.addEventListener('load', function() { // so shit loads and then runs.
+            let button = document.getElementById('change');
+     
+            button.addEventListener('click', function() {
+                
+           
+        let title = document.getElementById('V_title').value;
+        let author = document.getElementById('V_author').value;
+        let id = current_id_book; 
 
+		if(author === '' && title ==='') {
+			printm('Please enter a title and an author first!');
+		}
+		else { 
+                
+                // url to access server
+                let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=update&key=sHx2P';
+                
+                url+= '&id=' + id + '&title=' + title+ '&author=' + author;
+               
+                // AJAX request 
+                let ajax = new XMLHttpRequest();
 
+                ajax.open('post', url);
+  
+                ajax.onreadystatechange = function() {
+                    
+                let status = '';
 
+                    if (ajax.status == 200 && ajax.readyState == 4) {
+                        //parse string to object
+                        let json = JSON.parse(ajax.responseText);
 
+                        // check is status = error
+                        if (json.status !== 'error') {
+// status message - Server OK
+                           
+                            printm('The book: with id: ' + id + ' has been updated to: ' + title +  ' by ' + author);
+                            document.getElementById('V_title').value = '';
+                            document.getElementById('V_author').value = '';
+                            
+       
+                        } else {
+// status message - Server Bad
+                            
+                            printm(json.status +', ' + json.message);
+                            
+                        }
 
-/*********************************************************************************************** */
-// click and write on spans
+                    } else if (ajax.status != 200) {  
+// status message - Server Bad
+                             console.log(json);
+                             printm('server error');
+                             
+                    }
 
-
-    
-    
+                };  //end ajax
+            ajax.send();
+} // end else
+                
+            } // button event listener done
         
-        function clickChange() { 
-            
-        var elts = document.getElementsByClassName('editable');
-    
-        for (var i = 0; i < elts.length; ++i) {
-            
-        let itme = elts[i].innerText;
-        
-        elts[i].innerHTML = '<input type="text" value=" ' + itme + ' "/>';
-        
-        }
-        
-        
-    }
-
-    
+        )}); // window event listener done
 
 
-/*var textInputElement = document.getElementById('textInput');
-      nameDivElement = document.getElementById('nameDiv');
-      textInputElement.addEventListener('keyup', function(){
-        var text = textInputElement.value;
-        nameDivElement.innerHTML = text;
-      });
-      */
+
+
+
+
+
+
+
+
+

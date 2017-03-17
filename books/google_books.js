@@ -54,6 +54,10 @@
                         
                         let clearB = document.getElementById('search_c');
                         clearB.style.display = 'inline';
+                        
+                        let showI = document.getElementById('click_add');
+                        showI.style.display = 'inline';
+                        
 
                     } else if (ajax.status != 200) {  
                         printm('Error! Try again.');
@@ -76,6 +80,8 @@ let book_clear = document.getElementById('search_c');
         x.style.display= 'none';
         let y = document.getElementById("R_bg_color")
         y.style.display= 'none';
+        let showI = document.getElementById('click_add');
+        showI.style.display = 'none';
         printm('You have cleared the list');
     });                   
                                    

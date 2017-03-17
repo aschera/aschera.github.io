@@ -23,6 +23,9 @@
     
     <!-- jquery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- scripts -->
     <script src="view_book.js"></script>
@@ -111,7 +114,8 @@
                 <label id='labelB' for="title">Title</label>
                 <input type="text" class="form-control" placeholder="" id="title" >
                 
-                <button type="button" class="btn-success btn-sm" id='button'>ADD</button>
+                <button type="button" title="Click here to add a book to the database." class=" btn-success btn-sm" id='button' class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip">ADD</button>
+               
                 </div>
                 
                 <!-- <label for="title" style=" border-radius: 8px; color:white; padding:5px; height:2em; background-color:#9fa8a3;">The last book you have added:</label>
@@ -141,7 +145,7 @@
         <!-- Book title and author fields and buttons for add and search-->
 
         <div class="row" style=" background-color:#c5d5cb;">
-            <div class="col-lg-5 col-md-12 col-sm-12 round" style="padding-left:15px;  margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em;">
+            <div class="col-lg-5 col-md-12 col-sm-12 round" style="padding-left:15px;  margin-bottom: 19px; margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em;">
             
                 <h2 style="color: black; border-radius: 8px; padding:5px; height:2em; background-color:#9fa8a3;">Search for a book</h2>
                 <h4 style="color:black;">If you are unsure about a title or author, search in Googles book database. <br>Specify title or author (or both) and press the search button. </h4>
@@ -155,18 +159,22 @@
                 <input type="text" style="max-width=40px;" class="form-control" placeholder="" id="S_title" >
                 
                 
-                <button type="button" class="btn-success btn-sm inner" onclick="mySecret('book_reviews')" id='search_g'>SEARCH</button>
-                <button type="button" class="btn-success btn-sm inner" onclick="" id='search_c'>CLEAR</button>
-                
-                
+                <button type="button" title="Click here to search for books matching your query." class="btn-success btn-sm inner" onclick="mySecret('book_reviews')" id='search_g'>SEARCH</button>
+                <button type="button" title="Click here to clear this list." class="btn-success btn-sm inner" onclick="" id='search_c'>CLEAR</button>
                     
                 </div>
+                <br>
+                <div id="click_add" style="border-radius:4px; background-color:#e3e0cf ; float:left; width:100%;">
+                    <i class=" large material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">trending_flat </i> 
+                    <p style="display: table-cell;vertical-align: middle; padding: 1px;float: right; color:black; background-color:#e3e0cf ;"><strong>Click on a title to add it to the database </strong></p>  
+                </div>
+                
             </div>
             <!--Col end-->
             
             <div class="col-lg-6 col-md-12 col-sm-12 round" id="R_bg_color">
                 <!--review-->
-                <br>
+              <br>
                 
                 <section id="review_section">
                     <pre style="display:none; color:white; border:none; background-color: rgb(227, 224, 207);" id="book_reviews"></pre>
@@ -196,20 +204,20 @@
                 <br>
                 <div class="bg_menu round">
                     
-                <div id="input_fields round"> 
-                <h4 id="heading_view" style=" margin-left: 5px; padding-top:5px; color:black;">To change or delete a book, choose it from the list.<br>Then press the delete or change button.</h4>
-                    <br>
-                <label id='labelE' for="author">Author</label>
-                <input type="text" class="form-control" style="max-width=40px;" placeholder="" id="V_author">
-                
-                <label id='labelF' for="title">Title</label>
-                <input type="text" style="max-width=40px;" class="form-control" placeholder="" id="V_title" >
-                 
-                <button type="button" class="btn-danger btn-sm" id='change'>CHANGE</button>
-                <button type="button" class="btn-danger btn-sm" id='delete'>DELETE</button>    
-                </div>       
-                    
-                <button type="button" class="btn-success btn-sm" id='button2'>VIEW</button>
+                    <div id="input_fields" class="round"> 
+                        <h4 id="heading_view" style=" margin-left: 5px; padding-top:5px; color:black;">To change or delete a book, choose it from the list.<br>Then press the delete or change button.</h4>
+                            <br>
+                        <label id='labelE' for="author">Author</label>
+                        <input type="text" class="form-control" style="max-width=40px;" placeholder="" id="V_author">
+
+                        <label id='labelF' for="title">Title</label>
+                        <input type="text" style="max-width=40px;" class="form-control" placeholder="" id="V_title" >
+
+                        <button type="button" class="btn-danger btn-sm" id='change'>CHANGE</button>
+                        <button type="button" class="btn-danger btn-sm" id='delete'>DELETE</button>    
+                    </div>       
+
+                    <button type="button" class="btn-success btn-sm" id='button2'>VIEW</button>
 		        
                 </div>
             </div>

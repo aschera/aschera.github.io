@@ -97,27 +97,41 @@ font-family: 'Gudea', sans-serif;}
 
 #search_g{margin-bottom: 5px;
     margin-top: 5px;
-    min-width: 60px;
+    min-width: 50px;
+    font-size: 0.7em;
+    background-color: #e3e0cf;
+    border-color: #000;
+    color:#000;}
+
+#search_c{
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 0.7em;
+    min-width: 50px;
     background-color: #e3e0cf;
     border-color: #000;
     color:#000;}
 
 #button{margin-bottom: 5px;
     margin-top: 5px;
-    min-width: 60px;
+    min-width: 50px;
+    font-size: 0.7em;
     background-color: #e3e0cf;
     border-color: #000;color:#000;}
 
 #button2{margin-bottom: 5px;
     margin-top: 5px;
     margin-left: 5px;
-    min-width: 60px;
+    font-size: 0.7em;
+    min-width: 50px;
     background-color: #e3e0cf;
     border-color: #000;color:#000;}
 
 #delete{margin-bottom: 5px;
     margin-top: 5px;
-    min-width: 60px;
+    min-width: 50px;
+    font-size: 0.7em;
     background-color: #e3e0cf;
     border-color: #000;
     color:#000;}
@@ -125,7 +139,8 @@ font-family: 'Gudea', sans-serif;}
 #change{margin-bottom: 5px;
     margin-top: 5px;
     margin-left: 5px;
-    min-width: 60px;
+    min-width: 50px;
+    font-size: 0.7em;
     background-color: #e3e0cf;
     border-color: #000;
     color:#000;}
@@ -290,3 +305,10 @@ th {height: 3em;}
     margin-left:15px;
     }
 
+.round {border-radius: 4px;}
+
+.inner
+{display: inline;
+}
+
+#search_c {display: none;}

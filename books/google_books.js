@@ -48,6 +48,12 @@
                         row_color.style.marginLeft = '15px';
                         
                         printm('You found books matching your query');
+                        
+                        document.getElementById('S_author').value = ' ';
+                        document.getElementById('S_title').value = ' ';
+                        
+                        let clearB = document.getElementById('search_c');
+                        clearB.style.display = 'inline';
 
                     } else if (ajax.status != 200) {  
                         printm('Error! Try again.');
@@ -58,13 +64,23 @@
             ajax.send();
             
             };
-                
-                
-                
         
-                
-                    
-                
-            } // button event listener done
+            }) // button search books event listener done
+                                    
+                                    
+                                    
+let book_clear = document.getElementById('search_c');
+    book_clear.addEventListener('click', function() {   
+        let x = document.getElementById("book_reviews")
+        x.innerHTML = " "; 
+        x.style.display= 'none';
+        let y = document.getElementById("R_bg_color")
+        y.style.display= 'none';
+        printm('You have cleared the list');
+    });                   
+                                   
+                                    
+                                    
         
-        )}); // window event listener done
+        }
+                               ); // window event listener done

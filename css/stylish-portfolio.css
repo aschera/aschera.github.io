@@ -318,6 +318,8 @@ body {
 
 hr.small {
     max-width: 100px;
+    margin-left: 45%;
+    margin-right: 45%;
 }
 
 /* Side Menu */
@@ -450,6 +452,8 @@ hr.small {
 
 .services {
     padding: 50px 0;
+    width: 100%;
+    height: 100%;
 }
 
 .service-item {
@@ -578,7 +582,7 @@ color:white;
 }
 
 .gallery > div:hover {
-  transform: scale(1.2,1.2);
+  transform: scale(2,2);
   transition: .3s transform;
 }
 
@@ -601,28 +605,32 @@ h1 {
 
 #bgimg {
     background-image: url('../img/book.jpg'); background-size: contain;
-    width: 18em; height:15em;
+    width: 8em; height:5em;
 }
 #bgimg2 {
     background-image: url('../img/chat.jpg'); background-size: contain;
-    width: 18em; height:15em;
+    width: 8em; height:5em;
 }
 #bgimg3 {
     background-image: url('../img/pick.jpg'); background-size: contain;
-    width: 18em; height:15em;
+    width: 8em; height:5em;
 }
 #bgimg4 {
     background-image: url('../img/drawit.png'); background-size: contain;
-    width: 18em; height:15em;
+    width: 8em; height:5em;
 }
 #bgimg5 {
     background-image: url('../img/cayman.png'); background-size: contain;
-    width: 18em; height:15em;
+    width: 8em; height:5em;
+}
+#bgimg5 {
+    background-image: url('../img/basic_python.png'); background-size: contain;
+    width: 8em; height:5em;
 }
 
 .text{
 	background:#94F5AE;
 	opacity:0.8; 
     color:black;
-    height:2em;
+    height:1em;
 }

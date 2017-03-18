@@ -539,3 +539,90 @@ color:white;
     width: 300px;
 
 }
+
+/*** ********** project gallery ************* */
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.gallery {
+  width: 950px;
+  margin: auto auto;
+  padding: 5px;
+  background: #394669;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+}
+
+.gallery > div {
+  position: relative;
+  float: left;
+  padding: 5px;
+}
+
+.gallery > div > img {
+  display: block;
+  width: 200px;
+  transition: .1s transform;
+  transform: translateZ(0); /* hack */
+}
+
+.gallery > div:hover {
+  z-index: 1;
+}
+
+.gallery > div:hover {
+  transform: scale(1.2,1.2);
+  transition: .3s transform;
+}
+
+.cf:before, .cf:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.cf:after {
+  clear: both;
+}
+
+h1 {
+  margin: 40px 0;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+}
+
+#bgimg {
+    background-image: url('../img/book.jpg'); background-size: contain;
+    width: 18em; height:15em;
+}
+#bgimg2 {
+    background-image: url('../img/chat.jpg'); background-size: contain;
+    width: 18em; height:15em;
+}
+#bgimg3 {
+    background-image: url('../img/pick.jpg'); background-size: contain;
+    width: 18em; height:15em;
+}
+#bgimg4 {
+    background-image: url('../img/drawit.png'); background-size: contain;
+    width: 18em; height:15em;
+}
+#bgimg5 {
+    background-image: url('../img/cayman.png'); background-size: contain;
+    width: 18em; height:15em;
+}
+
+.text{
+	background:#94F5AE;
+	opacity:0.8; 
+    color:black;
+    height:2em;
+}

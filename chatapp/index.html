@@ -38,7 +38,7 @@
     
     <style>
         label {color:white;}
-        
+        #savename {color:white; font-size: 0.7em;}
         #text {display:none;}
         #results {display:none;}
         #post {display:none;}
@@ -56,16 +56,34 @@
 
     
       <div class="row" style="background-color:#729f98; padding:1em;">
-        <div class="col-md-4" style="background-color:#283018; padding:1em; margin:1em;" >
-            <input id="username" type="text" placeholder="Name">
+        <div class="col-md-12" style="background-color:#283018; padding:1em; margin:1em;" >
+            
+            <div class="col-md-6" style="background-color:#283018; padding:1em; margin:1em;" >
+                h
+            </div>
+            
+            <div class="col-md-6" style="background-color:#283018; padding:1em; margin:1em;" >
+                g
+            </div>
+            
+            <label for="username">New user:</label>
+            <br>
+            <input id="username" type="text" placeholder="Your username">
             <button id="OK">Log In</button>
+            
+            <br/>
+            <br/>
             <br/>
             
+            <label for="saved_names">Log in:</label>
+            <select id="saved_names">
+              
+            </select>
             
-            <label>
- <input type="checkbox" onclick="saveData()";>
-  I want to save this username for later.
-</label>
+            <label id="savename">
+            <input type="checkbox" onclick="saveData()";>
+              Remember me.
+            </label>
             <br><br>
             <br/>
             <br><br>
@@ -144,6 +162,17 @@
           localStorage.setItem('locname', JSON.stringify(names));
             
             console.log(names);
+        };
+        
+        
+        /* ************************ ADD items to dropdown list **************************** */
+        for (i =0; i < names.length; i++) {
+            let item = document.getElementById('saved_names');
+
+            let option = document.createElement("option");
+            option.text = names[i].name;
+            item.add(option);
+
         }
 
       

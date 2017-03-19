@@ -31,10 +31,19 @@
     
     
     <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
+    
     <script src="script.js"></script>
+    
     <link href="style.css" rel="stylesheet">
     
-    
+    <style>
+        label {color:white;}
+        
+        #text {display:none;}
+        #results {display:none;}
+        #post {display:none;}
+        
+    </style>
 </head>
 
 <body style="margin-left:20px; margin-right:20px; ">
@@ -48,8 +57,20 @@
     
       <div class="row" style="background-color:#729f98; padding:1em;">
         <div class="col-md-4" style="background-color:#283018; padding:1em; margin:1em;" >
-            <input id="username" type="text" placeholder="Name"><br/>
+            <input id="username" type="text" placeholder="Name">
+            <button id="OK">Log In</button>
+            <br/>
+            
+            
+            <label>
+ <input type="checkbox" onclick="saveData()";>
+  I want to save this username for later.
+</label>
+            <br><br>
+            <br/>
+            <br><br>
             <input id="text" type="text" placeholder="Message"><br/>
+
             <button id="post">Post</button><br/>
           
         </div>
@@ -106,6 +127,28 @@
 
 </script>
 
+    <script>
+
+        // Read value from storage, or empty array
+        names = JSON.parse(localStorage.getItem('locname') || "[]");
+
+        var saveData = function() {
+            
+            var data = document.getElementById('username').value;
+      
+        //unique ID for the user
+        let id = data.length + 'id' + Math.floor((Math.random() * 100) + 1) + data;  
+     
+          names.push({id: id, name: data});
+            
+          localStorage.setItem('locname', JSON.stringify(names));
+            
+            console.log(names);
+        }
+
+      
+
+    </script>
 </body>
 
 </html>

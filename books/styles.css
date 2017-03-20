@@ -7,8 +7,26 @@ font-family: 'Gudea', sans-serif;}
     margin-left:20px; 
     margin-right:20px; 
     min-width:530px; 
-    background-image: url(books-wallpaper-books-to-read-28990406-1024-768.jpg);
+    background-image: url(books-wallpaper-books-to-read-28990406-1024-768.jpg);;
 }
+
+.menu_bg {
+    background-image: url(bg_menu.jpg);background-size: contain;
+}
+
+/* The background image */
+
+.bg {
+    background-image: url(bg_fairy_small.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    float:none;
+    height:0; 
+    padding-top: 8.33%;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
 
 /* the labels */
 
@@ -80,7 +98,8 @@ font-family: 'Gudea', sans-serif;}
 
 #V_author {
     display: inline;
-    width: ;
+     width: 35%;
+    
     height:2em;
     padding: 6px 12px;
     font-size: 14px;
@@ -93,7 +112,8 @@ font-family: 'Gudea', sans-serif;}
 
 #V_title {
     display: inline;
-    width: ;
+    width: 35%;
+    
     height:2em;
     padding: 6px 12px;
     font-size: 14px;
@@ -160,15 +180,6 @@ font-family: 'Gudea', sans-serif;}
     background-color: #e3e0cf;
     border-color: #000;
     color:#000;}
-
-
-
-/* The background image */
-
-.bg {background-image: url(bg_fairy_small.jpg); background-repeat: no-repeat; background-size: cover;
-  }
-
-
 
 
 /* List */
@@ -239,10 +250,9 @@ th {height: 3em;}
    float:left;
    width:100%;
    background:#c5d5cb;
-   border-bottom:4px solid #000;
    overflow:hidden;
    position:relative;
-    min-width: 475px;
+   min-width: 475px;
 }
 #centeredmenu ul {
    clear:left;

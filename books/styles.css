@@ -1,22 +1,24 @@
 * {
 font-family: 'Gudea', sans-serif;}
 
-/* the label and input and buttons */
+#bg_grey {background-color: #c5d5cb;}
 
-#labelA {border-radius: 4px; color:black; background-color:#c5d5cb; height:2em; margin-left:2px; min-width:60px; margin-right:2px; padding:2px;display: inline;
+/* the labels */
+
+#labelA {border-radius: 4px; color:black; background-color:#c5d5cb; height:1em; margin-left:2px;   padding:2px;display: inline-block;
 }
 
-#labelB {border-radius: 4px; color:black; background-color:#c5d5cb; height:2em; margin-left:2px; margin-top: 5px; min-width:60px; margin-right:2px; padding:2px;display: inline;}
+#labelB {border-radius: 4px; color:black; background-color:#c5d5cb; height:1em; margin-left:2px; margin-top: 5px;   padding:2px;display: inline-block;}
 
-#labelC {border-radius: 4px; color:black; background-color:#c5d5cb; height:2em; margin-left:2px; min-width:60px; margin-right:2px; padding:2px;display: inline;}
+#labelC {border-radius: 4px; color:black; background-color:#c5d5cb; height:1em; margin-left:2px; margin-right:2px; padding:2px;display: inline-block;}
 
-#labelD {border-radius: 4px; color:black; background-color:#c5d5cb; height:2em; margin-left:2px; margin-top: 5px;  min-width:60px; margin-right:2px; padding:2px;display: inline;}
+#labelD {border-radius: 4px; color:black; background-color:#c5d5cb; height:1em; margin-left:2px; margin-top: 5px;   margin-right:2px; padding:2px;display: inline-block;}
 
-#labelE {border-radius: 4px; color:black; background-color:#c5d5cb; height:2em; margin-left:2px; min-width:60px; margin-right:2px; padding:2px;display: inline;}
+#labelE {border-radius: 4px; color:black; background-color:#c5d5cb; height:1em; margin-left:2px;  margin-right:2px; padding:2px;display: inline-block;}
 
-#labelF {border-radius: 4px; color:black; background-color:#c5d5cb; height:2em; margin-left:2px; margin-top: 5px;  min-width:60px; margin-right:2px; padding:2px;display: inline;}
+#labelF {border-radius: 4px; color:black; background-color:#c5d5cb; height:1em; margin-left:2px; margin-top: 5px;   margin-right:2px; padding:2px;display: inline-block;}
 
-
+/* input fields */
 #author {
     display: inline;
     width: 25%;
@@ -95,6 +97,12 @@ font-family: 'Gudea', sans-serif;}
     border: 1px solid #ccc;
     border-radius: 4px;}
 
+#form-control {
+  width: 200px; 
+}
+
+/* buttons */
+
 #search_g{margin-bottom: 5px;
     margin-top: 5px;
     margin-left: 5px;
@@ -146,46 +154,32 @@ font-family: 'Gudea', sans-serif;}
     border-color: #000;
     color:#000;}
 
+
+
 /* The background image */
+
 .bg {background-image: url(bg_fairy_small.jpg); background-repeat: no-repeat; background-size: cover;
   }
 
 
 
-#form-control {
-  width: 200px; 
-}
-#form-control1 {
-  width: 200px; 
-}
 
+/* List */
 
-/* Stuff to reverse the order of the list so the last element comes first */
-
-.list-group-item {
-  
-  background-color: #c5d5cb;
-}
+.list-group-item {background-color: #c5d5cb;}
         
 ul {
     transform: rotate(180deg); 
     list-style-type: none;
     margin-top: 10px;
     border-radius: 8px;
-    
     white-space:nowrap;
-    
     }
 
+li {display:inline;}
 
+#books {background-color: #c5d5cb; color = '#f1dcc9';}  
 
-li {
-   display:inline;
-  
-}
-
-#books {background-color: #c5d5cb; 
-    color = '#f1dcc9';}        
 ul > li {
         transform: rotate(-180deg);
         display: block;
@@ -314,6 +308,8 @@ th {height: 3em;}
 
 #search_c {display: none;}
 #click_add {display: none;}
+
+
 
 /*Tooltip */
 

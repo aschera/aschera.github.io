@@ -45,206 +45,163 @@
 </head>
 
 <body style="margin-left:20px; margin-right:20px; min-width:530px;">
-    
     <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
         <!-- title and intro-->
-
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 bg" style=" vertical-align: bottom; height:10em; ">
-                <div style=" float:middle; text-align:center;">
-                    
-                </div>
             </div>
             <!--Col end-->
         </div>
         <!--row end-->
-
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 round" style="background-color:#c5d5cb; vertical-align: bottom; height: 100%;">
                 <h3 style=" float:middle; text-align:center;">Easily catalog your home library - create your personal book database</h3>
                 <br>
-              
-                    <!--status-->
-                    
-                <section id="status_field_v"><pre style=" background-color: #9fa8a3;
-        color :#f1dcc9; padding: 9.5px;margin: 0 0 10px;font-size: 13px;line-height: 1.42857143;">&nbsp;</pre></section>
-               
+                <!--status-->
+                <section id="status_field_v">
+                    <pre style=" background-color: #9fa8a3;
+                        color :#f1dcc9; padding: 9.5px;margin: 0 0 10px;font-size: 13px;line-height: 1.42857143;">&nbsp;
+                    </pre>
+                </section> 
             </div>
             <!--Col end-->
         </div>
         <!--row end-->
     </div>
     <!--Container end-->
-    
     <br>
-<div class="container-fluid round " style="margin-left:20px; margin-right:20px; min-width:450px;">
+    
+    <div class="container-fluid round " style="margin-left:20px; margin-right:20px; min-width:450px;">
         <!--menu-->
-    <div class="row round" style="min-height:5em; background-color:#c5d5cb; vertical-align: bottom;">
-        <div class="col-lg-12 col-md-12 col-sm-12 round" style=" background-color:#c5d5cb; vertical-align: bottom;">
-<div id="centeredmenu">
-    <ul>
-        <li><a href="#" onclick="openCity('viewBook')">View saved books</a></li>
-        <li><a href="#" onclick="openCity('searchBook')">Search for a book</a></li>
-        <li><a href="#" onclick="openCity('addBook')">Add a new book</a></li>
-    </ul>
-</div> <!--center end-->
-        </div> <!--Col end-->
-    </div> <!--row end-->
-</div><!--Container end-->
-            
-    
-    
-<div id="addBook" class="w3-container city round"> <!-- START ADD -->
-      <div class="container-fluid" style=" margin-left:20px; margin-right:20px; min-width:450px; ">
-        <!-- Book title and author fields and buttons for add and search-->
-
-        <div class="row" style=" background-color:#c5d5cb;">
-            <div class="col-lg-5 col-md-11 col-sm-12 round" style=" padding-right:15px; margin-bottom:20px; padding-left:15px;  margin-right:15px; margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em; max-width:500px;">
-                
-                <h2 style="border-radius: 8px; color: black; padding:5px; height:2em; background-color:#9fa8a3;">Add a new book</h2>
-                <h4 style="color:black;">You can here add a specific book to the database. <br>Specify title, author or both and press the button.</h4>
-                
-                <br>
-                
-                <div class="bg_menu round">
-                <label id='labelA' for="author">Author</label>
-                <input type="text" class="form-control"  placeholder="" id="author">
-                
-                
-                <label id='labelB' for="title">Title</label>
-                <input type="text" class="form-control" placeholder="" id="title" >
-                <br>
-                <button type="button" title="Click here to add a book to the database." class=" btn-success btn-sm" id='button' class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip" style="margin-left:5px;">
-                    <i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">playlist_add</i></button>
-               
+        <div class="row" style="min-height:5em; background-color:#c5d5cb; vertical-align: bottom;">
+            <div class="col-lg-12 col-md-12 col-sm-12 round" style=" background-color:#c5d5cb; vertical-align: bottom;">
+                <div id="centeredmenu">
+                    <ul>
+                        <li><a href="#" onclick="openCity('viewBook')">View saved books</a></li>
+                        <li><a href="#" onclick="openCity('searchBook')">Search for a book</a></li>
+                        <li><a href="#" onclick="openCity('addBook')">Add a new book</a></li>
+                    </ul>
+                </div> <!--center end-->
+            </div> <!--Col end-->
+        </div> <!--row end-->
+    </div><!--Container end-->   
+    <div id="addBook" class="w3-container city round"> <!-- START ADD -->
+          <div class="container-fluid" style=" margin-left:20px; margin-right:20px; min-width:450px; ">
+            <!-- Book title and author fields and buttons for add and search-->
+            <div class="row" style=" background-color:#c5d5cb;">
+                <div class="col-lg-5 col-md-11 col-sm-12 round" style=" padding-right:15px; margin-bottom:20px; padding-left:15px;  margin-right:15px; margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em; max-width:500px;">
+                    <h2 style="border-radius: 8px; color: black; padding:5px; height:2em; background-color:#9fa8a3;">
+                        Add a new book
+                    </h2>
+                    <h4 style="color:black;">
+                        You can here add a specific book to the database. <br>Specify title, author or both and press the button.
+                    </h4>
+                    <br>
+                    <div class="bg_menu round">
+                        <label id='labelA' for="author">Author</label>
+                        <input type="text" class="form-control"  placeholder="" id="author">
+                        <label id='labelB' for="title">Title</label>
+                        <input type="text" class="form-control" placeholder="" id="title" >
+                        <br>
+                        <button type="button" title="Click here to add a book to the database." class=" btn-success btn-sm" id='button' class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip" style="margin-left:5px;">
+                        <i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">playlist_add</i></button>
+                    </div>
                 </div>
-                
-                <!-- <label for="title" style=" border-radius: 8px; color:white; padding:5px; height:2em; background-color:#9fa8a3;">The last book you have added:</label>
-                <section id="status_field_selection" style="color:white;"></section>
-                -->
-                  
-            </div>
-            <!--Col end-->
-            <div class="col-lg-7 col-md-12 col-sm-12" style=" background-color:#c5d5cb; vertical-align: bottom;">
+                <!--Col end-->
+                <div class="col-lg-7 col-md-12 col-sm-12" style=" background-color:#c5d5cb; vertical-align: bottom;">
                 <!--review-->
-             
-            </div>
-            <!--Col end-->
-        
-            
-        </div>
-        <!--row end-->
-  
-    </div>
-    <!--Container end-->
-   
-</div> <!-- Add end -->
-
-<div id="searchBook" class="w3-container city" style="display:none"> <!-- START SEARCH -->
-      <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
-        <!-- Book title and author fields and buttons for add and search-->
-
-        <div class="row" style=" background-color:#c5d5cb;">
-            <div class="col-lg-5 col-md-12 col-sm-12 round" style="padding-left:15px; margin-bottom:20px; margin-right:15px;  margin-bottom: 19px; margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em; max-width:500px;">
-            
-                <h2 style="color: black; border-radius: 8px; padding:5px; height:2em; background-color:#9fa8a3;">Search for a book</h2>
-                <h4 style="color:black;">Not sure which book you want to add? <br>Search for any book by title, author or both.</h4>
-                <br>
-                
-                <div class="bg_menu round" id="search-menu">
-                <label id='labelC' for="author">Author</label>
-                <input type="text" class="form-control" style="max-width=40px;" placeholder="" id="S_author">
-                
-                <label id='labelD' for="title">Title</label>
-                <input type="text" style="max-width=40px;" class="form-control" placeholder="" id="S_title" >
-                
-                <br>
-                <button type="button" title="Click here to search for books matching your query." class="btn-success btn-sm" onclick="mySecret('book_reviews')" id='search_g'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">search </i> </button>
-                <button type="button" title="Click here to clear this list." class="btn-success btn-sm" onclick="" id='search_c'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">visibility_off </i></button>
-                    
                 </div>
-                <br>
-                <div id="click_add" style="border-radius:4px; background-color:#e3e0cf ; float:left; width:100%;">
-                    <i class=" large material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">trending_flat </i> 
-                    <p style="display: table-cell;vertical-align: middle; padding: 1px;float: right; color:black; background-color:#e3e0cf ;"><strong>Click on a title to add it to the database </strong></p>  
-                </div>
-                
+                <!--Col end-->
             </div>
-            <!--Col end-->
-            
-            <div class="col-lg-6 col-md-12 col-sm-12 round" id="R_bg_color" style="margin-right:15px; max-width:97%;">
-                <!--review-->
-             
-                
-                <section id="review_section">
-                    <pre style="display:none; color:white; border:none; background-color: rgb(227, 224, 207);" id="book_reviews"></pre>
-                </section>
-               
-            </div>
-            <!--Col end-->
-          
-            
+            <!--row end-->
         </div>
-        <!--row end-->
-     
-    </div>
-    <!--Container end-->
-</div> <!-- search end -->
-
-<div id="viewBook" class="w3-container city" style="display:none"> <!-- START VIEW -->
-      <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
-        <!-- Book title and author fields and buttons for add and search-->
-
-        <div class="row" style=" background-color:#c5d5cb;min-height:26.5em; border-radius:4px;">
-
-            <div class="col-lg-5 col-md-12 col-sm-12 round " style=" margin-bottom:20px; padding-left:15px; margin-right:15px; margin-left:15px; margin-bottom: 0px; padding-bottom:0px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em; max-width:500px;">
-                
-                <h2 style="border-radius: 8px; color:black; padding:5px; height:2em; background-color:#9fa8a3;">View saved books</h2>
-                <h4 id="heading_view" style="color:black;">Here you can view all the books that are saved. <br>Press the button to start. </h4>
-                <br>
-                <div class="bg_menu round">
-                    
-                    <div id="input_fields" class="round"> 
-                        <h4 id="heading_view" style=" margin-left: 5px; padding-top:5px; color:black;">You can here change or delete a book. <br> Choose a book from the list & press the button to commit.</h4>
+        <!--Container end-->
+    </div> <!-- Add end -->
+    <div id="searchBook" class="w3-container city" style="display:none"> <!-- START SEARCH -->
+          <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
+            <!-- Book title and author fields and buttons for add and search-->
+            <div class="row" style=" background-color:#c5d5cb;">
+                <div class="col-lg-5 col-md-12 col-sm-12 round" style="padding-left:15px; margin-bottom:20px; margin-right:15px;  margin-bottom: 19px; margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em; max-width:500px;">
+                    <h2 style="color: black; border-radius: 8px; padding:5px; height:2em; background-color:#9fa8a3;">
+                        Search for a book
+                    </h2>
+                    <h4 style="color:black;">
+                        Not sure which book you want to add? <br>Search for any book by title, author or both.
+                    </h4>
+                    <br>
+                    <div class="bg_menu round" id="search-menu">
+                        <label id='labelC' for="author">Author</label>
+                        <input type="text" class="form-control" style="max-width=40px;" placeholder="" id="S_author">
+                        <label id='labelD' for="title">Title</label>
+                        <input type="text" style="max-width=40px;" class="form-control" placeholder="" id="S_title" >
+                        <br>
+                        <button type="button" title="Click here to search for books matching your query." class="btn-success btn-sm" onclick="mySecret('book_reviews')" id='search_g'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">search </i> </button>
+                        <button type="button" title="Click here to clear this list." class="btn-success btn-sm" onclick="" id='search_c'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">visibility_off </i></button>
+                    </div>
+                    <br>
+                    <div id="click_add" style="border-radius:4px; background-color:#e3e0cf ; float:left; width:100%;">
+                        <i class=" large material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">trending_flat </i> 
+                        <p style="display: table-cell;vertical-align: middle; padding: 1px;float: right; color:black; background-color:#e3e0cf ;">
+                            <strong>
+                                Click on a title to add it to the database
+                            </strong>
+                        </p>  
+                    </div>
+                </div>
+                <!--Col end-->
+                <div class="col-lg-6 col-md-12 col-sm-12 round" id="R_bg_color" style="margin-right:15px; max-width:97%;">
+                    <!--review-->
+                    <section id="review_section">
+                        <pre style="display:none; color:white; border:none; background-color: rgb(227, 224, 207);" id="book_reviews"></pre>
+                    </section>
+                </div>
+                <!--Col end-->
+            </div>
+            <!--row end-->
+        </div>
+        <!--Container end-->
+    </div> <!-- search end -->
+    <div id="viewBook" class="w3-container city" style="display:none"> <!-- START VIEW -->
+          <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
+            <!-- Book title and author fields and buttons for add and search-->
+            <div class="row" style=" background-color:#c5d5cb;min-height:26.5em;">
+                <div class="col-lg-5 col-md-12 col-sm-12 round " style=" margin-bottom:20px; padding-left:15px; margin-right:15px; margin-left:15px; margin-bottom: 0px; padding-bottom:0px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em; max-width:500px;">
+                    <h2 style="border-radius: 8px; color:black; padding:5px; height:2em; background-color:#9fa8a3;">
+                        View saved books
+                    </h2>
+                    <h4 id="heading_view" style="color:black;">
+                        Here you can view all the books that are saved. <br>Press the button to start.
+                    </h4>
+                    <br>
+                    <div class="bg_menu round">
+                        <div id="input_fields" class="round"> 
+                            <h4 id="heading_view" style=" margin-left: 5px; padding-top:5px; color:black;">You can here change or delete a book. <br> Choose a book from the list & press the button to commit.</h4>
                             <br>
-                        <label id='labelE' for="author">Author</label>
-                        <input type="text" class="form-control" style="max-width=40px;" placeholder="" id="V_author">
-
-                        <label id='labelF' for="title">Title</label>
-                        <input type="text" style="max-width=40px;" class="form-control" placeholder="" id="V_title" >
-
-                        <button type="button" class="btn-danger btn-sm" id='change'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;"> mode_edit</i></button>
-                        <button type="button" class="btn-danger btn-sm" id='delete'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">delete </i></button>    
-                    </div>       
-
-                    <button type="button" class="btn-success btn-sm" id='button2'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;"> play_arrow</i></button>
-		        
+                            <label id='labelE' for="author">Author</label>
+                            <input type="text" class="form-control" style="max-width=40px;" placeholder="" id="V_author">
+                            <label id='labelF' for="title">Title</label>
+                            <input type="text" style="max-width=40px;" class="form-control" placeholder="" id="V_title" >
+                            <button type="button" class="btn-danger btn-sm" id='change'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;"> mode_edit</i></button>
+                            <button type="button" class="btn-danger btn-sm" id='delete'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">delete </i></button>    
+                        </div>       
+                        <button type="button" class="btn-success btn-sm" id='button2'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;"> play_arrow</i></button>
+                    </div>
                 </div>
-            </div>
-            <!--Col end-->
-            
-            <div class="col-lg-6 col-md-12 col-sm-12" style=" margin-top:0px; paddig-top:0px; vertical-align: bottom; ">
-                <!--View-->
-               
-                <div class="col-lg-12 round" id="V_bg_color" >
-          
+                <!--Col end-->
+                <div class="col-lg-6 col-md-12 col-sm-12" style=" margin-top:0px; paddig-top:0px; vertical-align: bottom; ">
+                    <!--View-->
+                    <div class="col-lg-12 round" id="V_bg_color" >
                         <ul class="list-group" id="books" style=" padding:5px; display:none;"></ul>
+                    </div>
                 </div>
+                <!--Col end-->
             </div>
-            <!--Col end-->
-            
+            <!--row end-->
         </div>
-        <!--row end-->
-     
-    </div>
-    <!--Container end-->
-</div> <!--view end -->
-
-
-
+        <!--Container end-->
+    </div> <!--view end -->
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
 </body>
-
 </html>

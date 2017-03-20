@@ -3,6 +3,13 @@ font-family: 'Gudea', sans-serif;}
 
 #bg_grey {background-color: #c5d5cb;}
 
+#body_bg {
+    margin-left:20px; 
+    margin-right:20px; 
+    min-width:530px; 
+    background-image: url(books-wallpaper-books-to-read-28990406-1024-768.jpg);
+}
+
 /* the labels */
 
 #labelA {border-radius: 4px; color:black; background-color:#c5d5cb; height:1em; margin-left:2px;   padding:2px;display: inline-block;
@@ -235,6 +242,7 @@ th {height: 3em;}
    border-bottom:4px solid #000;
    overflow:hidden;
    position:relative;
+    min-width: 475px;
 }
 #centeredmenu ul {
    clear:left;
@@ -284,11 +292,12 @@ th {height: 3em;}
 }
 
 
-.bg_menu {background-color:#c5d5cb;}
+.bg_menu {background-color:#c5d5cb; margin-bottom: 10px;}
 
 #V_bg_color {
     vertical-align: bottom; 
     background-color:#9fa8a3;
+    
     display: none;}
 
 #input_fields {display:none;}

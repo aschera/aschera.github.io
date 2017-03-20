@@ -31,7 +31,7 @@
                     if (ajax.status == 200 && ajax.readyState == 4) {
                         
                         let json = JSON.parse(ajax.responseText);
-
+                            console.log(json);
                         for (i=0; i<json.items.length;i++){
                             
                             let e = document.createElement('pre');

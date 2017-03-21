@@ -145,7 +145,65 @@ document.addEventListener('change', changeHandler, false);
 
 
 
+/* ********************* enter *************************** */
 
+
+let enterChange = function () {
+        let title = document.getElementById('V_title').value;
+        let author = document.getElementById('V_author').value;
+        let id = current_id_book; 
+
+		if(author === '' && title ==='') {
+			printm('Please enter a title and an author first!');
+		}
+		else { 
+                
+                // url to access server
+                let url = 'https://www.forverkliga.se/JavaScript/api/crud.php?op=update&key=sHx2P';
+                
+                url+= '&id=' + id + '&title=' + title+ '&author=' + author;
+               
+                // AJAX request 
+                let ajax = new XMLHttpRequest();
+
+                ajax.open('post', url);
+  
+                ajax.onreadystatechange = function() {
+                    
+                let status = '';
+
+                    if (ajax.status == 200 && ajax.readyState == 4) {
+                        //parse string to object
+                        let json = JSON.parse(ajax.responseText);
+
+                        // check is status = error
+                        if (json.status !== 'error') {
+// status message - Server OK
+                           
+                            printm('The book: with id: ' + id + ' has been updated to: ' + title +  ' by ' + author);
+                            document.getElementById('V_title').value = '';
+                            document.getElementById('V_author').value = '';
+                            
+       
+                        } else {
+// status message - Server Bad
+                            
+                            printm(json.status +', ' + json.message);
+                            
+                        }
+
+                    } else if (ajax.status != 200) {  
+// status message - Server Bad
+                             console.log(json);
+                             printm('server error');
+                             
+                    }
+
+                };  //end ajax
+            ajax.send();
+} // end else    
+
+}; // end function
 
 
 

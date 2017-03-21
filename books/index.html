@@ -72,8 +72,8 @@
     
     <div class="container-fluid round menu_bg" style="margin-left:20px; margin-right:20px; min-width:450px; margin-top:5px;">
         <!--menu-->
-        <div class="row" style="border-radius:4px; border-bottom:none; min-height:5em; background-color:#c5d5cb; vertical-align: bottom;">
-            <div class="col-lg-12 col-md-12 col-sm-12 round" >
+        <div class="row" style="border-radius:4px; border-bottom:none; min-height:3em; background-color:#c5d5cb; vertical-align: bottom;">
+            <div class="col-lg-12 col-md-12 col-sm-12 round" style="">
                 <div id="centeredmenu">
                     <ul>
                         <li><a href="#" onclick="openCity('viewBook')">View saved books</a></li>
@@ -86,9 +86,9 @@
     </div><!--Container end-->  
     
     <div id="addBook" class="w3-container city round" > <!-- START ADD -->
-          <div class="container-fluid round " style=" margin-left:20px; margin-right:20px; min-width:450px; border-radius:4px; ">
+          <div class="container-fluid round " style=" margin-left:20px; margin-right:20px; min-width:450px; border-radius:4px; margin-bottom:4px;">
             <!-- Book title and author fields and buttons for add and search-->
-            <div class="row" style=" background-color:#c5d5cb; border-radius:4px; margin-top:5px;">
+            <div class="row" style=" background-color:#c5d5cb; border-radius:4px; margin-top:5px; min-height:30em;">
                 <div class="col-lg-5 col-md-11 col-sm-12 round" style=" padding-right:15px; margin-bottom:20px; padding-left:15px;  margin-right:15px; margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em; max-width:500px; margin-top:5px;">
                     <h2 style="border-radius: 8px; color: black; padding:5px; height:2em; background-color:#9fa8a3;">
                         Add a new book
@@ -108,10 +108,7 @@
                     </div>
                 </div>
                 <!--Col end-->
-                <div class="col-lg-7 col-md-12 col-sm-12" style="display:none; background-color:#c5d5cb; vertical-align: bottom; border-radius:4px;">
-                <!--review-->
-                </div>
-                <!--Col end-->
+                
             </div>
             <!--row end-->
         </div>
@@ -120,7 +117,7 @@
     <div id="searchBook" class="w3-container city" style="display:none"> <!-- START SEARCH -->
           <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px; ">
             <!-- Book title and author fields and buttons for add and search-->
-            <div class="row" style=" background-color:#c5d5cb; margin-top:5px; border-radius:4px;">
+            <div class="row" style=" background-color:#c5d5cb; margin-top:5px; border-radius:4px; min-height:30em;">
                 <div class="col-lg-5 col-md-12 col-sm-12 round" style="padding-left:15px; margin-bottom:20px; margin-right:15px;  margin-bottom: 19px; margin-left:15px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em; max-width:500px; margin-top:5px;">
                     <h2 style="color: black; border-radius: 8px; padding:5px; height:2em; background-color:#9fa8a3;">
                         Search for a book
@@ -165,7 +162,7 @@
     <div id="viewBook" class="w3-container city" style="display:none"> <!-- START VIEW -->
           <div class="container-fluid" style="margin-left:20px; margin-right:20px; min-width:450px;">
             <!-- Book title and author fields and buttons for add and search-->
-            <div class="row" style=" background-color:#c5d5cb;min-height:26.5em; margin-top:5px; border-radius:4px;">
+            <div class="row" style=" background-color:#c5d5cb;min-height:26.5em; margin-top:5px; border-radius:4px; min-height:30em;">
                 <div class="col-lg-5 col-md-12 col-sm-12 round " style=" margin-bottom:20px; padding-left:15px; margin-right:15px; margin-left:15px; margin-bottom: 10px; padding-bottom:0px; background-color:#9fa8a3; vertical-align: bottom; min-height:25em; max-width:500px; margin-top:5px;">
                     <h2 style="border-radius: 8px; color:black; padding:5px; height:2em; background-color:#9fa8a3;">
                         View saved books
@@ -179,9 +176,9 @@
                             <h4 id="heading_view" style=" font-size:1em; margin-left: 5px; padding-top:5px; color:black;">You can here change or delete a book. <br> Choose a book from the list & press the button to commit.</h4>
                             <br>
                             <label id='labelE' for="author">Author</label>
-                            <input type="text" class="form-control" style="max-width=40px;" placeholder="" id="V_author">
+                            <input type="text" class="form-control" style="max-width=40px;" placeholder="" id="V_author" onkeyup="inputKeyUp(event)">
                             <label id='labelF' for="title">Title</label>
-                            <input type="text" style="max-width=40px;" class="form-control" placeholder="" id="V_title" >
+                            <input type="text" style="max-width=40px;" class="form-control" placeholder="" id="V_title" onkeyup="inputKeyUp(event)">
                             <br>
                             <button type="button" class="btn-danger btn-sm" id='change'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;"> mode_edit</i></button>
                             <button type="button" class="btn-danger btn-sm" id='delete'><i class=" small material-icons" style=" display: table-cell;vertical-align: middle; float: right; color:black;">delete </i></button>    
@@ -207,5 +204,15 @@
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    
+        function inputKeyUp(e) {
+        e.which = e.which || e.keyCode;
+            if(event.which == 13 || event.keyCode == 13) {
+                enterChange();
+            }
+            };
+
+    </script>
 </body>
 </html>

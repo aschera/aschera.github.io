@@ -39,8 +39,8 @@ deletion.addEventListener('click', function() {
                         printm(json2.status + ', You have deleted the book: ' + book);
                         
                         document.getElementById(res).outerHTML = ""; // delete from view list
-                        document.getElementById('V_title').value = '';
-                        document.getElementById('V_author').value = '';
+                        document.getElementById('V_title').value = ' ';
+                        document.getElementById('V_author').value = ' ';
 
                     } else {
                         console.log('server is no good');

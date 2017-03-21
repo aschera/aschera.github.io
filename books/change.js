@@ -17,8 +17,13 @@ var changeHandler = (function initChangeHandler() {
         var message = element.value + ' was unchecked';
         
         let the_li = previousCheckedRadio.value; // the li that was selected previousCheckedRadio
-        document.getElementById(the_li).style.backgroundColor = '#e3e0cf';
-        logInfo(message);
+        if (document.getElementById(the_li) == null) {
+            console.log('no');
+        } else {
+            document.getElementById(the_li).style.backgroundColor = '#e3e0cf';
+            logInfo(message);
+        }
+        
     }
     
     function logCurrent(element) {

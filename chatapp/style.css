@@ -21,4 +21,10 @@
 #results {background-color: #283018; margin: 1em; padding: 1em;}
 
 #username{color:#aa863a;}
-#text {color:#aa863a;}
+#text {color:#aa863a; width: 92%; height: 1em;}
+
+#textline {
+    background-color: #283018; margin: 1em; padding: 1em;
+}
+
+#logininfo {display:none;}

@@ -9,7 +9,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title>innlämning 2</title>
-    
+
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,145 +28,163 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-    
+
+
     <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
-    
+
     <script src="script.js"></script>
-    
+
     <link href="style.css" rel="stylesheet">
-    
+
     <style>
-        label {color:white;}
-        #savename {color:white; font-size: 0.7em;}
-        #text {display:none;}
-        #results {display:none;}
-        #post {display:none;}
-        
+        label {
+            color: white;
+        }
+
+        #savename {
+            color: white;
+            font-size: 0.7em;
+        }
+
+        #text {
+            display: none;
+        }
+
+        #results {
+            display: none;
+        }
+
+        #post {
+            display: none;
+        }
     </style>
 </head>
 
 <body style="margin-left:20px; margin-right:20px; ">
-<div class="container">
+    <div class="container">
 
-      <div class="page-header">
-        <h1>Chatapp</h1>
-        <p class="lead">Do you want to talk?</p>
-      </div>
-
-    
-      <div class="row" style="background-color:#729f98; padding:1em;">
-        <div class="col-md-12" style="background-color:#283018; padding:1em; margin:1em;" >
+        <div class="page-header">
+            <h1>Chatapp</h1>
+            <p class="lead">Do you want to talk?</p>
             
-            <div class="col-md-6" style="background-color:#283018; padding:1em; margin:1em;" >
-                h
+            <div id="logininfo">
+                <p> You are logged in as: <span id="loginname"></span>. </p>
             </div>
             
-            <div class="col-md-6" style="background-color:#283018; padding:1em; margin:1em;" >
-                g
-            </div>
-            
-            <label for="username">New user:</label>
-            <br>
-            <input id="username" type="text" placeholder="Your username">
-            <button id="OK">Log In</button>
-            
-            <br/>
-            <br/>
-            <br/>
-            
-            <label for="saved_names">Log in:</label>
-            <select id="saved_names">
-              
-            </select>
-            
-            <label id="savename">
-            <input type="checkbox" onclick="saveData()";>
-              Remember me.
-            </label>
-            <br><br>
-            <br/>
-            <br><br>
-            <input id="text" type="text" placeholder="Message"><br/>
-
-            <button id="post">Post</button><br/>
-          
         </div>
-        <div class="col-md-4">
-    
-            <div id="results"></div>
-          
-        </div>
-      </div>
 
-</div>  <!-- end container -->
- 
-    
-<script>
-    var myFirebase = new Firebase('https://mein-chat.firebaseio.com/');
-</script>
-       <script>
-    var myFirebase = new Firebase('https://mein-chat.firebaseio.com/');
-    var usernameInput = document.querySelector('#username');
-    var textInput = document.querySelector('#text');
-    var postButton = document.querySelector('#post');
+        <div class="row" style="background-color:#729f98; padding:1em;">
+            <div class="col-md-12" id="logInWindow" style="background-color:#283018; padding:1em; margin:1em;">
 
-    postButton.addEventListener("click", function() {
-      var msgUser = usernameInput.value;
-      var msgText = textInput.value;
-      myFirebase.push({username:msgUser, text:msgText});
-      textInput.value = "";
-    });
-    var startListening = function() {
-      myFirebase.on('child_added', function(snapshot) {
-        var msg = snapshot.val();
-      
-        //name
-        var msgUsernameElement = document.createElement("strong");
-        msgUsernameElement.textContent = msg.username + ' wrote: ';
-        
-        //message
-        var msgTextElement = document.createElement("p");
-        msgTextElement.textContent = msg.text;
-  
-        //box t hold the name and message
-        var msgElement = document.createElement("div");
-        msgElement.appendChild(msgUsernameElement);
-        msgElement.appendChild(msgTextElement);
-          
-          
-        msgElement.className = "msg";
-        document.getElementById("results").appendChild(msgElement);
-      });
-    }
+                
+                    <label for="username">New user:</label>
+                    <br>
+                    <input id="username" type="text" placeholder="Your username">
+                    <button id="OK" onclick="logIn()">Log In</button>
 
-    // Begin listening for data
-    startListening();
+                    <label for="saved_names">Log in:</label>
+                    <select id="saved_names">
 
-</script>
+                    </select>
+
+                    <label id="savename">
+                        <input type="checkbox" onclick="saveData()";>
+                            Remember me.
+                    </label>
+                
+            </div><!-- end col -->
+            </div> <!-- end row -->
+            
+        <div class="row" style="background-color:#729f98; padding:1em;">
+            
+            <div class="col-md-12" id="textline">
+                        <span> 
+                            <input id="text" type="text" placeholder="Message">
+                            <button id="post">Post</button> 
+                        </span>
+                </div><!-- end col -->
+            
+            <div class="col-md-12">
+
+                <div id="results"></div>
+
+            </div> <!-- end col -->
+
+        </div> <!-- end row -->
+
+    </div>
+    <!-- end container -->
+
 
     <script>
+        var myFirebase = new Firebase('https://mein-chat.firebaseio.com/');
+    </script>
+    <script>
+        var myFirebase = new Firebase('https://mein-chat.firebaseio.com/');
+        var usernameInput = document.querySelector('#username');
+        var textInput = document.querySelector('#text');
+        var postButton = document.querySelector('#post');
 
+        postButton.addEventListener("click", function() {
+            var msgUser = usernameInput.value;
+            var msgText = textInput.value;
+            myFirebase.push({
+                username: msgUser,
+                text: msgText
+            });
+            textInput.value = "";
+        });
+        var startListening = function() {
+            myFirebase.on('child_added', function(snapshot) {
+                var msg = snapshot.val();
+
+                //name
+                var msgUsernameElement = document.createElement("p");
+                msgUsernameElement.textContent = msg.username + ' wrote: ' + msg.text;
+
+                //message
+                //var msgTextElement = document.createElement("p");
+                //msgTextElement.textContent = msg.text;
+
+                //box t hold the name and message
+                var msgElement = document.createElement("div");
+                msgElement.appendChild(msgUsernameElement);
+                //msgElement.appendChild(msgTextElement);
+
+
+                msgElement.className = "msg";
+                document.getElementById("results").appendChild(msgElement);
+            });
+        }
+
+        // Begin listening for data
+        startListening();
+    </script>
+
+    <script>
         // Read value from storage, or empty array
         names = JSON.parse(localStorage.getItem('locname') || "[]");
 
         var saveData = function() {
-            
+
             var data = document.getElementById('username').value;
-      
-        //unique ID for the user
-        let id = data.length + 'id' + Math.floor((Math.random() * 100) + 1) + data;  
-     
-          names.push({id: id, name: data});
-            
-          localStorage.setItem('locname', JSON.stringify(names));
-            
+
+            //unique ID for the user
+            let id = data.length + 'id' + Math.floor((Math.random() * 100) + 1) + data;
+
+            names.push({
+                id: id,
+                name: data
+            });
+
+            localStorage.setItem('locname', JSON.stringify(names));
+
             console.log(names);
         };
-        
-        
+
+
         /* ************************ ADD items to dropdown list **************************** */
-        for (i =0; i < names.length; i++) {
+        for (i = 0; i < names.length; i++) {
             let item = document.getElementById('saved_names');
 
             let option = document.createElement("option");
@@ -174,9 +192,27 @@
             item.add(option);
 
         }
+    </script>
+    <script>
+        function logIn() {
+            let results = document.getElementById('results');
+            results.style.display = 'block';
 
-      
-
+            let inputText = document.getElementById('text');
+            inputText.style.display = 'inline-block';
+            
+            let postButton = document.getElementById('post');
+            postButton.style.display = 'inline-block';
+            
+            let loginInfo = document.getElementById('logininfo');
+            loginInfo.style.display = 'inline-block';
+            
+            document.getElementById('loginname').innerText = usernameInput.value;
+            
+            
+            let loginwindow = document.getElementById('logInWindow');
+            loginwindow.style.display = 'none';
+        }
     </script>
 </body>
 

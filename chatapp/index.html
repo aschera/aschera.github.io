@@ -7,57 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
 
-    <title>innlämning 2</title>
+    <title>Innlämning 2</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="grid.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
+    
     <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
 
     <script src="script.js"></script>
 
     <link href="style.css" rel="stylesheet">
 
-    <style>
-        label {
-            color: white;
-        }
-
-        #savename {
-            color: white;
-            font-size: 0.7em;
-        }
-
-        #text {
-            display: none;
-        }
-
-        #results {
-            display: none;
-        }
-
-        #post {
-            display: none;
-        }
-    </style>
 </head>
 
 <body style="margin-left:20px; margin-right:20px; ">
@@ -104,7 +75,7 @@
                         </span>
                 </div><!-- end col -->
             
-            <div class="col-md-12">
+            <div class="col-md-12" id="chat_text">
 
                 <div id="results"></div>
 
@@ -119,53 +90,73 @@
     <script>
         var myFirebase = new Firebase('https://mein-chat.firebaseio.com/');
     </script>
-    <script>
+
+        <script>
+            console.log(new Date().getTime());
+            
+            
+            
+            
         var myFirebase = new Firebase('https://mein-chat.firebaseio.com/');
         var usernameInput = document.querySelector('#username');
         var textInput = document.querySelector('#text');
         var postButton = document.querySelector('#post');
+        
 
         postButton.addEventListener("click", function() {
             var msgUser = usernameInput.value;
             var msgText = textInput.value;
+            //var timeStamped = Firebase.ServerValue.TIMESTAMP;
+            var timeStamped =Date();
+            
             myFirebase.push({
                 username: msgUser,
-                text: msgText
+                text: msgText,
+                theTime:timeStamped
+                
             });
             textInput.value = "";
         });
         var startListening = function() {
             myFirebase.on('child_added', function(snapshot) {
                 var msg = snapshot.val();
-
+                
+                
                 //name
                 var msgUsernameElement = document.createElement("p");
                 msgUsernameElement.textContent = msg.username + ' wrote: ' + msg.text;
 
                 //message
-                //var msgTextElement = document.createElement("p");
-                //msgTextElement.textContent = msg.text;
+                var msgTextElement = document.createElement("p");
+                msgTextElement.textContent = msg.theTime;
 
                 //box t hold the name and message
                 var msgElement = document.createElement("div");
                 msgElement.appendChild(msgUsernameElement);
-                //msgElement.appendChild(msgTextElement);
+                msgElement.appendChild(msgTextElement);
 
 
                 msgElement.className = "msg";
-                document.getElementById("results").appendChild(msgElement);
+                let element = document.getElementById("results");
+                element.insertBefore(msgElement, element.firstChild);
+                
+                
+                
             });
         }
 
         // Begin listening for data
         startListening();
+            
+            
+        
     </script>
 
     <script>
         // Read value from storage, or empty array
         names = JSON.parse(localStorage.getItem('locname') || "[]");
 
-        var saveData = function() {
+        function saveData() {
 
             var data = document.getElementById('username').value;
 
@@ -190,11 +181,16 @@
             let option = document.createElement("option");
             option.text = names[i].name;
             item.add(option);
-
         }
     </script>
     <script>
+        
+        // log in menu changes
         function logIn() {
+            let loginwindow = document.getElementById('logInWindow');
+            loginwindow.style.display = 'none';
+            
+            console.log('yes');
             let results = document.getElementById('results');
             results.style.display = 'block';
 
@@ -208,12 +204,12 @@
             loginInfo.style.display = 'inline-block';
             
             document.getElementById('loginname').innerText = usernameInput.value;
-            
-            
-            let loginwindow = document.getElementById('logInWindow');
-            loginwindow.style.display = 'none';
-        }
+};
+   
+     
     </script>
+    
+
 </body>
 
 </html>

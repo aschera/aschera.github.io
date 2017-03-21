@@ -1,4 +1,27 @@
- 
+        label {
+            color: white;
+        }
+
+        #savename {
+            color: white;
+            font-size: 0.7em;
+        }
+
+        #text {
+            display: none;
+        }
+
+        #results {
+            display: none;
+        }
+
+        #post {
+            display: none;
+        }
+
+p{
+    height: 1.5em; padding:2px;
+}
     body {
       font-family: 'HelveticaNeue-Light';
       background-color: #283018;
@@ -18,13 +41,21 @@
   
 .page-header {color:#aa863a; text-align:center;}
 
-#results {background-color: #283018; margin: 1em; padding: 1em;}
+#results {background-color: #283018; margin: 1em; }
 
 #username{color:#aa863a;}
-#text {color:#aa863a; width: 92%; height: 1em;}
+#text {color:#aa863a; width: 90%; height: 2em;}
 
 #textline {
     background-color: #283018; margin: 1em; padding: 1em;
+    padding-left: 2em; padding-right: 2em;
 }
 
+#chat_text {
+    background-color: #283018; margin: 1em; padding: 1em;
+}
 #logininfo {display:none;}
+
+
+/* ***************** Login window /*********************** **/
+

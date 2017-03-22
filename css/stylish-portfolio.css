@@ -52,12 +52,12 @@ tr {
   text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
 }
  
-tr:hover td {
+/*tr:hover td {
   background:#4E5066;
   color:#FFFFFF;
   border-top: 1px solid #22262e;
   border-bottom: 1px solid #22262e;
-}
+}*/
  
 tr:first-child {
   border-top:none;
@@ -71,9 +71,9 @@ tr:nth-child(odd) td {
   background:#EBEBEB;
 }
  
-tr:nth-child(odd):hover td {
+/*tr:nth-child(odd):hover td {
   background:#4E5066;
-}
+}*/
 
 tr:last-child td:first-child {
   border-bottom-left-radius:3px;
@@ -321,7 +321,12 @@ hr.small {
     margin-left: 45%;
     margin-right: 45%;
 }
-
+hr.small2 {
+    max-width: 100px;
+    margin-left: 45%;
+    margin-right: 45%;
+    
+}
 /* Side Menu */
 
 #sidebar-wrapper {
@@ -629,10 +634,11 @@ h1 {
 }
 
 .text{
-	background:#94F5AE;
-	opacity:0.8; 
-    color:black;
-    height:1em;
+	background:#F6FCA9;
+	opacity:0.7; 
+    color: #EA4E76;
+    height:100%;
+    min-height:5em;
 }
 
 /* ************** flex image gallery ******************* */

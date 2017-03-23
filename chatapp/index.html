@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- #729f98 green    #283018 darkgreen     #aa863a orange -->
-
+<!-- 276d7a blue    8fcbd4 lightblue		f4c872 yellow ->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +31,7 @@
 
 </head>
 
-<body style="margin-left:20px; margin-right:20px; ">
+<body style="max-width:80%; margin-left:20px; margin-right:20px; ">
     <div class="container">
 
         <div class="page-header">
@@ -39,13 +39,13 @@
             <p class="lead">Do you want to talk?</p>
             
             <div id="logininfo">
-                <p> You are logged in as: <span id="loginname"></span>. </p>
+                <p> You are logged in as: <span id="loginname"></span>. <span id="logout"><button onclick="forgetData()">Log out</button></span></p>
             </div>
             
         </div>
 
-        <div class="row" style="background-color:#729f98; padding:1em;">
-            <div class="col-md-12" id="logInWindow" style="background-color:#283018; padding:1em; margin:1em;">
+        <div class="row" style="background-color:#276d7a; padding:1em;">
+            <div class="col-md-12" id="logInWindow" style="background-color:#8fcbd4; padding:1em; margin:1em;">
 
                 
                     <label for="username">New user:</label>
@@ -66,7 +66,7 @@
             </div><!-- end col -->
             </div> <!-- end row -->
             
-        <div class="row" style="background-color:#729f98; padding:1em;">
+        <div class="row" style="background-color:#276d7a; padding:1em;">
             
             <div class="col-md-12" id="textline">
                         <span> 
@@ -93,10 +93,7 @@
 
         <script>
             console.log(new Date().getTime());
-            
-            
-            
-            
+         
         var myFirebase = new Firebase('https://mein-chat.firebaseio.com/');
         var usernameInput = document.querySelector('#username');
         var textInput = document.querySelector('#text');
@@ -107,7 +104,8 @@
             var msgUser = usernameInput.value;
             var msgText = textInput.value;
             //var timeStamped = Firebase.ServerValue.TIMESTAMP;
-            var timeStamped =Date();
+	    var time = Date();
+            var timeStamped = time.substring(0, 24); 
             
             myFirebase.push({
                 username: msgUser,
@@ -123,12 +121,23 @@
                 
                 
                 //name
-                var msgUsernameElement = document.createElement("p");
-                msgUsernameElement.textContent = msg.username + ' wrote: ' + msg.text;
+                var msgUsernameElement = document.createElement("span");
+                msgUsernameElement.innerHTML = msg.username;
+		msgUsernameElement.id = 'name';
+		
 
+			var msgTime = document.createElement("span");
+		        msgTime.innerHTML = ' wrote at ' + msg.theTime;
+			msgTime.id = 'time';
+
+			msgUsernameElement.appendChild(msgTime);
+
+		
                 //message
                 var msgTextElement = document.createElement("p");
-                msgTextElement.textContent = msg.theTime;
+                msgTextElement.innerHTML = msg.text;
+		msgUsernameElement.id = 'message';
+		
 
                 //box t hold the name and message
                 var msgElement = document.createElement("div");
@@ -153,6 +162,7 @@
     </script>
 
     <script>
+ /* ************************ ADD username to localstorage **************************** */
         // Read value from storage, or empty array
         names = JSON.parse(localStorage.getItem('locname') || "[]");
 
@@ -162,7 +172,7 @@
 
             //unique ID for the user
             let id = data.length + 'id' + Math.floor((Math.random() * 100) + 1) + data;
-
+		
             names.push({
                 id: id,
                 name: data
@@ -172,38 +182,59 @@
 
             console.log(names);
         };
+ /* ************************ log out **************************** */
+	 function forgetData() {
+
+            let name = usernameInput.value;
+	    localStorage.removeItem(name);
+		console.log('the user ' + name + ' has been removed.');
+		location.reload();
+        };
 
 
         /* ************************ ADD items to dropdown list **************************** */
+
         for (i = 0; i < names.length; i++) {
             let item = document.getElementById('saved_names');
-
             let option = document.createElement("option");
             option.text = names[i].name;
             item.add(option);
         }
     </script>
     <script>
-        
+         /* ************************ Log in **************************** */
         // log in menu changes
         function logIn() {
-            let loginwindow = document.getElementById('logInWindow');
-            loginwindow.style.display = 'none';
-            
-            console.log('yes');
-            let results = document.getElementById('results');
-            results.style.display = 'block';
+		let n = document.querySelector('#username').value;
+		if(n.length > 1) {
+			console.log(document.querySelector('#username'));
+			   let loginwindow = document.getElementById('logInWindow');
+			    loginwindow.style.display = 'none';
+			    
+			    console.log('yes');
+			    let results = document.getElementById('results');
+			    results.style.display = 'block';
 
-            let inputText = document.getElementById('text');
-            inputText.style.display = 'inline-block';
-            
-            let postButton = document.getElementById('post');
-            postButton.style.display = 'inline-block';
-            
-            let loginInfo = document.getElementById('logininfo');
-            loginInfo.style.display = 'inline-block';
-            
-            document.getElementById('loginname').innerText = usernameInput.value;
+			    let inputText = document.getElementById('text');
+			    inputText.style.display = 'inline-block';
+			    
+			    let postButton = document.getElementById('post');
+			    postButton.style.display = 'inline-block';
+			    
+			    let loginInfo = document.getElementById('logininfo');
+			    loginInfo.style.display = 'inline-block';
+		
+			    let logoutbutton = document.getElementById('logout');
+			    logoutbutton.style.display = 'inline-block';
+			    
+			    document.getElementById('loginname').innerText = usernameInput.value;
+		}
+		else {
+			console.log('please enter a username');
+			window.alert('please enter a username');
+		}
+
+         
 };
    
      

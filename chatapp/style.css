@@ -18,13 +18,17 @@
         #post {
             display: none;
         }
-
+#time {color:red;}
+#name {color:green;}
 p{
     height: 1.5em; padding:2px;
 }
     body {
       font-family: 'HelveticaNeue-Light';
-      background-color: #283018;
+      background-image: url(bg.png);
+background-repeat: no-repeat;
+background-size: cover;
+
     }
     .msg {
       background-color: #efefef;
@@ -39,23 +43,23 @@ p{
       color: #FFF;
     }
   
-.page-header {color:#aa863a; text-align:center;}
+.page-header {color:#283018; text-align:center;}
 
-#results {background-color: #283018; margin: 1em; }
+#results {background-color: #8fcbd4; margin: 1em; }
 
 #username{color:#aa863a;}
 #text {color:#aa863a; width: 90%; height: 2em;}
 
 #textline {
-    background-color: #283018; margin: 1em; padding: 1em;
+    background-color: #8fcbd4; margin: 1em; padding: 1em;
     padding-left: 2em; padding-right: 2em;
 }
 
 #chat_text {
-    background-color: #283018; margin: 1em; padding: 1em;
+    background-color: #8fcbd4; margin: 1em; padding: 1em;
 }
 #logininfo {display:none;}
-
+#logout {display:none;}
 
 /* ***************** Login window /*********************** **/
 

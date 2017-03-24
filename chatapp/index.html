@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- #729f98 green    #283018 darkgreen     #aa863a orange -->
-<!-- 276d7a blue    8fcbd4 lightblue		f4c872 yellow ->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
@@ -29,6 +29,7 @@
     <script src="script.js"></script>
     <script src="login.js"></script>
     <script src="logout.js"></script>
+    <script src="likes.js"></script>
     
     <link href="style.css" rel="stylesheet">
 
@@ -45,14 +46,15 @@
         </div>
         <div class="row" style="background-color:#276d7a; margin:0;">
             <div class="col-md-12" id="logInWindow">
+                
                     <!-- saved user select -->
-                    <label for="saved_names" id="loginselect">Log in:</label>
+                   <!-- <label for="saved_names" id="loginselect">Log in:</label>
                     <select id="saved_names" onchange="logIn2()">
-                        <option class="disabled">Select</option>
+                       <option class="disabled">Select</option>
                     </select>
-                <br>
+                
                     <!-- new user type name -->
-                    <label for="username" id="registerfield">Register:</label>
+                    <label for="username" id="registerfield">Log in:</label>
                     <input id="username" type="text" placeholder="Your username">
                     <button id="OK" onclick="logIn()">Log In</button>
                 <br>
@@ -111,10 +113,30 @@
                 msgUsernameElement.innerHTML = msg.username;
 		        msgUsernameElement.id = 'name';
 		
-			var msgTime = document.createElement("span");
-		        msgTime.innerHTML = ' wrote at ' + msg.theTime;
-			    msgTime.id = 'time';
-			    msgUsernameElement.appendChild(msgTime);
+                    var msgTime = document.createElement("span");
+                    msgTime.innerHTML = ' wrote at ' + msg.theTime;
+                    msgTime.id = 'time';
+                    msgUsernameElement.appendChild(msgTime);
+                
+                    var likeButton = document.createElement("input");
+                    likeButton.innerHTML = 0;
+                    likeButton.type = "button";
+                    likeButton.value = "like";
+                    likeButton.addEventListener('click', function(event) {
+                        console.log('liked');
+                        like(snapshot.key());  // adds the key to the function to push 'like'
+                    });
+                    msgUsernameElement.appendChild(likeButton);
+                
+                    var dislikeButton = document.createElement("input");
+                    dislikeButton.innerHTML = 'hate';
+                    dislikeButton.type = "button";
+                    dislikeButton.value = "dislike";
+                    likeButton.addEventListener('click', function(event) {
+                        console.log('disliked');
+                        dislike(snapshot.key());  // adds the key to the function to push 'dislike'
+                    });
+                    msgUsernameElement.appendChild(dislikeButton);
                 
                 //message
                 var msgTextElement = document.createElement("p");
@@ -133,9 +155,20 @@
             });
         }
 
-        // Begin listening for data
-        startListening();
+        
 
+    </script>
+    
+    <script>
+        function likePost(event) {
+				console.log('liked it');
+				var hopperRef = usersRef.child("gracehop");
+                    hopperRef.update({
+                      "nickname": "Amazing Grace"
+                    });
+					
+				}; // end firebase.
+			
     </script>
 
 </body>

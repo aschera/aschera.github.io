@@ -3,10 +3,8 @@
 	 function forgetData() {
 
         let name = document.getElementById('loginname').innerText;
-	    //localStorage.removeItem(name);  //does not work!
-         
-        //localStorage.setItem(name, "");
-        localStorage.removeItem(name);
+	    
+        localStorage.clear();
         
         loadSelectList();
 		location.reload();

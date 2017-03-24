@@ -88,6 +88,9 @@
 			    logoutbutton.style.display = 'inline-block';
 			    
 			    document.getElementById('loginname').innerText = usernameInput.value;
+            
+               // Begin listening for data
+               startListening();
 		}
 		else {
 			console.log('please enter a username');

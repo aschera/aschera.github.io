@@ -23,13 +23,75 @@
 p{
     height: 1.5em; padding:2px;
 }
-    body {
-      font-family: 'HelveticaNeue-Light';
-      background-image: url(bg.png);
-background-repeat: no-repeat;
-background-size: cover;
+/* select box */
 
-    }
+.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+/* bg login stuff */
+
+#logInWindow {
+    background-color:#8fcbd4; 
+    width:95%;
+    margin-left: 2em;
+    margin-right: 5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding:1em;
+}
+
+/* chat results stuff */
+
+#textline {
+    background-color:#8fcbd4; 
+    width:95%;
+    margin-left: 2em;
+    margin-right: 6em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding:1em;
+    display: none;
+    background-color: #8fcbd4; 
+    
+}
+}
+
+#chat_text{
+    background-color:#8fcbd4; 
+    width:95%;
+    margin-left: 2em;
+    margin-right: 6em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding:1em;
+    display: none;
+    background-color: #8fcbd4;
+}
+
+
+
+/* login field labels */
+
+#loginselect {margin-right: 1.8em;}
+#registerfield{margin-right: 0.8em;}
+#selectsavename {margin-right: 0.5em;}
+#savename{margin-left: 8em;}
+
+/* background image */
+
+html { 
+  background: url(bg.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body { 
+    background-color: transparent;
+}
+
     .msg {
       background-color: #efefef;
     }
@@ -43,21 +105,14 @@ background-size: cover;
       color: #FFF;
     }
   
-.page-header {color:#283018; text-align:center;}
+.page-header {color:#283018; text-align:center; border-bottom-color: transparent;
+}
 
-#results {background-color: #8fcbd4; margin: 1em; }
+#results {background-color: #8fcbd4; margin: 1em; padding: 1em;}
 
 #username{color:#aa863a;}
 #text {color:#aa863a; width: 90%; height: 2em;}
 
-#textline {
-    background-color: #8fcbd4; margin: 1em; padding: 1em;
-    padding-left: 2em; padding-right: 2em;
-}
-
-#chat_text {
-    background-color: #8fcbd4; margin: 1em; padding: 1em;
-}
 #logininfo {display:none;}
 #logout {display:none;}
 

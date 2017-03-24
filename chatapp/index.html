@@ -24,76 +24,63 @@
     <![endif]-->
     
     <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
-
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    
     <script src="script.js"></script>
-
+    <script src="login.js"></script>
+    <script src="logout.js"></script>
+    
     <link href="style.css" rel="stylesheet">
 
 </head>
 
 <body style="max-width:80%; margin-left:20px; margin-right:20px; ">
     <div class="container">
-
         <div class="page-header">
             <h1>Chatapp</h1>
             <p class="lead">Do you want to talk?</p>
-            
             <div id="logininfo">
                 <p> You are logged in as: <span id="loginname"></span>. <span id="logout"><button onclick="forgetData()">Log out</button></span></p>
             </div>
-            
         </div>
-
-        <div class="row" style="background-color:#276d7a; padding:1em;">
-            <div class="col-md-12" id="logInWindow" style="background-color:#8fcbd4; padding:1em; margin:1em;">
-
-                
-                    <label for="username">New user:</label>
-                    <br>
+        <div class="row" style="background-color:#276d7a; margin:0;">
+            <div class="col-md-12" id="logInWindow">
+                    <!-- saved user select -->
+                    <label for="saved_names" id="loginselect">Log in:</label>
+                    <select id="saved_names" onchange="logIn2()">
+                        <option class="disabled">Select</option>
+                    </select>
+                <br>
+                    <!-- new user type name -->
+                    <label for="username" id="registerfield">Register:</label>
                     <input id="username" type="text" placeholder="Your username">
                     <button id="OK" onclick="logIn()">Log In</button>
-
-                    <label for="saved_names">Log in:</label>
-                    <select id="saved_names">
-
-                    </select>
-
+                <br>
                     <label id="savename">
-                        <input type="checkbox" onclick="saveData()";>
+                        <input id="selectsavename" type="checkbox" onclick="saveData()";>
                             Remember me.
                     </label>
-                
             </div><!-- end col -->
             </div> <!-- end row -->
-            
-        <div class="row" style="background-color:#276d7a; padding:1em;">
-            
+<br>  
+        <div class="row" style="background-color:#276d7a; margin:0;">
             <div class="col-md-12" id="textline">
                         <span> 
                             <input id="text" type="text" placeholder="Message">
                             <button id="post">Post</button> 
                         </span>
-                </div><!-- end col -->
-            
+            </div><!-- end col -->
             <div class="col-md-12" id="chat_text">
-
                 <div id="results"></div>
-
             </div> <!-- end col -->
-
         </div> <!-- end row -->
-
     </div>
     <!-- end container -->
 
 
-    <script>
-        var myFirebase = new Firebase('https://mein-chat.firebaseio.com/');
-    </script>
+    <script> var myFirebase = new Firebase('https://mein-chat.firebaseio.com/'); </script>
 
-        <script>
-            console.log(new Date().getTime());
-         
+    <script>
         var myFirebase = new Firebase('https://mein-chat.firebaseio.com/');
         var usernameInput = document.querySelector('#username');
         var textInput = document.querySelector('#text');
@@ -104,7 +91,7 @@
             var msgUser = usernameInput.value;
             var msgText = textInput.value;
             //var timeStamped = Firebase.ServerValue.TIMESTAMP;
-	    var time = Date();
+	        var time = Date();
             var timeStamped = time.substring(0, 24); 
             
             myFirebase.push({
@@ -118,128 +105,38 @@
         var startListening = function() {
             myFirebase.on('child_added', function(snapshot) {
                 var msg = snapshot.val();
-                
-                
+
                 //name
                 var msgUsernameElement = document.createElement("span");
                 msgUsernameElement.innerHTML = msg.username;
-		msgUsernameElement.id = 'name';
+		        msgUsernameElement.id = 'name';
 		
-
 			var msgTime = document.createElement("span");
 		        msgTime.innerHTML = ' wrote at ' + msg.theTime;
-			msgTime.id = 'time';
-
-			msgUsernameElement.appendChild(msgTime);
-
-		
+			    msgTime.id = 'time';
+			    msgUsernameElement.appendChild(msgTime);
+                
                 //message
                 var msgTextElement = document.createElement("p");
                 msgTextElement.innerHTML = msg.text;
-		msgUsernameElement.id = 'message';
+		        msgUsernameElement.id = 'message';
 		
-
                 //box t hold the name and message
                 var msgElement = document.createElement("div");
                 msgElement.appendChild(msgUsernameElement);
                 msgElement.appendChild(msgTextElement);
 
-
                 msgElement.className = "msg";
                 let element = document.getElementById("results");
                 element.insertBefore(msgElement, element.firstChild);
-                
-                
-                
+  
             });
         }
 
         // Begin listening for data
         startListening();
-            
-            
-        
+
     </script>
-
-    <script>
- /* ************************ ADD username to localstorage **************************** */
-        // Read value from storage, or empty array
-        names = JSON.parse(localStorage.getItem('locname') || "[]");
-
-        function saveData() {
-
-            var data = document.getElementById('username').value;
-
-            //unique ID for the user
-            let id = data.length + 'id' + Math.floor((Math.random() * 100) + 1) + data;
-		
-            names.push({
-                id: id,
-                name: data
-            });
-
-            localStorage.setItem('locname', JSON.stringify(names));
-
-            console.log(names);
-        };
- /* ************************ log out **************************** */
-	 function forgetData() {
-
-            let name = usernameInput.value;
-	    localStorage.removeItem(name);
-		console.log('the user ' + name + ' has been removed.');
-		location.reload();
-        };
-
-
-        /* ************************ ADD items to dropdown list **************************** */
-
-        for (i = 0; i < names.length; i++) {
-            let item = document.getElementById('saved_names');
-            let option = document.createElement("option");
-            option.text = names[i].name;
-            item.add(option);
-        }
-    </script>
-    <script>
-         /* ************************ Log in **************************** */
-        // log in menu changes
-        function logIn() {
-		let n = document.querySelector('#username').value;
-		if(n.length > 1) {
-			console.log(document.querySelector('#username'));
-			   let loginwindow = document.getElementById('logInWindow');
-			    loginwindow.style.display = 'none';
-			    
-			    console.log('yes');
-			    let results = document.getElementById('results');
-			    results.style.display = 'block';
-
-			    let inputText = document.getElementById('text');
-			    inputText.style.display = 'inline-block';
-			    
-			    let postButton = document.getElementById('post');
-			    postButton.style.display = 'inline-block';
-			    
-			    let loginInfo = document.getElementById('logininfo');
-			    loginInfo.style.display = 'inline-block';
-		
-			    let logoutbutton = document.getElementById('logout');
-			    logoutbutton.style.display = 'inline-block';
-			    
-			    document.getElementById('loginname').innerText = usernameInput.value;
-		}
-		else {
-			console.log('please enter a username');
-			window.alert('please enter a username');
-		}
-
-         
-};
-   
-     
-    </script>
-    
 
 </body>
 

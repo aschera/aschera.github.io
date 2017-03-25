@@ -129,7 +129,8 @@
                     var likeButton = document.createElement("input");
                     likeButton.innerHTML = 0;
                     likeButton.type = "button";
-                    likeButton.value = "like";
+                    likeButton.value = "like " + 0;
+                    likeButton.style.float = 'right';
                     likeButton.addEventListener('click', function(event) {
                         console.log('liked');
                         like(snapshot.key());  // adds the key to the function to push 'like'
@@ -137,9 +138,10 @@
                     msgUsernameElement.appendChild(likeButton);
                 
                     var dislikeButton = document.createElement("input");
-                    dislikeButton.innerHTML = 'hate';
+                    dislikeButton.innerHTML = 0;
                     dislikeButton.type = "button";
-                    dislikeButton.value = "dislike";
+                    dislikeButton.value = "dislike " + 0;
+                    dislikeButton.style.float = 'right';
                     likeButton.addEventListener('click', function(event) {
                         console.log('disliked');
                         dislike(snapshot.key());  // adds the key to the function to push 'dislike'
@@ -149,6 +151,9 @@
                 //message
                 var msgTextElement = document.createElement("p");
                 msgTextElement.innerHTML = msg.text;
+                msgTextElement.style.display = 'block';
+                msgTextElement.style.overflow = 'hidden';
+                msgTextElement.style.lineHeight ='1.42857143';
 		        msgUsernameElement.id = 'message';
 		
                 //box t hold the name and message

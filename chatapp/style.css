@@ -8,7 +8,7 @@
         }
 
         #text {
-            display: none;border-radius: 4px;
+            display: none; border-radius: 4px;
         }
 
         #results {
@@ -19,7 +19,7 @@
 #time {color:red;border-radius: 4px;}
 #name {color:green;border-radius: 4px;}
 p{
-    height: 1.5em; padding:2px;border-radius: 4px;
+    padding:2px;border-radius: 4px;
 }
 /* select box */
 
@@ -94,10 +94,11 @@ body {
 }
 
     .msg {
-      background-color: #efefef;border-radius: 4px;
+      background-color: #efefef; border-radius: 4px;
     }
     #username, #text {
-      margin: 5px 0px;border-radius: 4px;
+      margin: 5px 0px;
+        border-radius: 4px;
     }
     #post {
       padding: 0.5em 1em;
@@ -113,7 +114,7 @@ body {
 #results {background-color: #8fcbd4; margin: 1em; padding: 1em;}
 
 #username{color:#aa863a;}
-#text {color:#aa863a; width: 90%; height: 2em;}
+#text {color:#aa863a; width: 92%; min-height: 2em;}
 
 
 /* ********************** logout ********************* */
@@ -128,8 +129,8 @@ body {
     border-bottom-color: black;
     border:1px;
     border-radius: 4px;
-    color: black;
-    padding: 4px 4px;
+    color: white;
+    padding: 0.5em 1em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -140,15 +141,15 @@ body {
 
 /* ***************** Login window /*********************** **/
 
-#loginname{font-size: 2em;}
+#loginname{font-size: 2em; color:#276d7a;}
 #logininfo {display:none;}
 
 #OK {background-color: #50b1ff;
     border-bottom-color: black;
     border:1px;
     border-radius: 4px;
-    color: black;
-    padding: 4px 4px;
+    color: white;
+    padding: 0.5em 1em;
     text-align: center;
     text-decoration: none;
     display: inline-block;

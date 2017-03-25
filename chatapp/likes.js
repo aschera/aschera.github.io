@@ -1,23 +1,43 @@
- 
-function like(name) {
-    this.username = name;
-    
-    var hopperRef = myFirebase.child(name);
-    hopperRef.update({
-      "like": "yes"
-    });
-    
-	};
+let likeCount = 0;
+
+let dislikeCount = 0;
 
 
 
-function dislike(name) {
-    this.username = name;
+
+function like(key) {
     
-    var hopperRef = myFirebase.child(name);
-    hopperRef.update({
-      "dislike": "yes"
-    });
+let url = 'https://mein-chat.firebaseio.com/';
+url += key + '/' + 'text' + '/' + 'like';
     
-	};
+var upvotesRef = new Firebase(url);
+                                  
+upvotesRef.transaction(function (current_value) {
+  let result = (current_value || 0) + 1;
+    likeCount = result;
+    console.log('like is ' + likeCount);
+  return result;
+});
+   
+};
+
+
+function dislike(key) {
     
+let url = 'https://mein-chat.firebaseio.com/';
+url += key + '/' + 'text' + '/' + 'dislike';
+    
+var downvotesRef = new Firebase(url);
+                                  
+downvotesRef.transaction(function (current_value) {
+  let result = (current_value || 0) + 1;
+    dislikeCount = result;
+    console.log('dislike is ' + dislikeCount);
+  return result;
+});
+   
+};
+
+function updatebutton() {
+    console.log('need updating');
+}

@@ -106,7 +106,7 @@
             
             myFirebase.push({
                 username: msgUser,
-                text: msgText,
+                text: [msgText],
                 theTime:timeStamped
                 
             });
@@ -127,22 +127,24 @@
                     msgUsernameElement.appendChild(msgTime);
                 
                     var likeButton = document.createElement("input");
-                    likeButton.innerHTML = 0;
                     likeButton.type = "button";
-                    likeButton.value = "like " + 0;
+                    let y= snapshot.val().text;
+                    likeButton.value = "like " + y.like;
                     likeButton.style.float = 'right';
+                    likeButton.onchange = updatebutton();
                     likeButton.addEventListener('click', function(event) {
                         console.log('liked');
                         like(snapshot.key());  // adds the key to the function to push 'like'
+                        
                     });
                     msgUsernameElement.appendChild(likeButton);
                 
                     var dislikeButton = document.createElement("input");
-                    dislikeButton.innerHTML = 0;
                     dislikeButton.type = "button";
-                    dislikeButton.value = "dislike " + 0;
+                    let x= snapshot.val().text;
+                    dislikeButton.value = "dislike " + x.dislike;
                     dislikeButton.style.float = 'right';
-                    likeButton.addEventListener('click', function(event) {
+                    dislikeButton.addEventListener('click', function(event) {
                         console.log('disliked');
                         dislike(snapshot.key());  // adds the key to the function to push 'dislike'
                     });
@@ -150,7 +152,7 @@
                 
                 //message
                 var msgTextElement = document.createElement("p");
-                msgTextElement.innerHTML = msg.text;
+                msgTextElement.innerHTML = msg.text[0];
                 msgTextElement.style.display = 'block';
                 msgTextElement.style.overflow = 'hidden';
                 msgTextElement.style.lineHeight ='1.42857143';

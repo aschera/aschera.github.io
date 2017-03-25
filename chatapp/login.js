@@ -60,12 +60,14 @@
 
         function logIn() {
 		let n = document.querySelector('#username').value;
-		if(n.length > 1) {
+		if(n.length >= 1) {
 			console.log(document.querySelector('#username'));
 			   let loginwindow = document.getElementById('logInWindow');
 			    loginwindow.style.display = 'none';
-			    
-			    console.log('yes');
+            
+                let GreetingHeader= document.getElementById('greeting');
+			    GreetingHeader.style.display = 'none';
+            
 			    let results = document.getElementById('results');
 			    results.style.display = 'block';
 

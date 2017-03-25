@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    
+    <meta name="description" content="chat">
+    <meta name="author" content="Christina Bögh">
     
 
     <title>Innlämning 2</title>
@@ -38,13 +39,20 @@
 <body style="max-width:80%; margin-left:20px; margin-right:20px; ">
     <div class="container">
         <div class="page-header">
-            <h1>Chatapp</h1>
-            <p class="lead">Do you want to talk?</p>
+            
+            <div id="greeting">
+                <h1>Chatapp</h1>
+                <p class="lead">Do you want to talk?</p>
+            </div>
+            
+            
             <div id="logininfo">
-                <p> You are logged in as: <span id="loginname"></span>. <span id="logout"><button onclick="forgetData()">Log out</button></span></p>
+                <p> You are logged in as: <strong><span id="loginname"></span></strong> 
+                    <br>
+                    <span id="logout"><button ID="logoutButton" onclick="forgetData()">Log out</button></span></p>
             </div>
         </div>
-        <div class="row" style="background-color:#276d7a; margin:0;">
+        <div class="row" style="background-color:#276d7a; margin:0; border-radius: 4px;">
             <div class="col-md-12" id="logInWindow">
                 
                     <!-- saved user select -->
@@ -65,7 +73,7 @@
             </div><!-- end col -->
             </div> <!-- end row -->
 <br>  
-        <div class="row" style="background-color:#276d7a; margin:0;">
+        <div class="row" style="background-color:#276d7a; margin:0; border-radius: 4px;">
             <div class="col-md-12" id="textline">
                         <span> 
                             <input id="text" type="text" placeholder="Message">

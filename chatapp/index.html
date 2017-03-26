@@ -131,10 +131,11 @@
                     let y= snapshot.val().text;
                     likeButton.value = "like " + y.like;
                     likeButton.style.float = 'right';
-                    likeButton.onchange = updatebutton();
+                    likeButton.id = snapshot.val().username;
                     likeButton.addEventListener('click', function(event) {
+                        
                         console.log('liked');
-                        like(snapshot.key());  // adds the key to the function to push 'like'
+                        like(snapshot.key());
                         
                     });
                     msgUsernameElement.appendChild(likeButton);
@@ -145,8 +146,10 @@
                     dislikeButton.value = "dislike " + x.dislike;
                     dislikeButton.style.float = 'right';
                     dislikeButton.addEventListener('click', function(event) {
+                        
                         console.log('disliked');
-                        dislike(snapshot.key());  // adds the key to the function to push 'dislike'
+                        dislike(snapshot.key());
+                        
                     });
                     msgUsernameElement.appendChild(dislikeButton);
                 

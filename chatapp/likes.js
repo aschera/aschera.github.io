@@ -1,9 +1,3 @@
-let likeCount = 0;
-
-let dislikeCount = 0;
-
-
-
 
 function like(key) {
     
@@ -14,8 +8,9 @@ var upvotesRef = new Firebase(url);
                                   
 upvotesRef.transaction(function (current_value) {
   let result = (current_value || 0) + 1;
-    likeCount = result;
-    console.log('like is ' + likeCount);
+    
+ listenToLikes(key);
+    
   return result;
 });
    
@@ -31,13 +26,27 @@ var downvotesRef = new Firebase(url);
                                   
 downvotesRef.transaction(function (current_value) {
   let result = (current_value || 0) + 1;
-    dislikeCount = result;
-    console.log('dislike is ' + dislikeCount);
+    
   return result;
 });
    
 };
 
-function updatebutton() {
-    console.log('need updating');
-}
+
+
+var listenToLikes = function(key) {
+    
+let url = 'https://mein-chat.firebaseio.com/';
+url += key;
+    
+var votes = new Firebase(url);
+    
+votes.once('value').then(function(snapshot) {
+    
+  var username = snapshot.val().username;
+  console.log(username); // good!
+
+  var likes = snapshot.val().text.like;
+  console.log(likes); // good!
+});
+};

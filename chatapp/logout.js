@@ -14,7 +14,7 @@
 
 
 /* ************************ ADD items to dropdown list **************************** */
-    
+ /*   
 function loadSelectList() {
     if (names.length > 1) {
         for (i = 0; i < names.length; i++) {
@@ -27,9 +27,11 @@ function loadSelectList() {
         }
     }
 }; 
-
+*/
 
  /* ************************ ADD username to localstorage **************************** */
+
+/*
         // Read value from storage, or empty array
         names = JSON.parse(localStorage.getItem('locname') || "[]");
 
@@ -49,3 +51,4 @@ function loadSelectList() {
 
             console.log(names);
         };
+        */

@@ -4,11 +4,9 @@
         // Read value from storage, or empty array
         names = JSON.parse(localStorage.getItem('locname') || "[]");
 
-        console.log(names);
-     
-       
+        
         // load the values into a select menu
-        loadSelectList();
+        //loadSelectList();
      
  });
 
@@ -23,7 +21,6 @@
 			   let loginwindow = document.getElementById('logInWindow');
 			    loginwindow.style.display = 'none';
 			    
-			    console.log('yes');
 			    let results = document.getElementById('results');
 			    results.style.display = 'block';
 
@@ -61,7 +58,7 @@
         function logIn() {
 		let n = document.querySelector('#username').value;
 		if(n.length >= 1) {
-			console.log(document.querySelector('#username'));
+			
 			   let loginwindow = document.getElementById('logInWindow');
 			    loginwindow.style.display = 'none';
             

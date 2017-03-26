@@ -1,4 +1,6 @@
 
+/* ******************* update database with likes or dislikes ****************************** */
+
 function like(key) {
     
 let url = 'https://mein-chat.firebaseio.com/';
@@ -7,10 +9,8 @@ url += key + '/' + 'text' + '/' + 'like';
 var upvotesRef = new Firebase(url);
                                   
 upvotesRef.transaction(function (current_value) {
-  let result = (current_value || 0) + 1;
-    
- listenToLikes(key);
-    
+  let result = ((current_value || 0) + 1);
+
   return result;
 });
    
@@ -34,7 +34,18 @@ downvotesRef.transaction(function (current_value) {
 
 
 
-var listenToLikes = function(key) {
+
+
+
+
+
+
+
+
+
+/* ***************** update buttons ************************** */
+
+function listenToVotes (key) {
     
 let url = 'https://mein-chat.firebaseio.com/';
 url += key;
@@ -43,10 +54,39 @@ var votes = new Firebase(url);
     
 votes.once('value').then(function(snapshot) {
     
-  var username = snapshot.val().username;
-  console.log(username); // good!
+  var username = (snapshot.val().text[0]);
+  
+     
+  var number = snapshot.val().text.like;
+  
+  if (number === undefined) {
+      number = 1;
+  }
+  let button = document.getElementById(username);
+  button.value = "like " + number;
 
-  var likes = snapshot.val().text.like;
-  console.log(likes); // good!
+});
+};
+
+
+function listenToVotes2 (key) {
+    
+let url = 'https://mein-chat.firebaseio.com/';
+url += key;
+    
+var votes = new Firebase(url);
+    
+votes.once('value').then(function(snapshot) {
+    
+  var username = (snapshot.val().text[0]) + 1;
+   
+  var number = snapshot.val().text.dislike;
+  
+  if (number === undefined) {
+      number = 1;
+  }
+  let button = document.getElementById(username);
+  button.value = "dislike " + number;
+
 });
 };

@@ -108,7 +108,7 @@
                 username: msgUser,
                 text: [msgText],
                 theTime:timeStamped
-                
+           
             });
             textInput.value = "";
         });
@@ -129,26 +129,40 @@
                     var likeButton = document.createElement("input");
                     likeButton.type = "button";
                     let y= snapshot.val().text;
+                    
+                    if (y.like === undefined) {
+                        y.like = '';
+                    }
+                
                     likeButton.value = "like " + y.like;
                     likeButton.style.float = 'right';
-                    likeButton.id = snapshot.val().username;
+                    likeButton.id = snapshot.val().text;
                     likeButton.addEventListener('click', function(event) {
                         
                         console.log('liked');
                         like(snapshot.key());
-                        
+                            
+                        listenToVotes(snapshot.key());
+    
                     });
                     msgUsernameElement.appendChild(likeButton);
                 
                     var dislikeButton = document.createElement("input");
                     dislikeButton.type = "button";
                     let x= snapshot.val().text;
+                
+                    if (x.dislike === undefined) {
+                        x.dislike = '';
+                    }
                     dislikeButton.value = "dislike " + x.dislike;
                     dislikeButton.style.float = 'right';
+                    dislikeButton.id = (snapshot.val().text) + 1;
                     dislikeButton.addEventListener('click', function(event) {
                         
                         console.log('disliked');
                         dislike(snapshot.key());
+                        
+                        listenToVotes2(snapshot.key());
                         
                     });
                     msgUsernameElement.appendChild(dislikeButton);

@@ -7,6 +7,14 @@
         
         // load the values into a select menu
         //loadSelectList();
+        
+        if (document.getElementById('username').value === undefined) {
+            console.log ('no one logged in');
+        }
+        else {
+            document.getElementById('username').value = names[0].name;
+            logIn();
+        }
      
  });
 
@@ -87,6 +95,8 @@
 			    logoutbutton.style.display = 'inline-block';
 			    
 			    document.getElementById('loginname').innerText = usernameInput.value;
+            
+                localStorage.setItem('username', JSON.stringify(usernameInput.value));
             
                // Begin listening for data
                startListening();

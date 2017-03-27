@@ -54,16 +54,18 @@ var votes = new Firebase(url);
     
 votes.once('value').then(function(snapshot) {
     
-  var username = (snapshot.val().text[0]);
-  
-     
+  var username = (snapshot.val().text[0]) + 1;
+   
   var number = snapshot.val().text.like;
   
   if (number === undefined) {
       number = 1;
   }
   let button = document.getElementById(id);
-  button.value = "like " + number;
+    console.log('id: ' + id);
+    
+    console.log(button);
+  button.innerHTML = number;
 
 });
 };
@@ -86,7 +88,10 @@ votes.once('value').then(function(snapshot) {
       number = 1;
   }
   let button = document.getElementById(id);
-  button.innerHTML = "dislike " + number;
+    console.log('id: ' + id);
+    
+    console.log(button);
+  button.innerHTML = number;
 
 });
 };

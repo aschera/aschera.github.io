@@ -147,13 +147,14 @@
                         
                     likeButton.style.float = 'right';
                     let theLId = (snapshot.val().username).length + Math.random();
+                    
                     likeButton.id = theLId;
                     likeButton.addEventListener('click', function(event) {
                         
                         console.log('liked');
                         like(snapshot.key());
                             
-                        listenToVotes(snapshot.key(),theLId);
+                        listenToVotes(snapshot.key(), (theLId+10));
     
                     });
                     msgUsernameElement.appendChild(likeButton);
@@ -162,7 +163,7 @@
                         var numberLikes = document.createElement("span");
                         numberLikes.style.float = 'right';
                         numberLikes.innerHTML = insideY;
-                        numberLikes.id = theLId;
+                        numberLikes.id = (theLId+10);
                         msgUsernameElement.appendChild(numberLikes);
                 
                     //dislike button image
@@ -188,7 +189,7 @@
                         console.log('disliked');
                         dislike(snapshot.key());
                         
-                        listenToVotes2(snapshot.key(),theId);
+                        listenToVotes2(snapshot.key(), (theId +10));
                         
                     });
                     msgUsernameElement.appendChild(dislikeButton);
@@ -198,7 +199,7 @@
                         
                         numberDisLikes.style.float = 'right';
                         numberDisLikes.innerHTML = insideX;
-                        numberDisLikes.id = theId;
+                        numberDisLikes.id = (theId + 10);
                         msgUsernameElement.appendChild(numberDisLikes);
                 
                 //chat message

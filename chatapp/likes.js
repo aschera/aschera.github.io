@@ -62,9 +62,7 @@ votes.once('value').then(function(snapshot) {
       number = 1;
   }
   let button = document.getElementById(id);
-    console.log('id: ' + id);
     
-    console.log(button);
   button.innerHTML = number;
 
 });
@@ -88,9 +86,7 @@ votes.once('value').then(function(snapshot) {
       number = 1;
   }
   let button = document.getElementById(id);
-    console.log('id: ' + id);
     
-    console.log(button);
   button.innerHTML = number;
 
 });

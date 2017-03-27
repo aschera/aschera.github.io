@@ -36,9 +36,10 @@
 
 </head>
 
-<body style="max-width:80%; margin-left:20px; margin-right:20px; ">
-    <div class="container">
-        <div class="page-header">
+<body class="center">
+    
+    <div class="container center">
+        <div class="page-header center">
             
             <div id="greeting">
                 <h1>Chatapp</h1>
@@ -118,23 +119,24 @@
 
                 //name
                 var msgUsernameElement = document.createElement("span");
-                msgUsernameElement.innerHTML = msg.username;
+                msgUsernameElement.innerHTML = msg.username + ' wrote at ';
 		        msgUsernameElement.id = 'name';
 		
                     var msgTime = document.createElement("span");
-                    msgTime.innerHTML = ' wrote at ' + msg.theTime;
+                    msgTime.innerHTML = msg.theTime;
                     msgTime.id = 'time';
                     msgUsernameElement.appendChild(msgTime);
                 
                     var likeButton = document.createElement("input");
                     likeButton.type = "button";
                     let y= snapshot.val().text;
-                    
+                
+                    let insideY = "like " + y.like;
                     if (y.like === undefined) {
-                        y.like = '';
+                       insideY = 'like';
                     }
                 
-                    likeButton.value = "like " + y.like;
+                    likeButton.value = insideY;
                     likeButton.style.float = 'right';
                     likeButton.id = snapshot.val().text;
                     likeButton.addEventListener('click', function(event) {
@@ -151,10 +153,11 @@
                     dislikeButton.type = "button";
                     let x= snapshot.val().text;
                 
+                    let insideX = "dislike " + x.dislike;
                     if (x.dislike === undefined) {
-                        x.dislike = '';
+                        insideX = 'dislike';
                     }
-                    dislikeButton.value = "dislike " + x.dislike;
+                    dislikeButton.value = insideX;
                     dislikeButton.style.float = 'right';
                     dislikeButton.id = (snapshot.val().text) + 1;
                     dislikeButton.addEventListener('click', function(event) {

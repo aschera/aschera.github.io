@@ -16,7 +16,9 @@
         }
 
       
-#time {color:red;border-radius: 4px;}
+#time {
+    color:#8fcbd4;
+    border-radius: 4px;}
 #name {color:green;border-radius: 4px;}
 p{
     padding:2px;border-radius: 4px;
@@ -107,7 +109,13 @@ body {
       color: #FFF;border-radius: 4px;
       display: none;
     }
-  
+
+ .center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+} 
+
 .page-header {color:#8fcbd4; text-align:center; border-bottom-color: transparent; border-radius: 4px;
 }
 

@@ -122,55 +122,86 @@
                 msgUsernameElement.innerHTML = msg.username + ' wrote at ';
 		        msgUsernameElement.id = 'name';
 		
+                
+                    //Time
                     var msgTime = document.createElement("span");
                     msgTime.innerHTML = msg.theTime;
                     msgTime.id = 'time';
                     msgUsernameElement.appendChild(msgTime);
                 
+                
+                    //like button image
                     var likeButton = document.createElement("input");
-                    likeButton.type = "button";
+                    likeButton.type = "image";
                     let y= snapshot.val().text;
                 
-                    let insideY = "like " + y.like;
-                    if (y.like === undefined) {
-                       insideY = 'like';
-                    }
-                
+                        let insideY = ":" + y.like;
+                        if (y.like === undefined) {
+                           insideY = 'like';
+                        }
                     likeButton.value = insideY;
+                
+                    likeButton.src = "like.gif"; //add button image
+                    likeButton.backgroundColor= 'rgba(255,255,255,0.0)'; //take away bg color
+                    likeButton.border = 'none';
+                        
                     likeButton.style.float = 'right';
-                    likeButton.id = snapshot.val().text;
+                    let theLId = (snapshot.val().username).length + Math.random();
+                    likeButton.id = theLId;
                     likeButton.addEventListener('click', function(event) {
                         
                         console.log('liked');
                         like(snapshot.key());
                             
-                        listenToVotes(snapshot.key());
+                        listenToVotes(snapshot.key(),theLId);
     
                     });
                     msgUsernameElement.appendChild(likeButton);
                 
+                   //number of likes
+                        var numberLikes = document.createElement("span");
+                        numberLikes.style.float = 'right';
+                        numberLikes.innerHTML = insideY;
+                        numberLikes.id = theLId;
+                        msgUsernameElement.appendChild(numberLikes);
+                
+                    //dislike button image
                     var dislikeButton = document.createElement("input");
-                    dislikeButton.type = "button";
+                    dislikeButton.type = "image";
                     let x= snapshot.val().text;
                 
-                    let insideX = "dislike " + x.dislike;
+                    let insideX = ":" + x.dislike;
                     if (x.dislike === undefined) {
                         insideX = 'dislike';
                     }
                     dislikeButton.value = insideX;
+                
+                    dislikeButton.src = "dislike.gif"; //add button image
+                    dislikeButton.backgroundColor= 'rgba(255,255,255,0.0)'; //take away bg color
+                    dislikeButton.border = 'none';
+                
                     dislikeButton.style.float = 'right';
-                    dislikeButton.id = (snapshot.val().text) + 1;
+                    let theId = (snapshot.val().username).length + Math.random();
+                    dislikeButton.id = theId;
                     dislikeButton.addEventListener('click', function(event) {
                         
                         console.log('disliked');
                         dislike(snapshot.key());
                         
-                        listenToVotes2(snapshot.key());
+                        listenToVotes2(snapshot.key(),theId);
                         
                     });
                     msgUsernameElement.appendChild(dislikeButton);
                 
-                //message
+                       //number of dislikes
+                        var numberDisLikes = document.createElement("span");
+                        
+                        numberDisLikes.style.float = 'right';
+                        numberDisLikes.innerHTML = insideX;
+                        numberDisLikes.id = theId;
+                        msgUsernameElement.appendChild(numberDisLikes);
+                
+                //chat message
                 var msgTextElement = document.createElement("p");
                 msgTextElement.innerHTML = msg.text[0];
                 msgTextElement.style.display = 'block';

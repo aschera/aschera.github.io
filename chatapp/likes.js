@@ -45,7 +45,7 @@ downvotesRef.transaction(function (current_value) {
 
 /* ***************** update buttons ************************** */
 
-function listenToVotes (key) {
+function listenToVotes (key,id) {
     
 let url = 'https://mein-chat.firebaseio.com/';
 url += key;
@@ -62,14 +62,14 @@ votes.once('value').then(function(snapshot) {
   if (number === undefined) {
       number = 1;
   }
-  let button = document.getElementById(username);
+  let button = document.getElementById(id);
   button.value = "like " + number;
 
 });
 };
 
 
-function listenToVotes2 (key) {
+function listenToVotes2 (key,id) {
     
 let url = 'https://mein-chat.firebaseio.com/';
 url += key;
@@ -85,8 +85,8 @@ votes.once('value').then(function(snapshot) {
   if (number === undefined) {
       number = 1;
   }
-  let button = document.getElementById(username);
-  button.value = "dislike " + number;
+  let button = document.getElementById(id);
+  button.innerHTML = "dislike " + number;
 
 });
 };

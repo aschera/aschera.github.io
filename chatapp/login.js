@@ -8,11 +8,13 @@
         // load the values into a select menu
         //loadSelectList();
         
-        if (document.getElementById('username').value === undefined) {
+     
+        if (names.length === 0) {
             console.log ('no one logged in');
         }
         else {
             document.getElementById('username').value = names[0].name;
+            console.log ('someone logged in: ' + names[0].name);
             logIn();
         }
      

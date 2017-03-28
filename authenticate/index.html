@@ -8,7 +8,7 @@
 
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <meta name="description" content="chat">
+    <meta name="description" content="github authentication">
     <meta name="author" content="Christina Bögh">
 
 
@@ -23,14 +23,6 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-
-    <script src="script.js"></script>
-  
-
-    <link href="style.css" rel="stylesheet">
 
 </head>
 
@@ -68,11 +60,11 @@ var provider = new firebase.auth.GithubAuthProvider();
 
 function githubSignin() {
 	   firebase.auth().getRedirectResult().then(function(result) {
-consol.log('before');
+console.log('before');
 	  if (result.credential) {
 	    // This gives you a GitHub Access Token. You can use it to access the GitHub API.
 	    var token = result.credential.accessToken;
-	    consol.log('got a token: ' + token);
+	    console.log('got a token: ' + token);
 	  }
 	  // The signed-in user info.
 	  var user = result.user;

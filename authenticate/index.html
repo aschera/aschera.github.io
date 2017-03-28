@@ -62,17 +62,17 @@ var provider = new firebase.auth.GithubAuthProvider();
 function githubSignin() {
 
 /* pop-up */ 
-
+/*
 firebase.auth().signInWithPopup(provider)
 .then(function(result) {
     
     let user = result.user;
 console.log('success: ' + user);
-});
+}); */
 
 
 /* re-load */
-/*
+
 firebase.auth().getRedirectResult().then(function(result) {
   if (result.credential) {
     // This gives you a GitHub Access Token. You can use it to access the GitHub API.
@@ -92,7 +92,7 @@ console.log(error);
   // The firebase.auth.AuthCredential type that was used.
   var credential = error.credential;
   // ...
-});*/
+});
 
 
 

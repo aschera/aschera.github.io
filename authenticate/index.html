@@ -23,6 +23,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <style>#welcomeTitle {display:none;}</style>
 
 </head>
 
@@ -39,7 +41,7 @@
             </div>
             <!-- end col -->
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="content" style="min-width:30em;">
-			    <span id="result"></span>
+			    <span id="result">Test</span>
             </div>
             <!-- end col -->
         </div>
@@ -95,7 +97,7 @@ element.disabled = true;  // stänger av ett klickbart element
         
    let loggedIn = document.getElementById('result');
       loggedIn.innerHTML = result.user;
-    
+    console.log(result.user);
 }).catch(function(error) {
 console.log(error);
   // Handle Errors here.

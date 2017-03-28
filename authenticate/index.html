@@ -68,10 +68,11 @@ var provider = new firebase.auth.GithubAuthProvider();
 
 function githubSignin() {
 	   firebase.auth().getRedirectResult().then(function(result) {
+consol.log('before');
 	  if (result.credential) {
 	    // This gives you a GitHub Access Token. You can use it to access the GitHub API.
 	    var token = result.credential.accessToken;
-	    // ...
+	    consol.log('got a token: ' + token);
 	  }
 	  // The signed-in user info.
 	  var user = result.user;

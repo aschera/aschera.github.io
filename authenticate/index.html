@@ -69,17 +69,27 @@ var provider = new firebase.auth.GithubAuthProvider();
 function githubSignin() {
 
 /* pop-up */ 
-/*
+
 firebase.auth().signInWithPopup(provider)
 .then(function(result) {
     
     let user = result.user;
-console.log('success: ' + user);
-}); */
+    
+    let element = document.getElementById('login');
+        element.disabled = true;  // stänger av ett klickbart element
+        element.style.display = 'none';
+    let title = document.getElementById('loginTitle');
+        title.style.display = 'none';   
+    let loggedIn = document.getElementById('result');
+        loggedIn.innerHTML = result;
+    
+    console.log(result);
+    console.log('success: ' + user);
+}); 
 
 
 /* re-load */
-
+/*
 firebase.auth().getRedirectResult().then(function(result) {
   if (result.credential) {
     // This gives you a GitHub Access Token. You can use it to access the GitHub API.
@@ -110,7 +120,7 @@ console.log(error);
   // ...
 });
 
-}
+}*/
 
 
 

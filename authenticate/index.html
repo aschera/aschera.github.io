@@ -82,6 +82,10 @@ console.log('all good');
   }
   // The signed-in user info.
   var user = result.user;
+    let element = document.getElementById('login');
+element.disabled = true;  // stänger av ett klickbart element
+    element.style.display = 'none';
+    
 }).catch(function(error) {
 console.log(error);
   // Handle Errors here.
@@ -93,11 +97,6 @@ console.log(error);
   var credential = error.credential;
   // ...
 });
-
-
-
-let element = document.getElementById('login');
-element.disabled = true;  // stänger av ett klickbart element
 
 }
 
@@ -114,7 +113,7 @@ function githubSignout(){
 
 let element = document.getElementById('login');
 element.disabled = false;  
-
+element.style.display = 'block';
 }
 </script>
 

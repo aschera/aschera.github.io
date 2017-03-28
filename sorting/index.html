@@ -1,6 +1,5 @@
-
-
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -26,65 +25,70 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<style>
-td {
-    background-color: lime;
-    margin: 12px 12px 12px 12px;
-    padding: 12px 12px 12px 12px;
-}
-#items{border-radius:4px;}
-table.items {
-    border-collapse: separate;
-    border-spacing: 10px;
-    *border-collapse: expression('separate', cellSpacing = '10px');
-}
-</style>
+    <style>
+        td {
+            background-color: lime;
+            margin: 12px 12px 12px 12px;
+            padding: 12px 12px 12px 12px;
+        }
+
+        #items {
+            border-radius: 4px;
+        }
+
+        table.items {
+            border-collapse: separate;
+            border-spacing: 10px;
+            *border-collapse: expression('separate', cellSpacing='10px');
+        }
+    </style>
 
 </head>
 
 <body class="center">
 
     <div class="container center" style="min-width:30em;">
-        
+
         <div class="row" style="background-color:#276d7a; padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" style="min-width:30em;">
 
 
-<br>
-<p>
-		Add an item:<br>
-		<input id="inputName" type="text" placeholder="Name"/>
-		<input id="inputType" type="text" placeholder="Type"/>
-		<input id="inputCount" type="text" placeholder="Count"/>
-		<input id="inputPrice" type="text" placeholder="Price"/>
-		<button id="addButton">Add</button>
-	</p>
+                <br>
+                <p>
+                    Add an item:<br>
+                    <input id="inputName" type="text" placeholder="Name" />
+                    <input id="inputType" type="text" placeholder="Type" />
+                    <input id="inputCount" type="text" placeholder="Count" />
+                    <input id="inputPrice" type="text" placeholder="Price" />
+                    <button id="addButton">Add</button>
+                </p>
 
             </div>
             <!-- end col -->
         </div>
         <!-- end row -->
-<div class="row" style="background-color:#276d7a; padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
+        <div class="row" style="background-color:#276d7a; padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" style="min-width:30em;">
-<p>
-Sort the list: <br>
-<button id="sortname">by name</button>
-<button id="sorttype">by type</button>
-<button id="sortcount">by amount</button>
-<button id="sortprice">by price</button>
-<input type='text' id='howmany' />
-</p>
-</div>
+                <p>
+                    Sort the list: <br>
+                    <button id="sortname">by name</button>
+                    <button id="sorttype">by type</button>
+                    <button id="sortcount">by amount</button>
+                    <button id="sortprice">by price</button>
+                    <input type='text' id='howmany' />
+                </p>
+            </div>
             <!-- end col -->
         </div>
         <!-- end row -->
-<div class="row" style="background-color:#276d7a; padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
+        <div class="row" style="background-color:#276d7a; padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" style="min-width:30em;">
-<p>
-Stored Items: <br>
-<table id="items" cellspacing=12 style="margin:0.6em; padding:0.6em;"></table>
-</p>
-</div>
+                <p>
+                    Stored Items: <br>
+                    <table id="items" cellspacing=12 style="margin:0.6em; padding:0.6em;"></table>
+			<button onclick="nextList();" id="nextItems">Next</button>
+                </p>
+            </div>
             <!-- end col -->
         </div>
         <!-- end row -->
@@ -92,107 +96,121 @@ Stored Items: <br>
     <!-- end container -->
 
 
-<script>
-
-window.addEventListener('load', function() { //shit has to load
-			let name = document.getElementById('inputName');
-			let type = document.getElementById('inputType');
-			let amount = document.getElementById('inputCount');
-			let price = document.getElementById('inputPrice');
-			let addButton = document.getElementById('addButton');
-			
-			
-			
-			addButton.addEventListener('click', function(event) { // button push add
-				
-				firebase.database().ref('items/').push({
-					name: name.value,
-					type: type.value,
-					amount: Number(amount.value),
-					price: Number(price.value)
-				});
-			});
-firebase.database().ref('items/').on('child_added', function(snapshot, prevChildKey) {
-				
-				let data = snapshot.val();
-				addItem(data);
-			});
-
-			function addItem(data) {
-				let items = document.getElementById('items');
-				let tr = document.createElement('tr');
-				tr.style.margin = '1em';
-				tr.innerHTML = `
-<td >${data.name}</td> 
-<td>${data.type}</td> 
-<td>${data.amount}</td>
-<td>${data.price}</td> 
-`;
-				items.appendChild(tr);
-			}
+    <script>
+        window.addEventListener('load', function() { //shit has to load
+            let name = document.getElementById('inputName');
+            let type = document.getElementById('inputType');
+            let amount = document.getElementById('inputCount');
+            let price = document.getElementById('inputPrice');
+            let addButton = document.getElementById('addButton');
 
 
-			let sortName = document.getElementById('sortname');
-			let sortType = document.getElementById('sorttype');
-			let SortCount = document.getElementById('sortcount');
-			let SortPrice = document.getElementById('sortprice');
-			let howMany = document.getElementById('howmany');
 
-function sortFunction(button, sortKey) {
-				button.addEventListener('click', function(event) {
-					items.innerHTML = '';
+            addButton.addEventListener('click', function(event) { // button push add
+
+                firebase.database().ref('items/').push({
+                    name: name.value,
+                    type: type.value,
+                    amount: Number(amount.value),
+                    price: Number(price.value)
+                });
+            });
+            firebase.database().ref('items/').on('child_added', function(snapshot, prevChildKey) {
+
+                let data = snapshot.val();
+                addItem(data);
+            });
+
+            function addItem(data) {
+                let items = document.getElementById('items');
+                let tr = document.createElement('tr');
+                tr.style.margin = '1em';
+                tr.innerHTML = `
+			<td >${data.name}</td> 
+			<td>${data.type}</td> 
+			<td>${data.amount}</td>
+			<td>${data.price}</td> 
+			`;
+                items.appendChild(tr);
+            }
+
+
+            let sortName = document.getElementById('sortname');
+            let sortType = document.getElementById('sorttype');
+            let SortCount = document.getElementById('sortcount');
+            let SortPrice = document.getElementById('sortprice');
+            let howMany = document.getElementById('howmany');
+
+            function sortFunction(button, sortKey) {
+                button.addEventListener('click', function(event) {
+                    items.innerHTML = '';
+
+                    firebase.database().ref('items/').orderByChild(sortKey)
+                        .once('value', function(snapshot) {
+                            snapshot.forEach(items => {
+                                addItem(items.val());
+
+                            })
+                        });
+                })
+            }
+            sortFunction(sortName, 'name');
+            sortFunction(sortType, 'type');
+            sortFunction(sortcount, 'count');
+            sortFunction(sortprice, 'price');
+
+            howMany.addEventListener('keypress', function(event) {
+		let lastItem = '';
+
+                if (event.keyCode == 13) {
+                    let many = Number(howmany.value);
+                    items.innerHTML = '';
+
+                    if (isNaN(many)) {
+                        console.log('no good');
+                    } else {
+                        firebase.database().ref('items/').limitToFirst(many)
+                            .once('value', function(snapshot) {
+                                snapshot.forEach(items => {
+                                    addItem(items.val());
 					
-					firebase.database().ref('items/').orderByChild(sortKey)
-					.once('value', function(snapshot) {
-						snapshot.forEach( items => {
-							addItem(items.val());
-								
-						})
-					});
-				})
-			}
-			sortFunction(sortName, 'name');
-			sortFunction(sortType, 'type');
-			sortFunction(sortcount, 'count');
-			sortFunction(sortprice, 'price');
-
-howMany.addEventListener('keypress', function(event) {
-
-				if( event.keyCode == 13 ) {
-					let many = Number(howmany.value);
-					items.innerHTML = '';
-					
-					if( isNaN(many) ) {
-						console.log('no good');
-					} else {
-						firebase.database().ref('items/').limitToFirst(many)
-						.once('value', function(snapshot) {
-								snapshot.forEach( items => {
-							addItem(items.val());
-								})
-						});
-					}
-				}
-			});
+					lastItem = items.val();
+						
+                                })
+                            });
+                    }
+console.log(lastItem);
+                };
+            });
 
 
+
+function nextList() {
+
+firebase.database().ref('items/').orderByValue().startAt(lastItem)
+ .once('value', function(snapshot) {
+                                snapshot.forEach(items => {
+                                    addItem(items.val());
 
 });
+});
 
-</script>
 
-<script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyA9MPqB2yn2TZWAprYguFmg9gLCUiog31s",
-    authDomain: "sortingshop.firebaseapp.com",
-    databaseURL: "https://sortingshop.firebaseio.com",
-    storageBucket: "sortingshop.appspot.com",
-    messagingSenderId: "968890666078"
-  };
-  firebase.initializeApp(config);
-</script>
+    })    }; // end loader
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA9MPqB2yn2TZWAprYguFmg9gLCUiog31s",
+            authDomain: "sortingshop.firebaseapp.com",
+            databaseURL: "https://sortingshop.firebaseio.com",
+            storageBucket: "sortingshop.appspot.com",
+            messagingSenderId: "968890666078"
+        };
+        firebase.initializeApp(config);
+    </script>
 
 </body>
 

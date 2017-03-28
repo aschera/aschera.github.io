@@ -48,7 +48,7 @@
   var config = {
     apiKey: "AIzaSyDPoGgZRIb77rztoNrl2NaGARKWVLdQZtU",
     //authDomain: "githubauth-c6d8b.firebaseapp.com",
-    authDomain: "https://githubauth-c6d8b.firebaseapp.com/__/auth/handler",
+    authDomain: "https://githubauth-c6d8b.firebaseapp.com/__/auth/handler", // special github redirect url
     databaseURL: "https://githubauth-c6d8b.firebaseio.com",
     storageBucket: "githubauth-c6d8b.appspot.com",
     messagingSenderId: "918393670030"
@@ -60,6 +60,12 @@
 var provider = new firebase.auth.GithubAuthProvider();
 
 function githubSignin() {
+
+
+firebase.auth().signInWithRedirect(provider);
+
+
+
 	   firebase.auth().getRedirectResult().then(function(result) {
 console.log('before');
 	  if (result.credential) {

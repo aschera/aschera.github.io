@@ -27,14 +27,19 @@
 </head>
 
 <body class="center">
-
     <div class="container center" style="min-width:30em;">
-      
         <div class="row" style="background-color:#276d7a; margin:0; border-radius: 4px; min-width:30em;">
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="min-width:30em;">
-			Github Login <br>
-<button onclick = "githubSignin()" id="login">Github Signin</button><br>
-<button onclick = "githubSignout()" id="logout">Github Signout</button>
+			    <span id="loginTitle"><strong>Click the buttn to log into Github</strong></span>
+                <span id="welcomeTitle"><strong>You are now logged in</strong></span>
+                <br>
+                <button onclick = "githubSignin()" id="login">Github Signin</button>
+                <br>
+                <button onclick = "githubSignout()" id="logout">Github Signout</button>
+            </div>
+            <!-- end col -->
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="content" style="min-width:30em;">
+			    <span id="result"></span>
             </div>
             <!-- end col -->
         </div>
@@ -78,13 +83,18 @@ firebase.auth().getRedirectResult().then(function(result) {
     // This gives you a GitHub Access Token. You can use it to access the GitHub API.
     var token = result.credential.accessToken;
 console.log('all good');
-    // ...
+  
   }
   // The signed-in user info.
   var user = result.user;
     let element = document.getElementById('login');
 element.disabled = true;  // stänger av ett klickbart element
     element.style.display = 'none';
+    let title = document.getElementById('loginTitle');
+    title.style.display = 'none';
+        
+   let loggedIn = document.getElementById('result');
+      loggedIn.innerHTML = result.user;
     
 }).catch(function(error) {
 console.log(error);
@@ -114,6 +124,8 @@ function githubSignout(){
 let element = document.getElementById('login');
 element.disabled = false;  
 element.style.display = 'block';
+    let welcome = document.getElementById('welcomeTitle');
+    welcome.style.display = 'block';
 }
 </script>
 

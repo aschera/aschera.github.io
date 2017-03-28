@@ -47,7 +47,8 @@
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDPoGgZRIb77rztoNrl2NaGARKWVLdQZtU",
-    authDomain: "githubauth-c6d8b.firebaseapp.com",
+    //authDomain: "githubauth-c6d8b.firebaseapp.com",
+    authDomain: "https://githubauth-c6d8b.firebaseapp.com/__/auth/handler",
     databaseURL: "https://githubauth-c6d8b.firebaseio.com",
     storageBucket: "githubauth-c6d8b.appspot.com",
     messagingSenderId: "918393670030"
@@ -79,6 +80,7 @@ console.log(error);
 	  var credential = error.credential;
 	  // ...
 	});
+console.log('after');
 }
 
 function githubSignout(){

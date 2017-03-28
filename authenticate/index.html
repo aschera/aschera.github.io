@@ -51,25 +51,40 @@
 
 <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
 <script>
+
+</script>
+
+<script>
   // Initialize Firebase
+var ref = new Firebase("https://githubauth-c6d8b.firebaseio.com/");
   var config = {
     apiKey: "AIzaSyDPoGgZRIb77rztoNrl2NaGARKWVLdQZtU",
-   authDomain: "githubauth-c6d8b.firebaseapp.com",
-    //authDomain: "https://githubauth-c6d8b.firebaseapp.com/__/auth/handler", // special github redirect url
+    authDomain: "githubauth-c6d8b.firebaseapp.com",
     databaseURL: "https://githubauth-c6d8b.firebaseio.com",
     storageBucket: "githubauth-c6d8b.appspot.com",
     messagingSenderId: "918393670030"
   };
   firebase.initializeApp(config);
 </script>
+</script>
 
 <script>
-var provider = new firebase.auth.GithubAuthProvider();
+//var provider = new firebase.auth.GithubAuthProvider();
 
 function githubSignin() {
 
-/* pop-up */ 
 
+ref.authWithOAuthRedirect("github", function(error) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    // We'll never get here, as the page will redirect on success.
+  }
+});  
+    
+    
+/* pop-up */ 
+/*
 firebase.auth().signInWithPopup(provider)
 .then(function(result) {
     
@@ -86,28 +101,32 @@ firebase.auth().signInWithPopup(provider)
     console.log(result);
     console.log('success: ' + user);
 }); 
-};
+};*/
 
-/* re-load */
+/* re-load1 */
 /*
 firebase.auth().getRedirectResult().then(function(result) {
   if (result.credential) {
+      
     // This gives you a GitHub Access Token. You can use it to access the GitHub API.
     var token = result.credential.accessToken;
-console.log('all good');
-  
   }
+    
   // The signed-in user info.
   var user = result.user;
+    
     let element = document.getElementById('login');
-element.disabled = true;  // stänger av ett klickbart element
-    element.style.display = 'none';
+        element.disabled = true;  // stänger av ett klickbart element
+        element.style.display = 'none';
     let title = document.getElementById('loginTitle');
-    title.style.display = 'none';
-        
-   let loggedIn = document.getElementById('result');
-      loggedIn.innerHTML = result;
+        title.style.display = 'none';   
+    let loggedIn = document.getElementById('result');
+        loggedIn.innerHTML = result;
+    
     console.log(result);
+    console.log('success: ' + user);
+    
+    
 }).catch(function(error) {
 console.log(error);
   // Handle Errors here.
@@ -119,9 +138,8 @@ console.log(error);
   var credential = error.credential;
   // ...
 });
-
-}*/
-
+*/
+};
 
 
 function githubSignout(){
@@ -138,7 +156,7 @@ element.disabled = false;
 element.style.display = 'block';
     let welcome = document.getElementById('welcomeTitle');
     welcome.style.display = 'none';
-}
+};
 </script>
 
 </body>

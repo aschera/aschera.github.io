@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <meta name="description" content="chat">
+    <meta name="author" content="Christina Bögh">
+
+
+    <title>Innlämning 3</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <script src="script.js"></script>
+  
+
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body class="center">
+
+    <div class="container center" style="min-width:30em;">
+      
+        <div class="row" style="background-color:#276d7a; margin:0; border-radius: 4px; min-width:30em;">
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="min-width:30em;">
+			Github Login <br>
+<button onclick = "githubSignin()">Github Signin</button><br>
+<button onclick = "githubSignout()">Github Signout</button>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+
+<script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCOSPO1Kzq0EmDsIHttUE1L2ppbwRpD0g8",
+    authDomain: "mein-chat.firebaseapp.com",
+    databaseURL: "https://mein-chat.firebaseio.com",
+    storageBucket: "mein-chat.appspot.com",
+    messagingSenderId: "338907639525"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+var provider = new firebase.auth.GithubAuthProvider();
+
+function githubSignin() {
+   firebase.auth().signInWithPopup(provider)
+   
+   .then(function(result) {
+      var token = result.credential.accessToken;
+      var user = result.user;
+		
+      console.log(token)
+      console.log(user)
+   }).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+		
+      console.log(error.code)
+      console.log(error.message)
+   });
+}
+
+function githubSignout(){
+   firebase.auth().signOut()
+   
+   .then(function() {
+      console.log('Signout successful!')
+   }, function(error) {
+      console.log('Signout failed')
+   });
+}
+</script>
+
+</body>
+
+</html>

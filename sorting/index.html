@@ -27,11 +27,12 @@
     <![endif]-->
 
 <style>
-table.items td {
+td {
     background-color: lime;
     margin: 12px 12px 12px 12px;
     padding: 12px 12px 12px 12px;
 }
+#items{border-radius:4px;}
 table.items {
     border-collapse: separate;
     border-spacing: 10px;
@@ -51,17 +52,39 @@ table.items {
 
 <br>
 <p>
-		Add an item:
+		Add an item:<br>
 		<input id="inputName" type="text" placeholder="Name"/>
 		<input id="inputType" type="text" placeholder="Type"/>
 		<input id="inputCount" type="text" placeholder="Count"/>
 		<input id="inputPrice" type="text" placeholder="Price"/>
 		<button id="addButton">Add</button>
 	</p>
+
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+<div class="row" style="background-color:#276d7a; padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" style="min-width:30em;">
 <p>
+Sort the list: <br>
+<button id="sortname">by name</button>
+<button id="sorttype">by type</button>
+<button id="sortcount">by amount</button>
+<button id="sortprice">by price</button>
+<input type='text' id='howmany' />
+</p>
+</div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+<div class="row" style="background-color:#276d7a; padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" style="min-width:30em;">
+<p>
+Stored Items: <br>
 <table id="items" cellspacing=12 style="margin:0.6em; padding:0.6em;"></table>
 </p>
-            </div>
+</div>
             <!-- end col -->
         </div>
         <!-- end row -->
@@ -86,7 +109,7 @@ window.addEventListener('load', function() { //shit has to load
 					name: name.value,
 					type: type.value,
 					amount: Number(amount.value),
-					price: price.value
+					price: Number(price.value)
 				});
 			});
 firebase.database().ref('items/').on('child_added', function(snapshot, prevChildKey) {
@@ -107,7 +130,54 @@ firebase.database().ref('items/').on('child_added', function(snapshot, prevChild
 `;
 				items.appendChild(tr);
 			}
-})
+
+
+			let sortName = document.getElementById('sortname');
+			let sortType = document.getElementById('sorttype');
+			let SortCount = document.getElementById('sortcount');
+			let SortPrice = document.getElementById('sortprice');
+			let howMany = document.getElementById('howmany');
+
+function sortFunction(button, sortKey) {
+				button.addEventListener('click', function(event) {
+					items.innerHTML = '';
+					
+					firebase.database().ref('items/').orderByChild(sortKey)
+					.once('value', function(snapshot) {
+						snapshot.forEach( items => {
+							addItem(items.val());
+								
+						})
+					});
+				})
+			}
+			sortFunction(sortName, 'name');
+			sortFunction(sortType, 'type');
+			sortFunction(sortcount, 'count');
+			sortFunction(sortprice, 'price');
+
+howMany.addEventListener('keypress', function(event) {
+
+				if( event.keyCode == 13 ) {
+					let many = Number(howmany.value);
+					items.innerHTML = '';
+					
+					if( isNaN(many) ) {
+						console.log('no good');
+					} else {
+						firebase.database().ref('items/').limitToFirst(many)
+						.once('value', function(snapshot) {
+								snapshot.forEach( items => {
+							addItem(items.val());
+								})
+						});
+					}
+				}
+			});
+
+
+
+});
 
 </script>
 

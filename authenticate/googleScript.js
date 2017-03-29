@@ -1,9 +1,6 @@
 /* GOOGLE */
 
-                    /*<!-- Google -->
-                    <button disabled class="button" id="theLoginButton2" onclick="SignInNow2()">GitHub</button>
-                    */
-
+/*SHA-1 */
 
 <!--  **************************************************************************** -->
         /* The log in function */
@@ -13,8 +10,8 @@
 
                 //var provider = new firebase.auth.GithubAuthProvider();
                 var provider = new firebase.auth.GoogleAuthProvider();
-                provider.addScope('repo');
-
+                //provider.addScope('repo');
+                provider.addScope('https://www.googleapis.com/auth/plus.login');
                 
                 //Re-dictedt!!!!!!!!!!!!!!!!
                 firebase.auth().signInWithRedirect(provider);
@@ -77,14 +74,14 @@
 
                     // user name
                     var userInformation = document.getElementById('userWhoIsloggedIn');
-                    userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
+                    userInformation.textContent = JSON.stringify(user, null, '  ');
 
                     //picture icon
-                    var icon = (user.providerData[0].photoURL);
+                    /*var icon = (user.providerData[0].photoURL);
                     let image = document.createElement('img');
                     image.src = icon;
                     var userpicture = document.getElementById('userimage');
-                    userpicture.appendChild(image);
+                    userpicture.appendChild(image);*/
 
                 } else {
 

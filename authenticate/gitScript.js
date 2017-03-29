@@ -31,7 +31,7 @@
             }
             // login button
             document.getElementById('theLoginButton').disabled = true;
-            document.getElementById('theLoginButton2').disabled = false;
+            
      gitHubVerification();
         }
 

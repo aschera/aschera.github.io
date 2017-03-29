@@ -95,6 +95,7 @@
                     document.getElementById('loginStatus').textContent = 'Logged in';
                     document.getElementById('theLoginButton').textContent = 'GitHub';
                     document.getElementById('loginHeader').textContent = 'Log out';
+                    document.getElementById('userInformation').style = 'block';
 
                     // user name
                     var userInformation = document.getElementById('userWhoIsloggedIn');
@@ -150,6 +151,7 @@
         image {
             min-height: 15em;
         }
+        #userInformation {display:none;}
     }
     </style>
 </head>
@@ -183,19 +185,20 @@
             <!-- col -->
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="background-color:#E8D4B4; margin:1em; padding:1em;">
                 <!-- Result -->
-                <div  style="color:#C9FFF5;">
+                <div  id='userInformation' style="color:#C9FFF5;">
 
                     <strong>Status: </strong><span id="loginStatus"></span><br>
                     
                     <strong>User: </strong>
                     <pre><code id="userWhoIsloggedIn"></code></pre>
-                </div>
+                
                     
                 <div id="userimage"></div>
 
                 <div><strong>GitHub OAuth Access Token:</strong></div>
                     <pre><code id="gitHubToken"></code></pre>
-                  </div>
+                    
+                </div>
                 </div>
                 <!-- end col -->
 

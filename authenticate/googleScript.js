@@ -21,6 +21,7 @@
             }
             // login button
             document.getElementById('theLoginButton2').disabled = true;
+            document.getElementById('theLoginButton').disabled = true;
         }
 
 
@@ -74,14 +75,14 @@
 
                     // user name
                     var userInformation = document.getElementById('userWhoIsloggedIn');
-                    userInformation.textContent = JSON.stringify(user, null, '  ');
+                    userInformation.textContent = JSON.stringify(user.providerData[0].displayName, null, '  ');
 
                     //picture icon
-                    /*var icon = (user.providerData[0].photoURL);
+                    var icon = (user.providerData[0].photoURL);
                     let image = document.createElement('img');
                     image.src = icon;
                     var userpicture = document.getElementById('userimage');
-                    userpicture.appendChild(image);*/
+                    userpicture.appendChild(image);
 
                 } else {
 

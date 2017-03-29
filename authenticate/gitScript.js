@@ -17,7 +17,13 @@
                 firebase.auth().signInWithRedirect(provider);
 
             } else {
-                firebase.auth().signOut();
+                //firebase.auth().signOut();
+                
+                firebase.auth().signOut().then(function() {
+                  console.log('signed out of Github');
+                }).catch(function(error) {
+                 console.log(error);
+                });
             }
             // login button
             document.getElementById('theLoginButton').disabled = true;

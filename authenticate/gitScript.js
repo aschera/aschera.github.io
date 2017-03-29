@@ -98,7 +98,7 @@
                 }
 
                 document.getElementById('theLoginButton').disabled = false;
-                document.getElementById('theLoginButton2').disabled = true;
+               
 
             });
 

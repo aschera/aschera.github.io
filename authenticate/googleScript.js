@@ -25,7 +25,7 @@
         }
 
 
-        function gitHubVerification() {
+        function googleVerification() {
             
             firebase.auth().getRedirectResult().then(function(result) {
                 console.error(result);
@@ -99,7 +99,7 @@
                 }
 
                 document.getElementById('theLoginButton2').disabled = false;
-                document.getElementById('theLoginButton').disabled = true;
+               
             });
 
 
@@ -107,7 +107,7 @@
         
         
         window.onload = function() {
-            gitHubVerification();
+            googleVerification();
         };
         
    

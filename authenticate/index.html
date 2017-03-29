@@ -93,7 +93,7 @@
           var icon = (user.providerData[0].photoURL);    
           let image = document.createElement('img');                    
           image.src = icon;
-            image.height = '20em';
+          image.height = 20em;
           var userpicture = document.getElementById('userimage'); 
           userpicture.appendChild(image);
           
@@ -104,7 +104,7 @@
           document.getElementById('quickstart-sign-in').textContent = 'GitHub';
           document.getElementById('quickstart-account-details').textContent = 'null';
           document.getElementById('quickstart-oauthtoken').textContent = 'null';
-          document.getElementById('userimage').textContent = 'null';
+          document.getElementById('userimage').textContent = '';
         }
        
         document.getElementById('quickstart-sign-in').disabled = false;

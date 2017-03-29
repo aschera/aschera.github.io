@@ -48,7 +48,7 @@
         // [END signout]
       }
       // [START_EXCLUDE]
-      document.getElementById('quickstart-sign-in').disabled = true;
+      document.getElementById('loginButton').disabled = true;
       // [END_EXCLUDE]
     }
     // [END buttoncallback]
@@ -100,25 +100,25 @@
           var uid = user.uid;
           var providerData = user.providerData;
           // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          document.getElementById('loginStatus').textContent = 'Signed in';
+          document.getElementById('loginButton').textContent = 'Sign out';
           document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
           // [END_EXCLUDE]
         } else {
           // User is signed out.
           // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign in with GitHub';
+          document.getElementById('loginStatus').textContent = 'Signed out';
+          document.getElementById('loginButton').textContent = 'Sign in with GitHub';
           document.getElementById('quickstart-account-details').textContent = 'null';
           document.getElementById('quickstart-oauthtoken').textContent = 'null';
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE]
-        document.getElementById('quickstart-sign-in').disabled = false;
+        document.getElementById('loginButton').disabled = false;
         // [END_EXCLUDE]
       });
       // [END authstatelistener]
-      document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+      document.getElementById('loginButton').addEventListener('click', toggleSignIn, false);
     }
     window.onload = function() {
       initApp();
@@ -141,11 +141,11 @@
           <p>Sign in with your GitHub account below.</p>
 
           <!-- Button that handles sign-in/sign-out -->
-          <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in">Sign in with GitHub</button>
+          <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="loginButton">Sign in with GitHub</button>
 
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
-            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+            Firebase sign-in status: <span id="loginStatus">Unknown</span>
             <div>Firebase auth <code>currentUser</code> object value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>
             <div>GitHub OAuth Access Token:</div>

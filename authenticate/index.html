@@ -38,7 +38,7 @@
       }
       
         // login button
-      document.getElementById('loginButton').disabled = true;
+      document.getElementById('quickstart-sign-in').disabled = true;
      
     }
    
@@ -79,11 +79,11 @@
       
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          // User is logged in.
+          // User is signed in.
           console.error('logged in');
           
           document.getElementById('loginStatus').textContent = 'Log in';
-          document.getElementById('loginButton').textContent = 'Log out';
+          document.getElementById('quickstart-sign-in').textContent = 'Log out';
         
           // user name
           var userInformation = document.getElementById('quickstart-account-details');
@@ -100,13 +100,13 @@
           
          
           document.getElementById('loginStatus').textContent = 'Logged out';
-          document.getElementById('loginButton').textContent = 'GitHub';
+          document.getElementById('quickstart-sign-in').textContent = 'GitHub';
           document.getElementById('quickstart-account-details').textContent = 'null';
           document.getElementById('quickstart-oauthtoken').textContent = 'null';
           
         }
        
-        document.getElementById('loginButton').disabled = false;
+        document.getElementById('quickstart-sign-in').disabled = false;
       
       });
      
@@ -152,7 +152,7 @@
                 <!-- Login -->
                 <div id="login" style="margin-bottom:2em;">
                   <h2 style="color:#C9FFF5;">Log in:</h2>
-                  <button disabled class="button" id="loginButton" onclick="toggleSignIn()">GitHub</button>
+                  <button disabled class="button" id="quickstart-sign-in" onclick="toggleSignIn()">GitHub</button>
                 </div>
 			   </div>
             <!-- end col -->

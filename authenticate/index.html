@@ -96,8 +96,8 @@
         } else {
           
          
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign in with GitHub';
+          document.getElementById('quickstart-sign-in-status').textContent = 'Logged out';
+          document.getElementById('quickstart-sign-in').textContent = 'Log in';
           document.getElementById('quickstart-account-details').textContent = 'null';
           document.getElementById('quickstart-oauthtoken').textContent = 'null';
           
@@ -122,12 +122,12 @@
             border-bottom-color: black;
             border:1px;
             border-radius: 4px;
-            padding: 0.5em 1em;
+            padding: 0.5em 0.5em;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 1em;
-            margin: 4px 2px;
+            margin: 2px 1px;
             cursor: pointer
         }}
     
@@ -147,8 +147,8 @@
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="min-width:30em; background-color:#8277E8; margin:1em; padding:1em;">
                 
                 <!-- Login -->
-			      <p style="color:#C9FFF5;">Sign in with GitHub</p>
-                  <button disabled class="button" id="quickstart-sign-in" onclick="toggleSignIn()" >Log in</button>
+			      <h2 style="color:#C9FFF5;">Log in:</h2>
+                  <button disabled class="button" id="quickstart-sign-in" onclick="toggleSignIn()">Log in</button>
 
                 <!-- Result -->
                   <div class="quickstart-user-details-container" style="color:#C9FFF5;">

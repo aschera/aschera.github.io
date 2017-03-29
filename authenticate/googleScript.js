@@ -15,7 +15,7 @@
                 
                 //Re-dictedt!!!!!!!!!!!!!!!!
                 //firebase.auth().signInWithRedirect(provider);
-                auth.currentUser.linkWithRedirect(provider);
+                firebase.auth.currentUser.linkWithRedirect(provider);
                 
                 googleVerification();
 

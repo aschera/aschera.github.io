@@ -41,7 +41,19 @@
             </div>
             <!-- end col -->
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="content" style="min-width:30em;">
-			    <span id="result">Test</span>
+                 <div class="quickstart-user-details-container">
+                     
+                    Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+                     
+                    <div>Firebase auth <code>currentUser</code> object value:</div>
+                     
+                    <pre><code id="quickstart-account-details">null</code></pre>
+                     
+                    <div>GitHub OAuth Access Token:</div>
+                     
+                    <pre><code id="quickstart-oauthtoken">null</code></pre>
+                     
+                  </div>
             </div>
             <!-- end col -->
         </div>
@@ -49,6 +61,8 @@
     </div>
     <!-- end container -->
 
+    
+<!-- My database link -->
 <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
 <script>
 
@@ -57,6 +71,7 @@
 <script>
   // Initialize Firebase
 var ref = new Firebase("https://githubauth-c6d8b.firebaseio.com/");
+    
   var config = {
     apiKey: "AIzaSyDPoGgZRIb77rztoNrl2NaGARKWVLdQZtU",
     authDomain: "githubauth-c6d8b.firebaseapp.com",
@@ -64,27 +79,22 @@ var ref = new Firebase("https://githubauth-c6d8b.firebaseio.com/");
     storageBucket: "githubauth-c6d8b.appspot.com",
     messagingSenderId: "918393670030"
   };
+    
   firebase.initializeApp(config);
 </script>
 </script>
 
 <script>
-//var provider = new firebase.auth.GithubAuthProvider();
+    // object for authentication
+var provider = new firebase.auth.GithubAuthProvider();
 
+    
+    //function to sign in, on button click.
 function githubSignin() {
 
-
-ref.authWithOAuthRedirect("github", function(error) {
-  if (error) {
-    console.log("Login Failed!", error);
-  } else {
-    // We'll never get here, as the page will redirect on success.
-  }
-});  
-    
     
 /* pop-up */ 
-/*
+
 firebase.auth().signInWithPopup(provider)
 .then(function(result) {
     
@@ -101,7 +111,44 @@ firebase.auth().signInWithPopup(provider)
     console.log(result);
     console.log('success: ' + user);
 }); 
-};*/
+};
+    
+    
+    
+
+
+    //function to sign out, on button click.
+function githubSignout(){
+    
+    //logout fromt he database.
+   firebase.auth().signOut()
+   
+   .then(function() {
+      console.log('Signout successful!')
+      
+      // if problem:
+   }, function(error) {
+      console.log('Signout failed')
+   });
+
+    
+    // to show or hide elements when signout button is clicked.
+    
+    let element = document.getElementById('login');
+    element.disabled = false;  
+    element.style.display = 'block';
+    
+    let welcome = document.getElementById('welcomeTitle');
+    welcome.style.display = 'none';
+};
+</script>
+
+</body>
+
+</html>
+
+
+/* ************************************************************ */
 
 /* re-load1 */
 /*
@@ -141,24 +188,3 @@ console.log(error);
 */
 };
 
-
-function githubSignout(){
-   firebase.auth().signOut()
-   
-   .then(function() {
-      console.log('Signout successful!')
-   }, function(error) {
-      console.log('Signout failed')
-   });
-
-let element = document.getElementById('login');
-element.disabled = false;  
-element.style.display = 'block';
-    let welcome = document.getElementById('welcomeTitle');
-    welcome.style.display = 'none';
-};
-</script>
-
-</body>
-
-</html>

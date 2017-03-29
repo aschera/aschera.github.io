@@ -14,13 +14,16 @@
                 provider.addScope('https://www.googleapis.com/auth/plus.login');
                 
                 //Re-dictedt!!!!!!!!!!!!!!!!
-                firebase.auth().signInWithRedirect(provider);
+                //firebase.auth().signInWithRedirect(provider);
+                auth.currentUser.linkWithRedirect(provider);
+                
+                googleVerification();
 
             } else {
                 //firebase.auth().signOut();
                 
                 firebase.auth().signOut().then(function() {
-                  console.log('signed out of Github');
+                  console.log('signed out of Google');
                 }).catch(function(error) {
                  console.log(error);
                 });
@@ -32,11 +35,11 @@
 
 
         function googleVerification() {
-            
             firebase.auth().getRedirectResult().then(function(result) {
-                console.error(result);
+                
                 if (result.credential) {
-
+                    var credential = result.credential;
+                    var user = result.user;
                     var token = result.credential.accessToken;
 
                     document.getElementById('gitHubToken').textContent = token;
@@ -112,8 +115,8 @@
         }
         
         
-        window.onload = function() {
+        /*window.onload = function() {
             googleVerification();
-        };
+        };*/
         
    

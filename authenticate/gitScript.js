@@ -13,8 +13,11 @@
                 provider.addScope('repo');
 
                 
-                //Re-dictedt!!!!!!!!!!!!!!!!
-                firebase.auth().signInWithRedirect(provider);
+                //Re-directed!!!!!!!!!!!!!!!!
+                //firebase.auth().signInWithRedirect(provider);
+                auth.currentUser.linkWithRedirect(provider);
+                
+                gitHubVerification();
 
             } else {
                 //firebase.auth().signOut();
@@ -34,12 +37,15 @@
         function gitHubVerification() {
             
             firebase.auth().getRedirectResult().then(function(result) {
-                console.error(result);
+                
                 if (result.credential) {
-
+                    
+                    var credential = result.credential;
+                    var user = result.user;
+                    
                     var token = result.credential.accessToken;
-
                     document.getElementById('gitHubToken').textContent = token;
+                    
                 } else {
                     document.getElementById('gitHubToken').textContent = '';
 
@@ -112,8 +118,8 @@
         }
         
         
-        window.onload = function() {
+       /* window.onload = function() {
             gitHubVerification();
-        };
+        };*/
         
    

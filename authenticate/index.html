@@ -91,7 +91,17 @@
           
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user.displayName + '' + providerData[0].photoURL, null, '  ');
+        
+          // user name
+          var userInformation = document.getElementById('quickstart-account-details');
+          userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
+            
+          //picture icon
+          var icon = (providerData[0].photoURL);    
+          let image = document.createElement('img');                    
+          image.src = icon;
+          var userpicture = document.getElementById('userInfo'); 
+          userpicture.appendChild(image);
           
         } else {
           
@@ -171,6 +181,8 @@
                       <div id="userInfo"></div>
                       
                     <pre><code id="quickstart-account-details">null</code></pre>
+                      
+                      <div id="userimage"></div>
                       
                     <div><strong>GitHub OAuth Access Token:</strong></div>
                     <pre><code id="quickstart-oauthtoken">null</code></pre>

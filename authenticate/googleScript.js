@@ -70,6 +70,7 @@
 
                     document.getElementById('loginStatus').textContent = 'Logged in';
                     document.getElementById('theLoginButton2').textContent = 'Google';
+                    document.getElementById('theLoginButton').style.display = 'none';
                     document.getElementById('loginHeader').textContent = 'Log out';
                     document.getElementById('userInformation').style.display = 'block';
 
@@ -89,6 +90,7 @@
 
                     document.getElementById('loginStatus').textContent = 'Logged out';
                     document.getElementById('theLoginButton2').textContent = 'Google';
+                    document.getElementById('theLoginButton').style.display = 'block';
                     document.getElementById('userWhoIsloggedIn').textContent = '';
                     document.getElementById('gitHubToken').textContent = '';
                     document.getElementById('userimage').textContent = '';
@@ -97,7 +99,7 @@
                 }
 
                 document.getElementById('theLoginButton2').disabled = false;
-
+                document.getElementById('theLoginButton').disabled = true;
             });
 
 

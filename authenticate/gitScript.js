@@ -7,6 +7,7 @@
         /* The log in function */
         
         function SignInNow() {
+            console.log('clicked');
             if (!firebase.auth().currentUser) {
 
                 var provider = new firebase.auth.GithubAuthProvider();
@@ -17,7 +18,7 @@
                 //firebase.auth().signInWithRedirect(provider);
                 firebase.auth.currentUser.linkWithRedirect(provider);
                 
-                gitHubVerification();
+               
 
             } else {
                 //firebase.auth().signOut();
@@ -31,6 +32,7 @@
             // login button
             document.getElementById('theLoginButton').disabled = true;
             document.getElementById('theLoginButton2').disabled = false;
+     gitHubVerification();
         }
 
 

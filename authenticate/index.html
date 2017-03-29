@@ -53,7 +53,7 @@
         }
 
 
-        function initApp() {
+        function gitHubVerification() {
             
             firebase.auth().getRedirectResult().then(function(result) {
                 console.error(result);
@@ -66,8 +66,12 @@
                     document.getElementById('gitHubToken').textContent = '';
 
                 }
-
+                
+                
+                //the user who is logged in!
                 var user = result.user;
+                
+                
             }).catch(function(error) {
 
                 var errorCode = error.code;
@@ -126,9 +130,12 @@
 
 
         }
+        
+        
         window.onload = function() {
-            initApp();
+            gitHubVerification();
         };
+        
     </script>
 
     <style>

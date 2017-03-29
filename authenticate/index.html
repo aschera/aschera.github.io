@@ -102,7 +102,6 @@
                     var icon = (user.providerData[0].photoURL);
                     let image = document.createElement('img');
                     image.src = icon;
-                    image.height = '200px';
                     var userpicture = document.getElementById('userimage');
                     userpicture.appendChild(image);
 
@@ -145,6 +144,9 @@
             font-size: 1em;
             margin: 2px 1px;
             cursor: pointer
+        };
+        image {
+            min-height: 15em;
         }
     }
     </style>

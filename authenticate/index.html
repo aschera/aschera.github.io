@@ -41,6 +41,7 @@
                 var provider = new firebase.auth.GithubAuthProvider();
                 provider.addScope('repo');
 
+                
                 //Re-dictedt!!!!!!!!!!!!!!!!
                 firebase.auth().signInWithRedirect(provider);
 
@@ -128,12 +129,12 @@
 
     <style>
     * {
-            color: #C9FFF5;
+            color: black;
         }
 
         .button {
-            background-color: #E8D4B4;
-            color: #FF5980;
+            background-color: #FF5980;
+            color: black;
             border-bottom-color: black;
             border: 1px;
             border-radius: 4px;
@@ -156,17 +157,17 @@
 
 
     <!-- Container-->
-    <div class="container center" style="margin:1em; padding:1em; min-width:30em; background-color:#E8D4B4;">
+    <div class="container center" style="margin:1em; padding:1em; background-color:#E8D4B4;">
 
         <!-- Row -->
-        <div class="row" style="margin:1em; padding:1em;  background-color:#FF5980; margin:0; border-radius: 4px; min-width:30em;">
+        <div class="row" style="margin:1em; padding:1em;  background-color:#FF5980; margin:0; border-radius: 4px;">
 
             <!-- col -->
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="min-width:30em; background-color:#8277E8; margin:1em; padding:1em;">
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="background-color:#E8D4B4; margin:1em; padding:1em;">
 
                 <!-- Login -->
                 <div id="login" style="margin-bottom:2em;">
-                    <h2 style="color:#C9FFF5;">Log in:</h2>
+                    <h2>Log in:</h2>
                     <button disabled class="button" id="theLoginButton" onclick="SignInNow()">GitHub</button>
                 </div>
             </div>
@@ -176,26 +177,25 @@
         <!-- end row -->
 
         <!-- Row -->
-        <div class="row" style="margin:1em; padding:1em;  background-color:#FF5980; margin:0; border-radius: 4px; min-width:30em;">
+        <div class="row" style="margin:1em; padding:1em;  background-color:#FF5980; margin:0; border-radius: 4px;">
 
             <!-- col -->
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="min-width:30em; background-color:#8277E8; margin:1em; padding:1em;">
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="background-color:#E8D4B4; margin:1em; padding:1em;">
                 <!-- Result -->
                 <div class="quickstart-user-details-container" style="color:#C9FFF5;">
 
-                    <strong>Firebase sign-in status: </strong><span id="loginStatus">Unknown</span>
+                    <strong>Status: </strong><span id="loginStatus"></span>
+                    <br><br><br>
 
-                    <div><strong><code>currentUser</code></strong> is:</div>
-                    <div id="userInfo"></div>
-
-                    <pre><code id="quickstart-account-details">null</code></pre>
-
+                     <strong>User: </strong>
+                    <pre><code id="quickstart-account-details"></code></pre>
+                    </div>
+                    <br>
                     <div id="userimage"></div>
 
-                    
+                    <br>
                     <div><strong>GitHub OAuth Access Token:</strong></div>
-                    <pre>
-                        <code id="quickstart-oauthtoken">null</code></pre>
+                    <pre><code id="quickstart-oauthtoken">null</code></pre>
                   </div>
                 </div>
                 <!-- end col -->

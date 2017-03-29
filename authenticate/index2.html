@@ -31,7 +31,7 @@
      * Function called when clicking the Login/Logout button.
      */
     // [START buttoncallback]
-    function toggleSignIn() {
+    function SignInNow() {
       if (!firebase.auth().currentUser) {
         // [START createprovider]
         var provider = new firebase.auth.GithubAuthProvider();
@@ -118,7 +118,7 @@
         // [END_EXCLUDE]
       });
       // [END authstatelistener]
-      document.getElementById('loginButton').addEventListener('click', toggleSignIn, false);
+      document.getElementById('loginButton').addEventListener('click', SignInNow, false);
     }
     window.onload = function() {
       initApp();

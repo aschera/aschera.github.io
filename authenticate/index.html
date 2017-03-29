@@ -1,130 +1,142 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-  <meta charset=utf-8 />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inlämning 3</title>
 
-  <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDPoGgZRIb77rztoNrl2NaGARKWVLdQZtU",
-    authDomain: "githubauth-c6d8b.firebaseapp.com",
-    databaseURL: "https://githubauth-c6d8b.firebaseio.com",
-    storageBucket: "githubauth-c6d8b.appspot.com",
-    messagingSenderId: "918393670030"
-  };
-  firebase.initializeApp(config);
-</script>
+<head>
+    <meta charset=utf-8 />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-  <script type="text/javascript">
-  
-    function toggleSignIn() {
-      if (!firebase.auth().currentUser) {
-        
-        var provider = new firebase.auth.GithubAuthProvider();
-        provider.addScope('repo');
-          
-          
-//Re-dictedt!!!!!!!!!!!!!!!!
-        firebase.auth().signInWithRedirect(provider);
-        
-      } else {
-        
-        firebase.auth().signOut();
-      
-      }
-      
-        // login button
-      document.getElementById('quickstart-sign-in').disabled = true;
-     
-    }
-   
     
-    function initApp() {
-      
-      firebase.auth().getRedirectResult().then(function(result) {
-          console.error(result);
-        if (result.credential) {
-         
-          var token = result.credential.accessToken;
-          
-          document.getElementById('quickstart-oauthtoken').textContent = token;
-        } else {
-          document.getElementById('quickstart-oauthtoken').textContent = 'null';
+    <title>Inlämning 3</title>
+
+/** **************************************************************************** **/
+    /* Firebase basic stuff */
+    
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDPoGgZRIb77rztoNrl2NaGARKWVLdQZtU",
+            authDomain: "githubauth-c6d8b.firebaseapp.com",
+            databaseURL: "https://githubauth-c6d8b.firebaseio.com",
+            storageBucket: "githubauth-c6d8b.appspot.com",
+            messagingSenderId: "918393670030"
+        };
+        firebase.initializeApp(config);
+    </script>
+    
+/** **************************************************************************** **/
+/** **************************************************************************** **/
+/** **************************************************************************** **/
+    
+    <script type="text/javascript">
         
+        
+/** **************************************************************************** **/
+        /* The log in function */
+        
+        function SignInNow() {
+            if (!firebase.auth().currentUser) {
+
+                var provider = new firebase.auth.GithubAuthProvider();
+                //provider.addScope('repo');
+
+                //Re-dictedt!!!!!!!!!!!!!!!!
+                firebase.auth().signInWithRedirect(provider);
+
+            } else {
+                firebase.auth().signOut();
+            }
+            // login button
+            document.getElementById('theLoginButton').disabled = true;
         }
-      
-        var user = result.user;
-      }).catch(function(error) {
-        
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        
-        if (errorCode === 'auth/account-exists-with-different-credential') {
-          alert('You have already signed up with a different auth provider for that email.');
-          // If you are using multiple auth providers on your app you should handle linking
-          // the user's accounts here.
-        } else {
-          console.error(error);
-        }
-       
-      });
-      
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          console.error('logged in');
-          
-          document.getElementById('loginStatus').textContent = 'Log in';
-          document.getElementById('quickstart-sign-in').textContent = 'Log out';
-        
-          // user name
-          var userInformation = document.getElementById('quickstart-account-details');
-          userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
+
+
+        function initApp() {
             
-          //picture icon
-          var icon = (user.providerData[0].photoURL);    
-          let image = document.createElement('img');                    
-          image.src = icon;
-          image.height = '200px';
-          var userpicture = document.getElementById('userimage'); 
-          userpicture.appendChild(image);
-          
-        } else {
-          
-         
-          document.getElementById('loginStatus').textContent = 'Logged out';
-          document.getElementById('quickstart-sign-in').textContent = 'GitHub';
-          document.getElementById('quickstart-account-details').textContent = 'null';
-          document.getElementById('quickstart-oauthtoken').textContent = 'null';
-          document.getElementById('userimage').textContent = '';
+            firebase.auth().getRedirectResult().then(function(result) {
+                console.error(result);
+                if (result.credential) {
+
+                    var token = result.credential.accessToken;
+
+                    document.getElementById('quickstart-oauthtoken').textContent = token;
+                } else {
+                    document.getElementById('quickstart-oauthtoken').textContent = 'null';
+
+                }
+
+                var user = result.user;
+            }).catch(function(error) {
+
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // The email of the user's account used.
+                var email = error.email;
+                // The firebase.auth.AuthCredential type that was used.
+                var credential = error.credential;
+
+                if (errorCode === 'auth/account-exists-with-different-credential') {
+                    alert('You have already signed up with a different auth provider for that email.');
+                    // If you are using multiple auth providers on your app you should handle linking
+                    // the user's accounts here.
+                } else {
+                    console.error(error);
+                }
+
+            });
+
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    // User is signed in.
+                    console.error('logged in');
+
+                    document.getElementById('loginStatus').textContent = 'Log in';
+                    document.getElementById('theLoginButton').textContent = 'Log out';
+
+                    // user name
+                    var userInformation = document.getElementById('quickstart-account-details');
+                    userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
+
+                    //picture icon
+                    var icon = (user.providerData[0].photoURL);
+                    let image = document.createElement('img');
+                    image.src = icon;
+                    image.height = '200px';
+                    var userpicture = document.getElementById('userimage');
+                    userpicture.appendChild(image);
+
+                } else {
+
+
+                    document.getElementById('loginStatus').textContent = 'Logged out';
+                    document.getElementById('theLoginButton').textContent = 'GitHub';
+                    document.getElementById('quickstart-account-details').textContent = 'null';
+                    document.getElementById('quickstart-oauthtoken').textContent = 'null';
+                    document.getElementById('userimage').textContent = '';
+                }
+
+                document.getElementById('theLoginButton').disabled = false;
+
+            });
+
+
         }
-       
-        document.getElementById('quickstart-sign-in').disabled = false;
-      
-      });
-     
-      
-    }
-    window.onload = function() {
-      initApp();
-    };
-  </script>
-    
+        window.onload = function() {
+            initApp();
+        };
+    </script>
+
     <style>
-        *{color:#C9FFF5;}
+    * {
+            color: #C9FFF5;
+        }
+
         .button {
-            background-color:#E8D4B4; 
-            color:#FF5980;
+            background-color: #E8D4B4;
+            color: #FF5980;
             border-bottom-color: black;
-            border:1px;
+            border: 1px;
             border-radius: 4px;
             padding: 0.5em 0.5em;
             text-align: center;
@@ -133,61 +145,64 @@
             font-size: 1em;
             margin: 2px 1px;
             cursor: pointer
-        }}
-    
-    
+        }
+    }
     </style>
 </head>
+
 <body>
 
 
-      <!-- Container-->
-       <div class="container center" style="margin:1em; padding:1em; min-width:30em; background-color:#E8D4B4;">
-           
-            <!-- Row -->
-           <div class="row" style="margin:1em; padding:1em;  background-color:#FF5980; margin:0; border-radius: 4px; min-width:30em;">
-               
-                <!-- col -->
+    <!-- Container-->
+    <div class="container center" style="margin:1em; padding:1em; min-width:30em; background-color:#E8D4B4;">
+
+        <!-- Row -->
+        <div class="row" style="margin:1em; padding:1em;  background-color:#FF5980; margin:0; border-radius: 4px; min-width:30em;">
+
+            <!-- col -->
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="min-width:30em; background-color:#8277E8; margin:1em; padding:1em;">
-                
+
                 <!-- Login -->
                 <div id="login" style="margin-bottom:2em;">
-                  <h2 style="color:#C9FFF5;">Log in:</h2>
-                  <button disabled class="button" id="quickstart-sign-in" onclick="toggleSignIn()">GitHub</button>
+                    <h2 style="color:#C9FFF5;">Log in:</h2>
+                    <button disabled class="button" id="theLoginButton" onclick="SignInNow()">GitHub</button>
                 </div>
-			   </div>
-            <!-- end col -->
-            
-        </div>
-        <!-- end row -->    
-           
-           <!-- Row -->
-           <div class="row" style="margin:1em; padding:1em;  background-color:#FF5980; margin:0; border-radius: 4px; min-width:30em;">
-               
-                <!-- col -->
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="min-width:30em; background-color:#8277E8; margin:1em; padding:1em;">
-                <!-- Result -->
-                  <div class="quickstart-user-details-container" style="color:#C9FFF5;">
-                      
-                    <strong>Firebase sign-in status: </strong><span id="loginStatus">Unknown</span>
-                      
-                    <div><strong><code>currentUser</code></strong> is:</div>
-                      <div id="userInfo"></div>
-                      
-                    <pre><code id="quickstart-account-details">null</code></pre>
-                      
-                      <div id="userimage"></div>
-                      
-                    <div><strong>GitHub OAuth Access Token:</strong></div>
-                    <pre><code id="quickstart-oauthtoken">null</code></pre>
-                  </div>
             </div>
             <!-- end col -->
-            
+
         </div>
         <!-- end row -->
-    </div>
-    <!-- end container -->
-    
+
+        <!-- Row -->
+        <div class="row" style="margin:1em; padding:1em;  background-color:#FF5980; margin:0; border-radius: 4px; min-width:30em;">
+
+            <!-- col -->
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="min-width:30em; background-color:#8277E8; margin:1em; padding:1em;">
+                <!-- Result -->
+                <div class="quickstart-user-details-container" style="color:#C9FFF5;">
+
+                    <strong>Firebase sign-in status: </strong><span id="loginStatus">Unknown</span>
+
+                    <div><strong><code>currentUser</code></strong> is:</div>
+                    <div id="userInfo"></div>
+
+                    <pre><code id="quickstart-account-details">null</code></pre>
+
+                    <div id="userimage"></div>
+
+                    <!-- 
+                    <div><strong>GitHub OAuth Access Token:</strong></div>
+                    <pre>
+                        <code id="quickstart-oauthtoken">null</code></pre>
+                  </div> -->
+                </div>
+                <!-- end col -->
+
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+
 </body>
+
 </html>

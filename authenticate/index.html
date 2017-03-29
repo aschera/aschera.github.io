@@ -114,7 +114,25 @@
     };
   </script>
     
-    <style>*{color:#C9FFF5;}</style>
+    <style>
+        *{color:#C9FFF5;}
+        button {
+            background-color:#E8D4B4; 
+            color:#FF5980;
+            border-bottom-color: black;
+            border:1px;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            margin: 4px 2px;
+            cursor: pointer
+        }}
+    
+    
+    </style>
 </head>
 <body>
 
@@ -130,7 +148,7 @@
                 
                 <!-- Login -->
 			      <p style="color:#C9FFF5;">Sign in with GitHub</p>
-                  <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" onclick="toggleSignIn()" style="background-color:#E8D4B4;">Log in</button>
+                  <button disabled id="quickstart-sign-in" onclick="toggleSignIn()" >Log in</button>
 
                 <!-- Result -->
                   <div class="quickstart-user-details-container" style="color:#C9FFF5;">

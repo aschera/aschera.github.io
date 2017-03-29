@@ -90,7 +90,7 @@
           userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
             
           //picture icon
-          var icon = (providerData[0].photoURL);    
+          var icon = (user.providerData[0].photoURL);    
           let image = document.createElement('img');                    
           image.src = icon;
           var userpicture = document.getElementById('userInfo'); 

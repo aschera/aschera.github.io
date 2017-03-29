@@ -1,15 +1,18 @@
-/* GitHub */
+/* GOOGLE */
 
-
+                    /*<!-- Google -->
+                    <button disabled class="button" id="theLoginButton2" onclick="SignInNow2()">GitHub</button>
+                    */
 
 
 <!--  **************************************************************************** -->
         /* The log in function */
         
-        function SignInNow() {
+        function SignInNow2() {
             if (!firebase.auth().currentUser) {
 
-                var provider = new firebase.auth.GithubAuthProvider();
+                //var provider = new firebase.auth.GithubAuthProvider();
+                var provider = new firebase.auth.GoogleAuthProvider();
                 provider.addScope('repo');
 
                 
@@ -20,7 +23,7 @@
                 firebase.auth().signOut();
             }
             // login button
-            document.getElementById('theLoginButton').disabled = true;
+            document.getElementById('theLoginButton2').disabled = true;
         }
 
 
@@ -68,7 +71,7 @@
                     console.error('logged in');
 
                     document.getElementById('loginStatus').textContent = 'Logged in';
-                    document.getElementById('theLoginButton').textContent = 'GitHub';
+                    document.getElementById('theLoginButton2').textContent = 'Google';
                     document.getElementById('loginHeader').textContent = 'Log out';
                     document.getElementById('userInformation').style.display = 'block';
 
@@ -87,7 +90,7 @@
 
 
                     document.getElementById('loginStatus').textContent = 'Logged out';
-                    document.getElementById('theLoginButton').textContent = 'GitHub';
+                    document.getElementById('theLoginButton2').textContent = 'Google';
                     document.getElementById('userWhoIsloggedIn').textContent = '';
                     document.getElementById('gitHubToken').textContent = '';
                     document.getElementById('userimage').textContent = '';
@@ -95,7 +98,7 @@
                     document.getElementById('loginHeader').textContent = 'Log in';
                 }
 
-                document.getElementById('theLoginButton').disabled = false;
+                document.getElementById('theLoginButton2').disabled = false;
 
             });
 

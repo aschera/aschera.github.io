@@ -38,7 +38,7 @@
       }
       
         // login button
-      document.getElementById('quickstart-sign-in').disabled = true;
+      document.getElementById('loginButton').disabled = true;
      
     }
    
@@ -79,18 +79,11 @@
       
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          // User is signed in.
-            console.error('signed in');
-          var displayName = user.displayName;
-          var email = user.email;
-          var emailVerified = user.emailVerified;
-          var photoURL = user.photoURL;
-          var isAnonymous = user.isAnonymous;
-          var uid = user.uid;
-          var providerData = user.providerData;
+          // User is logged in.
+          console.error('logged in');
           
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          document.getElementById('loginStatus').textContent = 'Log in';
+          document.getElementById('loginButton').textContent = 'Log out';
         
           // user name
           var userInformation = document.getElementById('quickstart-account-details');
@@ -106,14 +99,14 @@
         } else {
           
          
-          document.getElementById('quickstart-sign-in-status').textContent = 'Logged out';
-          document.getElementById('quickstart-sign-in').textContent = 'GitHub';
+          document.getElementById('loginStatus').textContent = 'Logged out';
+          document.getElementById('loginButton').textContent = 'GitHub';
           document.getElementById('quickstart-account-details').textContent = 'null';
           document.getElementById('quickstart-oauthtoken').textContent = 'null';
           
         }
        
-        document.getElementById('quickstart-sign-in').disabled = false;
+        document.getElementById('loginButton').disabled = false;
       
       });
      
@@ -159,7 +152,7 @@
                 <!-- Login -->
                 <div id="login" style="margin-bottom:2em;">
                   <h2 style="color:#C9FFF5;">Log in:</h2>
-                  <button disabled class="button" id="quickstart-sign-in" onclick="toggleSignIn()">GitHub</button>
+                  <button disabled class="button" id="loginButton" onclick="toggleSignIn()">GitHub</button>
                 </div>
 			   </div>
             <!-- end col -->
@@ -175,7 +168,7 @@
                 <!-- Result -->
                   <div class="quickstart-user-details-container" style="color:#C9FFF5;">
                       
-                    <strong>Firebase sign-in status: </strong><span id="quickstart-sign-in-status">Unknown</span>
+                    <strong>Firebase sign-in status: </strong><span id="loginStatus">Unknown</span>
                       
                     <div><strong><code>currentUser</code></strong> is:</div>
                       <div id="userInfo"></div>

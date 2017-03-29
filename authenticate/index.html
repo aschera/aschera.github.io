@@ -96,7 +96,7 @@
                     document.getElementById('theLoginButton').textContent = 'Log out';
 
                     // user name
-                    var userInformation = document.getElementById('quickstart-account-details');
+                    var userInformation = document.getElementById('userWhoIsloggedIn');
                     userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
 
                     //picture icon
@@ -111,7 +111,7 @@
 
                     document.getElementById('loginStatus').textContent = 'Logged out';
                     document.getElementById('theLoginButton').textContent = 'GitHub';
-                    document.getElementById('quickstart-account-details').textContent = 'null';
+                    document.getElementById('userWhoIsloggedIn').textContent = '';
                     document.getElementById('gitHubToken').textContent = '';
                     document.getElementById('userimage').textContent = '';
                 }
@@ -188,7 +188,7 @@
                     <br><br><br>
 
                      <strong>User: </strong>
-                    <pre><code id="quickstart-account-details"></code></pre>
+                    <pre><code id="userWhoIsloggedIn"></code></pre>
                     </div>
                     <br>
                     <div id="userimage"></div>

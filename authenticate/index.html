@@ -39,7 +39,7 @@
             if (!firebase.auth().currentUser) {
 
                 var provider = new firebase.auth.GithubAuthProvider();
-                //provider.addScope('repo');
+                provider.addScope('repo');
 
                 //Re-dictedt!!!!!!!!!!!!!!!!
                 firebase.auth().signInWithRedirect(provider);

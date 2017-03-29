@@ -61,9 +61,9 @@
 
                     var token = result.credential.accessToken;
 
-                    document.getElementById('quickstart-oauthtoken').textContent = token;
+                    document.getElementById('gitHubToken').textContent = token;
                 } else {
-                    document.getElementById('quickstart-oauthtoken').textContent = 'null';
+                    document.getElementById('gitHubToken').textContent = '';
 
                 }
 
@@ -92,7 +92,7 @@
                     // User is signed in.
                     console.error('logged in');
 
-                    document.getElementById('loginStatus').textContent = 'Log in';
+                    document.getElementById('loginStatus').textContent = 'Logged in';
                     document.getElementById('theLoginButton').textContent = 'Log out';
 
                     // user name
@@ -112,7 +112,7 @@
                     document.getElementById('loginStatus').textContent = 'Logged out';
                     document.getElementById('theLoginButton').textContent = 'GitHub';
                     document.getElementById('quickstart-account-details').textContent = 'null';
-                    document.getElementById('quickstart-oauthtoken').textContent = 'null';
+                    document.getElementById('gitHubToken').textContent = '';
                     document.getElementById('userimage').textContent = '';
                 }
 
@@ -195,7 +195,7 @@
 
                     <br>
                     <div><strong>GitHub OAuth Access Token:</strong></div>
-                    <pre><code id="quickstart-oauthtoken">null</code></pre>
+                    <pre><code id="gitHubToken"></code></pre>
                   </div>
                 </div>
                 <!-- end col -->

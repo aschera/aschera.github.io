@@ -21,7 +21,7 @@
             }
             // login button
             document.getElementById('theLoginButton2').disabled = true;
-            document.getElementById('theLoginButton').disabled = true;
+            document.getElementById('theLoginButton').disabled = false;
         }
 
 

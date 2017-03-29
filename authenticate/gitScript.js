@@ -21,6 +21,7 @@
             }
             // login button
             document.getElementById('theLoginButton').disabled = true;
+            document.getElementById('theLoginButton2').disabled = false;
         }
 
 
@@ -69,6 +70,7 @@
 
                     document.getElementById('loginStatus').textContent = 'Logged in';
                     document.getElementById('theLoginButton').textContent = 'GitHub';
+                    document.getElementById('theLoginButton2').style.display = 'none';
                     document.getElementById('loginHeader').textContent = 'Log out';
                     document.getElementById('userInformation').style.display = 'block';
 
@@ -96,6 +98,7 @@
                 }
 
                 document.getElementById('theLoginButton').disabled = false;
+                document.getElementById('theLoginButton2').disabled = true;
 
             });
 

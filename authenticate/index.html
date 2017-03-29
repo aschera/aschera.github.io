@@ -97,7 +97,7 @@
           
          
           document.getElementById('quickstart-sign-in-status').textContent = 'Logged out';
-          document.getElementById('quickstart-sign-in').textContent = 'Log in';
+          document.getElementById('quickstart-sign-in').textContent = 'GitHub';
           document.getElementById('quickstart-account-details').textContent = 'null';
           document.getElementById('quickstart-oauthtoken').textContent = 'null';
           
@@ -148,14 +148,18 @@
                 
                 <!-- Login -->
 			      <h2 style="color:#C9FFF5;">Log in:</h2>
-                  <button disabled class="button" id="quickstart-sign-in" onclick="toggleSignIn()">Log in</button>
-
+                  <button disabled class="button" id="quickstart-sign-in" onclick="toggleSignIn()">GitHub</button>
+                    <br>
                 <!-- Result -->
                   <div class="quickstart-user-details-container" style="color:#C9FFF5;">
-                    Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-                    <div>Firebase auth <code>currentUser</code> object value:</div>
+                      
+                    <strong>Firebase sign-in status: </strong><span id="quickstart-sign-in-status">Unknown</span>
+                      
+                    <div><strong><code>currentUser</code></strong> is:</div>
+                      
                     <pre><code id="quickstart-account-details">null</code></pre>
-                    <div>GitHub OAuth Access Token:</div>
+                      
+                    <div><strong>GitHub OAuth Access Token:</strong></div>
                     <pre><code id="quickstart-oauthtoken">null</code></pre>
                   </div>
             </div>

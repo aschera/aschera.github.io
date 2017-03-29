@@ -16,6 +16,8 @@
                 //Re-directed!!!!!!!!!!!!!!!!
                 //firebase.auth().signInWithRedirect(provider);
                 auth.currentUser.linkWithRedirect(provider);
+                
+                gitHubVerification();
 
             } else {
                 //firebase.auth().signOut();
@@ -116,8 +118,8 @@
         }
         
         
-        window.onload = function() {
+       /* window.onload = function() {
             gitHubVerification();
-        };
+        };*/
         
    

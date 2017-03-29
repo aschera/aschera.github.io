@@ -16,6 +16,8 @@
                 //Re-dictedt!!!!!!!!!!!!!!!!
                 //firebase.auth().signInWithRedirect(provider);
                 auth.currentUser.linkWithRedirect(provider);
+                
+                googleVerification();
 
             } else {
                 //firebase.auth().signOut();
@@ -114,8 +116,8 @@
         }
         
         
-        window.onload = function() {
+        /*window.onload = function() {
             googleVerification();
-        };
+        };*/
         
    

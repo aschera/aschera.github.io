@@ -81,8 +81,7 @@
                 if (user) {
                     // User is signed in.
                     console.error('logged in');
-                    document.getElementById('resultRow').style.display = 'block';
-                    document.getElementById('resultWindow').style.display = 'block';
+                    
                     document.getElementById('loginStatus').textContent = 'Logged in';
                     document.getElementById('theLoginButton').textContent = 'Log out';
 		            document.getElementById('login').textContent = 'Log out';
@@ -93,7 +92,7 @@
                     userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
                     //picture icon
                     var icon = (user.providerData[0].photoURL);
-			console.log(user);
+			         console.log(user);
                     let image = document.createElement('img');
                     image.src = icon;
                     var userpicture = document.getElementById('userimage');
@@ -107,6 +106,8 @@
                     document.getElementById('userimage').textContent = '';
                 }
                 document.getElementById('theLoginButton').disabled = false;
+                document.getElementById('resultRow').style.display = 'block';
+                document.getElementById('resultWindow').style.display = 'block';
             });
         }
         window.onload = function() {

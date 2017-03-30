@@ -1,4 +1,4 @@
-var currentPage = 0;
+var currentPage = 1;
 
 function nextList() {
 	var res;

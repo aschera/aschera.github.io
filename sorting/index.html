@@ -25,6 +25,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+<script src="paging.js"></script>
+
     <style>
         td {
             background-color: lime;
@@ -86,7 +88,7 @@
                 <p>
                     Stored Items: <br>
                     <table id="items" cellspacing=12 style="margin:0.6em; padding:0.6em;"></table>
-			<button onclick="nextList();" id="nextItems">Next</button>
+			<button onclick="nextList()" id="nextItems">Next</button>
                 </p>
             </div>
             <!-- end col -->
@@ -96,8 +98,16 @@
     <!-- end container -->
 
 
+
+
     <script>
+var lastItem = '';
+
         window.addEventListener('load', function() { //shit has to load
+
+
+
+
             let name = document.getElementById('inputName');
             let type = document.getElementById('inputType');
             let amount = document.getElementById('inputCount');
@@ -119,9 +129,12 @@
 
                 let data = snapshot.val();
                 addItem(data);
+
+		
             });
 
             function addItem(data) {
+console.log(data) ;
                 let items = document.getElementById('items');
                 let tr = document.createElement('tr');
                 tr.style.margin = '1em';
@@ -150,6 +163,7 @@
                             snapshot.forEach(items => {
                                 addItem(items.val());
 
+
                             })
                         });
                 })
@@ -160,7 +174,7 @@
             sortFunction(sortprice, 'price');
 
             howMany.addEventListener('keypress', function(event) {
-		let lastItem = '';
+		
 
                 if (event.keyCode == 13) {
                     let many = Number(howmany.value);
@@ -174,29 +188,23 @@
                                 snapshot.forEach(items => {
                                     addItem(items.val());
 					
-					lastItem = items.val();
+					
+
 						
                                 })
                             });
                     }
-console.log(lastItem);
+
                 };
             });
 
 
 
-function nextList() {
-
-firebase.database().ref('items/').orderByValue().startAt(lastItem)
- .once('value', function(snapshot) {
-                                snapshot.forEach(items => {
-                                    addItem(items.val());
-
-});
-});
 
 
-    };
+
+
+   
     }); // end loader
     </script>
 

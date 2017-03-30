@@ -85,6 +85,8 @@
                     document.getElementById('loginStatus').textContent = 'Logged in';
                     document.getElementById('theLoginButton').textContent = 'Log out';
 		            document.getElementById('login').textContent = 'Log out';
+                    document.getElementById('resultWindow').style.display = 'block';
+                    document.getElementById('resultRow').style.display = 'block';
 
                     // user name
                     var userInformation = document.getElementById('userInfoField');
@@ -99,7 +101,7 @@
                     userpicture.appendChild(image);
                 } else {
                     document.getElementById('loginStatus').textContent = 'Logged out';
-		    document.getElementById('login').textContent = 'Log in';
+		            document.getElementById('login').textContent = 'Log in';
                     document.getElementById('theLoginButton').textContent = 'GitHub';
                     document.getElementById('userInfoField').textContent = 'null';
                     document.getElementById('gitHubToken').textContent = '';

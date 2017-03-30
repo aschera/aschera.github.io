@@ -82,6 +82,7 @@
                     document.getElementById('theLoginButton').textContent = 'Log out';
                     // user name
                     var userInformation = document.getElementById('quickstart-account-details');
+console.log(user);
                     userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
                     //picture icon
                     var icon = (user.providerData[0].photoURL);

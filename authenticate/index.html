@@ -59,7 +59,7 @@
                     document.getElementById('gitHubToken').textContent = '';
                 }
                 var user = result.user;
-console.log('user is: ' + result.user);
+console.log(result.user);
             }).catch(function(error) {
                 var errorCode = error.code;
                 var errorMessage = error.message;
@@ -87,7 +87,7 @@ console.log('user is: ' + result.user);
                     userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
                     //picture icon
                     var icon = (user.providerData[0].photoURL);
-			console.log('user is: ' + user);
+			console.log(user);
                     let image = document.createElement('img');
                     image.src = icon;
                     var userpicture = document.getElementById('userimage');
@@ -137,7 +137,7 @@ console.log('user is: ' + result.user);
 
     <!-- Container-->
     <div class="container center" style="margin:1em; padding:1em; background-color:#E8D4B4;">
-
+<div style="background-color:#FF598">
         <!-- Row -->
         <div class="row" style="margin:1em; padding:1em;  background-color:#FF5980; margin:0; border-radius: 4px;">
 
@@ -181,6 +181,7 @@ console.log('user is: ' + result.user);
 
             </div>
             <!-- end row -->
+</div>
         </div>
         <!-- end container -->
 

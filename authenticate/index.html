@@ -25,8 +25,84 @@
         firebase.initializeApp(config);
     </script>
     
-     <script src="gitScript2.js"></script>
-
+<!--  **************************************************************************** -->
+<!--  **************************************************************************** -->
+<!--  **************************************************************************** -->
+    
+    <script type="text/javascript">
+        
+        
+<!--  **************************************************************************** -->
+        /* The log in function */
+        
+        function SignInNow() {
+            if (!firebase.auth().currentUser) {
+                var provider = new firebase.auth.GithubAuthProvider();
+                provider.addScope('repo');
+                
+                //Re-dictedt!!!!!!!!!!!!!!!!
+                firebase.auth().signInWithRedirect(provider);
+            } else {
+                firebase.auth().signOut();
+            }
+            // login button
+            document.getElementById('theLoginButton').disabled = true;
+        }
+        function initApp() {
+            
+            firebase.auth().getRedirectResult().then(function(result) {
+                console.error(result);
+                if (result.credential) {
+                    var token = result.credential.accessToken;
+                    document.getElementById('gitHubToken').textContent = token;
+                } else {
+                    document.getElementById('gitHubToken').textContent = '';
+                }
+                var user = result.user;
+            }).catch(function(error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // The email of the user's account used.
+                var email = error.email;
+                // The firebase.auth.AuthCredential type that was used.
+                var credential = error.credential;
+                if (errorCode === 'auth/account-exists-with-different-credential') {
+                    alert('You have already signed up with a different auth provider for that email.');
+                    // If you are using multiple auth providers on your app you should handle linking
+                    // the user's accounts here.
+                } else {
+                    console.error(error);
+                }
+            });
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    // User is signed in.
+                    console.error('logged in');
+                    document.getElementById('loginStatus').textContent = 'Logged in';
+                    document.getElementById('theLoginButton').textContent = 'Log out';
+                    // user name
+                    var userInformation = document.getElementById('quickstart-account-details');
+                    userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
+                    //picture icon
+                    var icon = (user.providerData[0].photoURL);
+                    let image = document.createElement('img');
+                    image.src = icon;
+                    var userpicture = document.getElementById('userimage');
+                    userpicture.appendChild(image);
+                } else {
+                    document.getElementById('loginStatus').textContent = 'Logged out';
+                    document.getElementById('theLoginButton').textContent = 'GitHub';
+                    document.getElementById('quickstart-account-details').textContent = 'null';
+                    document.getElementById('gitHubToken').textContent = '';
+                    document.getElementById('userimage').textContent = '';
+                }
+                document.getElementById('theLoginButton').disabled = false;
+            });
+        }
+        window.onload = function() {
+            initApp();
+        };
+    </script>
 
     <style>
     * {
@@ -49,7 +125,6 @@
         image {
             min-height: 15em;
         }
-        #userInformation {display:none;}
     }
     </style>
 </head>
@@ -58,21 +133,17 @@
 
 
     <!-- Container-->
-    <div class="container center" style="margin:1em; padding:1em; background-color:#E8D4B4; border-radius: 4px;">
-        
-<div style="background-color:#FF5980; width:100%; border-radius: 4px;"><!-- bg color -->
-    
+    <div class="container center" style="margin:1em; padding:1em; background-color:#E8D4B4;">
+
         <!-- Row -->
         <div class="row" style="margin:1em; padding:1em;  background-color:#FF5980; margin:0; border-radius: 4px;">
-            
 
-    
             <!-- col -->
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="background-color:#E8D4B4; margin:1em; padding:1em; border-radius: 4px;">
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="background-color:#E8D4B4; margin:1em; padding:1em;">
 
                 <!-- Login -->
                 <div id="login" style="margin-bottom:2em;">
-                    <h2 id="loginHeader">Log in:</h2>
+                    <h2>Log in:</h2>
                     <button disabled class="button" id="theLoginButton" onclick="SignInNow()">GitHub</button>
                 </div>
             </div>
@@ -82,35 +153,35 @@
         <!-- end row -->
 
         <!-- Row -->
-        <div class="row" style="margin:1em; padding:1em;  background-color:#FF5980; margin:0; border-radius: 4px;"   id='userInformation' >
-            
+        <div class="row" style="margin:1em; padding:1em;  background-color:#FF5980; margin:0; border-radius: 4px;">
 
-    
             <!-- col -->
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="background-color:#E8D4B4; margin:1em; padding:1em; border-radius: 4px;">
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="background-color:#E8D4B4; margin:1em; padding:1em;">
                 <!-- Result -->
-                <div style="color:#C9FFF5;">
+                <div class="quickstart-user-details-container" style="color:#C9FFF5;">
 
-                    <strong>Status: </strong><span id="loginStatus"></span><br><br>
-                    
-                    <strong>User: </strong>
-                    <pre><code id="userWhoIsloggedIn"></code></pre>
-                
-                    
-                <div id="userimage"></div>
+                    <strong>Status: </strong><span id="loginStatus"></span>
+                    <br><br><br>
 
-                <div><strong>GitHub OAuth Access Token:</strong></div>
+                     <strong>User: </strong>
+                    <pre><code id="quickstart-account-details"></code></pre>
+                    </div>
+                    <br>
+                    <div id="userimage"></div>
+
+                    <br>
+                    <div><strong>GitHub OAuth Access Token:</strong></div>
                     <pre><code id="gitHubToken"></code></pre>
-                    
+                  </div>
                 </div>
-                
+                <!-- end col -->
 
-            </div><!-- end col -->
-            
-        </div><!-- end row -->
-        
-    </div> <!--end bg color -->
-</div> <!-- end container -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+
 </body>
+
 
 </html>

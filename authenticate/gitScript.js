@@ -15,8 +15,8 @@
 
                 
                 //Re-directed!!!!!!!!!!!!!!!!
-                //firebase.auth().signInWithRedirect(provider);
-                firebase.auth.currentUser.linkWithRedirect(provider);
+                firebase.auth().signInWithRedirect(provider);
+                //firebase.auth.currentUser.linkWithRedirect(provider);
                 
                
 
@@ -32,7 +32,7 @@
             // login button
             document.getElementById('theLoginButton').disabled = true;
             
-     gitHubVerification();
+     //gitHubVerification();
         }
 
 
@@ -42,8 +42,8 @@
                 
                 if (result.credential) {
                     
-                    var credential = result.credential;
-                    var user = result.user;
+                    //var credential = result.credential;
+                    //var user = result.user;
                     
                     var token = result.credential.accessToken;
                     document.getElementById('gitHubToken').textContent = token;
@@ -120,8 +120,8 @@
         }
         
         
-       /* window.onload = function() {
+       window.onload = function() {
             gitHubVerification();
-        };*/
+        };
         
    

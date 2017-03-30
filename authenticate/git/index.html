@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Inlämning 3</title>
+
+<!--  **************************************************************************** -->
+    <!-- Firebase basic stuff -->
+    
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDPoGgZRIb77rztoNrl2NaGARKWVLdQZtU",
+            authDomain: "githubauth-c6d8b.firebaseapp.com",
+            databaseURL: "https://githubauth-c6d8b.firebaseio.com",
+            storageBucket: "githubauth-c6d8b.appspot.com",
+            messagingSenderId: "918393670030"
+        };
+        firebase.initializeApp(config);
+    </script>
+    
+     <script src="gitScript.js"></script>
+
+
+    <style>
+        html { 
+  background: url(bg.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body { 
+    background-color: transparent;
+}
+    * {
+            color: black;
+        }
+        .button {
+            background-color: #415592;
+            color: black;
+            border-bottom-color: black;
+            border: 1px;
+            border-radius: 4px;
+            padding: 0.5em 0.5em;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            margin: 2px 1px;
+            cursor: pointer
+        };
+        image {
+            min-height: 15em;
+        }
+        #userInformation {display:none;}
+    }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Container-->
+    <div class="container center" style="margin:1em; padding:1em; background-color:#BEDAE8; border-radius: 4px;  margin-left:20%; margin-right:20%;">
+        
+<div style="background-color:#415592; width:100%; border-radius: 4px;"><!-- bg color -->
+    
+        <!-- Row -->
+        <div class="row" style="margin:1em; padding:1em;  background-color:#415592; margin:0; border-radius: 4px;">
+            
+
+    
+            <!-- col -->
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="background-color:#BEDAE8; margin:1em; padding:1em; border-radius: 4px;">
+
+                <!-- Login -->
+                <div id="login" style="margin-bottom:2em;">
+                    <h2 id="loginHeader">Log in:</h2>
+                    <button disabled class="button" id="theLoginButton" onclick="SignInNow()">GitHub</button>
+                </div>
+            </div>
+            <!-- end col -->
+
+        </div>
+        <!-- end row -->
+
+        <!-- Row -->
+        <div class="row" style="margin:1em; padding:1em;  background-color:#415592; margin:0; border-radius: 4px;"   id='userInformation' >
+            
+
+    
+            <!-- col -->
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="background-color:#BEDAE8; margin:1em; padding:1em; border-radius: 4px;">
+                <!-- Result -->
+                <div style="color:#C9FFF5;">
+
+                    <strong>Status: </strong><span id="loginStatus"></span><br><br>
+                    
+                    <strong>User: </strong>
+                    <pre><code id="userWhoIsloggedIn"></code></pre>
+                
+                    
+                <div id="userimage"></div>
+
+                <div><strong>GitHub OAuth Access Token:</strong></div>
+                    <pre><code id="gitHubToken"></code></pre>
+                    
+                </div>
+                
+
+            </div><!-- end col -->
+            
+        </div><!-- end row -->
+        
+    </div> <!--end bg color -->
+</div> <!-- end container -->
+</body>
+
+</html>

@@ -108,7 +108,16 @@ firebase.auth().onAuthStateChanged(function(user) {
     console.log("no user signed in");
   }
 });
+    
+    
+    
+    function logout(){
+        firebase.auth().signOut();
+    }
 </script>
+            
+            
+            
 <button id="logoutButton" onclick="logout()">Log out</button>
 <p id ='loggedinGreeting'> Congrats you're done! </p>
             

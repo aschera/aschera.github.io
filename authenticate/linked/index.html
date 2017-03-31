@@ -9,13 +9,12 @@
     
     <title>Inlämning 3B  Linked</title>
 
-    <style>
-    
+<style>
 #loggedinGreeting{display:none;}
 #logoutButton{display:none;}
-     #userimage{display:none;}
-        #userInfoField{display:none;}
-    </style>
+#userimage{display:none;}
+#userInfoField{display:none;}
+</style>
     
     
     
@@ -103,6 +102,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     let greeting = document.getElementById('loggedinGreeting').style.display = 'block';
     let loginButtons = document.getElementById("firebaseui-auth-container").style.display = 'none';
     let logoutButton = document.getElementById("logoutButton").style.display = 'block';
+    let userimage = document.getElementById("userInfoField").style.display = 'block';
+    let username = document.getElementById("userimage").style.display = 'block';
       
     
                     // user name

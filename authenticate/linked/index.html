@@ -13,7 +13,8 @@
     
 #loggedinGreeting{display:none;}
 #logoutButton{display:none;}
-     
+     #userimage{display:none;}
+        #userInfoField{display:none;}
     </style>
     
     
@@ -131,6 +132,8 @@ firebase.auth().onAuthStateChanged(function(user) {
         let greeting = document.getElementById('loggedinGreeting').style.display = 'none';
         let loginButtons = document.getElementById("firebaseui-auth-container").style.display = 'block';
         let logoutButton = document.getElementById("logoutButton").style.display = 'none';
+        let userimage = document.getElementById("userInfoField").style.display = 'none';
+        let username = document.getElementById("userimage").style.display = 'none';
     }
 </script>
             

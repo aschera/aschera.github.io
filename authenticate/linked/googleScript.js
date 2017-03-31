@@ -120,7 +120,7 @@
                     document.getElementById('gitHubToken').textContent = '';
                     document.getElementById('userimage').textContent = '';
                     //document.getElementById('userInformation').style.display = 'none';
-                    document.getElementById('loginHeader').textContent = 'Log in';
+                    //document.getElementById('loginHeader').textContent = 'Log in';
                 }
 
                 document.getElementById('theLoginButtonGoogle').disabled = false;

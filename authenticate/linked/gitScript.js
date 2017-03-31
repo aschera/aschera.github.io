@@ -31,7 +31,7 @@
             // login button
             document.getElementById('theLoginButton').disabled = true;
             
-     //gitHubVerification();
+     gitHubVerification();
         }
 
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Logged in now</title>
+    <meta charset="UTF-8">
+</head>
+
+<!-- Firebase init -->
+
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAIGJZw4iTVSW8VlHrA-hzuYt-L5fWtaVw",
+    authDomain: "linkedlogin-2a007.firebaseapp.com",
+    databaseURL: "https://linkedlogin-2a007.firebaseio.com",
+    projectId: "linkedlogin-2a007",
+    storageBucket: "linkedlogin-2a007.appspot.com",
+    messagingSenderId: "464854473605"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<body>
+
+<!-- A simple example script to add text to the page that displays the user's Display Name and Email -->
+
+<script> 
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    document.body.innerHTML = '<h1> Congrats ' + user.displayName + ', you are done! </h1> <h2> Now get back to what you love building. </h2> <h2> Need to verify your email address or reset your password? Firebase can handle all of that for you using the email you provided: ' + user.email + '. <h/2>';
+  } else {
+    console.log("no user signed in");
+  }
+});
+</script>
+
+<h1>Congrats you're done! </h1>
+
+
+</html>

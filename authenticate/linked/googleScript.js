@@ -12,8 +12,8 @@
             console.log('clicked');
             if (!firebase.auth().currentUser) {
 
-                var provider = new firebase.auth.GithubAuthProvider();
-                provider.addScope('repo');
+                var provider = new firebase.auth.GoogleAuthProvider();
+                provider.addScope('https://www.googleapis.com/auth/plus.login');
 
                 
                 //Redirected!!!!!!!!!!!!!!!!

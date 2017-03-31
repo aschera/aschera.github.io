@@ -92,6 +92,11 @@
                     var userInformation = document.getElementById('userInfoField');
 
                     userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
+
+			if (user.displayName === 'C.B.') {
+			document.getElementById('theSecretButton').disabled = false;
+			}
+
                     //picture icon
                     var icon = (user.providerData[0].photoURL);
 			         console.log(user);
@@ -114,6 +119,11 @@
         window.onload = function() {
             initApp();
         };
+
+
+function boo () {
+alert('You have clicked');
+};
     </script>
 
     <style>
@@ -195,6 +205,9 @@
                     <br>
                     <div><strong>Token:</strong></div>
                     <pre><code id="gitHubToken"></code></pre>
+
+			<button disabled="true" class="button" id="theSecretButton" onclick="boo()">Christinas Button</button>
+
                   </div>
                 </div>
                 <!-- end col -->

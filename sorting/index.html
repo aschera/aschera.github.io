@@ -43,6 +43,8 @@
             border-spacing: 10px;
             *border-collapse: expression('separate', cellSpacing='10px');
         }
+p{color:white;}
+.inputs{color:black;}
     </style>
 
 </head>
@@ -58,11 +60,11 @@
                 <br>
                 <p>
                     Add an item:<br>
-                    <input id="inputName" type="text" placeholder="Name" />
-                    <input id="inputType" type="text" placeholder="Type" />
-                    <input id="inputCount" type="text" placeholder="Count" />
-                    <input id="inputPrice" type="text" placeholder="Price" />
-                    <button id="addButton">Add</button>
+                    <input class ="inputs" id="inputName" type="text" placeholder="Name" />
+                    <input class ="inputs" id="inputType" type="text" placeholder="Type" />
+                    <input class ="inputs" id="inputCount" type="text" placeholder="Count" />
+                    <input class ="inputs" id="inputPrice" type="text" placeholder="Price" />
+                    <button class ="inputs" id="addButton">Add</button>
                 </p>
 
             </div>
@@ -73,11 +75,11 @@
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" style="min-width:30em;">
                 <p>
                     Sort the list: <br>
-                    <button id="sortname">by name</button>
-                    <button id="sorttype">by type</button>
-                    <button id="sortcount">by amount</button>
-                    <button id="sortprice">by price</button>
-                    <input type='text' id='howmany' />
+                    <button class ="inputs" id="sortname">by name</button>
+                    <button class ="inputs" id="sorttype">by type</button>
+                    <button class ="inputs" id="sortcount">by amount</button>
+                    <button class ="inputs" id="sortprice">by price</button>
+                    <input class ="inputs" type='text' id='howmany' />
                 </p>
             </div>
             <!-- end col -->

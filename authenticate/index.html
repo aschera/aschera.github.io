@@ -92,8 +92,10 @@
                     var userInformation = document.getElementById('userInfoField');
 
                     userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
+			console.log(user.displayName);
 
 			if (user.displayName === 'C.B.') {
+			console.log();
 			document.getElementById('theSecretButton').disabled = false;
 			}
 
@@ -142,7 +144,7 @@ alert('You have clicked');
             display: inline-block;
             font-size: 1em;
             margin: 2px 1px;
-            cursor: pointer
+            
         };
         image {
             min-height: 15em;

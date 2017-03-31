@@ -3,7 +3,7 @@
 
 
 
-<!--  **************************************************************************** -->
+<!  **************************************************************************** >
         /* The log in function */
         
         function SignInNowGoogle() {
@@ -14,7 +14,7 @@
                 provider.addScope('repo');
 
                 
-                //Re-directed!!!!!!!!!!!!!!!!
+                //Redirected!!!!!!!!!!!!!!!!
                 //firebase.auth().signInWithRedirect(provider);
                 auth.currentUser.linkWithRedirect(provider);
                 
@@ -45,7 +45,7 @@
                     var token = result.credential.accessToken;
                     document.getElementById('gitHubToken').textContent = token;
                       
-                                // Get reference to the currently signed-in user
+                                // Get reference to the currently signedin user
                                 var prevUser = auth.currentUser;
                                 // Sign in user with another account
                                 auth.signInWithCredential(credential).then(function(user) {
@@ -76,7 +76,7 @@
                 // The firebase.auth.AuthCredential type that was used.
                 var credential = error.credential;
 
-                if (errorCode === 'auth/account-exists-with-different-credential') {
+                if (errorCode === 'auth/accountexistswithdifferentcredential') {
                     alert('You have already signed up with a different auth provider for that email.');
                     // If you are using multiple auth providers on your app you should handle linking
                     // the user's accounts here.

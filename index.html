@@ -1,134 +1,489 @@
 <!DOCTYPE html>
-
-<html>
-
-<head>
-    <meta charset=utf-8 />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    <title>Inlämning 3</title>
-
-<!--  **************************************************************************** -->
-    <!-- Firebase basic stuff -->
-    
-    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDPoGgZRIb77rztoNrl2NaGARKWVLdQZtU",
-            authDomain: "githubauth-c6d8b.firebaseapp.com",
-            databaseURL: "https://githubauth-c6d8b.firebaseio.com",
-            storageBucket: "githubauth-c6d8b.appspot.com",
-            messagingSenderId: "918393670030"
-        };
-        firebase.initializeApp(config);
-    </script>
-    
-     <script src="gitScript.js"></script>
-    <script src="googleScript.js"></script>
-
-    <style>
-        html { 
-  background: url(bg.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-body { 
-    background-color: transparent;
-}
-    * {
-            color: black;
-        }
-
-        .button {
-            background-color: #415592;
-            color: black;
-            border-bottom-color: black;
-            border: 1px;
-            border-radius: 4px;
-            padding: 0.5em 0.5em;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 1em;
-            margin: 2px 1px;
-            cursor: pointer
-        };
-        image {
-            min-height: 10em;
-            max-width: 50%;
-        }
-        #userInformation {display:none;}
-    }
-    </style>
-</head>
-
-<body>
-
-
-    <!-- Container-->
-    <div class="container center" style="margin:1em; padding:1em; background-color:#BEDAE8; border-radius: 4px;  margin-left:20%; margin-right:20%;">
-        
-<div style="background-color:#415592; width:100%; border-radius: 4px;"><!-- bg color -->
-    
-        <!-- Row -->
-        <div class="row" style="margin:1em; padding:1em;  background-color:#415592; margin:0; border-radius: 4px;">
+ <html lang="en">
+ 
+ <head>
+     <! brown: 302825  purple: 394669   pink: 4c0075  grey: BCC0BF>
+ 
+     <meta charset="utf8">
+     <meta httpequiv="XUACompatible" content="IE=edge">
+     <meta name="viewport" content="width=devicewidth, initialscale=1">
+     <meta name="description" content="personal website">
+     <meta name="author" content="Christina Bögh">
+     <meta httpequiv="cleartype" content="on">
+ 
+ 
+ 
+ 
+     <title>Christina Bögh's website</title>
+ 
+ 
+ 
+     <!-- Bootstrap Core CSS -->
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+ 
+     <!-- Custom CSS -->
+     <link href="css/stylishportfolio.css" rel="stylesheet">
+ 
+     <!-- Custom Fonts -->
+     <link href="fontawesome/css/fontawesome.min.css" rel="stylesheet" type="text/css">
+     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+ 
+     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+     <!--[if lt IE 9]-->
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+     <!--[endif]-->
+ 
+ </head>
+ 
+ <body>
+     <! does not yet work properly 
+     
+     <a id="menutoggle" href="#" class="btn btndark btnlg toggle"><i class="fa fabars"></i></a>
+     <nav id="sidebarwrapper">
+         <ul class="sidebarnav">
+             <a id="menuclose" href="#" class="btn btnlight btnlg pullright toggle"><i class="fa fatimes"></i></a>
+             <li class="sidebarbrand">
+                 <a href="#top" onclick=$("#menuclose").click();>Menu</a>
+             </li>
+             <li>
+                 <a href="#top" onclick=$("#menuclose").click();>Home</a>
+             </li>
+             <li>
+                 <a href="#about" onclick=$("#menuclose").click();>About me</a>
+             </li>
+             <li>
+                 <a href="#services" onclick=$("#menuclose").click();>Documentation</a>
+             </li>
+         </ul>
+     </nav>
+ 
+ >
+     <!-- Header -->
+     <header id="top" class="header">
+         <div class="textverticalcenter">
+             <div style="backgroundcolor:black; opacity:0.8;">
+                 <h1>Hello!</h1>
+                 <h3>My name is Christina Bögh</h3>
+                 <h2>Welcome to my website.</h2>
+ 
+                 <div style="width:560px; height:315px; marginleft: auto ; marginright: auto ;">
+                     <iframe class="collg12 colmd12 colsm12 colxs12" width="560" align="middle" height="315" src="https://www.youtube.com/embed/u8n1SuPG8Qg" frameborder="0" allowfullscreen></iframe>
+                 </div>
+ 
+                 <p style="fontsize: 1em; color:white;">This site is new and not all done (yet). But you can listen to some disco music while we wait :) </p>
+ 
+                 <a style=" margintop: 20Vh; fontsize: 1em; backgroundcolor:#4c0075;" href="#about" class="btn btndark btnlg">Scroll down!</a>
+             </div>
+ 
+ 
+         </div>
+     </header>
+ 
+ 
+ 
+     <!-- About -->
+     <section id="about" class="about" style="color: white; backgroundcolor:#EA4E76;">
+ 
+         <div class="container">
+             <div class="row">
+                 <! row 1 >
+ 
+                 <div class="collg4 colmd4 colsm6 textcenter">
+                     <div class="projects">
+                         <div class="item">
+                             <div class="iteminfo">
+                                 <h4 style="color:#F6FCA9;">FACTS</h4>
+                                 <span>
+                        
+                       &#8728; Name: Christina Bögh<br> 
+                       &#8728; Born in Flensburg, Germany, 1981.<br><br> 
+                       
+           </span>
+                                 
+                                 <h4 style="color:#F6FCA9;">EDUCATION</h4>
+                                 <span>
+                       Ongoing:<br> 
+                       &#8728; Sept. 2016  Frontend Developer YH <br> 
+                       &#8728; Nov. 2015  B.A. Computer Science  <br><br> 
+                       Completed:<br> 
+                       &#8728; 2008  B.A. Science of Nursing  <br> 
+                       &#8728; 2004  B.A Philosophy <br> 
+                       &#8728; 2001  Highschool Exam <br><br>
+           </span>
+                             </div>
+                         </div>
+                         </div>
+                     </div> <! end col >
+                     <div class="collg4 colmd4 colsm6 textcenter">
+                             
+                         <div class="item">
+                             <div class="iteminfo">
+                                 <h6 style="color:#F6FCA9;">Frontend Developer YH </h6>
+                                 <span>
+               
+                       &#8728; JavaScript 1<br>
+                       &#8728; HTML5/ CSS<br>
+                       &#8728; UX/UI<br>
+                       &#8728; Graphics (Photoshop) <br>
+                       &#8728; Career <br>
+           </span>
+ 
+                                 
+ 
+                             </div>
+                         </div>
+                         <div class="item">
+                             <div class="iteminfo">
+                      
+                                 <h6 style="color:#F6FCA9;">B.A. Computer Science </h6>
+                                 <span>
+                     &#8728; Art History<br>
+                       &#8728; Comparative Programming Languages <br>
+                       &#8728; Databases 1 (SQL)<br> 
+                       &#8728; English Composition 1<br>
+                       &#8728; Globalization <br>
+                      
+                       &#8728; Programming 1 (Java)<br> 
+                       &#8728; Programming 2 (Java)<br> 
+                       &#8728; Programming Fundamentals (Python)<br><br>
+             </span>
+                             </div>
+                         </div>
+                         </div> <! end col >
+                     <div class="collg4 colmd4 colsm6 textcenter">
+                         <div class="item">
+                             <div class="iteminfo">
+                                 <h4 style="color:#F6FCA9;">COMPUTER SKILLS</h4>
+                                 <span>
+              
+                       &#8728; Office<br> 
+                       &#8728; Photoshop<br> 
+                       &#8728; Axure RP8/Balsamiq<br> 
+                       &#8728; Github<br> 
+                       &#8728; Netbeans IDE<br> 
+                       &#8728; Eclipse Java Neon<br>
+                       &#8728; Opera PMS Oracle<br>
+                       <br><br>
+                       &#8728; Windows (95/200/Vista/10)<br>
+                       &#8728; Linux Ubuntu<br><br>
+           </span>
+                             </div>
+                         </div>
+                         <div class="item">
+                             <div class="iteminfo">
+                                            <h4 style="color:#F6FCA9;">LANGUAGES</h4>
+                                 <span>
+               
+                                 &#8728; German Fluent.<br> 
+                                 &#8728; English Advanced.<br> 
+                                 &#8728; Danish Advanced.<br> 
+                                 &#8728; Swedish Beginner 
             
-
-    
-            <!-- col -->
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="background-color:#BEDAE8; margin:1em; padding:1em; border-radius: 4px;">
-
-                <!-- Login -->
-                <div id="login" style="margin-bottom:2em;">
-                    <h2 id="loginHeader">Log in:</h2>
-                    
-                    <!-- Github -->
-                    <button disabled class="button" id="theLoginButton" onclick="SignInNow()">GitHub</button>
-                    
-                    <!-- Google -->
-                    <button disabled class="button" id="theLoginButton2" onclick="SignInNow2()">Google</button>
-                    
-                </div>
-            </div>
-            <!-- end col -->
-
-        </div>
-        <!-- end row -->
-
-        <!-- Row -->
-        <div class="row" style="margin:1em; padding:1em;  background-color:#415592; margin:0; border-radius: 4px;"   id='userInformation' >
-            
-
-    
-            <!-- col -->
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="background-color:#BEDAE8; margin:1em; padding:1em; border-radius: 4px;">
-                <!-- Result -->
-                <div style="color:#C9FFF5;">
-
-                    <strong>Status: </strong><span id="loginStatus"></span><br><br>
-                    
-                    <strong>User: </strong>
-                    <pre><code id="userWhoIsloggedIn"></code></pre>
-                
-                    
-                <div id="userimage"></div>
-
-                <div><strong>Token:</strong></div>
-                    <pre><code id="gitHubToken"></code></pre>
-                    
-                </div>
-                
-
-            </div><!-- end col -->
-            
-        </div><!-- end row -->
-        
-    </div> <!--end bg color -->
-</div> <!-- end container -->
-</body>
-
-</html>
+           </span>
+                             </div>
+                         </div>
+                         </div> <! end col >
+                     <div class="collg4 colmd4 colsm6 textcenter">
+                         <div class="item">
+                             <div class="iteminfo">
+                                 <h4 style="color:#F6FCA9;">PROGRAMMING LANGUAGES</h4>
+                                 <span>
+             
+                                   &#8728; Python  Junior<br> 
+                                   &#8728; Java  Junior <br> 
+                                   &#8728; JavaScript  Junior<br> 
+                                   &#8728; SQL  Junior <br> 
+                                   &#8728; HTML/CSS  Mid <br><br>
+                   
+                                  &#8728; PHP  Babysteps<br>
+                                  &#8728; Haskell Babysteps<br>
+                                  &#8728; ADA 95 Babysteps<br>
+                                  &#8728; Prolog Babysteps<br><br>
+           </span>
+                             </div>
+                         </div>
+                         
+                         <br>
+                         <a style="fontsize: 1em; backgroundcolor:#4c0075;" href="#information" class="btn btndark btnlg">Scroll down!</a>
+                     </div>
+ 
+ 
+                 </div>
+                 <!-- col end -->
+                 
+                 
+             </div>
+             <!-- /.row -->
+             
+         </div>
+         <!-- /.container -->
+ 
+ 
+ 
+     </section>
+     <!-- end About -->
+ 
+     <!-- Information -->
+     <section id="information" class="information" style="color: white; backgroundcolor:#F6FCA9;">
+ 
+         <div class="container">
+             <div class="row">
+                 <! row 1 >
+ 
+                 <div class="collg12 textcenter">
+                     <h2 style="color:#EA4E76;">Projects</h2>
+                     <hr class="small">
+                 </div>
+                 <! col end >
+ 
+                 <div class="collg12 textcenter">
+          
+                             <h4 style="color:#EA4E76;">HTML / CSS</h4>
+                             Completed: <br>
+                             <a style="color:#B512B1; fontsize: 1.2em; " href="https://sebastianes.github.io/projekthtmlgrupp2/master/home.html" target="_blank">
+                                 <div id="bgimg5" style="">
+                                     <div class="text" style="paddingtop:2em;">Cayman paradise</div>
+                                 </div>
+                             </a>
+                        
+                             <h4 style="color:#EA4E76;">JavaScript</h4>
+                             Completed: <br>
+                             <a style="width=30%;  color:#B512B1; fontsize: 1.2em; " href="http://aschera.github.io/No stress/index.html " target="_blank">
+                                 <div id="bgimg3" style="">
+                                     <div class="text" style="paddingtop:2em;">Pick your next vacation</div>
+                                 </div>
+                             </a>
+                             <br>
+                             <a style="color:#B512B1; fontsize: 1.2em; " href="https://aschera.github.io/books/index.html" target="_blank">
+                                 <div id="bgimg" style="">
+                                     <div class="text" style="paddingtop:2em;">Book database </div>
+                                 </div>
+                             </a>
+                             <br>
+                             <a style="color:#B512B1; fontsize: 1.2em; " href="https://aschera.github.io/lab3/" target="_blank">
+                                 <div id="bgimg4" style="">
+                                     <div class="text" style="paddingtop:2em;">Draw shapes</div>
+                                 </div>
+                             </a>
+ 
+                             <h4 style="color:#EA4E76;">JavaScript</h4>
+                             Ongoing: <br>
+                             <a style="color:#B512B1; fontsize: 1.2em; " href="https://aschera.github.io/chatapp/index.html" target="_blank">
+                                 <div id="bgimg2" style="">
+                                     <div class="text" style="paddingtop:2em;">Chat</div>
+                                 </div>
+                             </a>
+ 
+                        
+                             <h4 style="color:#EA4E76;">Articles</h4>
+                             Finished:
+                             <div class=" textcenter">
+                                 <a href="python_basic.html.html" target="_blank" style="color:#B512B1; fontsize: 1.2em;">
+                                     <div id="bgimg6" style="">
+                                         <div class="text" style="paddingtop:2em;">Basic vs. Python</div>
+                                     </div>
+                                 </a>
+                             </div>
+ 
+ 
+                     <br>
+                         <a style="fontsize: 1em; backgroundcolor:#4c0075;" href="#information" class="btn btndark btnlg">Scroll down!</a>
+                 </div>
+                 <!-- col end -->
+ 
+             </div>
+             <!-- /.row -->
+         </div>
+         <!-- /.container -->
+     </section>
+ 
+     <!--
+ <section id="information" style="backgroundcolor:#F6FCA9;">
+         <aside class="information">
+             <div class="rowfluid">
+                 <div class="collg12 colmd12">
+                     hello
+                 </div> <! end col >
+     <!         </div> 
+         </aside>
+ </section>
+ 
+         <!
+      <div class="container">
+             <div class="row">
+                 <div class="collg10 collgoffset1 textcenter">
+                     <h2 style="color:white;">Pictues and Projects</h2>
+                     <hr class="small">
+                     <p>More coming soon!</p>
+                     <div class="row">
+                         <div class="colmd6">
+                             <div class="portfolioitem">
+                                 <a href="#">
+                                     <img class="imgportfolio imgresponsive" src="img/tumblr_ldxiqzVNhg1qd5tlio2_1280%20%20Kopi.jpg">
+                                 </a>
+                             </div>
+                         </div>
+                         <div class="colmd6">
+                             <div class="portfolioitem">
+                                 <a href="#">
+                                     <img class="imgportfolio imgresponsive" src="img/tumblr_ldxiqzVNhg1qd5tlio2_1280%20%20Kopi.jpg">
+                                 </a>
+                             </div>
+                         </div>
+ 
+                     </div>
+                     <! /.row (nested) >
+     <!-- add link later<a href="#" class="btn btnlight">Learn More</a> >
+ 
+     <!--     </div>
+                 <!-- /.collg10 >
+     <!--    </div>
+     <!--        <!-- /.row >
+     <!--  </div>>
+ 
+ 
+ 
+     <!-- Map -->
+     <section id="contact" class="map">
+ 
+     </section>
+     <!-- Footer -->
+     <footer class="the_end">
+ 
+ 
+ 
+         <div class="container">
+             <div class="row">
+                 <div class="collg10 collgoffset1 textcenter">
+                     <h4 style="color:black;"><strong>Contact information</strong>
+                     </h4>
+                     <p>Göteborg, Sweden
+                         <br>Don't call me, please write!</p>
+                     <ul class="listunstyled">
+                         <li><i class="fa faphone fafw"></i> +46 076148 96 63/li>
+                             <li><i class="fa faenvelopeo fafw"></i> <a href="mailto:aschera@gmail.com" title="aschera@gmail.com">mail</a>
+                             </li>
+                     </ul>
+                     <br>
+                     <ul class="listinline">
+                         <li>
+                             <a href="https://www.facebook.com/christina.bogh"><i class="fa fafacebook fafw fa3x"></i></a>
+                         </li>
+                     </ul>
+                     <hr class="small">
+                     <p class="textmuted">Copyright &copy; Christina's magical website 2017</p>
+                 </div>
+             </div>
+         </div>
+         <a id="totop" href="#top" class="btn btndark btnlg"><i class="fa fachevronup fafw fa1x"></i></a>
+ 
+     </footer>
+ 
+     <!-- jQuery -->
+     <script src="js/jquery.js"></script>
+ 
+     <!-- Bootstrap Core JavaScript -->
+     <script src="js/bootstrap.min.js"></script>
+ 
+     <!-- Custom Theme JavaScript -->
+     <script>
+         // Closes the sidebar menu
+         $("#menuclose").click(function(e) {
+             e.preventDefault();
+             $("#sidebarwrapper").toggleClass("active");
+         });
+         // Opens the sidebar menu
+         $("#menutoggle").click(function(e) {
+             e.preventDefault();
+             $("#sidebarwrapper").toggleClass("active");
+         });
+         // Scrolls to the selected menu item on the page
+         $(function() {
+             $('a[href*=#]:not([href=#],[datatoggle],[datatarget],[dataslide])').click(function() {
+                 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                     var target = $(this.hash);
+                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                     if (target.length) {
+                         $('html,body').animate({
+                             scrollTop: target.offset().top
+                         }, 1000);
+                         return false;
+                     }
+                 }
+             });
+         });
+         //#totop button appears after scrolling
+         var fixed = false;
+         $(document).scroll(function() {
+             if ($(this).scrollTop() > 250) {
+                 if (!fixed) {
+                     fixed = true;
+                     // $('#totop').css({position:'fixed', display:'block'});
+                     $('#totop').show("slow", function() {
+                         $('#totop').css({
+                             position: 'fixed',
+                             display: 'block'
+                         });
+                     });
+                 }
+             } else {
+                 if (fixed) {
+                     fixed = false;
+                     $('#totop').hide("slow", function() {
+                         $('#totop').css({
+                             display: 'none'
+                         });
+                     });
+                 }
+             }
+         });
+         // Disable Google Maps scrolling
+         // See http://stackoverflow.com/a/25904582/1607849
+         // Disable scroll zooming and bind back the click event
+         var onMapMouseleaveHandler = function(event) {
+             var that = $(this);
+             that.on('click', onMapClickHandler);
+             that.off('mouseleave', onMapMouseleaveHandler);
+             that.find('iframe').css("pointerevents", "none");
+         }
+         var onMapClickHandler = function(event) {
+             var that = $(this);
+             // Disable the click handler until the user leaves the map area
+             that.off('click', onMapClickHandler);
+             // Enable scrolling zoom
+             that.find('iframe').css("pointerevents", "auto");
+             // Handle the mouse leave event
+             that.on('mouseleave', onMapMouseleaveHandler);
+         }
+         // Enable map zooming with mouse scroll when the user clicks the map
+         $('.map').on('click', onMapClickHandler);
+     </script>
+ 
+     <!-- Google needs id!
+     AIzaSyDqlDUN18gi5vXn7lqtHJXUCwnqmKkjNXk -->
+ 
+     <script>
+         // Google API for the map. 
+         // Needs to be here too, so it lopads properly.
+ 
+         function initMap() {
+             // Create a map object and specify the DOM element for display.
+             var map = new google.maps.Map(document.getElementById("contact"), {
+                 center: {
+                     lat: 57.70716,
+                     lng: 11.96679
+                 },
+                 scrollwheel: false,
+                 zoom: 12
+             });
+         }
+     </script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqlDUN18gi5vXn7lqtHJXUCwnqmKkjNXk&callback=initMap" async defer></script>
+ 
+ 
+     <!-- JavaScript -->
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+ 
+ </body>

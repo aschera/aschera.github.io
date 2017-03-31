@@ -1,5 +1,5 @@
 
-<!--  **************************************************************************** -->
+<!  **************************************************************************** >
         /* The log in function */
        
       function SignInNow() {
@@ -9,7 +9,7 @@
                 provider.addScope('repo');
 
                 
-                //Re-dictedt!!!!!!!!!!!!!!!!
+                //Redictedt!!!!!!!!!!!!!!!!
                 firebase.auth().signInWithRedirect(provider);
 
             } else {
@@ -48,7 +48,7 @@
                 // The firebase.auth.AuthCredential type that was used.
                 var credential = error.credential;
 
-                if (errorCode === 'auth/account-exists-with-different-credential') {
+                if (errorCode === 'auth/accountexistswithdifferentcredential') {
                     alert('You have already signed up with a different auth provider for that email.');
                     // If you are using multiple auth providers on your app you should handle linking
                     // the user's accounts here.

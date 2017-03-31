@@ -101,14 +101,15 @@
 
                     // user name
                     var userInformation = document.getElementById('userWhoIsloggedIn');
-                    userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
+                    userInformation.textContent = JSON.stringify(user, null, '  ');
 
+                    console.log (user);
                     //picture icon
-                    var icon = (user.providerData[0].photoURL);
-                    let image = document.createElement('img');
-                    image.src = icon;
-                    var userpicture = document.getElementById('userimage');
-                    userpicture.appendChild(image);
+                    //var icon = (user.providerData[0].photoURL);
+                    //let image = document.createElement('img');
+                    //image.src = icon;
+                    //var userpicture = document.getElementById('userimage');
+                    //userpicture.appendChild(image);
 
                 } else {
 
@@ -118,7 +119,7 @@
                     document.getElementById('userWhoIsloggedIn').textContent = '';
                     document.getElementById('gitHubToken').textContent = '';
                     document.getElementById('userimage').textContent = '';
-                    document.getElementById('userInformation').style.display = 'none';
+                    //document.getElementById('userInformation').style.display = 'none';
                     document.getElementById('loginHeader').textContent = 'Log in';
                 }
 

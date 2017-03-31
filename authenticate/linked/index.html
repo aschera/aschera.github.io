@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Inlämning 3B - Linked</title>
+
+<!--  **************************************************************************** -->
+    <!-- Firebase basic stuff -->
+    
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAIGJZw4iTVSW8VlHrA-hzuYt-L5fWtaVw",
+    authDomain: "linkedlogin-2a007.firebaseapp.com",
+    databaseURL: "https://linkedlogin-2a007.firebaseio.com",
+    projectId: "linkedlogin-2a007",
+    storageBucket: "linkedlogin-2a007.appspot.com",
+    messagingSenderId: "464854473605"
+  };
+  firebase.initializeApp(config);
+</script>
+    
+<!-- Client ID
+d697ad3799209129c6b1
+Client Secret
+b46b38c2839d99a12eb99f61348c4b5b61c8edb4 -->
+    
+<!--  **************************************************************************** -->
+<!--  **************************************************************************** -->
+<!--  **************************************************************************** -->
+
+
+    <style>
+    * {
+            color: black;
+        }
+        .button {
+            background-color: #FF5980;
+            color: black;
+            border-bottom-color: black;
+            border: 1px;
+            border-radius: 4px;
+            padding: 0.5em 0.5em;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            margin: 2px 1px;
+            cursor: pointer
+        };
+        image {
+            min-height: 15em;
+        }
+        
+#resultRow{display:none;}
+        
+        #containerBox{margin-right: 25%;
+        margin-left: 25%; width:80%;}
+        
+        #resultWindow{display:none;}
+        
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Container-->
+    <div class="container center" style="margin:1em; padding:1em; background-color:black;" id="containerBox">
+
+<div style="background-color:#FF5980;"> <!-- background behind rows -->
+
+        <!-- Row -->
+        <div class="row" style="margin:1em; padding:1em;  background-color:#FF5980; margin:0; border-radius: 4px;">
+
+            <!-- col -->
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="logInWindow" style="background-color:#E8D4B4; margin:1em; padding:1em;">
+
+                <!-- Login -->
+                <div  style="margin-bottom:2em;">
+                    <h2 id="login">Log in:</h2>
+                    <button disabled class="button" id="theLoginButton" onclick="SignInNow()">GitHub</button>
+                    <button disabled class="button" id="theLoginButtonGoogle" onclick="SignInNowGoogle()">Google</button>
+                </div>
+            </div>
+            <!-- end col -->
+
+        </div>
+        <!-- end row -->
+
+        <!-- Row -->
+        <div class="row" style="margin:1em; padding:1em;  display:none; background-color:#FF5980; margin:0; border-radius: 4px;" id="resultRow">
+
+            <!-- col -->
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="resultWindow" style="background-color:#E8D4B4; display:none; margin:1em; padding:1em;">
+                <!-- Result -->
+                <div class="quickstart-user-details-container" style="color:#C9FFF5;">
+
+                    <strong>Status: </strong><span id="loginStatus"></span>
+                    <br><br><br>
+
+                     <strong>User: </strong>
+                    <pre><code id="userInfoField"></code></pre>
+                    </div>
+                    <br>
+                    <div id="userimage"></div>
+
+                    <br>
+                    <div><strong>Token:</strong></div>
+                    <pre><code id="gitHubToken"></code></pre>
+                  </div>
+                </div>
+                <!-- end col -->
+
+            </div>
+            <!-- end row -->
+</div>
+        </div>
+        <!-- end container -->
+
+</body>
+
+
+</html>

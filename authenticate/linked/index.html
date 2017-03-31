@@ -10,33 +10,9 @@
     <title>Inlämning 3B  Linked</title>
 
     <style>
-    * {
-            color: black;
-        }
-        .button {
-            backgroundcolor: #FF5980;
-            color: black;
-            borderbottomcolor: black;
-            border: 1px;
-            borderradius: 4px;
-            padding: 0.5em 0.5em;
-            textalign: center;
-            textdecoration: none;
-            display: inlineblock;
-            fontsize: 1em;
-            margin: 2px 1px;
-            cursor: pointer
-        };
-        image {
-            minheight: 15em;
-        }
-        
-#resultRow{display:none;}
-        
-        #containerBox{marginright: 25%;
-        marginleft: 25%; width:80%;}
-        
-        #resultWindow{display:none;}
+    
+#loggedinGreeting{display:none;}
+#logoutButton{display:none;}
      
     </style>
     
@@ -123,14 +99,18 @@
 <script> 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    document.body.innerHTML = '<h1> Congrats ' + user.displayName + ', you are done! </h1> <h2> Now get back to what you love building. </h2> <h2> Need to verify your email address or reset your password? Firebase can handle all of that for you using the email you provided: ' + user.email + '. <h/2>';
+    let greeting = document.getElementById('loggedinGreeting').style.display = 'block';
+    let loginButtons = document.getElementById("firebaseui-auth-container").style.display = 'none';
+    let logoutButton = document.getElementById("logoutButton").style.display = 'block';
+      
+    greeting.innerHTML = '<h1> Congrats ' + user.displayName + ', you are done! </h1> <h2> Now get back to what you love building. </h2> <h2> Need to verify your email address or reset your password? Firebase can handle all of that for you using the email you provided: ' + user.email + '. <h/2>';
   } else {
     console.log("no user signed in");
   }
 });
 </script>
-
-<h1>Congrats you're done! </h1>
+<button id="logoutButton" onclick="logout()">Log out</button>
+<p id ='loggedinGreeting'> Congrats you're done! </p>
             
             
     

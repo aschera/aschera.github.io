@@ -113,6 +113,9 @@ firebase.auth().onAuthStateChanged(function(user) {
     
     function logout(){
         firebase.auth().signOut();
+        let greeting = document.getElementById('loggedinGreeting').style.display = 'none';
+        let loginButtons = document.getElementById("firebaseui-auth-container").style.display = 'block';
+        let logoutButton = document.getElementById("logoutButton").style.display = 'none';
     }
 </script>
             

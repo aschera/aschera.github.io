@@ -103,7 +103,19 @@ firebase.auth().onAuthStateChanged(function(user) {
     let loginButtons = document.getElementById("firebaseui-auth-container").style.display = 'none';
     let logoutButton = document.getElementById("logoutButton").style.display = 'block';
       
-    greeting.innerHTML = '<h1> Congrats ' + user.displayName + ', you are done! </h1> <h2> Now get back to what you love building. </h2> <h2> Need to verify your email address or reset your password? Firebase can handle all of that for you using the email you provided: ' + user.email + '. <h/2>';
+    
+                    // user name
+                    var userInformation = document.getElementById('userInfoField');
+
+                    userInformation.textContent = JSON.stringify(user.displayName, null, '  ');
+                    //picture icon
+                    var icon = (user.providerData[0].photoURL);
+			         console.log(user);
+                    let image = document.createElement('img');
+                    image.src = icon;
+                    var userpicture = document.getElementById('userimage');
+                    userpicture.appendChild(image);
+
   } else {
       
     logout();
@@ -126,6 +138,9 @@ firebase.auth().onAuthStateChanged(function(user) {
             
 <button id="logoutButton" onclick="logout()">Log out</button>
 <p id ='loggedinGreeting'> Congrats you're done! </p>
+            
+            <p id='userInfoField'></p>
+            <div id='userimage'></div>
             
             
     

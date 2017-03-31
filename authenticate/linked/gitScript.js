@@ -5,37 +5,7 @@
 
 
 /*  **************************************************************************** */
-        /* The log in function */
-        
-        function SignInNow() {
-            console.log('clicked');
-            if (!firebase.auth().currentUser) {
-
-                var provider = new firebase.auth.GithubAuthProvider();
-                provider.addScope('repo');
-
-                
-                //Redirected!!!!!!!!!!!!!!!!
-                //firebase.auth().signInWithRedirect(provider);
-                auth.currentUser.linkWithRedirect(provider);
-                
-            } else {
-                //firebase.auth().signOut();
-                
-                firebase.auth().signOut().then(function() {
-                  console.log('signed out of Github');
-                }).catch(function(error) {
-                 console.log(error);
-                });
-            }
-            // login button
-            document.getElementById('theLoginButton').disabled = true;
-            
-     gitHubVerification();
-        }
-
-
-        function gitHubVerification() {
+function gitHubVerification() {
             
            firebase.auth().getRedirectResult().then(function(result) {
                   if (result.credential) {

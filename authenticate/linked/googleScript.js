@@ -9,7 +9,7 @@
         /* The log in function */
         
         function SignInNowGoogle() {
-            console.log('clicked');
+            console.log('Google clicked');
             if (!firebase.auth().currentUser) {
 
                 var provider = new firebase.auth.GoogleAuthProvider();
@@ -18,7 +18,7 @@
                 
                 //Redirected!!!!!!!!!!!!!!!!
                 //firebase.auth().signInWithRedirect(provider);
-                auth.currentUser.linkWithRedirect(provider);
+                firebase.auth.currentUser.linkWithRedirect(provider);
                 
             } else {
                 //firebase.auth().signOut();

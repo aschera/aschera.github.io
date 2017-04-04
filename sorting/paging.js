@@ -64,15 +64,15 @@ function nextList() {
 
 function addItem(data) {
                 let items = document.getElementById('items');
-		
-
                 let tr = document.createElement('tr');
                 tr.style.margin = '1em';
+		tr.style.color = 'black';
+		
                 tr.innerHTML = `
-			<td >${data.name}</td> 
-			<td>${data.type}</td> 
-			<td>${data.amount}</td>
-			<td>${data.price}</td> 
+			<td style="padding:1em;" >${data.name}</td> 
+			<td style="padding:1em;" >${data.type}</td> 
+			<td style="padding:1em;"  >${data.amount}</td>
+			<td style="padding:1em;" >${data.price}</td> 
 			`;
                 items.appendChild(tr);
             }

@@ -42,7 +42,7 @@
             margin: 2px 1px;
             
         };
-        td {
+        td{
             background-color: #062F4F;
             margin: 12px 12px 12px 12px;
             padding: 12px 12px 12px 12px;
@@ -58,7 +58,7 @@
             *border-collapse: expression('separate', cellSpacing='10px');
         }
 p{color:white;}
-.inputs{color:white;}
+.inputs{color:black;}
 
 
 table {
@@ -157,7 +157,7 @@ tbody:hover > tr:hover td {
                     <button class ="inputs" id="sorttype">by type</button>
                     <button class ="inputs" id="sortcount">by amount</button>
                     <button class ="inputs" id="sortprice">by price</button>
-                    <input class ="inputs" type='text' id='howmany' />
+                    <input class ="inputs" placeholder="How many items to show" type='text' id='howmany' />
                 
             </div>
             <!-- end col -->
@@ -230,13 +230,13 @@ console.log(data) ;
                 let items = document.getElementById('items');
                 let tr = document.createElement('tr');
                 tr.style.margin = '1em';
-		tr.style.color = 'white';
+		tr.style.color = 'black';
 		
                 tr.innerHTML = `
-			<td >${data.name}</td> 
-			<td>${data.type}</td> 
-			<td>${data.amount}</td>
-			<td>${data.price}</td> 
+			<td style="padding:1em;" >${data.name}</td> 
+			<td style="padding:1em;" >${data.type}</td> 
+			<td style="padding:1em;"  >${data.amount}</td>
+			<td style="padding:1em;" >${data.price}</td> 
 			`;
                 items.appendChild(tr);
             }

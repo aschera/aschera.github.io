@@ -67,6 +67,7 @@
 
         .inputs {
             color: black;
+            width:5em;
         }
 
 
@@ -129,7 +130,34 @@
     color: #fff;
     background-color: #59A0D8;
     border-color: #59A0D8;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 100;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+            height: 3em;
+            width: 5em;
 }
+        
+                .btn-info1 {
+    color: #fff;
+    background-color: #59A0D8;
+    border-color: #59A0D8;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 100;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+            height: 2em;
+            width: 6em;
+}
+        #nextItems{display: none;}
     </style>
 
 
@@ -154,8 +182,8 @@
                 <label for="inputs" style="background-color:#062F4F; width:400px;  margin:0.6em; padding:0.6em;">
 
  		    
-		    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">
-		    <h2 style="color:#813772;">Add</h2></label>
+		    <button type="button" value="Add" name="Add" class="btn btn-info" data-toggle="collapse" data-target="#demo">Add
+		    </label>
                 </button>
 
                 <div id="demo" class="collapse" style="margin:0.6em; padding:0.6em; background-color:#062F4F; width:350px;">
@@ -163,23 +191,23 @@
                     <input class="inputs" id="inputType" type="text" placeholder="Type" />
                     <input class="inputs" id="inputCount" type="text" placeholder="Count" />
                     <input class="inputs" id="inputPrice" type="text" placeholder="Price" />
-                    <button class="inputs" id="addButton">Add</button>
+                    <button class="inputs btn-info1" id="addButton" style="margin-top:5px;">Add</button>
                 </div>
 
             </div>
             <!-- end col -->
-            <div class="col-md-6 col-md-6 col-sm-6 col-xs-6" style="min-width:30em;">
+            <div class="col-md-6 col-md-6 col-sm-6 col-xs-6" style="min-width:500px;">
 
                 <label for="inputs" style="background-color:#062F4F; width:400px; margin:0.6em; padding:0.6em;"> 
-		    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo1">
-		    <h2 style="color:#813772;">Sort</h2></label>
+		    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo1" value="sort"> Sort
+		    </label>
                 </button>
 
-                <div id="demo1" class="collapse" style="margin:0.6em; padding:0.6em; background-color:#062F4F; width:350px;">
-                    <button class="inputs" id="sortname">by name</button>
-                    <button class="inputs" id="sorttype">by type</button>
-                    <button class="inputs" id="sortcount">by amount</button>
-                    <button class="inputs" id="sortprice">by price</button>
+                <div id="demo1" class="collapse" style="margin:0.6em; padding:0.6em; background-color:#062F4F; min-width:400px;">
+                    <button class="inputs btn-info1" id="sortname">by <strong>name</strong></button>
+                    <button class="inputs btn-info1" id="sorttype">by <strong>type</strong></button>
+                    <button class="inputs btn-info1" id="sortcount">by <strong>amount</strong></button>
+                    <button class="inputs btn-info1" id="sortprice">by <strong>price</strong></button>
                     
                 </div>
             </div>
@@ -189,9 +217,9 @@
 
         <div class="row" style="padding:0.5em; margin:0.5em; border-radius: 4px; background-color:#062F4F; min-width:30em;">
 
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" style="min-width:30em;">
+            <div class="col-md-6 col-md-6 col-sm-6 col-xs-6" style="min-width:30em;">
 
-                <label for="howmany" style="background-color:#062F4F; width:68em; margin:0.6em; padding:0.6em;"> <input class="inputs" placeholder="Show first XX items" type='text' id='howmany' /> <input class="inputs" placeholder="Show last XX items" type='text' id='howmanyLast' /></label>
+                <label for="howmany" style="color:white; background-color:#062F4F; width:68em; margin:0.6em; padding:0.6em; padding-left:0;"> Show first: <input class="inputs" placeholder=" 10" type='text' id='howmany'/> Show last: <input class="inputs" placeholder=" 10" type='text' id='howmanyLast' /></label>
 		     
                 
                     <table cellspacing=12 style="margin:0.6em; padding:0.6em; width:400px; border-radius:4px;">
@@ -208,7 +236,7 @@
                     <table id="items" cellspacing=12 style="width:400px; margin:0.6em; padding:0.6em; min-width:250px;">
                     </table>
 
-                    <button onclick="nextList()" id="nextItems">Next</button>
+                    <button onclick="nextList()" id="nextItems" class="btn-info1">Next</button>
                 
             </div>
             <!-- end col -->
@@ -224,9 +252,6 @@
         var lastItem = '';
 
         window.addEventListener('load', function() { //shit has to load
-
-
-
 
             let name = document.getElementById('inputName');
             let type = document.getElementById('inputType');
@@ -254,7 +279,6 @@
             });
 
             function addItem(data) {
-                console.log(data);
                 let items = document.getElementById('items');
                 let tr = document.createElement('tr');
                 tr.style.margin = '1em';
@@ -275,6 +299,7 @@
             let SortCount = document.getElementById('sortcount');
             let sortPrice = document.getElementById('sortprice');
             let howMany = document.getElementById('howmany');
+            let howManyLast = document.getElementById('howmanyLast');
 
             function sortFunction(button, sortKey) {
                 button.addEventListener('click', function(event) {
@@ -292,7 +317,7 @@
             }
             sortFunction(sortName, 'name');
             sortFunction(sortType, 'type');
-            sortFunction(sortcount, 'count');
+            sortFunction(SortCount, 'count');
             sortFunction(sortPrice, 'price');
 
             howMany.addEventListener('keypress', function(event) {
@@ -301,6 +326,7 @@
                 if (event.keyCode == 13) {
                     let many = Number(howmany.value);
                     items.innerHTML = '';
+                    showButton('block');
 
                     if (isNaN(many)) {
                         console.log('no good');
@@ -310,8 +336,29 @@
                                 snapshot.forEach(items => {
                                     addItem(items.val());
 
+                                })
+                            });
+                    }
+
+                };
+            });
+            
+            
+            howManyLast.addEventListener('keypress', function(event) {
 
 
+                if (event.keyCode == 13) {
+                    let many = Number(howManyLast.value);
+                    items.innerHTML = '';
+                    showButton('block');
+
+                    if (isNaN(many)) {
+                        console.log('no good');
+                    } else {
+                        firebase.database().ref('items/').limitToLast(many)
+                            .once('value', function(snapshot) {
+                                snapshot.forEach(items => {
+                                    addItem(items.val());
 
                                 })
                             });

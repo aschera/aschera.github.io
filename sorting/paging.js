@@ -1,5 +1,12 @@
 var currentPage = 1;
 
+function showButton(x){
+    
+    let button = document.getElementById('nextItems');
+    button.style.display = x;
+}
+
+
 function nextList() {
 	var res;
 
@@ -7,7 +14,7 @@ function nextList() {
 
     var keys = Object.keys(res).sort();
 	let howMany = document.getElementById('howmany').value;
-	let count = Number(howMany); 
+	var count = Number(howMany); 
     var pageLength = count;
 
     var pageCount = keys.length / pageLength;
@@ -15,7 +22,8 @@ function nextList() {
     var promises = [];
     var nextKey;
     var query;
-
+    
+    
     for (var i = 0; i < pageCount; i++) {
       key = keys[i * pageLength];
       
@@ -25,27 +33,40 @@ function nextList() {
 
     Promise.all(promises)
       .then(function (snaps) {
+        
+        
+        
         var pages = [];
+        
+        
         snaps.forEach(function (snap) {
           pages.push(snap.val());
         });
 
-        console.log('pages', pages);
-	
 		let pageX = pages[currentPage];
-		console.log(currentPage);
-
+       
+        
+        try{
+            var size = Object.keys(pages[currentPage]).length;
+        }
+        catch (Error){
+            showButton('none');
+            console.log('no more pages');
+        }
+       
 		let items = document.getElementById('items');
 		items.innerHTML = '';
-
-		Object.keys(pageX).forEach(function(key) {
-		addItem(pageX[key]);
-		
-		});
-
-	
-	
-	currentPage = currentPage +1;
+       
+            
+          if(size > 0) {
+           
+            Object.keys(pageX).forEach(function(key) {
+		      addItem(pageX[key]);
+                
+            });
+          }
+            
+       currentPage = currentPage +1;
 
 	/*
 	Object.keys(pageone).forEach(function(key) {

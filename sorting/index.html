@@ -13,11 +13,13 @@
     <meta name="author" content="Christina Bögh">
 
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
     <title>Innlämning 4</title>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -25,10 +27,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<script src="paging.js"></script>
+    <script src="paging.js"></script>
 
     <style>
- button {
+        button {
             background-color: #813772;
             color: white;
             border-bottom-color: black;
@@ -40,9 +42,10 @@
             display: inline-block;
             font-size: 1em;
             margin: 2px 1px;
-            
-        };
-        td{
+        }
+
+        ;
+        td {
             background-color: #062F4F;
             margin: 12px 12px 12px 12px;
             padding: 12px 12px 12px 12px;
@@ -57,109 +60,155 @@
             border-spacing: 10px;
             *border-collapse: expression('separate', cellSpacing='10px');
         }
-p{color:white;}
-.inputs{color:black;}
+
+        p {
+            color: white;
+        }
+
+        .inputs {
+            color: black;
+        }
 
 
-table {
-  border-collapse: separate;
-  background:#fff;
-  @include border-radius(5px);
-  margin:50px auto;
-  @include box-shadow(0px 0px 5px rgba(0,0,0,0.3));
-}
+        table {
+            border-collapse: separate;
+            background: #fff;
+            @include border-radius(5px);
+            margin: 50px auto;
+            @include box-shadow(0px 0px 5px rgba(0, 0, 0, 0.3));
+        }
 
 
-tbody tr td {
-  font-family: 'Open Sans', sans-serif;
-  font-weight:400;
-  color:#5f6062;
-  font-size:13px;
-  padding:20px 20px 20px 20px;
-  border-bottom:1px solid #e0e0e0;
-  
-}
+        tbody tr td {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            color: #5f6062;
+            font-size: 13px;
+            padding: 20px 20px 20px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
 
-tbody tr:nth-child(2n) {
-  background:#f0f3f5;
-}
+        tbody tr:nth-child(2n) {
+            background: #f0f3f5;
+        }
 
-tbody tr:last-child td {
-  border-bottom:none;
-  &:first-child {
-    @include border-bottom-left-radius(5px);
-  }
-  &:last-child {
-    @include border-bottom-right-radius(5px);
-  }
-}
+        tbody tr:last-child td {
+            border-bottom: none;
+            &:first-child {
+                @include border-bottom-left-radius(5px);
+            }
+            &:last-child {
+                @include border-bottom-right-radius(5px);
+            }
+        }
 
-tbody:hover > tr td {
-  @include opacity(0.5);
+        tbody:hover>tr td {
+            @include opacity(0.5);
+        }
 
-}
+        tbody:hover>tr:hover td {
+            @include text-shadow(none);
+            color: #2d2d2d;
+            @include opacity(1.0);
+        }
+        /* background image */
 
-tbody:hover > tr:hover td {
-  @include text-shadow(none);
-  color:#2d2d2d;
-  @include opacity(1.0);
-}
+        html {
+            background: url(bg.png) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        body {
+            background-color: transparent;
+        }
     </style>
+
+
 
 </head>
 
 <body class="center">
 
     <div class="container center" style="min-width:30em;">
+        <div class="row" style="padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
 
-        <div class="row" style="background-color:#062F4F; padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" style="min-width:30em;">
-  <label for="inputs" style="margin:0.6em; padding:0.6em;" > <h2 style="color:#813772;">Add</h2></label><br>
-                    <input class ="inputs" id="inputName" type="text" placeholder="Name" />
-                    <input class ="inputs" id="inputType" type="text" placeholder="Type" />
-                    <input class ="inputs" id="inputCount" type="text" placeholder="Count" />
-                    <input class ="inputs" id="inputPrice" type="text" placeholder="Price" />
-                    <button class ="inputs" id="addButton">Add</button>
-                
-
+                <div style="background-color:#062F4F; width:68em; text-align:center; margin:0.6em; padding:0.6em;">
+                    <h1 style="color:white;">Webshop</h1>
+                </div>
             </div>
             <!-- end col -->
         </div>
         <!-- end row -->
-        <div class="row" style="background-color:#062F4F; padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" style="min-width:30em;">
-               <label for="inputs" style="margin:0.6em; padding:0.6em;" > <h2 style="color:#813772;">Sort</h2></label><br>
-			
-                    <button class ="inputs" id="sortname">by name</button>
-                    <button class ="inputs" id="sorttype">by type</button>
-                    <button class ="inputs" id="sortcount">by amount</button>
-                    <button class ="inputs" id="sortprice">by price</button>
-                    <input class ="inputs" placeholder="How many items to show" type='text' id='howmany' />
-                
+        <div class="row" style="padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
+
+            <div class="col-md-6 col-md-6 col-sm-6 col-xs-6" style="min-width:30em;">
+
+                <label for="inputs" style="background-color:#062F4F; width:400px;  margin:0.6em; padding:0.6em;">
+
+ 		    
+		    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">
+		    <h2 style="color:#813772;">Add</h2></label>
+                </button>
+
+                <div id="demo" class="collapse" style="margin:0.6em; padding:0.6em; background-color:#062F4F; width:350px;">
+                    <input class="inputs" id="inputName" type="text" placeholder="Name" />
+                    <input class="inputs" id="inputType" type="text" placeholder="Type" />
+                    <input class="inputs" id="inputCount" type="text" placeholder="Count" />
+                    <input class="inputs" id="inputPrice" type="text" placeholder="Price" />
+                    <button class="inputs" id="addButton">Add</button>
+                </div>
+
+            </div>
+            <!-- end col -->
+            <div class="col-md-6 col-md-6 col-sm-6 col-xs-6" style="min-width:30em;">
+
+                <label for="inputs" style="background-color:#062F4F; width:400px; margin:0.6em; padding:0.6em;"> 
+		    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo1">
+		    <h2 style="color:#813772;">Sort</h2></label>
+                </button>
+
+                <div id="demo1" class="collapse" style="margin:0.6em; padding:0.6em; background-color:#062F4F; width:350px;">
+                    <button class="inputs" id="sortname">by name</button>
+                    <button class="inputs" id="sorttype">by type</button>
+                    <button class="inputs" id="sortcount">by amount</button>
+                    <button class="inputs" id="sortprice">by price</button>
+                    <input class="inputs" placeholder="How many items to show" type='text' id='howmany' />
+                </div>
             </div>
             <!-- end col -->
         </div>
         <!-- end row -->
-        <div class="row" style="background-color:#062F4F; padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
+
+        <div class="row" style="padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
+
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" style="min-width:30em;">
-                
-                    <label for="items" style="margin:0.6em; padding:0.6em;" > <h2 style="color:#813772;">Stored Items</h2></label>
-		    <table cellspacing=12 style="margin:0.6em; padding:0.6em; width:400px; border-radius:4px;">
 
-				<tr>
-				    <th>Name</th>
-				    <th style="text-align:center; padding:1em; width:133px;">Type</th>
-				    <th style="text-align:right; padding:1em; width:44px;">Amount</th>
-				    <th style="text-align:right; padding:1em; width:60px;">Price</th>
-				</tr>
-			
-		    </table>
+                <label for="items" style="background-color:#062F4F; width:68em; margin:0.6em; padding:0.6em;"> 
+		    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo2">
+		    <h2 style="color:#813772;">Result</h2></label>
+                </button>
 
-                    <table id="items" cellspacing=12 style="margin:0.6em; padding:0.6em; min-width:250px;">
-		    </table>
-		    
-			<button onclick="nextList()" id="nextItems">Next</button>
-                
+                <div id="demo2" class="collapse" style="margin:0.6em; padding:0.6em; background-color:#062F4F; width:400px;">
+                    <table cellspacing=12 style="margin:0.6em; padding:0.6em; width:400px; border-radius:4px;">
+
+                        <tr>
+                            <th>Name</th>
+                            <th style="text-align:center; padding:1em; width:133px;">Type</th>
+                            <th style="text-align:right; padding:1em; width:44px;">Amount</th>
+                            <th style="text-align:right; padding:1em; width:60px;">Price</th>
+                        </tr>
+
+                    </table>
+
+                    <table id="items" cellspacing=12 style="width:400px; margin:0.6em; padding:0.6em; min-width:250px;">
+                    </table>
+
+                    <button onclick="nextList()" id="nextItems">Next</button>
+                </div>
             </div>
             <!-- end col -->
         </div>
@@ -171,7 +220,7 @@ tbody:hover > tr:hover td {
 
 
     <script>
-var lastItem = '';
+        var lastItem = '';
 
         window.addEventListener('load', function() { //shit has to load
 
@@ -200,16 +249,16 @@ var lastItem = '';
                 let data = snapshot.val();
                 addItem(data);
 
-		
+
             });
 
             function addItem(data) {
-console.log(data) ;
+                console.log(data);
                 let items = document.getElementById('items');
                 let tr = document.createElement('tr');
                 tr.style.margin = '1em';
-		tr.style.color = 'black';
-		
+                tr.style.color = 'black';
+
                 tr.innerHTML = `
 			<td style="padding:1em;" >${data.name}</td> 
 			<td style="padding:1em;" >${data.type}</td> 
@@ -223,7 +272,7 @@ console.log(data) ;
             let sortName = document.getElementById('sortname');
             let sortType = document.getElementById('sorttype');
             let SortCount = document.getElementById('sortcount');
-            let SortPrice = document.getElementById('sortprice');
+            let sortPrice = document.getElementById('sortprice');
             let howMany = document.getElementById('howmany');
 
             function sortFunction(button, sortKey) {
@@ -243,10 +292,10 @@ console.log(data) ;
             sortFunction(sortName, 'name');
             sortFunction(sortType, 'type');
             sortFunction(sortcount, 'count');
-            sortFunction(sortprice, 'price');
+            sortFunction(sortPrice, 'price');
 
             howMany.addEventListener('keypress', function(event) {
-		
+
 
                 if (event.keyCode == 13) {
                     let many = Number(howmany.value);
@@ -259,10 +308,10 @@ console.log(data) ;
                             .once('value', function(snapshot) {
                                 snapshot.forEach(items => {
                                     addItem(items.val());
-					
-					
 
-						
+
+
+
                                 })
                             });
                     }
@@ -273,11 +322,7 @@ console.log(data) ;
 
 
 
-
-
-
-   
-    }); // end loader
+        }); // end loader
     </script>
 
     <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>

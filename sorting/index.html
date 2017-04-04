@@ -68,6 +68,7 @@
         .inputs {
             color: black;
             width:5em;
+            margin-top: 0.6em;
         }
 
 
@@ -146,9 +147,11 @@
     color: #fff;
     background-color: #59A0D8;
     border-color: #59A0D8;
-    padding: 0;
-    margin: 0;
-    font-size: 1.2em;
+    padding: 0.5em;
+    margin: 0.5em;
+     margin-left: 0;padding-left: 0;               
+                    
+    font-size: 1em;
     font-weight: 100;
     line-height: 1;
     text-align: center;
@@ -157,7 +160,9 @@
             height: 2em;
             width: 6em;
 }
-        #nextItems{display: none;}
+        #nextItems{display: none; margin: 0.6em;
+    padding: 0.6em;}
+        .demo{margin-left: 0;padding-left: 0;}
     </style>
 
 
@@ -186,7 +191,7 @@
 		    </label>
                 </button>
 
-                <div id="demo" class="collapse" style="margin:0.6em; padding:0.6em; background-color:#062F4F; width:350px;">
+                <div id="demo" class="collapse" style="background-color:#062F4F; width:350px;">
                     <input class="inputs" id="inputName" type="text" placeholder="Name" />
                     <input class="inputs" id="inputType" type="text" placeholder="Type" />
                     <input class="inputs" id="inputCount" type="text" placeholder="Count" />
@@ -203,7 +208,7 @@
 		    </label>
                 </button>
 
-                <div id="demo1" class="collapse" style="margin:0.6em; padding:0.6em; background-color:#062F4F; min-width:400px;">
+                <div id="demo1" class="collapse" style="background-color:#062F4F; min-width:400px;">
                     <button class="inputs btn-info1" id="sortname">by <strong>name</strong></button>
                     <button class="inputs btn-info1" id="sorttype">by <strong>type</strong></button>
                     <button class="inputs btn-info1" id="sortcount">by <strong>amount</strong></button>
@@ -219,7 +224,7 @@
 
             <div class="col-md-6 col-md-6 col-sm-6 col-xs-6" style="min-width:30em;">
 
-                <label for="howmany" style="color:white; background-color:#062F4F; width:68em; margin:0.6em; padding:0.6em; padding-left:0;"> Show first: <input class="inputs" placeholder=" 10" type='text' id='howmany'/> Show last: <input class="inputs" placeholder=" 10" type='text' id='howmanyLast' /></label>
+                <label for="howmany" style="color:white; background-color:#062F4F; width:68em; margin:0.6em; padding:0.6em; padding-left:0;"> Show first: <input class="inputs" placeholder=" 10" type='text' id='howmany'/><!-- Show last: <input class="inputs" placeholder=" 10" type='text' id='howmanyLast' /> --> </label>
 		     
                 
                     <table cellspacing=12 style="margin:0.6em; padding:0.6em; width:400px; border-radius:4px;">

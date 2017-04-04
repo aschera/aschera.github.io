@@ -112,7 +112,7 @@
             @include opacity(1.0);
         }
         /* background image */
-
+/*
         html {
             background: url(bg.png) no-repeat center center fixed;
             -webkit-background-size: cover;
@@ -123,27 +123,31 @@
 
         body {
             background-color: transparent;
-        }
+        }*/
+        
+        .btn-info {
+    color: #fff;
+    background-color: #59A0D8;
+    border-color: #59A0D8;
+}
     </style>
 
 
 
 </head>
 
-<body class="center">
+<body class="center" style="background-color:#59A0D8;">
 
     <div class="container center" style="min-width:30em;">
-        <div class="row" style="padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
+        <div class="row" style="border-radius:4px; padding:0.5em; margin:0.5em; background-color:white;">
 
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" style="min-width:30em;">
-                <div style="background-color:#062F4F; width:68em; text-align:center; margin:0.6em; padding:0.6em;">
-                    <h1 style="color:white;">Webshop</h1>
-                </div>
+            <div id="banner" class="col-md-12 col-md-12 col-sm-12 col-xs-12">
+            <img src="civilwaruniformsnorth.jpg">
             </div>
             <!-- end col -->
         </div>
         <!-- end row -->
-        <div class="row" style="padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
+        <div class="row" style="padding:0.5em; margin:0.5em; background-color:#062F4F; border-radius: 4px; min-width:30em;">
 
             <div class="col-md-6 col-md-6 col-sm-6 col-xs-6" style="min-width:30em;">
 
@@ -176,23 +180,20 @@
                     <button class="inputs" id="sorttype">by type</button>
                     <button class="inputs" id="sortcount">by amount</button>
                     <button class="inputs" id="sortprice">by price</button>
-                    <input class="inputs" placeholder="How many items to show" type='text' id='howmany' />
+                    
                 </div>
             </div>
             <!-- end col -->
         </div>
         <!-- end row -->
 
-        <div class="row" style="padding:0.5em; margin:0.5em; border-radius: 4px; min-width:30em;">
+        <div class="row" style="padding:0.5em; margin:0.5em; border-radius: 4px; background-color:#062F4F; min-width:30em;">
 
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" style="min-width:30em;">
 
-                <label for="items" style="background-color:#062F4F; width:68em; margin:0.6em; padding:0.6em;"> 
-		    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo2">
-		    <h2 style="color:#813772;">Result</h2></label>
-                </button>
-
-                <div id="demo2" class="collapse" style="margin:0.6em; padding:0.6em; background-color:#062F4F; width:400px;">
+                <label for="howmany" style="background-color:#062F4F; width:68em; margin:0.6em; padding:0.6em;"> <input class="inputs" placeholder="Show first XX items" type='text' id='howmany' /> <input class="inputs" placeholder="Show last XX items" type='text' id='howmanyLast' /></label>
+		     
+                
                     <table cellspacing=12 style="margin:0.6em; padding:0.6em; width:400px; border-radius:4px;">
 
                         <tr>
@@ -208,7 +209,7 @@
                     </table>
 
                     <button onclick="nextList()" id="nextItems">Next</button>
-                </div>
+                
             </div>
             <!-- end col -->
         </div>

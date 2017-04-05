@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<!-- saved from url=(0052)http://wpdna.com/html/Christina-preview/Christina/index-4.html -->
-<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths gr__wpdna_com" lang="en-US" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths gr__wpdna_com" lang="en-US" style="">
+    <head>
+        
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+        
     <title>Christina | Home </title>
+        
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -56,7 +61,40 @@
 .bigText1:hover{ color:#fff;}
 
 .view{ font-size:12px; }
-
+        
+#outer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+    font-family: "Franklin Gothic Medium", sans-serif;
+    font-size: xx-large;
+    color: #3399FF;
+}
+#blueDiv {
+    width: 1000px;
+    height: 1000px;
+}
+    
+    #reddiv {
+    width: 500px;
+    height: 500px;
+        }
+        #pinkdiv {
+    width: 500px;
+    height: 500px;
+        }
+        .box {
+    float: left;
+    width: 200px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    border: 2px solid blue;
+}
     </style>
 </head>
 
@@ -131,11 +169,11 @@
                                     
                                 <strong><h3>About me</h3></strong><br><br>
                                 
-                                <div id="about" style="padding:40px 0px 0px 0px; display:block;  width:100%;">
-                                    <div id="whoamI">
-                                    <div class="photo"></div><a name="Who" id="Who"></a>
-                                    <div class="text">
-                                    <p style=" color:black;">
+                           
+                                <div id="outer">
+                                    <div id="blueDiv">
+                                        
+                                         <p style=" color:black;">
                                         <a href="" target="_blank"><h4 style="color:#6532FF;">Meet Christina Bögh</h4></a>
                                         <img src="picture_me.jpg" style="max-width:150px; float: left; margin:5px;"/>
                                         I'm a programmer, web developer and sunny spirit.
@@ -143,7 +181,7 @@
                                        I build websites in a functional, user-friendly and beautiful manner.
                                        I believe that websites need to be easy to use and attractive to look at.
                                        </p>
-                                        <p style=" color:black;">
+                                       
                                        I am currently studying 100% but am looking for a programming job, preferably as as webdesigner.
                                       <br />
                                        You can download my detailed CV <a href="cv_uppdaterat1.pdf" target="_blank">here.</a>
@@ -151,53 +189,51 @@
                                           I'm currently attending two schools:
                                            <br />
                                        </p>
-                                         
-                                    </div>
-                                    </div>   
-                                </div>
-                                
-                                <div style="display:block; margin:5px;">
-                                    <br />
-                                    <div style="display:inline; padding:5px; margin-right:5px;">
-                                       <a href="http://www.uopeople.edu/programs/cs/degrees/computer-science-bachelor-degree/" target="_blank"><h4 style="color:#6532FF;">UoPeople</h4></a>
-                                        <p style="color:black;">Bachelor of science in COMPUTER SCIENCE
-                                        <br />   <br />  
-                                        <strong>Completed courses:</strong>
-                                        <ul>
-                                        <li>Online Education Strategies</li>
-                                        <li>Globalization</li>
-                                        <li>Programming Fundamentals</li>
-                                        <li>Art History</li>
-                                        <li>Programming 1</li>
-                                        <li>Databases 1</li>
-                                        <li>Introduction to Sociology</li>
-                                        <li>Programming 2</li>
-                                        <li>Comparative Programming Languages</li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        </ul>
-                                        </p>
-                                        
-                                    </div>
                                     
-                                    <div style="display:inline; padding:5px; margin-right:5px;">
-                                       <a href="http://www.yrkesutbildningar.se/skola/ec-utbildning/frontend-utvecklare-512598" target="_blank"><h4 style="color:#6532FF;">YH</h4></a>
-                                        <p style="color:black;">A Higher Vocational Education as FRONTEND DEVELOPER
-                                        <br />   <br />  
-                                        <strong>Completed courses:</strong>
-                                        <ul>
-                                        <li>HTML/CSS</li>
-                                        <li>Graphicprograms</li>
-                                        <li>UX/UI</li>
-                                        <li>JavaScript1</li>
-                                        <li>Career</li>
-                                        <li></li>
-                                        </ul>
-                                        </p>
-                                        
-                                    </div>
-                                </div>
+                                    <div id="reddiv" class="box">
+                                        <div style="display:inline; padding:5px; margin-right:5px;">
+                                            <a href="http://www.uopeople.edu/programs/cs/degrees/computer-science-bachelor-degree/" target="_blank"><h4 style="color:#6532FF;">UoPeople</h4></a>
+                                            <p style="color:black;">Bachelor of science in COMPUTER SCIENCE
+                                            <br />   <br />  
+                                            <strong>Completed courses:</strong>
+                                            <ul>
+                                                <li>Online Education Strategies</li>
+                                                <li>Globalization</li>
+                                                <li>Programming Fundamentals</li>
+                                                <li>Art History</li>
+                                                <li>Programming 1</li>
+                                                <li>Databases 1</li>
+                                                <li>Introduction to Sociology</li>
+                                                <li>Programming 2</li>
+                                                <li>Comparative Programming Languages</li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                            </ul>
+                                            </p>
+                                        </div>
+                                    </div><!-- end red div-->
+                                    
+                                    <div id="pinkdiv" class="box">
+                                        <div style="display:inline; padding:5px; margin-right:5px;">
+                                           <a href="http://www.yrkesutbildningar.se/skola/ec-utbildning/frontend-utvecklare-512598" target="_blank"><h4 style="color:#6532FF;">YH</h4></a>
+                                            <p style="color:black;">A Higher Vocational Education as FRONTEND DEVELOPER
+                                            <br />   <br />  
+                                            <strong>Completed courses:</strong>
+                                            <ul>
+                                                <li>HTML/CSS</li>
+                                                <li>Graphicprograms</li>
+                                                <li>UX/UI</li>
+                                                <li>JavaScript1</li>
+                                                <li>Career</li>
+                                                <li></li>
+                                            </ul>
+                                            </p>
+                                        </div>
+                                    </div><!-- end pink div-->
+                                    
+                                
+                                
                                 
                                 <div id="skills" style="display:block;">
                                     <div class="grapchic">
@@ -208,6 +244,12 @@
                                             <div class="line5"><p>Dancing</p></div><span class="num">45%</span>
                                     </div>
                                 </div>
+                                    
+                                    </div> <!-- end inner -->
+                                </div> <!-- end outer -->
+                                
+                                
+                                
                                 
                            
                        

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- REACT -->
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    
+    <title>Inlämning 5</title>
+
+<script type="text/babel">
+    
+var MyComponent = React.createClass({
+  getInitialState: function () {
+    return { input: '' };
+  },
+
+  handleChange: function(e) {
+    this.setState({ input: e.target.value });
+  },
+
+  handleClick: function() {
+    let x = document.getElementById('result');
+    
+    console.log(this.state.input);
+  },
+
+  render: function() {
+    return (
+        <div>
+            <input type="text" onChange={ this.handleChange } />
+            
+
+            <div className="result">
+              <div>{this.state.input} <br/></div>
+            </div>
+        </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <MyComponent />,
+  document.getElementById('app')
+);
+    
+    </script>
+</head>
+
+<body>
+
+
+    <!-- Container-->
+    <div class="container center" id="">
+        <!-- Row -->
+        <div class="row" >
+            <!-- col -->
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" >
+
+            <div id="app">
+            Utan React
+            </div>
+            
+                
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+     </div>
+    <!-- end container -->
+    
+    
+    
+
+</body>
+
+
+</html>

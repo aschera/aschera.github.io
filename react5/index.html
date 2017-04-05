@@ -166,17 +166,17 @@ var MyComponent = React.createClass({
       return (
                 <div style={{margin: 1 + 'em'},{padding: 1 + 'em'},{color: 'white'}}>
                     
-                <button className={btnClass1} onClick={ this.handleChange1 } >button 1</button>
+                <button style={{margin: 3 + 'px'}} className={btnClass1} onClick={ this.handleChange1 } >button 1</button>
               
-                <button className={btnClass2} onClick={ this.handleChange2 } >button 2</button>
+                <button style={{margin: 3 + 'px'}} className={btnClass2} onClick={ this.handleChange2 } >button 2</button>
 
                     <div className="result">
 
                       <div>{this.state.input} <br/></div>
                       <br/>
                        <h5>Click-Stats:</h5>
-                      <div>button 1: <strong>{count1}</strong> <br/></div>
-                      <div>button 2: <strong>{count2}</strong> <br/></div>
+                      <div>button 1: <strong>{count1} times.</strong> <br/></div>
+                      <div>button 2: <strong>{count2} times.</strong> <br/></div>
                     </div>
                 </div>
               );
@@ -259,7 +259,13 @@ ReactDOM.render(
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black; margin:1em; padding 1em;">
                 <div>
                     <h2 style="color:white;">[2] - Calculate with numbers</h2>
-                    <h3  style="color:white; border:1px solid white;">Addition</h3>
+                    <br />
+                    <span  style="color:white; background-color: crimson; border:1px solid white; padding:3px; margin: 3px;  ">Addition</span>
+                    <span  style="color:white; padding:3px; margin: 3px; border:1px solid white;">Subtraction</span>
+                    <span  style="color:white; padding:3px; margin: 3px; border:1px solid white;">multiplication</span>
+                    <span  style="color:white; padding:3px; margin: 3px; border:1px solid white;">division</span>
+                    <br /><br />
+                   
                 </div>
                 <div id="app2">
                     Utan React

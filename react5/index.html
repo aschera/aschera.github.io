@@ -11,7 +11,7 @@
     <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     
-    <title>Inlämning 5</title>
+    <title>Innlämning 5</title>
 
     
 <!-- [1] -->
@@ -62,42 +62,56 @@ ReactDOM.render(
     
 var MyComponent = React.createClass({
   getInitialState: function () {
-    return { input1: '' },{ input2: '' };
+    return { input1: '0' },{ input2: '0' };
   },
 
 handleChange1: function(e) {
-    this.setState({ input1: e.target.value });
-    console.log(e.target.value);
+    
+    this.setState({ input1: Number(e.target.value) });
+    
   },
     
 handleChange2: function(e) {
     this.setState({ input2: e.target.value });
-    console.log(e.target.value);
+    
   },
 
   handleClick: function() {
     let x = document.getElementById('result');
+      
+  },
     
-    console.log(this.state.input);
+  addition: function(x,y) {
+   
+    let result = x * y;
+    if(x === undefined || y === undefined|| x === '' || y === ''){
+        return 0;
+    }
+    if ( Number.isNaN(result) == true ) {
+            return ('Enter two numbers');
+  }
+    return result;
+      
   },
 
   render: function() {
-    return (
-        <div style={{margin: 1 + 'em'},{padding: 1 + 'em'},{color: 'white'}}>
-            
-            
-            <input id="numberfield1" placeholder ="Type a number" type="text" onChange={ this.handleChange1 } />
-            <input id="numberfield2" placeholder ="Type a number" type="text" onChange={ this.handleChange2 } />
-           
-            <div className="result">
-              <div>Result: {this.state.input} <br/></div>
-            </div>
-            
-            
-        </div>
-    );
+   
+      return (
+                <div style={{margin: 1 + 'em'},{padding: 1 + 'em'},{color: 'white'}}>
+                    <input id="numberfield1" placeholder ="Type a number" type="text" onChange={ this.handleChange1 } />
+                    <input id="numberfield2" placeholder ="Type a number" type="text" onChange={ this.handleChange2 } />
+
+                    <div className="result">
+
+                      <div>Result: {this.addition((this.state.input1),(this.state.input2))} <br/></div>
+                    </div>
+                </div>
+              );
+ 
   }
 });
+
+
 
 ReactDOM.render(
   <MyComponent />,
@@ -140,7 +154,8 @@ ReactDOM.render(
             <!-- col -->
             <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black; margin:1em; padding 1em;">
                 <div>
-                    <h2 style="color:white;">[2] - Add numbers</h2>
+                    <h2 style="color:white;">[2] - Calculate with numbers</h2>
+                    <h3  style="color:white; border:1px solid white;">Addition</h3>
                 </div>
                 <div id="app2">
                     Utan React

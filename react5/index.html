@@ -13,6 +13,8 @@
     
     <title>Inlämning 5</title>
 
+    
+<!-- [1] -->
 <script type="text/babel">
     
 var MyComponent = React.createClass({
@@ -32,13 +34,17 @@ var MyComponent = React.createClass({
 
   render: function() {
     return (
-        <div>
-            <input type="text" onChange={ this.handleChange } />
+        <div style={{margin: 1 + 'em'},{padding: 1 + 'em'},{color: 'white'}}>
             
-
+            
+            <input id="textfield" placeholder ="Type something" type="text" onChange={ this.handleChange } />
+            
+           
             <div className="result">
-              <div>{this.state.input} <br/></div>
+              <div>Result: {this.state.input} <br/></div>
             </div>
+            
+            
         </div>
     );
   }
@@ -50,6 +56,59 @@ ReactDOM.render(
 );
     
     </script>
+    
+<!-- [2] -->
+<script type="text/babel">
+    
+var MyComponent = React.createClass({
+  getInitialState: function () {
+    return { input1: '' },{ input2: '' };
+  },
+
+handleChange1: function(e) {
+    this.setState({ input1: e.target.value });
+    console.log(e.target.value);
+  },
+    
+handleChange2: function(e) {
+    this.setState({ input2: e.target.value });
+    console.log(e.target.value);
+  },
+
+  handleClick: function() {
+    let x = document.getElementById('result');
+    
+    console.log(this.state.input);
+  },
+
+  render: function() {
+    return (
+        <div style={{margin: 1 + 'em'},{padding: 1 + 'em'},{color: 'white'}}>
+            
+            
+            <input id="numberfield1" placeholder ="Type a number" type="text" onChange={ this.handleChange1 } />
+            <input id="numberfield2" placeholder ="Type a number" type="text" onChange={ this.handleChange2 } />
+           
+            <div className="result">
+              <div>Result: {this.state.input} <br/></div>
+            </div>
+            
+            
+        </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <MyComponent />,
+  document.getElementById('app2')
+);
+    
+    </script>
+    
+    <style>
+        #textfield{width: 99%;}
+    </style>
 </head>
 
 <body>
@@ -57,20 +116,58 @@ ReactDOM.render(
 
     <!-- Container-->
     <div class="container center" id="">
+        
         <!-- Row -->
-        <div class="row" >
-            <!-- col -->
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" >
-
-            <div id="app">
-            Utan React
-            </div>
+        <div class="row" style="background-color:white; margin:1em; padding 1em;">
             
-                
+            <!-- col -->
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black; margin:1em; padding 1em;">
+                <div>
+                    <h2 style="color:white;">[1] - Textfield</h2>
+                </div>
+                <div id="app">
+                    Utan React
+                </div>   
             </div>
             <!-- end col -->
+            
         </div>
         <!-- end row -->
+        
+        <!-- Row -->
+        <div class="row" style="background-color:white; margin:1em; padding 1em;">
+            
+            <!-- col -->
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black; margin:1em; padding 1em;">
+                <div>
+                    <h2 style="color:white;">[2] - Add numbers</h2>
+                </div>
+                <div id="app2">
+                    Utan React
+                </div>   
+            </div>
+            <!-- end col -->
+            
+        </div>
+        <!-- end row -->
+        
+        <!-- Row -->
+        <div class="row" style="background-color:white; margin:1em; padding 1em;">
+            
+            <!-- col -->
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black; margin:1em; padding 1em;">
+                <div>
+                    <h2 style="color:white;">[3] - Change state</h2>
+                </div>
+                <div id="app3">
+                    Utan React
+                </div>   
+            </div>
+            <!-- end col -->
+            
+        </div>
+        <!-- end row -->
+        
      </div>
     <!-- end container -->
     

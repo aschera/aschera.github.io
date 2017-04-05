@@ -69,6 +69,7 @@ handleChange1: function(e) {
     
     this.setState({ input1: Number(e.target.value) });
     
+    
   },
     
 handleChange2: function(e) {
@@ -127,35 +128,47 @@ ReactDOM.render(
 
 var count1 = 0;
 var count2 = 0;
+var btnClass1 = 'btn1';
+var btnClass2 = 'btn2';
+
 
 var MyComponent = React.createClass({
+    
+
   getInitialState: function () {
     return { input: '' };
   },
 
   handleChange1: function(e) {
     this.setState({ input: 'button 1 clicked'});
+      btnClass1 = ' btn1-pressed';
+      btnClass2 = ' btn2';
       count1++;
   },
     
   handleChange2: function(e) {
     this.setState({input: 'button 2 clicked'});
+    btnClass2 = ' btn2-pressed';
+    btnClass1 = ' btn1';
     count2++;
   },
-    
-    
+   
   handleClick: function() {
     let x = document.getElementById('result');
+    btnClass = 'btn';
   },
+  
+ 
 
-  render: function() {
+    render: function() {
+      
    
       return (
                 <div style={{margin: 1 + 'em'},{padding: 1 + 'em'},{color: 'white'}}>
                     
-                <button onClick={ this.handleChange1 } >button 1</button>
+                <button className={btnClass1} onClick={ this.handleChange1 } >button 1</button>
               
-                <button onClick={ this.handleChange2 } >button 2</button>
+                <button className={btnClass2} onClick={ this.handleChange2 } >button 2</button>
 
                     <div className="result">
 
@@ -173,6 +186,9 @@ var MyComponent = React.createClass({
 
 
 
+
+
+
 ReactDOM.render(
   <MyComponent />,
   document.getElementById('app3')
@@ -180,9 +196,37 @@ ReactDOM.render(
     
     </script>
     
-    <style>
-        #textfield{width: 99%;}
-    </style>
+<style>
+    
+ #textfield{width: 99%;}
+        
+.btn1 {
+  display: block;
+  background-color: blueviolet;
+  color:antiquewhite;
+  margin-bottom: 1em;
+}
+.btn2 {
+  display: block;
+  background-color: blueviolet;
+  color:antiquewhite;
+  margin-bottom: 1em;
+}
+.btn2-pressed {
+  display: block;
+  background-color:crimson;
+  color:antiquewhite;
+  margin-bottom: 1em;
+}
+.btn1-pressed {
+  display: block;
+  background-color:crimson;
+  color:antiquewhite;
+  margin-bottom: 1em;
+}
+    
+</style>
+    
 </head>
 
 <body>

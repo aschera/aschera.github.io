@@ -120,6 +120,66 @@ ReactDOM.render(
     
     </script>
     
+    
+    
+<!-- [3] -->
+<script type="text/babel">
+
+var count1 = 0;
+var count2 = 0;
+
+var MyComponent = React.createClass({
+  getInitialState: function () {
+    return { input: '' };
+  },
+
+  handleChange1: function(e) {
+    this.setState({ input: 'button 1 clicked'});
+      count1++;
+  },
+    
+  handleChange2: function(e) {
+    this.setState({input: 'button 2 clicked'});
+    count2++;
+  },
+    
+    
+  handleClick: function() {
+    let x = document.getElementById('result');
+  },
+
+  render: function() {
+   
+      return (
+                <div style={{margin: 1 + 'em'},{padding: 1 + 'em'},{color: 'white'}}>
+                    
+                <button onClick={ this.handleChange1 } >button 1</button>
+              
+                <button onClick={ this.handleChange2 } >button 2</button>
+
+                    <div className="result">
+
+                      <div>{this.state.input} <br/></div>
+                      <br/>
+                       <h5>Click-Stats:</h5>
+                      <div>button 1: <strong>{count1}</strong> <br/></div>
+                      <div>button 2: <strong>{count2}</strong> <br/></div>
+                    </div>
+                </div>
+              );
+ 
+  }
+});
+
+
+
+ReactDOM.render(
+  <MyComponent />,
+  document.getElementById('app3')
+);
+    
+    </script>
+    
     <style>
         #textfield{width: 99%;}
     </style>

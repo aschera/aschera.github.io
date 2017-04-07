@@ -128,9 +128,10 @@ ReactDOM.render(
 
 var count1 = 0;
 var count2 = 0;
+var count3 = 0;
 var btnClass1 = 'btn1';
 var btnClass2 = 'btn2';
-
+var btnClass3 = 'btn3';
 
 var MyComponent = React.createClass({
     
@@ -141,16 +142,41 @@ var MyComponent = React.createClass({
 
   handleChange1: function(e) {
     this.setState({ input: 'button 1 clicked'});
-      btnClass1 = ' btn1-pressed';
-      btnClass2 = ' btn2';
       count1++;
+      if(count1 > count2 && count1 > count3) {
+         console.log('1 biggest');
+          btnClass1 = ' btn1-pressed';
+            btnClass2 = ' btn2';
+            btnClass3 = ' btn3';
+      }
+      
+      
   },
     
   handleChange2: function(e) {
     this.setState({input: 'button 2 clicked'});
-    btnClass2 = ' btn2-pressed';
-    btnClass1 = ' btn1';
-    count2++;
+      count2++;
+      if(count2 > count1 && count2 > count3) {
+         console.log('2 biggest');
+          btnClass2 = ' btn2-pressed';
+            btnClass1 = ' btn1';
+            btnClass3 = ' btn3';
+      }
+    
+    
+  },
+    
+  handleChange3: function(e) {
+    this.setState({input: 'button 3 clicked'});
+      count3++;
+      if(count3 > count1 && count3 > count2) {
+         console.log('3 biggest');
+          btnClass2 = ' btn2';
+            btnClass1 = ' btn1';
+            btnClass3 = ' btn3-pressed';
+      }
+    
+    
   },
    
   handleClick: function() {
@@ -169,6 +195,8 @@ var MyComponent = React.createClass({
                 <button style={{margin: 3 + 'px'}} className={btnClass1} onClick={ this.handleChange1 } >button 1</button>
               
                 <button style={{margin: 3 + 'px'}} className={btnClass2} onClick={ this.handleChange2 } >button 2</button>
+              
+                <button style={{margin: 3 + 'px'}} className={btnClass3} onClick={ this.handleChange3 } >button 3</button>
 
                     <div className="result">
 
@@ -177,6 +205,7 @@ var MyComponent = React.createClass({
                        <h5>Click-Stats:</h5>
                       <div>button 1: <strong>{count1} times.</strong> <br/></div>
                       <div>button 2: <strong>{count2} times.</strong> <br/></div>
+                      <div>button 3: <strong>{count3} times.</strong> <br/></div>
                     </div>
                 </div>
               );
@@ -212,6 +241,12 @@ ReactDOM.render(
   color:antiquewhite;
   margin-bottom: 1em;
 }
+    .btn3 {
+  display: block;
+  background-color: blueviolet;
+  color:antiquewhite;
+  margin-bottom: 1em;
+}
 .btn2-pressed {
   display: block;
   background-color:crimson;
@@ -219,6 +254,12 @@ ReactDOM.render(
   margin-bottom: 1em;
 }
 .btn1-pressed {
+  display: block;
+  background-color:crimson;
+  color:antiquewhite;
+  margin-bottom: 1em;
+}
+    .btn3-pressed {
   display: block;
   background-color:crimson;
   color:antiquewhite;
@@ -234,6 +275,22 @@ ReactDOM.render(
 
     <!-- Container-->
     <div class="container center" id="">
+        
+        <header>
+        <!-- Row -->
+        <div class="row" style="background-color:white; margin:1em; padding 1em;">
+            
+            <!-- col -->
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black; margin:1em; padding 1em;">
+                <div>
+                    <h1 style="color:white;">React components</h2>
+                </div>
+            </div>
+            <!-- end col -->
+            
+        </div>
+        <!-- end row -->
+        </header>
         
         <!-- Row -->
         <div class="row" style="background-color:white; margin:1em; padding 1em;">

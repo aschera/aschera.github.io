@@ -66,23 +66,21 @@ var MyComponent = React.createClass({
   },
 
 handleChange1: function(e) {
-    
     this.setState({ input1: Number(e.target.value) });
-    
-    
+  
   },
     
 handleChange2: function(e) {
-    this.setState({ input2: e.target.value });
-    
+    this.setState({ input2: e.target.value });    
   },
 
-  handleClick: function() {
-    let x = document.getElementById('result');
-      
+ handleClick: function() {
+    let x = document.getElementById('result');  
   },
+  
+/* ********************** Multiplication **************************** */
     
-  addition: function(x,y) {
+  multiplication: function(x,y) {
    
     let result = x * y;
     if(x === undefined || y === undefined|| x === '' || y === ''){
@@ -94,8 +92,57 @@ handleChange2: function(e) {
     return result;
       
   },
-
-  render: function() {
+/* ********************** Addition **************************** */
+    
+  addition: function(x,y) {
+    x = Number(x);
+    y = Number(y);
+      
+    let result = x + y;
+    if(x === undefined || y === undefined|| x === '' || y === ''){
+        return 0;
+    }
+    if ( Number.isNaN(result) == true ) {
+            return ('Enter two numbers');
+  }
+    return result;
+      
+  },
+    
+/* ********************** Subtraction **************************** */
+    
+  subtraction: function(x,y) {
+   
+    let result = x - y;
+    if(x === undefined || y === undefined|| x === '' || y === ''){
+        return 0;
+    }
+    if ( Number.isNaN(result) == true ) {
+            return ('Enter two numbers');
+  }
+    return result;
+      
+  },
+  
+/* ********************** Division **************************** */
+    
+  division: function(x,y) {
+   
+    let result = x / y;
+    if(x === undefined || y === undefined|| x === '' || y === ''){
+        return 0;
+    }
+    if ( Number.isNaN(result) == true ) {
+            return ('Enter two numbers');
+  }
+    return result;
+      
+  },
+    
+  
+/* ********************** Render **************************** */
+    
+    render: function() {
    
       return (
                 <div style={{margin: 1 + 'em'},{padding: 1 + 'em'},{color: 'white'}}>
@@ -120,6 +167,98 @@ ReactDOM.render(
 );
     
     </script>
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<!-- [2 vg] -->   
+<script type="text/babel"> 
+
+class Calculator extends React.Component{
+	constructor(props) {
+		super(props);
+        
+		this.state = {
+			number1: '',
+            number2: '',
+            add: 0,
+            divide: 0,
+            multiply: 0,
+            subtract: 0
+		}
+	}    
+    
+/* ********************** Render **************************** */
+    
+    render() {
+   
+      return (
+                <div style={{margin: 1 + 'em'},{padding: 1 + 'em'},{color: 'white'}}>
+              
+                  <input style={{width:40 +'px'}} id="a" placeholder ="01" type="text" />
+              
+                  <button style={{margin: 3 + 'px'}}> + </button>
+                  <button style={{margin: 3 + 'px'}}> - </button>
+                  <button style={{margin: 3 + 'px'}} > * </button>
+                  <button style={{margin: 3 + 'px'}}> / </button>
+              
+                  <input style={{width:40 +'px'}} id="b" placeholder ="01" type="text" />
+              
+                  <button style={{margin: 3 + 'px'}}> = </button>
+              
+                  <span className="result">
+                        <div style={{color:'black'}}>Result: {this.state.add} <br/></div>
+                  </span>
+              
+                </div>
+              );
+ 
+  }
+
+};
+   
+
+    
+    
+    
+  ReactDOM.render(
+  <Calculator />,
+  document.getElementById('app2b') 
+  )
+
+
+
+
+</script>    
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -325,6 +464,23 @@ ReactDOM.render(
                    
                 </div>
                 <div id="app2">
+                    Utan React
+                </div>   
+            </div>
+            <!-- end col -->
+            
+        </div>
+        <!-- end row -->
+        
+        <!-- Row -->
+        <div class="row" style="background-color:white; margin:1em; padding 1em;">
+            
+            <!-- col -->
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:; margin:1em; padding 1em;">
+                <div>
+                    <h2 style="color:white;">[2] - calculator</h2>
+                </div>
+                <div id="app2b">
                     Utan React
                 </div>   
             </div>

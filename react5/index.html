@@ -134,7 +134,7 @@ handleChange2: function(e) {
     }
     if ( Number.isNaN(result) == true ) {
             return ('Enter two numbers');
-  }
+    }
     return result;
       
   },
@@ -146,8 +146,8 @@ handleChange2: function(e) {
    
       return (
                 <div style={{margin: 1 + 'em'},{padding: 1 + 'em'},{color: 'white'}}>
-                    <input id="numberfield1" placeholder ="Type a number" type="text" onChange={ this.handleChange1 } />
-                    <input id="numberfield2" placeholder ="Type a number" type="text" onChange={ this.handleChange2 } />
+                    <input id="numberfield1" placeholder ="01" type="text" onChange={ this.handleChange1 } />
+                    <input id="numberfield2" placeholder ="02" type="text" onChange={ this.handleChange2 } />
 
                     <div className="result">
 
@@ -228,7 +228,12 @@ getInitialState() {
 /* ********************** Multiplication **************************** */
      multiplication() {
       let resultat = (Number(this.state.num1))*(Number(this.state.num2));
-      
+         
+      if ( Number.isNaN(resultat) == true ) {
+            resultat = 'Enter two numbers';
+      }
+         
+         
       this.setState({
 			sum: resultat
 		})
@@ -241,6 +246,10 @@ getInitialState() {
   addition() {
       let resultat = (Number(this.state.num1))+(Number(this.state.num2));
       
+      if ( Number.isNaN(resultat) == true ) {
+            resultat = 'Enter two numbers';
+      }
+      
       this.setState({
 			sum: resultat
 		})
@@ -252,6 +261,10 @@ getInitialState() {
      subtraction() {
       let resultat = (Number(this.state.num1))-(Number(this.state.num2));
       
+         if ( Number.isNaN(resultat) == true ) {
+            resultat = 'Enter two numbers';
+      }
+         
       this.setState({
 			sum: resultat
 		})
@@ -264,6 +277,10 @@ getInitialState() {
      division() {
       let resultat = (Number(this.state.num1))/(Number(this.state.num2));
       
+         if ( Number.isNaN(resultat) == true ) {
+            resultat = 'Enter two numbers';
+      }
+         
       this.setState({
 			sum: resultat
 		})
@@ -452,7 +469,7 @@ ReactDOM.render(
     
 <style>
     
- #textfield{width: 99%;}
+ #textfield{width: 50%; height:25px;}
         
 .btn1 {
   display: block;
@@ -490,106 +507,126 @@ ReactDOM.render(
   color:antiquewhite;
   margin-bottom: 1em;
 }
+    input[type="text"] {
+    width: 150px;
+}
     
 </style>
     
 </head>
 
-<body>
+<body style="margin:0; padding:0">
 
 
     <!-- Container-->
-    <div class="container center" id="">
+    <div class="container-fluid center" id="" >
         
         <header>
-        <!-- Row -->
-        <div class="row" style="background-color:white; margin:1em; padding 1em;">
+        <!-- row-fluid -->
+        <div class="row-fluid" style="background-color:white;">
             
             <!-- col -->
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black; margin:1em; padding 1em;">
+            <div class=" col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black; ">
                 <div>
-                    <h1 style="color:white;">React components</h2>
+                    <h1 style="color:white;-webkit-margin-before:0; -webkit-margin-after:0">React components</h2>
                 </div>
             </div>
             <!-- end col -->
             
         </div>
-        <!-- end row -->
+        <!-- end row-fluid -->
         </header>
         
-        <!-- Row -->
-        <div class="row" style="background-color:white; margin:1em; padding 1em;">
+        <!-- row-fluid-fluid -->
+        <div class="row-fluid" style="background-color:white;">
             
             <!-- col -->
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black; margin:1em; padding 1em;">
+            <div class="col-md-6 col-md-6 col-sm-6 col-xs-6" id="" style="background-color:black;">
                 <div>
                     <h2 style="color:white;">[1] - Textfield</h2>
+                    <br />
+                    <span  style="color:white; background-color: crimson; border:1px solid white; padding:3px; margin: 3px;  ">Type and see text:</span>
+                    <br /><br />
                 </div>
                 <div id="app">
                     Utan React
                 </div>   
+                <br /><br />
             </div>
             <!-- end col -->
-            
+      
         </div>
-        <!-- end row -->
+        <!-- end row-fluid-fluid -->
         
-        <!-- Row -->
-        <div class="row" style="background-color:white; margin:1em; padding 1em;">
+        <!-- row-fluid-fluid -->
+        <div class="row-fluid" style="background-color:white;">
             
             <!-- col -->
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black; margin:1em; padding 1em;">
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black; ">
                 <div>
-                    <h2 style="color:white;">[2] - Calculate with numbers</h2>
+                    <h2 style="color:white;">[2a] - Calculate with numbers</h2>
                     <br />
-                    <span  style="color:white; background-color: crimson; border:1px solid white; padding:3px; margin: 3px;  ">Addition</span>
+                    <span  style="color:white; background-color: crimson; border:1px solid white; padding:3px; margin: 3px;  ">Add two numbers:</span>
                    
                     <br /><br />
                    
                 </div>
                 <div id="app2">
                     Utan React
-                </div>   
+                </div> 
+                <br /><br />
             </div>
             <!-- end col -->
             
         </div>
-        <!-- end row -->
+        <!-- end row-fluid-fluid -->
         
-        <!-- Row -->
-        <div class="row" style="background-color:white; margin:1em; padding 1em;">
+        <!-- row-fluid -->
+        <div class="row-fluid" style="background-color:white;">
             
             <!-- col -->
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:; margin:1em; padding 1em;">
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black;">
                 <div>
-                    <h2 style="color:white;">[2] - calculator</h2>
+                    <div>
+                    <h2 style="color:white;">[2b] - Simple calculator</h2>
+                    <br />
+                    <span  style="color:white; background-color: crimson; border:1px solid white; padding:3px; margin: 3px;  ">Calculate with numbers:</span>
+                    <br /><br />
+                        <p style="color:white;">Enter a number in each textfield, then choose an operator.</p>
+                </div>
                 </div>
                 <div id="app2b">
                     Utan React
                 </div>  
                 <div id="c_result"></div>
+                <br /><br />
             </div>
             <!-- end col -->
             
         </div>
-        <!-- end row -->
+        <!-- end row-fluid -->
         
-        <!-- Row -->
-        <div class="row" style="background-color:white; margin:1em; padding 1em;">
+        <!-- row-fluid -->
+        <div class="row-fluid" style="background-color:white;">
             
             <!-- col -->
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black; margin:1em; padding 1em;">
+            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12" id="" style="background-color:black; ">
                 <div>
                     <h2 style="color:white;">[3] - Change state</h2>
+                    <br />
+                    <span  style="color:white; background-color: crimson; border:1px solid white; padding:3px; margin: 3px;  ">Click the buttons to change count and color:</span>
+                   
+                    <br /><br />
                 </div>
                 <div id="app3">
                     Utan React
-                </div>   
+                </div>  
+                <br /><br />
             </div>
             <!-- end col -->
             
         </div>
-        <!-- end row -->
+        <!-- end row-fluid -->
         
      </div>
     <!-- end container -->

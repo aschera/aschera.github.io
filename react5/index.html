@@ -182,63 +182,149 @@ ReactDOM.render(
     
     
 <!-- [2 vg] -->   
-<script type="text/babel"> 
+<script type="text/babel">
+
+
 
 class Calculator extends React.Component{
-	constructor(props) {
+
+constructor(props){
 		super(props);
-        
 		this.state = {
-			number1: '',
-            number2: '',
-            add: 0,
-            divide: 0,
-            multiply: 0,
-            subtract: 0
+			num1: '',
+			num2: '',
+            sum: '0'
 		}
-	}    
+		this.handleNumber1 = this.handleNumber1.bind(this);
+		this.handleNumber2 = this.handleNumber2.bind(this);
+        this.addition = this.addition.bind(this);
+        this.division = this.division.bind(this);
+        this.multiplication = this.multiplication.bind(this);
+        this.subtraction = this.subtraction.bind(this);
+	}
+
+handleNumber2(event) {
+    console.log(event.target.value);
     
+		this.setState({
+			num2: event.target.value
+		})
+	}
+
+handleNumber1(event) {
+    console.log(event.target.value);
+    
+		this.setState({
+			num1: event.target.value
+		})
+	}
+    
+  
+
+getInitialState() {
+    return {sum: '0'};
+  }
+ 
+/* ********************** Multiplication **************************** */
+     multiplication() {
+      let resultat = (Number(this.state.num1))*(Number(this.state.num2));
+      
+      this.setState({
+			sum: resultat
+		})
+      
+      console.log(resultat);
+  } 
+
+/* ********************** Addition **************************** */
+    
+  addition() {
+      let resultat = (Number(this.state.num1))+(Number(this.state.num2));
+      
+      this.setState({
+			sum: resultat
+		})
+      
+      console.log(resultat);
+  }
+    
+/* ********************** Subtraction **************************** */
+     subtraction() {
+      let resultat = (Number(this.state.num1))-(Number(this.state.num2));
+      
+      this.setState({
+			sum: resultat
+		})
+      
+      console.log(resultat);
+  } 
+  
+/* ********************** Division **************************** */
+    
+     division() {
+      let resultat = (Number(this.state.num1))/(Number(this.state.num2));
+      
+      this.setState({
+			sum: resultat
+		})
+      
+      console.log(resultat);
+  } 
+  
 /* ********************** Render **************************** */
     
     render() {
-   
+
+        
       return (
                 <div style={{margin: 1 + 'em'},{padding: 1 + 'em'},{color: 'white'}}>
               
-                  <input style={{width:40 +'px'}} id="a" placeholder ="01" type="text" />
+                    <input id="numberfield1" placeholder ="01" type="text" onKeyUp={ this.handleNumber1 } />
+            
+                    <input id="numberfield2" placeholder ="02" type="text" onKeyUp={ this.handleNumber2 } />
               
-                  <button style={{margin: 3 + 'px'}}> + </button>
-                  <button style={{margin: 3 + 'px'}}> - </button>
-                  <button style={{margin: 3 + 'px'}} > * </button>
-                  <button style={{margin: 3 + 'px'}}> / </button>
+              <table>
+                  <tbody>
+                  <tr>
+                      <td>
+                         <button style={{margin: 3 + 'px'}} onClick={this.addition} > + </button> 
+                      </td>
+                      <td>
+                          <button style={{margin: 3 + 'px'}} onClick={this.division} > / </button>
+                      </td>
+                </tr>
+                  <tr>
+                      <td>
+                          <button style={{margin: 3 + 'px'}} onClick={this.division} > / </button> 
+                      </td>
+                      <td>
+                           <button style={{margin: 3 + 'px'}} onClick={this.multiplication} > * </button>
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
               
-                  <input style={{width:40 +'px'}} id="b" placeholder ="01" type="text" />
-              
-                  <button style={{margin: 3 + 'px'}}> = </button>
-              
-                  <span className="result">
-                        <div style={{color:'black'}}>Result: {this.state.add} <br/></div>
-                  </span>
-              
+
+                    <div className="result">
+
+                      <div style={{color: 'black'}}>
+                          <input readOnly type="text" value={this.state.sum}/>
+                      </div>
+                    </div>
                 </div>
               );
  
   }
-
 };
-   
 
-    
-    
-    
-  ReactDOM.render(
+
+
+
+ReactDOM.render(
   <Calculator />,
-  document.getElementById('app2b') 
-  )
-
-
-
-
+  document.getElementById('app2b')
+);
+   
 </script>    
  
     
@@ -457,9 +543,7 @@ ReactDOM.render(
                     <h2 style="color:white;">[2] - Calculate with numbers</h2>
                     <br />
                     <span  style="color:white; background-color: crimson; border:1px solid white; padding:3px; margin: 3px;  ">Addition</span>
-                    <span  style="color:white; padding:3px; margin: 3px; border:1px solid white;">Subtraction</span>
-                    <span  style="color:white; padding:3px; margin: 3px; border:1px solid white;">multiplication</span>
-                    <span  style="color:white; padding:3px; margin: 3px; border:1px solid white;">division</span>
+                   
                     <br /><br />
                    
                 </div>
@@ -482,7 +566,8 @@ ReactDOM.render(
                 </div>
                 <div id="app2b">
                     Utan React
-                </div>   
+                </div>  
+                <div id="c_result"></div>
             </div>
             <!-- end col -->
             

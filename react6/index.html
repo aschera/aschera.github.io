@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>6</title>
+    
+    
+  <script src="https://fb.me/react-15.0.0-rc.2.js"></script>
+  <script src="https://fb.me/react-dom-15.0.0-rc.2.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+  <style>
+    body {
+      padding: 50px;
+      background-color: honeydew;
+      font-family: sans-serif;
+    }
+    .todoListMain .header input {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid black;
+      border-radius: 4px;
+    }
+    .todoListMain .header button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      background-color: goldenrod;
+      color: #FFF;
+      border: 2px solid #0066FF;
+      border-radius: 4px;
+    }
+
+    .todoListMain .header button:hover {
+      background-color: #003399;
+      border: 2px solid #003399;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .todoListMain .theList {
+      list-style: none;
+      padding-left: 0;
+      width: 255px;
+    }
+
+    .todoListMain .theList li {
+      color: #333;
+      background-color: darkgoldenrod;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+    }
+      #task{margin-right: 5px;}
+
+  </style>
+</head>
+
+<body>
+    
+  <div id="container">No React! where did it go?</div>
+    
+  <script type="text/babel">
+
+
+/* ********************************* The input elements class ********************************* */
+
+class TodoItems extends React.Component {
+    
+      render() {
+        var todoEntries = this.props.entries;
+        var listItems = [];
+ 
+        for (var i = 0; i < todoEntries.length; i++) {
+          var entry = todoEntries[i];
+ 
+          listItems.push(<li key={entry.task}>{entry.task + ' ' + entry.name}</li>);
+        }
+
+        return (
+          <ul className="theList">
+            {listItems}
+          </ul>
+        );
+      }
+    };
+
+/* ********************************* The list class ********************************* */
+    var TodoList = React.createClass({
+      getInitialState: function() {
+        return {
+          items: [],   /* array with all the items */
+          textValue: "",   /* temporay information */
+          textValue2: ""   /* temporay information */
+        };
+      },
+        
+        
+        
+        
+        
+      /* function to temporary save the input data */  
+      updateValue: function(e) {
+        this.setState({
+            textValue: e.target.value
+        });
+      },
+       /* function to temporary save the input data */  
+      updateValue2: function(e) {
+        this.setState({
+            textValue2: e.target.value
+        });
+      },
+        
+        
+        
+        
+        
+        
+      /* function to add to list on enter press */   
+      addItemEnter: function(e) {
+        if (e.key == "Enter") {
+            this.addItem();
+        }
+      },
+      
+      /* function to add new data to the list */ 
+      addItem: function(e) {
+        var itemArray = this.state.items;
+          let thetask = this.state.textValue;
+          let thename = this.state.textValue2;
+          let result = {task: thetask, name: thename};
+          
+        itemArray.push(result);
+
+        this.setState({
+          items:itemArray
+        });
+
+        this._inputElement.value = "";
+      },
+        
+        
+        
+        
+      render: function() {
+          return (
+            <div className="todoListMain">
+              <div className="header">
+                <input id="task" ref={(a) => this._inputElement = a}
+                       onKeyPress={this.addItemEnter}
+                       placeholder="enter task"
+                       onChange={this.updateValue}>
+                </input>
+                
+                <input id="name" ref={(b) => this._inputElement = b}
+                       onKeyPress={this.addItemEnter}
+                       placeholder="enter name"
+                       onChange={this.updateValue2}>
+                </input>
+                  
+                <button onClick={this.addItem}>add</button>
+              </div>
+              <TodoItems entries={this.state.items}/> 
+            </div>
+          );
+        }
+    });
+
+    ReactDOM.render((
+      <div>
+        <TodoList/>
+      </div>
+    ), document.querySelector("#container"));
+  </script>
+</body>
+
+</html>

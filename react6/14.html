@@ -1,0 +1,140 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>React demo</title>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	<style>
+		body{padding-top:12px;}
+		.border {
+			border: 1px solid gray;
+			border-radius: 4px;
+			padding: 4px;
+			margin: 2px;
+		}
+		li {
+			padding: 4px;
+			display: inline-block;
+			width: 200px;
+		}
+		li:hover {
+			background-color: floralwhite;
+			border: 1px solid lightgray;
+			padding: 4px 3px 3px 4px;
+		}
+		.flex {
+			display: flex; flex-direction: row;
+		}
+		.flex > div {
+			flex: 1;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="app-root">
+		Utan React
+	</div>
+  
+	<!--HTML-prototyp:
+	<div class="flex">
+		<div class="border" >
+			<input type="text" placeholder="Förnamn" /> <br>
+			<input type="text" placeholder="Efternamn" />
+		</div>
+		<div class="border">
+			<input type="text" placeholder="Avatar" />
+		</div>
+	</div> -->
+	
+	<script type="text/jsx">
+	class App extends React.Component {
+		constructor(props) {
+			super(props);
+			this.state = {
+				avatarName: ''
+			};
+			this.setAvatarName = this.setAvatarName.bind(this);
+		}
+		render() {
+			return (
+				<div className="flex">
+					<NameComponent setAvatarName={this.setAvatarName}/>
+					<AvatarComponent avatarName={this.state.avatarName} setAvatarName={this.setAvatarName}/>
+				</div>
+			);
+		}
+		setAvatarName(name) {
+			this.setState({
+				avatarName: name
+			});
+			console.log('App.setAvatarName');
+		}
+	}
+	class NameComponent extends React.Component {
+		constructor(props) {
+			super(props);
+			this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
+			this.handleChangeLastName = this.handleChangeLastName.bind(this);
+			this.state = {
+				firstName: '',
+				lastName: ''
+			}
+		}
+		render() {
+			return (
+				<div className="border" >
+					<input type="text" placeholder="Förnamn" onChange={this.handleChangeFirstName} /> <br/>
+					<input type="text" placeholder="Efternamn" onChange={this.handleChangeLastName} />
+				</div>
+			);
+		}
+		handleChangeFirstName(event) {
+			this.setState({
+				firstName: event.target.value
+			});
+			let name = event.target.value + this.state.lastName;
+			this.props.setAvatarName(name);
+		}
+		handleChangeLastName(event) {
+			this.setState({
+				lastName: event.target.value
+			});
+			let name = this.state.firstName + event.target.value;
+			this.props.setAvatarName(name);
+		}
+	}
+
+
+	class AvatarComponent extends React.Component {
+		constructor(props) {
+			super(props);
+			this.handleChange = this.handleChange.bind(this);
+		}
+		render() {
+			return (
+				<div className="border">
+					<input type="text" placeholder="Avatar" value={this.props.avatarName} onChange={this.handleChange} />
+				</div>
+			);
+		}
+		handleChange(event) {
+			this.props.setAvatarName(event.target.value);
+		}
+	}
+
+	ReactDOM.render(
+		<App />,
+		document.getElementById('app-root')
+	);
+	</script>
+</body>
+</html>
+
+
+react-ovn14.html

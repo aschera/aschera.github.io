@@ -141,7 +141,9 @@
 /* ------------------------------------------------------------- */        
         setList(name) {
 			this.setState({
-				items: name
+				items: name,
+                task: '',
+                username: ''
 			});
 			console.log('App.setNewList');
 		}
@@ -244,8 +246,9 @@ addToList(event) {
         let itemArray = this.props.items;
             console.log(itemArray);
             
-        let thetask = this.state.task;
-        let thename = this.state.username;
+        let thetask = this.props.value1;
+        let thename = this.props.value2;
+    
         let result = {id: Math.random(100), task: thetask, name: thename};
           
         itemArray.push(result);
@@ -279,7 +282,7 @@ class MyList extends React.Component {
         {
            this.props.items.map(function(result) {
                
-           return <ResultItem embiggenToggle={x} task={result.task} name={result.name} id={result.id} key={result.name + 100} result={result.task + ' : ' + result.name}/>;
+           return <ResultItem embiggenToggle={x} task={result.task} name={result.name} id={result.id} key={Math.random(100)} result={result.task + ' : ' + result.name}/>;
             })
         }
             

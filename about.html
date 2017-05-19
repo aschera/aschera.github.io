@@ -72,19 +72,23 @@ h1 {
     color: #3399FF;
 }
 #blueDiv {
-    width: 1000px;
-    height: 1000px;
+    width: 100vw;
+
 }
     
-    #reddiv {
-    width: 300px;
-    height: 500px;
+#reddiv {
+    min-width: 23em;
+    min-height: 40em;
+    font-size: 0.85em;
         }
-        #pinkdiv {
-    width: 300px;
-    height: 500px;
+        
+#pinkdiv {
+    min-width: 23em;
+    height: 40em;
+    font-size: 0.85em;
         }
-        .box {
+        
+.box {
     float: left;
     width: 200px;
     margin-left: 10px;
@@ -92,6 +96,41 @@ h1 {
     padding: 5px;
     border: 2px solid blue;
 }
+   
+#course1 {
+    list-style: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+#course1 li{
+    padding-left: 1.5em; 
+}
+
+#course1 li:before {
+    position: absolute;
+    content: "•";
+    color: blue;
+    left: 0;
+} 
+#course2 {
+    list-style: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+#course2 li{
+    padding-left: 1.5em; 
+}
+
+#course2 li:before {
+    position: absolute;
+    content: "•";
+    color: blue;
+    left: 0;
+} 
     </style>
 </head>
 
@@ -186,34 +225,33 @@ h1 {
                                           I'm currently attending two schools:
                                            
                                        </p>
+                                    
                                     <br /><br />
+                                    
                                     <div id="reddiv" class="box">
                                         <div style="display:inline; padding:5px; margin-right:5px;">
                                             <a href="http://www.uopeople.edu/programs/cs/degrees/computer-science-bachelor-degree/" target="_blank"><h4 style="color:#6532FF;">UoPeople</h4></a>
                                             <p style="color:black;">Bachelor of science in COMPUTER SCIENCE
                                             <br />   <br />  
                                             <strong><a href="http://www.uopeople.edu/programs/cs/degrees/cs-course-catalog/#faq_answer_1_1" target="_blank" style="color:black;">Completed courses: </a></strong>
-                                            <ul>
+                                            <ul id="course1">
                                                 <li>Online Education Strategies</li>
                                                 
                                                 <li>Programming Fundamentals (Python)</li>
-                                                <li>Programming 1 (Java) </li>
-                                                <li>Programming 2 (Java)</li>
-                                                <li>Databases 1 (SQL)</li>
-                                                <li>Comparative Programming Languages</li>
-                                                <li>Computer Systems</li>
+                                                <li>Programming 1 <span style ="font-style: oblique;">(Java)</span> </li>
+                                                <li>Programming 2 <span style ="font-style: oblique;">(Java</span>)</li>
+                                                <li>Databases 1 <span style ="font-style: oblique;">(SQL)</span></li>
+                                                <li>Comparative Prog. Lang. <span style ="font-style: oblique;">(Haskell, Ada, Prolog etc)</span></li>
+                                                <li>Computer Systems <span style ="font-style: oblique;">(Hardware, Assembler)</span></li>
                                                 
                                                 <li>Introduction to Sociology</li>
                                                 <li>Art History</li>
                                                 <li>Globalization</li>
-                                                
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
+                    
                                             </ul>
                                             </p>
                                         <a href="http://www.uopeople.edu/programs/cs/degrees/computer-science-bachelor-degree/" target="_blank">
-                                            <img src="./Christina%20_%20Home%204_files/logo_uopeople.png" style="width:290px;"></a>
+                                            <img src="./Christina%20_%20Home%204_files/logo_uopeople.png" style="width:250px;"></a>
                                         </div>
                                     </div><!-- end red div-->
                                     
@@ -223,14 +261,15 @@ h1 {
                                             <p style="color:black;">A Higher Vocational Education as FRONTEND DEVELOPER
                                             <br />   <br />  
                                             <strong>Completed courses:</strong>
-                                            <ul>
+                                            <ul id="course2">
                                                 <li>HTML/CSS</li>
                                                 <li>Graphicprograms</li>
                                                 <li>UX/UI</li>
-                                                <li>JavaScript1</li>
-                                                <li>JavaScript2</li>
+                                                <li>JavaScript 1 <span style ="font-style: oblique;">(Basics: DOM, events, promises)</span></li>
+                                                <li>JavaScript 2 <span style ="font-style: oblique;">(Medium: Ajax, firebase, React)</span></li>
+                                                <li>JavaScript 3 <span style ="font-style: oblique;">(Advanced: NPM, Jest, tests)</span></li>
                                                 <li>Career</li>
-                                                <li></li>
+                                              
                                             </ul>
                                             </p><br /> <br /><br /><br />
                                          <a href="http://www.yrkesutbildningar.se/skola/ec-utbildning/frontend-utvecklare-512598" target="_blank">
@@ -241,7 +280,12 @@ h1 {
                                 
                                 
                                 
-                                <div id="skills" style="display:block;">
+                               
+                                    
+                                    </div> <!-- end inner -->
+                                </div> <!-- end outer -->
+                                
+                                 <div id="skills" style="display:block;">
                                     <div class="grapchic">
                                             <div class="line1"><p>Html/CSS</p></div><span class="num">68%</span>
                                             <div class="line2"><p>JavaScript</p></div><span class="num">86%</span>
@@ -250,11 +294,6 @@ h1 {
                                             <div class="line5"><p>Dancing</p></div><span class="num">45%</span>
                                     </div>
                                 </div>
-                                    
-                                    </div> <!-- end inner -->
-                                </div> <!-- end outer -->
-                                
-                                
                                 
                                 
                            

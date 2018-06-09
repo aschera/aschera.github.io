@@ -1,0 +1,35 @@
+
+
+.self-presentation-text{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    line-height: 2rem;
+
+    & span{
+        display: block;
+    }
+}
+
+.education-text{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    
+
+    & span{
+        display: block;
+        line-height: 2rem;
+    }
+}
+
+.schoolLink{
+    &__schoolLogo--BA{
+        width:25rem;
+        float:left;
+    }
+    &__schoolLogo--YH{
+        width:25rem;
+        float:left;
+    }
+}

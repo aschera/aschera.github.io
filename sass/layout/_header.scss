@@ -1,0 +1,65 @@
+.header{
+    height:95vh;
+    background-image: 
+    linear-gradient(to right bottom, 
+    rgba($color-primary, 0.8), 
+    rgba($color-light, 0.8)),
+    url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    -webkit-clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 86%);
+            clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 86%);
+          /*clip-path: polygon(0 0, 100% 0, 0 100%);*/
+    position:relative;
+ 
+    &__logo-box{
+     position:absolute;
+     top:4rem;
+     left:4rem;
+    }
+    &__logo{
+     height:3.5rem;
+     backface-visibility: hidden;/*the animation wiggles without this*/
+     animation: spin 10s linear infinite;
+     /*Set our animation play state to paused initially */
+     animation-play-state: paused; 
+     }
+ 
+     &__logo:hover{
+         animation-play-state: running;/*spins around*/
+     }
+     &__logo:not( :hover ){
+         animation: none; /*resets to default*/
+     }
+     &__text-box{
+         position:absolute;
+         top:50%;
+         left:50%;
+         transform:translate(-50%, -50%);
+         text-align: center;
+     }
+     &__logo{
+         height:3.5rem;
+         backface-visibility: hidden;/*the animation wiggles without this*/
+         animation: spin 10s linear infinite;
+         /*Set our animation play state to paused initially */
+         animation-play-state: paused; 
+     }
+     &__logo:hover{
+         animation-play-state: running;/*spins around*/
+     }
+     &__logo:not( :hover ){
+         animation: none; /*resets to default*/
+     }
+     &__text-box{
+         position:absolute;
+         top:50%;
+         left:50%;
+         transform:translate(-50%, -50%);
+         text-align: center;
+     }
+     &__icon-box{
+         text-align: center;
+         color:$color-dark; 
+     }
+ }

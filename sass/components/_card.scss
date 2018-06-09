@@ -1,0 +1,141 @@
+.card{
+    /* ************* For functionality ************* */
+    -moz-perspective: 140rem; // makes the animation move towards the user.
+         perspective: 140rem; // needs to be on parent. child transistions.
+    position: relative;
+    height:40rem; // parent and child need be same width, else they collapse.
+
+
+    &__side{
+        background-color: orangered; 
+        height:40rem; 
+        transition: all .8s ease; 
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        backface-visibility: hidden;
+        border-radius:3px;
+        overflow:hidden; // if child overflows its hidden. Image does overflow and now with this is hidden-
+        box-shadow: 0 1.5rem 4rem rgba($color-dark, 0.15);
+
+        &--front{
+            background-image: linear-gradient($color-light, $color-dark);
+            color:$color-grey-light-1;     
+        }
+        &--back{
+            color: $color-light ;   
+            transform: rotateY(180deg);
+
+            &-1{
+                background-image: linear-gradient(to right bottom,$color-secondary, $color-primary);
+            }
+            &-2{
+                background-image: linear-gradient(to right bottom,$color-primary, $color-secondary);
+            }
+        }
+    }
+    
+    &:hover &__side--front{ // when hover over card, the card__side should rotate.
+        transform: rotateY(-180deg); // shows card from behind. as if its a card thats flipped.
+    }
+
+    &:hover &__side--back{ 
+        transform: rotateY(0); 
+    }
+
+    /* ************* Front side styling ************* */
+    &__picture{
+        background-size: cover;
+        height:23rem;
+        background-blend-mode: saturation;// two backgrounds. in order to blend them
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+
+        &--1{
+            background-image: 
+            linear-gradient(to right bottom,$color-secondary, $color-primary),
+            url(../img/card1.jpg);  
+        }
+        &--2{
+            background-image: 
+            linear-gradient(to right bottom,$color-secondary, $color-primary),
+            url(../img/card2.jpg);
+        }
+        &--3{
+            background-image: 
+            linear-gradient(to right bottom,$color-secondary, $color-primary),
+            url(../img/card3.jpg);
+        }
+        &--4{
+            background-image: 
+            linear-gradient(to right bottom,$color-secondary, $color-primary),
+            url(../img/card4.jpg);  
+        }
+        &--5{
+            background-image: 
+            linear-gradient(to right bottom,$color-secondary, $color-primary),
+            url(../img/card5.jpg);
+        }
+        &--6{
+            background-image: 
+            linear-gradient(to right bottom,$color-secondary, $color-primary),
+            url(../img/card6.jpg);
+        }
+                
+        
+    }
+
+    &__heading{
+        font-size: 2.5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: $color-light;
+        position:absolute;
+        top:15rem;
+        left:0;
+        text-align: right;
+        width: 75%;
+    }
+
+    &__heading-span{
+        
+        -webkit-box-decoration-break:clone; 
+                box-decoration-break:clone; //treats the text as if its is two lines.
+
+        &--1,
+        &--2,
+        &--3,
+        &--4,
+        &--5,
+        &--6{
+            background-image: 
+            linear-gradient(to right bottom, 
+            rgba(247, 60, 243, 0.50),
+            rgba(24, 16, 37, 0.80 ));
+        }
+
+    }
+
+    &__details{
+        padding:3rem;
+
+        ul{
+            list-style: none;
+            width: 80%;
+            margin:0 auto;
+
+            li{
+                text-align: center;
+                font-size: 1.5rem;
+                padding:1rem;
+
+                &:not(:last-child){
+                    border-bottom: 1px solid grey;
+                }
+                
+
+            }
+        }
+    }
+}

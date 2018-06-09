@@ -1,0 +1,9 @@
+@mixin clearfix{
+    //appends pseudo elements after element
+    // which clear floats so row height isnt 0
+    :after{
+        content : "";
+        display:table;
+        clear: both;
+    }
+}

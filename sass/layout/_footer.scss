@@ -1,0 +1,29 @@
+
+.footer{
+    &__date { 
+        color: $color-dark; 
+        display: block; 
+        font-family: 'Open Sans', sans-serif; 
+        font-size: 1.6rem; 
+        position: relative; 
+        text-align: center; 
+        z-index: 1; 
+        &:before { 
+            border-top: 0.1rem solid $color-light;  
+            content: ""; 
+            position: absolute; 
+            top: 1.2rem; 
+            left: 0; 
+            width: 100%; 
+            z-index: -1; 
+        }
+        & span,{
+        background:  $color-light;
+        padding: 0 1rem; 
+        text-transform: uppercase; 
+        }
+    }
+    &__madeBy{
+        text-align:center;
+    }
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- brown: 302825  purple: 394669   pink: 4c0075  grey: BCC0BF-->
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="personal website">
+    <meta name="author" content="Christina Bögh">
+
+    <title>BASIC vs. Python</title>
+    
+    <!-- scripts -->
+    <script src="/js/modal_popup.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    
+<div class="modal-content">
+                            <h1 style="text-align:center; color:#4c0075;">What is a Dynamic array - In Java</h1>
+                            <h5 style="color:#4c0075;">31. July 2016  written by Christina Bögh</h5>  
+                                
+                                A dynamic array is an array that is able to handle continuous change - this means you can be
+                                adding and removing items from the array at any time.<br>
+                                <br>
+                                ArrayList<br>
+                                This type of data structure is an object ( normal arrays are as well) and are in Java called
+
+                                ArrayList.
+
+                                ArrayList makes a list of items and it can hold any element, even null. All the elements in the
+
+                                dynamic array have to be of the same type ( int or String etc.).
+
+                                The ArrayList has something called capacity, which is the size of the array and the capacity
+
+                                increases with the size of items in the array. (&quot;ArrayList (Java Platform SE 7 ),&quot; n.d.).
+
+                                The ArrayList is an object the class  java.util library and is implemented as standard in
+
+                                Java.
+
+                                You import it by writing: import java.util.ArrayList; at the top of your code.
+
+                                (&quot;Home and Learn - Array Lists in Java,&quot; n.d.).
+
+                                ArrayList has methods for inserting, deleting and searching.<br><br>
+    
+                                    Vector.<br>
+
+                                Java has a class called Vector, which is basically the same as the ArrayList, but synchronized.
+
+                                Synchronization is important when several threads try to access and update the array at the
+
+                                same time. However, it seems to be the general rule to avoid using Vector and instead use
+
+                                ArrayList with an added synchronization when needed.
+
+                                (Tran, 2016).<br>
+                                    In my example, below I implemented such a synchronization by using a method
+
+                                (.synchronizedList) from the
+
+                                import java.util.Collections;
+
+                                List&lt;String&gt; syncList = Collections.synchronizedList(new ArrayList&lt;String&gt;());
+
+                                (Swartz, 2006).
+
+                                (Pjhanzlik, 2016).<br><br>
+
+                                Creation:<br>
+
+                                When you want to create a new array or ArrayList object of for example type integer this is
+
+                                how you do it and how they are different:<br>
+    
+                                
+                                Normal array: <br>
+                                <code>Integer[] ints = new Integer[x]</code>
+                                <br>
+                                ArrayList: <br>
+                                <code>List&lt;Integer&gt; ints = new ArrayList&lt;Integer&gt;();</code>
+
+                                <br>
+
+                                The ArrayList does not need to be initialized with a size like this array is with x.
+
+                                (Swartz, 2006).<br><br>
+    
+                                        Iteration<br>
+
+                                    To go through each item in your ArrayList you can set up something called an Iterator.
+
+                                    It is a class also found in the standard library.
+
+                                    import java.util.Iterator;<br><br>
+
+                                    Example:<br>
+
+                                    Create the ArrayList object called syncList like shown below:
+<br><br>
+                                    <code>
+                                        public static void main(String[] args) {<br>
+
+                                    List&lt;String&gt; syncList =new ArrayList&lt;&gt;();
+                                    
+
+                                    // Adding elements to the ArrayList with the .add method.<br>
+
+                                    
+                                 syncList.add(&quot;one&quot;);<br>
+
+                                    syncList.add(&quot;two&quot;);<br>
+
+                                    syncList.add(&quot;three&quot;);<br><br>
+
+                                    // when iterating over a synchronized list, we need to synchronize access to the synchronized
+
+                                    list.<br>
+
+                                    synchronized (syncList) {<br>
+
+                                    // new Iterator object called iterator. can be used to go through the items in the ArrayList with
+
+                                    the method .next.
+
+                                    Iterator&lt;String&gt; iterator = syncList.iterator(); <br> 
+
+                                    //while loop to iterate through the list.<br>
+
+                                    while (iterator.hasNext()) {<br>
+
+                                    System.out.println(&quot;item: &quot; + iterator.next());<br>
+
+                                    }<br>
+
+                                    //searching the array with the .contains method.<br>
+
+                                                   System.out.println (syncList.contains(&quot;two&quot;)); }<br>
+
+                                    }<br>
+
+                                    }</code>
+    <br><br>
+
+                                    Output:<br>
+
+                                    run:<br>
+
+                                    item: one<br>
+
+                                    item: two<br>
+
+                                    item: three<br>
+
+                                    true<br>
+
+                                    BUILD SUCCESSFUL (total time: 0 seconds)<br>
+
+                                    (Eriksson, n.d.).<br>
+
+                                    As you can see from the output that three Strings were in the ArrayList (“One”, “two”,
+
+                                    “three”) and the iterator found and printed them one after the other.
+
+                                    The last method (.contains) found that it is indeed true that the String ”two” can be found in
+
+                                    the ArrayList, and thus prints true.
+
+                                    When to use a dynamic array over a regular array
+
+                                    Advantage:
+
+                                    If you do not know how many items you want your array to hold, using an ArrayList is probably
+
+                                    the best idea, since you can add and remove items to it.
+
+                                    Disadvantage:
+
+                                    Normal arrays are faster, take a fixed amount of memory and you can make a normal array
+
+                                    double- and multi-dimensional, whereas an ArrayList is only one-dimensional.
+
+                                    
+                                    
+
+
+                             
+                            
+                                    <br><br><strong>References.</strong><br><br>
+                                    ArrayList (Java Platform SE 7 ). (n.d.). Retrieved from
+
+                                    https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html
+<br><br>
+                                    ConcurrentModificationException (Java Platform SE 7 ). (n.d.). Retrieved from
+
+                                    https://docs.oracle.com/javase/7/docs/api/java/util/ConcurrentModificationException.html
+<br><br>
+                                    Eriksson, D.Retrieved from www.avajava.com/tutorials/lessons/how-do- i-
+
+                                    synchronize-a- list-or- other-collection- in-java.html
+<br><br>
+                                    Home and Learn - Array Lists in Java. (n.d.). Retrieved from
+
+                                    www.homeandlearn.co.uk/java/array_lists.html
+<br><br>
+                                    Multithreaded programming [Photograph]. (n.d.). Retrieved from
+
+                                    https://www.quora.com/What-are- some-real- life-examples- of-multi- threading-as- we-study-
+
+                                    in-Java
+<br><br>
+                                    Swartz, F. (2006). Java Notes: ArrayList. Retrieved from
+
+                                    http://www.leepoint.net/data/collections/lists/arraylist.html
+<br><br>
+                                    Tran, J. (2016, June 25). java - When to use LinkedList over ArrayList? - Stack
+
+                                    Overflow. Retrieved from http://stackoverflow.com/questions/322715/when-to- use-linkedlist-
+
+                                    over-arraylist
+<br><br>
+                                    Pjhanzlik. (2016). Array Lists Comic [Comic]. Retrieved from
+
+                                    https://openclipart.org/detail/244473/array-lists- comic
+
+                          </div>
+</body>
+
+</html>

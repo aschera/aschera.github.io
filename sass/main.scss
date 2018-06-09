@@ -1,0 +1,34 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+@import "components/divider";
+@import "components/feature-box";
+@import "components/flexboxes";
+@import "components/socialmedia";
+@import "components/card";
+
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/main";
+
+@import "pages/home";
+
+
+/*to compile sass css in terminal
+ run -> 
+     npm run compile:sass
+needs to be started up every session
+
+to run the (HTTP)server - which starts watch and opens the page:
+in terminal
+    live-server
+*/

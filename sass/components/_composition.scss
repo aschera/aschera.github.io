@@ -1,0 +1,37 @@
+.composition{
+    position:relative;
+
+    &__photo{
+        width:30%;
+        box-shadow: 0 1.5rem 4rem rgba($color-grey-light-1, 0.4);
+        border-radius: 2px;
+        position:absolute; // reference at tope left corner of -composition element
+        z-index:10;
+        transition: all .2s;
+        outline-offset: 0.2rem; // this created the space between image and border on hover -> outline
+
+        &--p1{
+            left:2rem;
+            top: -4rem; // upwards
+        }
+        &--p2{
+            right:10rem;
+            top: 2rem; 
+        }
+        &--p3{
+            left:14rem;
+            top: 8rem; 
+        }
+
+        &:hover{
+            outline: 0.2rem solid $color-primary; // similar to border.
+            transform: scale(1.5) translateY(-.5rem);
+            box-shadow: 0 3rem 4rem rgba($color-grey-light-1, 0.6);
+            z-index:20;
+        }
+    }
+
+    &:hover &__photo:not(:hover){ // select all images that are not currently hovered 
+        transform: scale(0.75); // make them smaller.
+    }
+}

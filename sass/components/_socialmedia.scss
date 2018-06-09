@@ -1,0 +1,17 @@
+.social-icon-list{
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 2.5rem;
+
+    &__social-icon{
+        display:inline;
+        margin-right: 1.5rem;
+        position: relative;
+    }
+    &__social-links{
+        color:$color-dark;
+    }
+    &__social-links:hover{
+        color:$color-secondary;
+    }
+}

@@ -267,8 +267,17 @@ a {
 
 .btn--white {
   background-color: #e6e6e8;
-  color: #06000a; }
+  color: #06000a;
+  border-radius: 2rem; }
   .btn--white::after {
+    background-color: #e6e6e8;
+    color: #e6e6e8; }
+
+.btn--link {
+  background-color: #e6e6e8;
+  color: #06000a;
+  border-radius: 2rem; }
+  .btn--link::after {
     background-color: #e6e6e8;
     color: #e6e6e8; }
 
@@ -289,6 +298,62 @@ a {
   /*allows transitions*/ }
 
 .btn--animated {
+  /*slide in from invisible, to visible from bottom*/
+  animation: moveInButton .5s ease-out .75s;
+  animation-fill-mode: backwards;
+  /*before animation starts, the 0% styles from keyframes will be applied*/ }
+
+/* ************************************************************ */
+.btn2:link, .btn2:visited {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  /*if you want to give paddings, heights or widths*/
+  transition: all .2s;
+  /* here we 'allow' for transistions. without it the hover/active etc wouldnt work*/
+  position: relative; }
+
+.btn2:hover {
+  transform: translateY(-0.3rem);
+  /*when hover it slides up*/
+  box-shadow: 0 1rem 2rem rgba(6, 0, 10, 0.2);
+  /*x y blur color*/ }
+  .btn2:hover::after {
+    transform: scaleX(1) scaleY(1);
+    /*scale(2) would be double the size of the original .btn */
+    opacity: 0;
+    /*make invisible*/ }
+
+.btn2:active {
+  transform: translateY(-0.1rem);
+  /*when click it slides down*/
+  box-shadow: 0 0.5rem 1rem rgba(6, 0, 10, 0.2);
+  /*x y blur color*/ }
+
+.btn2--link {
+  background-color: #06000a;
+  color: #e6e6e8; }
+  .btn2--link::after {
+    background-color: #e6e6e8;
+    color: #e6e6e8; }
+
+.btn2::after {
+  /*looks like the original button, but is behind button. hover makes it show shortly*/
+  content: "";
+  /*required*/
+  display: inline-block;
+  height: 100%;
+  /*child of btn, so same size as btn*/
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+  /*allows transitions*/ }
+
+.btn2--animated {
   /*slide in from invisible, to visible from bottom*/
   animation: moveInButton .5s ease-out .75s;
   animation-fill-mode: backwards;
@@ -417,7 +482,8 @@ a {
   perspective: 140rem;
   position: relative;
   height: 40rem;
-  /* ************* Front side styling ************* */ }
+  /* ************* Front side styling ************* */
+  /* ************* Back side styling ************* */ }
   .card__side {
     background-color: orangered;
     height: 40rem;
@@ -431,15 +497,15 @@ a {
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba(6, 0, 10, 0.15); }
     .card__side--front {
-      background-image: linear-gradient(#e6e6e8, #06000a);
-      color: #f7f7f7; }
+      background-image: linear-gradient(#9296e3, #e39294);
+      color: #300032; }
     .card__side--back {
       color: #e6e6e8;
       transform: rotateY(180deg); }
       .card__side--back-1 {
-        background-image: linear-gradient(to right bottom, #c43235, #300032); }
+        background-image: linear-gradient(to right bottom, #9296e3, #e39294); }
       .card__side--back-2 {
-        background-image: linear-gradient(to right bottom, #300032, #c43235); }
+        background-image: linear-gradient(to right bottom, #9296e3, #e39294); }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
@@ -489,6 +555,19 @@ a {
         padding: 1rem; }
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid grey; }
+  .card__cta {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: translate(-10%, -10%); }
+  .card ul {
+    list-style-type: none;
+    text-align: left; }
+    .card ul li {
+      margin-bottom: 0.5rem; }
+      .card ul li a:hover {
+        color: #9296e3;
+        text-decoration: underline; }
 
 .footer__date {
   color: #06000a;
@@ -611,14 +690,6 @@ a {
     display: block;
     line-height: 2rem; }
 
-.schoolLink__schoolLogo--BA {
-  width: 25rem;
-  float: left; }
-
-.schoolLink__schoolLogo--YH {
-  width: 25rem;
-  float: left; }
-
 .section-about {
   height: 120vh;
   background-color: #f7f7f7;
@@ -648,10 +719,12 @@ a {
 .section-tours {
   height: 120vh;
   background-color: #f7f7f7;
-  padding: 15rem 0;
+  padding: 2rem 0;
   margin-top: -5vh; }
   .section-tours p {
     color: black; }
+  .section-tours__school-logo {
+    display: block; }
 
 /*
 .section-about2{

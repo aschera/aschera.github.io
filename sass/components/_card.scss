@@ -20,18 +20,18 @@
         box-shadow: 0 1.5rem 4rem rgba($color-dark, 0.15);
 
         &--front{
-            background-image: linear-gradient($color-light, $color-dark);
-            color:$color-grey-light-1;     
+            background-image: linear-gradient($color-primary-light, $color-secondary-light);
+            color:$color-primary;     
         }
         &--back{
             color: $color-light ;   
             transform: rotateY(180deg);
 
             &-1{
-                background-image: linear-gradient(to right bottom,$color-secondary, $color-primary);
+                background-image: linear-gradient(to right bottom,$color-primary-light, $color-secondary-light);
             }
             &-2{
-                background-image: linear-gradient(to right bottom,$color-primary, $color-secondary);
+                background-image: linear-gradient(to right bottom,$color-primary-light, $color-secondary-light);
             }
         }
     }
@@ -137,5 +137,29 @@
 
             }
         }
+    }
+
+    /* ************* Back side styling ************* */
+
+    &__cta{
+       position:absolute;
+       top: 10%;
+       left:10%;
+       transform: translate(-10%, -10%);
+    }
+
+    & ul{
+        list-style-type: none; 
+        text-align: left;
+
+        & li{
+            margin-bottom: 0.5rem;
+
+            & a:hover {
+                color: $color-primary-light;
+                text-decoration: underline;
+            }
+        }
+
     }
 }

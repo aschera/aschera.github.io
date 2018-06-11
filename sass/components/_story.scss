@@ -1,0 +1,62 @@
+.story{
+    width:75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-dark, .1);
+    background-color: $color-light;
+    border-radius:3px;
+    padding:6rem;
+    padding-left:9rem;
+    font-size: $default-font-size;
+    -webkit-clip-path: polygon(0% 0%, 86% 0, 100% 50%, 86% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 86% 0, 100% 50%, 86% 100%, 0% 100%);
+    position: relative;
+
+    p{
+        color: $color-dark;
+    }
+
+    &__shape{
+        width:15rem;
+        height: 15rem;
+        float:left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+                shape-outside: circle(50% at 50% 50%); // 50% is 7.5 which is the radius of the circle. the diameter is 15. -> element must be float for it to work. also needs width and height.
+        -webkit-clip-path: circle(45% at 50% 50%);
+                clip-path: circle(45% at 50% 50%);
+        transform: translateX(-3rem);
+        backface-visibility: hidden;
+    }
+
+    &__image{
+        height:100%;
+        transform: translateX(-4rem) scale(1.4); //initially zoomed out
+        backface-visibility: hidden;
+        transition:all .5s;
+    }
+
+    &__caption{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, 20%);
+        text-transform: uppercase;
+        font-size:1.7rem;
+        text-align: center;
+        opacity:0;
+        transition:all .5s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption{
+        opacity:1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__image{
+        transform: translateX(-4rem) scale(1);//on hover zooms out.
+        filter:blur(3px), brightness(80%);
+
+    }
+
+
+}

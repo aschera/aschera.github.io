@@ -195,6 +195,9 @@ a {
 .u-center-text {
   text-align: center; }
 
+.u-right-text {
+  text-align: right; }
+
 .u-margin-bottom-big {
   margin-bottom: 8rem; }
 
@@ -364,8 +367,9 @@ a {
 
 .btn--centered {
   position: absolute;
-  top: 4rem;
-  left: 4rem; }
+  margin: 0 auto;
+  bottom: 20%;
+  left: 50%; }
 
 .btn-text:link, .btn-text:visited {
   color: #300032;
@@ -624,29 +628,17 @@ a {
     transform: translateX(-4rem) scale(1);
     filter: blur(3px), brightness(80%); }
 
-.footer__date {
-  color: #06000a;
-  display: block;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.6rem;
-  position: relative;
-  text-align: center;
-  z-index: 1; }
-  .footer__date:before {
-    border-top: 0.1rem solid #e6e6e8;
-    content: "";
-    position: absolute;
-    top: 1.2rem;
-    left: 0;
-    width: 100%;
-    z-index: -1; }
-  .footer__date span {
-    background: #e6e6e8;
+.footer {
+  margin-top: 5rem;
+  border-top: 1px solid #06000a; }
+  .footer__text {
     padding: 0 1rem;
+    color: #06000a;
     text-transform: uppercase; }
-
-.footer__madeBy {
-  text-align: center; }
+  .footer__date {
+    color: #06000a;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem; }
 
 .row {
   max-width: 114rem;

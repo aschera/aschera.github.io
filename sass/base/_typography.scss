@@ -141,8 +141,10 @@ a {
     font-size: 1.4rem; height: 8rem; 
     line-height: 8rem; 
     margin: -2rem 0 0 -2rem; 
-    position: absolute; 
+
+    position: fixed; 
     top:3rem; 
+    z-index:999;
     right: 2.5rem; 
     text-align: center; 
     text-transform: uppercase; 

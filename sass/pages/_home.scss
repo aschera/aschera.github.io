@@ -1,5 +1,4 @@
-.main{
-}
+
 .section-about{
     height:120vh;
     background-color: $color-grey-light-1;
@@ -13,37 +12,29 @@
 
 .section-features{
     height:100vh;
-    padding:20rem 0;
+    padding:25rem 0;
     margin-top: -8vh;
+    margin-bottom:0rem;
 
     background-image: 
     linear-gradient(to right bottom, 
-    rgba($color-primary, 0.8), 
-    rgba($color-light, 0.8)),
-    url(../img/nat-1-large.jpg);
+    rgba($color-secondary, 0.9), 
+    rgba($color-secondary-light, 0.9)),
+    url(../img/snow.jpg);
     background-size: cover;
-    /*
-    background-position: top;
-    -webkit-clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 86%);
-    clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 86%);
-    */
-    /*clip-path: polygon(0 0, 100% 0, 0 100%);*/
-
-    transform: skewY(5deg);
-
-    &>*{ // all direct children of section
-        transform: skewY(-5deg);
-    }
+    -webkit-clip-path: polygon(0 26%, 100% 26%, 100% 25%, 0 25%, 0 0, 100% 0, 100% 87%, 0 88%, 0 89%, 100% 88%, 100% 100%, 0 100%);
+clip-path: polygon(0 26%, 100% 26%, 100% 25%, 0 25%, 0 0, 100% 0, 100% 87%, 0 88%, 0 89%, 100% 88%, 100% 100%, 0 100%);
     & p{
         color:black;
     }
 }
 
 .section-tours{
-    height:120vh;
+    height:100vh;
     background-color: $color-grey-light-1;
     padding:2rem 0;
-    margin-top: -5vh;
+    margin-top: 5vh;
+    
 
     & p{
         color:black;
@@ -56,5 +47,5 @@
 
 .section-stories{
     padding: 15rem 0;
-    background-color: $color-grey-light-1;
+    position:relative;
 }

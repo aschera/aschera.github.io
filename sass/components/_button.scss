@@ -115,6 +115,14 @@
     }
 }
 
+.btn3{
+    position:relative; 
+}
+.btn--centered{
+    position:absolute;
+    top:4rem;
+    left:4rem;
+}
 
 
 .btn-text{
@@ -141,3 +149,4 @@
         transform: translateY(0);
     }
 }
+

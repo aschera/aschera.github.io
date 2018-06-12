@@ -61,6 +61,7 @@ html {
 body {
   box-sizing: border-box; }
 
+/* ***************** HEADINGS ***************** */
 .heading-primary {
   color: #e6e6e8;
   text-transform: uppercase;
@@ -113,6 +114,12 @@ body {
   -webkit-margin-start: 0;
   -webkit-margin-end: 0; }
 
+.heading-comic {
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  font-size: 3rem; }
+
+/* ***************** other ***************** */
 p {
   color: #e6e6e8;
   font-size: 1.6rem;

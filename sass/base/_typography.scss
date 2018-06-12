@@ -1,3 +1,5 @@
+
+/* ***************** HEADINGS ***************** */
 .heading-primary{
     color:$color-light;
     text-transform:uppercase;
@@ -58,6 +60,11 @@
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
 }
+
+.heading-comic{font-family: 'Amatic SC', cursive; font-weight: 700; font-size:3rem;}
+
+/* ***************** other ***************** */
+
 p { 
     color: $color-light;
     font-size: $default-font-size; 
@@ -68,9 +75,6 @@ p {
         margin-bottom: 3rem; 
     }
 }
-
-
-
 body{
     font-family:'Belleza','Sansita', "Lato", sans-serif;
     font-weight:400;

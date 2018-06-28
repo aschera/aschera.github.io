@@ -1,4 +1,5 @@
 .btn{
+    &,
     &:link,
     &:visited{
     text-transform: uppercase;
@@ -8,8 +9,13 @@
     border-radius:10rem;
     transition: all .2s; /* here we 'allow' for transistions. without it the hover/active etc wouldnt work*/
     position:relative;
+
+    border: none; // remove standard border
+    cursor: pointer;
+
     }
-    &:hover{
+    &:hover,
+    {
         transform: translateY(-0.3rem); /*when hover it slides up*/
         box-shadow:0 1rem 2rem rgba($color-dark, 0.2); /*x y blur color*/
 
@@ -18,7 +24,9 @@
             opacity:0;/*make invisible*/
         }
     }
-    &:active{
+    &:active,
+    &:focus {
+        outline: none;
         transform: translateY(-0.1rem);/*when click it slides down*/
         box-shadow:0 0.5rem 1rem rgba($color-dark, 0.2); /*x y blur color*/
     }
@@ -32,7 +40,6 @@
             color:$color-light;
         }
     }
-
     &--link{
         background-color:$color-light;
         color:$color-dark;

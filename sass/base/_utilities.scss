@@ -1,23 +1,18 @@
-.u-center-text{text-align: center;}
-.u-right-text{text-align: right;}
+.u-center-text{text-align: center !important;}
+.u-right-text{text-align: right !important;}
 
-.u-margin-bottom-big{margin-bottom:8rem;}
-.u-margin-bottom-medium{margin-bottom:4rem;}
-.u-margin-bottom-small{margin-bottom:1.5rem;}
+.u-margin-bottom-big{margin-bottom:8rem !important;}
+.u-margin-bottom-medium{margin-bottom:4rem !important;}
+.u-margin-bottom-small{margin-bottom:1.5rem !important;}
 
-.u-padding-left-big{padding-left:8rem;}
-.u-padding--left-medium{padding-left:4rem;}
-.u-padding--left-small{padding-left:1.5rem;}
+.u-padding-left-big{padding-left:8rem !important;}
+.u-padding--left-medium{padding-left:4rem !important;}
+.u-padding--left-small{padding-left:1.5rem !important;}
 
-.u-padding-right-big{padding-right:8rem;}
-.u-padding--right-medium{padding-right:4rem;}
-.u-padding--right-small{padding-right:1.5rem;}
+.u-padding-right-big{padding-right:8rem !important;}
+.u-padding--right-medium{padding-right:4rem !important;}
+.u-padding--right-small{padding-right:1.5rem !important;}
 
-.u-padding-bottom-small{padding-bottom: 1.5rem;}
-.u-padding-bottom-medium{padding-bottom: 4rem;}
-.u-padding-bottom-large{padding-bottom: 8rem;}
-
-
-
-.u-background-dark-blue{background-color: darken($color-primary-light, 45%)}
-.u-background-light-blue{background-color: darken($color-primary-light, 45%)}
+.u-padding-bottom-small{padding-bottom: 1.5rem !important;}
+.u-padding-bottom-medium{padding-bottom: 4rem !important;}
+.u-padding-bottom-large{padding-bottom: 8rem !important;}

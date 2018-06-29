@@ -9,7 +9,6 @@
     border-radius:10rem;
     transition: all .2s; /* here we 'allow' for transistions. without it the hover/active etc wouldnt work*/
     position:relative;
-
     border: none; // remove standard border
     cursor: pointer;
 
@@ -36,7 +35,6 @@
         border-radius:2rem;
 
         &::after{
-            background-color:$color-light;
             color:$color-light;
         }
     }
@@ -46,7 +44,6 @@
         border-radius:2rem;
 
         &::after{
-            background-color:$color-light;
             color:$color-light;
         }
     }
@@ -99,7 +96,6 @@
         color:$color-light;
 
         &::after{
-            background-color:$color-light;
             color:$color-light;
         }
     }

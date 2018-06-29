@@ -98,7 +98,7 @@ body {
   transition: all 0.2s; }
   .heading-secondary:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
-    text-hadow: 0.5rem 1rem 2rem rgba(62, 26, 28, 0.2); }
+    text-shadow: 0.5rem 1rem 2rem rgba(62, 26, 28, 0.2); }
 
 .heading-tertiary {
   text-transform: uppercase;
@@ -281,7 +281,6 @@ a {
   color: #3E1A1C;
   border-radius: 2rem; }
   .btn--white::after {
-    background-color: #FFFAE4;
     color: #FFFAE4; }
 
 .btn--link {
@@ -289,7 +288,6 @@ a {
   color: #3E1A1C;
   border-radius: 2rem; }
   .btn--link::after {
-    background-color: #FFFAE4;
     color: #FFFAE4; }
 
 .btn::after {
@@ -345,7 +343,6 @@ a {
   background-color: #3E1A1C;
   color: #FFFAE4; }
   .btn2--link::after {
-    background-color: #FFFAE4;
     color: #FFFAE4; }
 
 .btn2::after {

@@ -1,3 +1,6 @@
+header {
+    background-color: black;
+}
 .header{
     height:95vh;
     background-image: 
@@ -6,14 +9,15 @@
     rgba($color-primary-light, 0.9)),
     url(../img/hero.jpg);
     background-size: cover;
-    -webkit-clip-path: polygon(0 26%, 100% 26%, 100% 25%, 0 25%, 0 11%, 100% 11%, 100% 87%, 0 88%, 0 89%, 100% 88%, 100% 100%, 0 100%);
-clip-path: polygon(0 26%, 100% 26%, 100% 25%, 0 25%, 0 11%, 100% 11%, 100% 87%, 0 88%, 0 89%, 100% 88%, 100% 100%, 0 100%);
- 
+    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
+    
     &__logo-box{
      position:absolute;
      top:4rem;
      left:4rem;
     }
+
     &__logo{
      height:3.5rem;
      backface-visibility: hidden;/*the animation wiggles without this*/

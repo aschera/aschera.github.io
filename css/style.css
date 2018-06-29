@@ -91,7 +91,7 @@ body {
   backface-visibility: hidden;
   margin-bottom: 6rem;
   display: inline-block;
-  background-image: linear-gradient(to right, #623A30, #26569E);
+  background-image: linear-gradient(to right, #623A30, #3E939A);
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: 0.2rem;
@@ -101,14 +101,14 @@ body {
     text-hadow: 0.5rem 1rem 2rem rgba(62, 26, 28, 0.2); }
 
 .heading-tertiary {
-  color: #FFFAE4;
   text-transform: uppercase;
   backface-visibility: hidden;
   display: inline-block;
   letter-spacing: 0.2rem;
   font-size: 1.6rem;
   font-weight: 700;
-  color: #26569E;
+  color: #3E1A1C;
+  font-size: 2rem;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   -webkit-margin-start: 0;
@@ -118,6 +118,9 @@ body {
   font-family: 'Amatic SC', cursive;
   font-weight: 700;
   font-size: 3rem; }
+
+.blog-heading {
+  margin-top: 20rem; }
 
 /* ***************** other ***************** */
 p {
@@ -138,10 +141,10 @@ body {
   /*background-color: $color-primary;*/ }
 
 a {
-  color: #6996db;
+  color: #8080ff;
   text-decoration: none; }
   a:hover {
-    color: #26569E;
+    color: #3E939A;
     text-decoration: underline; }
 
 .author {
@@ -197,7 +200,7 @@ a {
   width: 8rem;
   cursor: pointer; }
   .read-more:hover {
-    background: #26569E;
+    background: #3E939A;
     text-decoration: none; }
 
 .u-center-text {
@@ -400,7 +403,7 @@ a {
   position: relative; }
   .composition__photo {
     width: 30%;
-    box-shadow: 0 1.5rem 4rem rgba(247, 247, 247, 0.4);
+    box-shadow: 0 1.5rem 4rem rgba(112, 206, 198, 0.4);
     border-radius: 2px;
     position: absolute;
     z-index: 10;
@@ -418,7 +421,7 @@ a {
     .composition__photo:hover {
       outline: 0.2rem solid #623A30;
       transform: scale(1.5) translateY(-0.5rem);
-      box-shadow: 0 3rem 4rem rgba(247, 247, 247, 0.6);
+      box-shadow: 0 3rem 4rem rgba(112, 206, 198, 0.6);
       z-index: 20; }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.75); }
@@ -440,7 +443,7 @@ a {
     font-size: 5rem;
     margin-bottom: 0.4rem;
     display: inline-block;
-    background-image: linear-gradient(to right, #623A30, #26569E);
+    background-image: linear-gradient(to right, #623A30, #3E939A);
     -webkit-background-clip: text;
     color: transparent; }
   .feature-box__text {
@@ -492,7 +495,7 @@ a {
   .social-icon-list__social-links {
     color: #3E1A1C; }
   .social-icon-list__social-links:hover {
-    color: #26569E; }
+    color: #3E939A; }
 
 .card {
   /* ************* For functionality ************* */
@@ -535,17 +538,17 @@ a {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%); }
     .card__picture--1 {
-      background-image: linear-gradient(to right bottom, #26569E, #623A30), url(../img/card1.jpg); }
+      background-image: linear-gradient(to right bottom, #3E939A, #623A30), url(../img/card1.jpg); }
     .card__picture--2 {
-      background-image: linear-gradient(to right bottom, #26569E, #623A30), url(../img/card2.jpg); }
+      background-image: linear-gradient(to right bottom, #3E939A, #623A30), url(../img/card2.jpg); }
     .card__picture--3 {
-      background-image: linear-gradient(to right bottom, #26569E, #623A30), url(../img/card3.jpg); }
+      background-image: linear-gradient(to right bottom, #3E939A, #623A30), url(../img/card3.jpg); }
     .card__picture--4 {
-      background-image: linear-gradient(to right bottom, #26569E, #623A30), url(../img/card4.jpg); }
+      background-image: linear-gradient(to right bottom, #3E939A, #623A30), url(../img/card4.jpg); }
     .card__picture--5 {
-      background-image: linear-gradient(to right bottom, #26569E, #623A30), url(../img/card5.jpg); }
+      background-image: linear-gradient(to right bottom, #3E939A, #623A30), url(../img/card5.jpg); }
     .card__picture--6 {
-      background-image: linear-gradient(to right bottom, #26569E, #623A30), url(../img/card6.jpg); }
+      background-image: linear-gradient(to right bottom, #3E939A, #623A30), url(../img/card6.jpg); }
   .card__heading {
     font-size: 2.5rem;
     font-weight: 300;
@@ -590,14 +593,14 @@ a {
 .story {
   width: 75%;
   margin: 0 auto;
-  box-shadow: 0 3rem 6rem rgba(62, 26, 28, 0.1);
-  background-color: rgba(62, 26, 28, 0.05);
+  box-shadow: 0 3rem 6rem rgba(112, 206, 198, 0.1);
+  background-color: rgba(112, 206, 198, 0.7);
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
   font-size: 1.6rem;
-  -webkit-clip-path: polygon(0% 0%, 86% 0, 100% 50%, 86% 100%, 0% 100%);
-  clip-path: polygon(0% 0%, 86% 0, 100% 50%, 86% 100%, 0% 100%);
+  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
+  clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
   position: relative; }
   .story p {
     color: #3E1A1C; }
@@ -641,7 +644,7 @@ a {
   height: 100%;
   width: 100%;
   z-index: -1;
-  opacity: 0.35;
+  opacity: 0.70;
   overflow: hidden; }
   .bg-video__content {
     height: 100%;
@@ -671,10 +674,10 @@ a {
     box-shadow: 0 1rem 2rem rgba(62, 26, 28, 0.1);
     border-bottom: 3px solid #93e392; }
   .form__input:focus:invalid {
-    border-bottom: 3px solid #26569E; }
+    border-bottom: 3px solid #960015; }
 
 .form__label {
-  color: #26569E;
+  color: #3E939A;
   font-size: 1.2rem;
   font-weight: 700;
   margin-left: 2rem;
@@ -696,7 +699,7 @@ a {
   display: none; }
 
 .form__radio-label {
-  color: #26569E;
+  color: #3E939A;
   font-size: 1.6rem;
   cursor: pointer;
   position: relative;
@@ -766,12 +769,15 @@ a {
   .row .col-3-of-4 {
     width: calc( (3 * (100% - (3 * 8rem)) / 4) + 2 * 8rem); }
 
+header {
+  background-color: black; }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(98, 58, 48, 0.9), rgba(150, 0, 21, 0.9)), url(../img/hero.jpg);
   background-size: cover;
-  -webkit-clip-path: polygon(0 26%, 100% 26%, 100% 25%, 0 25%, 0 11%, 100% 11%, 100% 87%, 0 88%, 0 89%, 100% 88%, 100% 100%, 0 100%);
-  clip-path: polygon(0 26%, 100% 26%, 100% 25%, 0 25%, 0 11%, 100% 11%, 100% 87%, 0 88%, 0 89%, 100% 88%, 100% 100%, 0 100%); }
+  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
+  clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%); }
   .header__logo-box {
     position: absolute;
     top: 4rem;
@@ -835,8 +841,8 @@ a {
     line-height: 2rem; }
 
 .section-about {
-  height: 120vh;
-  background-color: #f7f7f7;
+  height: 90vh;
+  background-color: #70CEC6;
   padding: 15rem 0;
   margin-top: -15vh; }
   .section-about p {
@@ -847,16 +853,16 @@ a {
   padding: 30rem 0;
   margin-top: -8vh;
   margin-bottom: 0rem;
-  background-image: linear-gradient(to right bottom, rgba(38, 86, 158, 0.9), rgba(255, 248, 156, 0.9)), url(../img/snow.jpg);
+  background-image: linear-gradient(to right bottom, rgba(255, 248, 156, 0.9), rgba(251, 154, 0, 0.9)), url(../img/snow.jpg);
   background-size: cover;
-  -webkit-clip-path: polygon(0 26%, 100% 26%, 100% 25%, 0 25%, 0 0, 100% 0, 100% 87%, 0 88%, 0 89%, 100% 88%, 100% 100%, 0 100%);
-  clip-path: polygon(0 26%, 100% 26%, 100% 25%, 0 25%, 0 0, 100% 0, 100% 87%, 0 88%, 0 89%, 100% 88%, 100% 100%, 0 100%); }
+  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
+  clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%); }
   .section-features p {
     color: black; }
 
 .section-tours {
   height: 100vh;
-  background-color: #f7f7f7;
+  background-color: #70CEC6;
   padding: 2rem 0;
   margin-top: 5vh; }
   .section-tours p {
@@ -866,11 +872,17 @@ a {
 
 .section-stories {
   padding: 15rem 0;
+  margin-top: -25vh;
   position: relative; }
 
 .section-book {
+  height: 100vh;
   padding: 15rem 0;
-  background-image: linear-gradient(to right bottom, #FFFAE4, #3E1A1C); }
+  margin-top: -10vh;
+  background-image: linear-gradient(to right bottom, #3e939a, #960015);
+  background-size: cover;
+  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
+  clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%); }
 
 .book {
   background-image: linear-gradient(105deg, rgba(255, 250, 228, 0.5) 0%, rgba(255, 250, 228, 0.5) 50%, transparent 50%), url(../img/negative-space-sunset-flower-shadow-dandelion.jpg);

@@ -1,18 +1,19 @@
 .story{
     width:75%;
     margin: 0 auto;
-    box-shadow: 0 3rem 6rem rgba($color-dark, .1);
-    background-color: rgba($color-dark, 0.05);
+    box-shadow: 0 3rem 6rem rgba($color-grey-light-1, .1);
+    background-color: rgba($color-grey-light-1, .7);
     border-radius:3px;
     padding:6rem;
     padding-left:9rem;
     font-size: $default-font-size;
-    -webkit-clip-path: polygon(0% 0%, 86% 0, 100% 50%, 86% 100%, 0% 100%);
-    clip-path: polygon(0% 0%, 86% 0, 100% 50%, 86% 100%, 0% 100%);
+    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
+
     position: relative;
 
-    p{
-        color: $color-dark;
+    & p {
+        color:  $color-dark;
     }
 
     &__shape{

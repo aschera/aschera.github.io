@@ -7,15 +7,22 @@ $default-font-size: 1.6rem;
 
 //bg and link colors.
 $color-primary: #623A30;
+$color-dark: #3E1A1C;
+
 $color-primary-light: #960015;
-$color-secondary:#26569E;
+
+
 $color-secondary-light:#FFF89C;
-$color-grey-light-1: #f7f7f7;
+$color-dark-yellow: #FB9A00;
+
+$color-black: #100704;
+
 
 $color-green:#93e392;
 
-//text colors.
-$color-dark:#3E1A1C;
+$color-grey-light-1: #70CEC6;
+$color-secondary:#3E939A;
+
 $color-light:#FFFAE4;
 
 /*  ******************** GRID ******************** */
@@ -24,4 +31,3 @@ $grid-width: 114rem;
 $gutter-vertical:8rem;
 $gutter-horizontal:8rem;
 
-// #e39294  #93e392  #9296e3 #e3b992 #92e3df #bce392

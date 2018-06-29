@@ -30,7 +30,7 @@
         }
 
         &:focus:invalid { // validation: when not correct red line.
-            border-bottom: 3px solid $color-secondary;
+            border-bottom: 3px solid $color-primary-light;
         }
     }
 

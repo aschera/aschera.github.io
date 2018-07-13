@@ -63,7 +63,7 @@
     rgba($color-primary-light, 1));
     background-size: cover;
     -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
-    clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 1000% 100%, 0% 100%, 0 95%, 0 8%);
 }
 
 .book {

@@ -9,8 +9,9 @@ header {
     rgba($color-primary-light, 0.9)),
     url(../img/hero.jpg);
     background-size: cover;
-    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
-    clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
+    
     
     &__logo-box{
      position:absolute;

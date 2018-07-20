@@ -29,7 +29,7 @@
         transform: translateY(-0.1rem);/*when click it slides down*/
         box-shadow:0 0.5rem 1rem rgba($color-dark, 0.2); /*x y blur color*/
     }
-    &--white{
+    &--white {
         background-color:$color-light;
         color:$color-dark;
         border-radius:2rem;
@@ -38,7 +38,16 @@
             color:$color-light;
         }
     }
-    &--link{
+    &--blue {
+        background-color:$color-grey-light-1;
+        color:$color-light;
+        border-radius:2rem;
+
+        &::after{
+            color:$color-dark;
+        }
+    }
+    &--link {
         background-color:$color-light;
         color:$color-dark;
         border-radius:2rem;
@@ -48,7 +57,7 @@
         }
     }
 
-    &::after{ /*looks like the original button, but is behind button. hover makes it show shortly*/
+    &::after { /*looks like the original button, but is behind button. hover makes it show shortly*/
         content:""; /*required*/
         display:inline-block;
         height:100%; /*child of btn, so same size as btn*/
@@ -60,7 +69,7 @@
         z-index:-1;
         transition: all .4s; /*allows transitions*/
     }
-    &--animated{ /*slide in from invisible, to visible from bottom*/
+    &--animated { /*slide in from invisible, to visible from bottom*/
         animation: moveInButton .5s ease-out .75s;
         animation-fill-mode: backwards; /*before animation starts, the 0% styles from keyframes will be applied*/
     }
@@ -70,37 +79,37 @@
 
 .btn2{
     &:link,
-    &:visited{
+    &:visited {
     text-decoration:none;
     padding: .5rem 1rem /*(top right bottom left ) or (top/bottom left/right) */;
     display: inline-block; /*if you want to give paddings, heights or widths*/
     transition: all .2s; /* here we 'allow' for transistions. without it the hover/active etc wouldnt work*/
     position:relative;
     }
-    &:hover{
+    &:hover {
         transform: translateY(-0.3rem); /*when hover it slides up*/
         box-shadow:0 1rem 2rem rgba($color-dark, 0.2); /*x y blur color*/
 
-        &::after{
+        &::after {
             transform: scaleX(1) scaleY(1); /*scale(2) would be double the size of the original .btn */
             opacity:0;/*make invisible*/
         }
     }
-    &:active{
+    &:active {
         transform: translateY(-0.1rem);/*when click it slides down*/
         box-shadow:0 0.5rem 1rem rgba($color-dark, 0.2); /*x y blur color*/
     }
 
-    &--link{
+    &--link {
         background-color:$color-dark;
         color:$color-light;
 
-        &::after{
+        &::after {
             color:$color-light;
         }
     }
 
-    &::after{ /*looks like the original button, but is behind button. hover makes it show shortly*/
+    &::after { /*looks like the original button, but is behind button. hover makes it show shortly*/
         content:""; /*required*/
         display:inline-block;
         height:100%; /*child of btn, so same size as btn*/
@@ -112,16 +121,16 @@
         z-index:-1;
         transition: all .4s; /*allows transitions*/
     }
-    &--animated{ /*slide in from invisible, to visible from bottom*/
+    &--animated { /*slide in from invisible, to visible from bottom*/
         animation: moveInButton .5s ease-out .75s;
         animation-fill-mode: backwards; /*before animation starts, the 0% styles from keyframes will be applied*/
     }
 }
 
-.btn3{
+.btn3 {
     position:relative; 
 }
-.btn--centered{
+.btn--centered {
     position:absolute;
     margin:0 auto;
     bottom:20%;
@@ -130,9 +139,9 @@
 }
 
 
-.btn-text{
+.btn-text {
     &:link,
-    &:visited{
+    &:visited {
         color:$color-primary;
         display:inline-block;
         text-decoration: none;
@@ -142,14 +151,14 @@
         transition: all .2s;
     }
 
-    &:hover{
+    &:hover {
         background-color: $color-primary;
         color: $color-light;
         box-shadow: 0 1rem 2rem rgba($color-dark, 0.15);
         transform: translateY(-2px);
     }
 
-    &:active{
+    &:active {
         box-shadow: 0 0.5rem 1rem rgba($color-dark, 0.15);
         transform: translateY(0);
     }

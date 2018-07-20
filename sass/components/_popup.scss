@@ -1,0 +1,94 @@
+
+/* --------------------------------------------------
+Popup
+----------------------------------------------------*/
+.popup {
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color-black, 0.9);
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    &:target { // visible when the target is the popup anchor.
+      opacity: 1;
+      visibility: visible;
+    }
+
+    & p {
+        color: $color-black;
+    }
+
+    &__content {
+        @include centerHorizontalVertical;
+
+        background-color:$color-light;
+        width: 75%;
+        box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+        border-radius:3px;
+        display: table;
+        overflow: hidden;
+    }
+
+    &__left {
+        width: 33.333333%;
+        display:table-cell;
+        padding: 1.5rem;
+    }
+
+    &__right {
+        width: 66.6666667%;
+        display:table-cell;
+        vertical-align: middle; // table cell property (top/bottom);
+        padding: 3rem 5rem;
+    }
+
+    &__image {
+        display: block;
+        width: 100%; 
+        margin: 1rem;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+
+             column-count: 2; // text is in two columns
+             column-gap: 3rem; // space between columns
+             column-rule: 1px solid $color-grey-light-1; // line between columns.
+        -moz-column-count: 2; // text is in two columns
+        -moz-column-gap: 3rem; // space between columns
+        -moz-column-rule: 1px solid $color-grey-light-1; // line between columns.
+
+        -webkit-hyphens: auto;
+           -moz-hyphens: auto;
+            -ms-hyphens: auto;
+                hyphens: auto; // will add hyphens if text is breaking from one line to another. html language has to be added
+    }
+
+    &__close {
+        &:link,
+        &:visited{
+            color: $color-black;
+            position: absolute;
+            top: 0.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1;
+        }
+
+        &:hover {
+            color: $color-primary-light;
+            font-size: 3.5rem;
+        }
+
+    }
+
+}

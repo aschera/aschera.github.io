@@ -8,6 +8,7 @@
     }
 }
 
+// center a block in the middle of its parent
 @mixin centerHorizontalVertical {
     position: absolute;
     top: 50%;
@@ -15,3 +16,31 @@
     -webkit-transition-property: -webkit-transform;
     transform: translate(-50%, -50%);
 }
+
+
+/* ---------------------------------------------------------
+Media Query manager
+-----------------------------------------------------------*/
+
+/* breakpoints arguments can be:
+phone, tab-p, tab-l, desk-b
+*/
+@mixin respond($breakpoint){
+
+    //1em = 16px => EM is better for scaling content. 
+
+    //phones 600px
+    @if $breakpoint == phone  { 
+        @media (max-width: 37.5em)  {@content} 
+    };
+
+    // tablets in portrait 900px
+    @if $breakpoint == tab-p  { @media (max-width: 56.25em)  {@content} };
+
+    //tablets in landscape 1200px
+    @if $breakpoint == tab-l  { @media (max-width: 75em) {@content} };
+
+    // big desktop screens 1800px
+    @if $breakpoint == desk-b { @media (min-width: 112.5em) {@content} };
+}
+

@@ -14,14 +14,6 @@ Popup
     visibility: hidden;
     transition: all .3s;
 
-    &:target { // visible when the target is the popup anchor.
-      opacity: 1;
-      visibility: visible;
-    }
-
-    & p {
-        color: $color-black;
-    }
 
     &__content {
         @include centerHorizontalVertical;
@@ -32,6 +24,9 @@ Popup
         border-radius:3px;
         display: table;
         overflow: hidden;
+        opacity: 0; //first hidden
+        transform: translate(-50%, -50%) scale(.2); //smaller
+        transition: all .4s .2s;
     }
 
     &__left {
@@ -45,6 +40,10 @@ Popup
         display:table-cell;
         vertical-align: middle; // table cell property (top/bottom);
         padding: 3rem 5rem;
+    }
+
+    & p {
+        color: $color-black;
     }
 
     &__image {
@@ -70,6 +69,21 @@ Popup
                 hyphens: auto; // will add hyphens if text is breaking from one line to another. html language has to be added
     }
 
+/* -----------------------------------------------------------------------
+Open and Close
+--------------------------------------------------------------------------*/
+
+    &:target { // visible when the target is the popup anchor.
+        opacity: 1;
+        visibility: visible;
+    }
+
+    // when opening the popup__content is transforming from 0 to 1 opacity and scaling from smaller to normal size.
+    &:target &__content { 
+        opacity: 1; //then shown
+        transform: translate(-50%, -50%) scale(1); //normal size
+    }
+    
     &__close {
         &:link,
         &:visited{
@@ -88,7 +102,5 @@ Popup
             color: $color-primary-light;
             font-size: 3.5rem;
         }
-
     }
-
 }

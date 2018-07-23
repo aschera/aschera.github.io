@@ -13,6 +13,28 @@ html{ /*ROOT*/
     to get %, divide 16/100 = 0.625 which is 62.5% 
     we do this to accomodate user CSS changes in peoples browsers
     */
+
+    /* -------------MEDIA Queries -----------------*/
+    // Order: large before small.
+
+    // < 1800?
+    @include respond(desk-b) {
+        font-size: 75%; // 1rem = 12 pixels. 12/16 = 75
+    }
+
+    // 900 -1200?
+    @include respond(tab-l) {
+        font-size: 56.25%; // 1rem = 9 pixels. 9/16 = 56,25
+    }
+
+    //  600 - 900 ?
+    @include respond(tab-p) {
+        font-size: 50%; // 1rem = 8 pixels. 8/16= 50
+    }
+    // 0 - 600?
+    @include respond(phone) {
+        font-size: 70%; 
+    }
 }
 body{
     box-sizing: border-box;

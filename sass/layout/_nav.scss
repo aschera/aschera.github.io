@@ -7,11 +7,11 @@
         display: none;
     }
 
-    &__button {
+    &__button { // the rount button
         background-color: $color-light;
         height: 7rem;
         width: 7rem;
-        border-radius: 50%;
+        border-radius: 50%; //round
         position: fixed;
         top: 6rem;
         right: 6rem;
@@ -20,7 +20,6 @@
         text-align: center;
         cursor: pointer;
     }
-
 
     &__background {
         height: 6rem;
@@ -33,9 +32,6 @@
         background-image: radial-gradient($color-primary-light, $color-primary);
         z-index: 1000;
         transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-
-        // the bg grows 
-        //transform: scale(80);
     }
 
     &__nav {
@@ -43,7 +39,6 @@
         position: fixed;
         top: 0;
         left: 0;
-     
         z-index: 1500;
         opacity: 0; //hidden
         width: 0; // if not this is set, the links will appear on hover.
@@ -80,7 +75,6 @@
                 margin-right: 1.5rem;
                 display:inline-block;
             }
-
         }
 
         &:hover,
@@ -89,12 +83,10 @@
             color: $color-primary;
             transform: translateX(1rem);
         }
-        
     }
 
     //Checkbox hack. 
     //~ general sibling of the checkbox
-
     &__checkbox:checked ~ &__background {
         transform: scale(80);
     }
@@ -104,7 +96,6 @@
     }
 
     //Icon: Menu
-
     &__icon {
         position: relative;
         margin-top: 3.5rem;

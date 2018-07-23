@@ -1,3 +1,9 @@
+/* ---------------------------------------------------------
+Media Query manager
+-----------------------------------------------------------*/
+/* breakpoints arguments can be:
+phone, tab-p, tab-l, desk-b
+*/
 /*  ******************** FONT ******************** */
 /*  ******************** COLORS ******************** */
 /*  ******************** GRID ******************** */
@@ -56,7 +62,20 @@ html {
   /* we want the font size to be 10px.
     to get %, divide 16/100 = 0.625 which is 62.5% 
     we do this to accomodate user CSS changes in peoples browsers
-    */ }
+    */
+  /* -------------MEDIA Queries -----------------*/ }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 70%; } }
 
 body {
   box-sizing: border-box; }
@@ -748,12 +767,10 @@ Popup
   z-index: 2000;
   opacity: 0;
   visibility: hidden;
-  transition: all .3s; }
-  .popup:target {
-    opacity: 1;
-    visibility: visible; }
-  .popup p {
-    color: #100704; }
+  transition: all .3s;
+  /* -----------------------------------------------------------------------
+Open and Close
+--------------------------------------------------------------------------*/ }
   .popup__content {
     position: absolute;
     top: 50%;
@@ -765,7 +782,10 @@ Popup
     box-shadow: 0 2rem 4rem rgba(16, 7, 4, 0.2);
     border-radius: 3px;
     display: table;
-    overflow: hidden; }
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+    transition: all .4s .2s; }
   .popup__left {
     width: 33.333333%;
     display: table-cell;
@@ -775,6 +795,8 @@ Popup
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+  .popup p {
+    color: #100704; }
   .popup__image {
     display: block;
     width: 100%;
@@ -792,6 +814,12 @@ Popup
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto; }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup:target .popup__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
   .popup__close:link, .popup__close:visited {
     color: #100704;
     position: absolute;

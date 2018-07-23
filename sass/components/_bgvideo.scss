@@ -8,6 +8,12 @@
     opacity: 0.70;
     overflow:hidden;
 
+        /* -------------MEDIA Queries -----------------*/
+        //  600 - 900 ?
+        @include respond(tab-p) {
+           display: none;
+        }
+
     &__content{
         height:100%;
         width:100%;

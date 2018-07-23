@@ -1,9 +1,23 @@
 .row{
     max-width:$grid-width; //standard. max-widths adapats if the screen viewport is smaller so it fills 100% of available space.
+    
+        /* -------------MEDIA Queries -----------------*/
+        //  600 - 900 ?
+        @include respond(tab-p) {
+            max-width: 50rem;
+            padding: 0 1rem;
+        }
+
     margin: 0 auto; //trick to center block elements inside another block element. 
     
     &:not(:last-child){  // everything except the last child
-        margin-bottom: $gutter-vertical; // white space between rows
+        margin-bottom:$gutter-vertical; // white space between rows
+        
+        /* -------------MEDIA Queries -----------------*/
+        //  600 - 900 ?
+        @include respond(tab-p) {
+            margin-bottom: $gutter-vertical-small;
+        }
     }
 
     @include clearfix;
@@ -13,6 +27,19 @@
 
         &:not(:last-child){
             margin-right: $gutter-horizontal;
+
+            /* -------------MEDIA Queries -----------------*/
+            //  600 - 900 ?
+            @include respond(tab-p) {
+                margin-right: 0; 
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+
+        /* -------------MEDIA Queries -----------------*/
+        //  600 - 900 ?
+        @include respond(tab-p) {
+            width: 100% !important;
         }
     }
     
@@ -41,5 +68,3 @@
         (3 * (100% - (3 * #{$gutter-horizontal})) / 4) + 2 * #{$gutter-horizontal});
     }
 }
-
-

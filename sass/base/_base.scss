@@ -15,8 +15,6 @@ html{ /*ROOT*/
     */
 
     /* -------------MEDIA Queries -----------------*/
-    // Order: large before small.
-
     // < 1800?
     @include respond(desk-b) {
         font-size: 75%; // 1rem = 12 pixels. 12/16 = 75
@@ -38,5 +36,11 @@ html{ /*ROOT*/
 }
 body{
     box-sizing: border-box;
-    
+    padding:3rem;
+
+    /* -------------MEDIA Queries -----------------*/
+    //  600 - 900 ?
+    @include respond(tab-p) {
+        padding:0;
+    }
 }

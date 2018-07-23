@@ -12,6 +12,10 @@ header {
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
     
+    /* -------------MEDIA Queries -----------------*/
+    // 0 - 600?
+    @include respond(phone) {
+    }
     
     &__logo-box{
      position:absolute;

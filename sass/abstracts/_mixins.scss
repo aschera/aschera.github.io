@@ -25,8 +25,12 @@ Media Query manager
 /* breakpoints arguments can be:
 phone, tab-p, tab-l, desk-b
 */
-@mixin respond($breakpoint){
 
+/* Order: large before small. ( Desktop first design) OR 
+ small before large. ( Mobile first design) */
+
+
+@mixin respond($breakpoint){
     //1em = 16px => EM is better for scaling content. 
 
     //phones 600px

@@ -1,6 +1,12 @@
 .composition{
     position:relative;
 
+        /* -------------MEDIA Queries -----------------*/
+        //  600 - 900 ?
+        @include respond(tab-p) {
+            padding-right: 2rem;
+        }
+
     &__photo{
         width:30%;
         box-shadow: 0 1.5rem 4rem rgba($color-grey-light-1, 0.4);
@@ -10,18 +16,52 @@
         transition: all .2s;
         outline-offset: 0.2rem; // this created the space between image and border on hover -> outline
 
+            /* -------------MEDIA Queries -----------------*/
+            //  600 - 900 ?
+            @include respond(tab-p) {
+                float: left;
+                position: relative;
+                width: 33.3333333%;
+                box-shadow: 0 1rem 3rem rgba($color-grey-light-1, 0.2);
+            }
+
         &--p1{
             left:2rem;
             top: -4rem; // upwards
+
+            /* -------------MEDIA Queries -----------------*/
+            //  600 - 900 ?
+            @include respond(tab-p) {
+                top: 0;
+                transform: scale(1.3);
+            }
         }
         &--p2{
             right:10rem;
             top: 2rem; 
+
+            /* -------------MEDIA Queries -----------------*/
+            //  600 - 900 ?
+            @include respond(tab-p) {
+                top: -1rem;
+                right:1rem;
+                transform: scale(1.5);
+                z-index: 100;
+            }
         }
         &--p3{
             left:14rem;
             top: 8rem; 
+
+            /* -------------MEDIA Queries -----------------*/
+            //  600 - 900 ?
+            @include respond(tab-p) {
+                left: 0rem;
+                top:0;
+                transform: scale(1.3);
+            }
         }
+
 
         &:hover{
             outline: 0.2rem solid $color-primary; // similar to border.
@@ -34,4 +74,13 @@
     &:hover &__photo:not(:hover){ // select all images that are not currently hovered 
         transform: scale(0.75); // make them smaller.
     }
+}
+
+
+#about > div.row > div:nth-child(2) {
+    /* -------------MEDIA Queries -----------------*/
+    //  600 - 900 ?
+    @include respond(tab-p) {
+        margin-top: 10rem;
+    }        
 }

@@ -87,7 +87,18 @@
 }
 
 .heading-comic{font-family: 'Amatic SC', cursive; font-weight: 700; font-size:3rem;}
-.blog-heading {margin-top:20rem;}
+
+.blog-heading {
+    margin-top: 20rem;
+
+            /* -------------MEDIA Queries -----------------*/
+            //  600 - 900 ?
+            @include respond(tab-p) {
+                margin-top: 2rem;
+            }
+}
+
+
 
 /* ***************** other ***************** */
 

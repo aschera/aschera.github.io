@@ -163,7 +163,11 @@ body {
   font-size: 3rem; }
 
 .blog-heading {
-  margin-top: 20rem; }
+  margin-top: 20rem;
+  /* -------------MEDIA Queries -----------------*/ }
+  @media (max-width: 56.25em) {
+    .blog-heading {
+      margin-top: 2rem; } }
 
 /* ***************** other ***************** */
 p {
@@ -455,7 +459,11 @@ a {
   transform: translateY(0); }
 
 .composition {
-  position: relative; }
+  position: relative;
+  /* -------------MEDIA Queries -----------------*/ }
+  @media (max-width: 56.25em) {
+    .composition {
+      padding-right: 2rem; } }
   .composition__photo {
     width: 30%;
     box-shadow: 0 1.5rem 4rem rgba(112, 206, 198, 0.4);
@@ -463,16 +471,41 @@ a {
     position: absolute;
     z-index: 10;
     transition: all .2s;
-    outline-offset: 0.2rem; }
+    outline-offset: 0.2rem;
+    /* -------------MEDIA Queries -----------------*/ }
+    @media (max-width: 56.25em) {
+      .composition__photo {
+        float: left;
+        position: relative;
+        width: 33.3333333%;
+        box-shadow: 0 1rem 3rem rgba(112, 206, 198, 0.2); } }
     .composition__photo--p1 {
       left: 2rem;
-      top: -4rem; }
+      top: -4rem;
+      /* -------------MEDIA Queries -----------------*/ }
+      @media (max-width: 56.25em) {
+        .composition__photo--p1 {
+          top: 0;
+          transform: scale(1.3); } }
     .composition__photo--p2 {
       right: 10rem;
-      top: 2rem; }
+      top: 2rem;
+      /* -------------MEDIA Queries -----------------*/ }
+      @media (max-width: 56.25em) {
+        .composition__photo--p2 {
+          top: -1rem;
+          right: 1rem;
+          transform: scale(1.5);
+          z-index: 100; } }
     .composition__photo--p3 {
       left: 14rem;
-      top: 8rem; }
+      top: 8rem;
+      /* -------------MEDIA Queries -----------------*/ }
+      @media (max-width: 56.25em) {
+        .composition__photo--p3 {
+          left: 0rem;
+          top: 0;
+          transform: scale(1.3); } }
     .composition__photo:hover {
       outline: 0.2rem solid #8a7c5e;
       transform: scale(1.5) translateY(-0.5rem);
@@ -480,6 +513,12 @@ a {
       z-index: 20; }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.75); }
+
+#about > div.row > div:nth-child(2) {
+  /* -------------MEDIA Queries -----------------*/ }
+  @media (max-width: 56.25em) {
+    #about > div.row > div:nth-child(2) {
+      margin-top: 10rem; } }
 
 .divider {
   margin: 2rem;
@@ -936,6 +975,9 @@ header {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
   /* -------------MEDIA Queries -----------------*/ }
+  @media (max-width: 37.5em) {
+    .header {
+      height: 65rem; } }
   .header__logo-box {
     position: absolute;
     top: 4rem;
@@ -1163,6 +1205,11 @@ header {
   padding: 15rem 0;
   margin-top: -15vh;
   /* -------------MEDIA Queries -----------------*/ }
+  @media (max-width: 56.25em) {
+    .section-about {
+      padding: 10rem 0;
+      height: 105rem;
+      margin-top: -5vh; } }
   .section-about p {
     color: black; }
 
@@ -1171,10 +1218,16 @@ header {
   padding: 30rem 0;
   margin-top: -8vh;
   margin-bottom: 0rem;
+  /* -------------MEDIA Queries -----------------*/
   background-image: linear-gradient(to right bottom, rgba(255, 248, 156, 0.9), rgba(251, 154, 0, 0.9)), url(../img/snow.jpg);
   background-size: cover;
-  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
-  clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%); }
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 8 8%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 8 8%); }
+  @media (max-width: 56.25em) {
+    .section-features {
+      padding: 5rem 0;
+      height: 120rem;
+      margin-top: 0; } }
   .section-features p {
     color: black; }
 
@@ -1195,16 +1248,26 @@ header {
   /* -------------MEDIA Queries -----------------*/ }
   @media (max-width: 56.25em) {
     .section-stories {
-      height: 100vh; } }
+      height: 190rem;
+      padding: 10rem 0;
+      margin-top: 0vh;
+      background-image: url("https://images.unsplash.com/photo-1530474492440-a00a7bc1dbb9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=aac0383b8ac411f85597eccda181c273&auto=format&fit=crop&w=1046&q=80");
+      background-repeat: no-repeat;
+      background-size: cover; } }
 
 .section-book {
   height: 100vh;
   padding: 15rem 0;
   margin-top: -10vh;
+  /* -------------MEDIA Queries -----------------*/
   background-image: linear-gradient(to right bottom, #3e939a, #960015);
   background-size: cover;
   -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
   clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 1000% 100%, 0% 100%, 0 95%, 0 8%); }
+  @media (max-width: 56.25em) {
+    .section-book {
+      padding: 10rem 0;
+      height: 100rem; } }
 
 .book {
   background-image: linear-gradient(105deg, rgba(255, 250, 228, 0.5) 0%, rgba(255, 250, 228, 0.5) 50%, transparent 50%), url(../img/negative-space-sunset-flower-shadow-dandelion.jpg);

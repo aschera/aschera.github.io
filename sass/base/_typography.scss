@@ -111,6 +111,12 @@ p {
     &:not(:last-child){
         margin-bottom: 3rem; 
     }
+
+    /* -------------MEDIA Queries -----------------*/
+        // 0 - 600?
+        @include respond(tab-p) {
+            font-size: 2rem;
+        }
 }
 body{
     font-family:'Belleza','Sansita', "Lato", sans-serif;

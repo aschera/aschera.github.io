@@ -1,3 +1,4 @@
+
 .story{
     width:75%;
     margin: 0 auto;
@@ -9,11 +10,27 @@
     font-size: $default-font-size;
     -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
     clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
-
     position: relative;
 
+    /* -------------MEDIA Queries -----------------*/
+        // 0 - 600?
+        @include respond(tab-p) {
+            width:90%;
+            max-height: 100vh;
+            -webkit-clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 0% 50%);
+            clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 0% 50%);
+            margin: 1rem;
+        }
+
+        
     & p {
         color:  $color-dark;
+       
+        /* -------------MEDIA Queries -----------------*/
+        // 0 - 600?
+        @include respond(tab-p) {
+            font-size: 1rem;
+        }
     }
 
     &__shape{
@@ -26,6 +43,13 @@
                 clip-path: circle(45% at 50% 50%);
         transform: translateX(-3rem);
         backface-visibility: hidden;
+
+        /* -------------MEDIA Queries -----------------*/
+        // 0 - 600?
+        @include respond(tab-p) {
+            float: none;
+            margin: 0 auto;
+        }
     }
 
     &__image{

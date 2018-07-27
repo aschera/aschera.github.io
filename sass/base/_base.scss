@@ -27,20 +27,22 @@ html{ /*ROOT*/
 
     //  600 - 900 ?
     @include respond(tab-p) {
-        font-size: 50%; // 1rem = 8 pixels. 8/16= 50
+        font-size: 80%; // 1rem = 8 pixels. 8/16= 50
     }
     // 0 - 600?
     @include respond(phone) {
-        font-size: 70%; 
+        font-size: 80%; 
     }
 }
 body{
     box-sizing: border-box;
-    padding:3rem;
+    padding: 3rem;
 
     /* -------------MEDIA Queries -----------------*/
     //  600 - 900 ?
     @include respond(tab-p) {
         padding:0;
     }
+
 }
+

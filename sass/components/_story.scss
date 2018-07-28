@@ -1,3 +1,13 @@
+#story > div:nth-child(3),
+#story > div.row.u-margin-bottom-big {
+    /* -------------MEDIA Queries -----------------*/
+        // 0 - 600?
+        @include respond(tab-p) {
+           padding:0;
+        }
+}
+
+
 
 .story{
     width:75%;
@@ -15,23 +25,24 @@
     /* -------------MEDIA Queries -----------------*/
         // 0 - 600?
         @include respond(tab-p) {
-            width:90%;
+            width: 100vw;
             max-height: 100vh;
             -webkit-clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 0% 50%);
             clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 0% 50%);
-            margin: 1rem;
+            box-shadow: none;
+            postion:absolute;
         }
-
-        
+  
     & p {
         color:  $color-dark;
        
         /* -------------MEDIA Queries -----------------*/
         // 0 - 600?
         @include respond(tab-p) {
-            font-size: 1rem;
+            font-size: 1.5rem;
         }
     }
+    
 
     &__shape{
         width:15rem;

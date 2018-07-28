@@ -5,13 +5,21 @@
     padding:15rem 0;
     margin-top: -15vh;
 
-        /* -------------MEDIA Queries -----------------*/
-        // 0 - 600?
-        @include respond(tab-p) {
-            padding: 10rem 0;
-            height: 115rem;
-            margin-top: -5vh;
-        }
+    /* -------------MEDIA Queries -----------------*/
+    // 900 -1200?
+    @include respond(tab-l) {
+        height: 100rem;
+    }
+    //  600 - 900 ?
+    @include respond(tab-p) {
+        padding: 10rem 0;
+        height: 115rem;
+        margin-top: -5vh; 
+    }
+    // 0 - 600?
+    @include respond(phone) {
+        height: 100rem;
+    }
 
     & p{
         color:black;
@@ -24,16 +32,6 @@
     padding:30rem 0;
     margin-top: -8vh;
     margin-bottom:0rem;
-
-        /* -------------MEDIA Queries -----------------*/
-        // 0 - 600?
-        @include respond(tab-p) {
-            padding: 5rem 0;
-            height: 130rem;
-            margin-top: 0;
-        }
-
-
     background-image: 
     linear-gradient(to right bottom, 
     rgba($color-secondary-light, 0.9), 
@@ -43,6 +41,21 @@
    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 8 8%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 8 8%);
     
+    /* -------------MEDIA Queries -----------------*/
+    // 900 -1200?
+    @include respond(tab-l) {
+        height: 110rem;
+    }
+    //  600 - 900 ?
+    @include respond(tab-p) {
+        padding: 10rem 0;
+        
+        margin-top: -5vh; 
+    }
+    // 0 - 600?
+    @include respond(phone) {
+        height: 125rem;
+    }
 
     & p{
         color:black;
@@ -88,7 +101,13 @@
             background-repeat: no-repeat;
             background-size: cover;
          }
+        // 0 - 600?
+        @include respond(tab-p) {
+            height: 170rem;
+        }
 }
+
+
 
 .section-book {
     height:100vh;
@@ -99,10 +118,9 @@
         // 0 - 600?
         @include respond(tab-p) {
             padding: 10rem 0;
-            height: 100rem;
+            height: 75rem;
             margin-top: -20vh;
         }
-
 
     background-image: linear-gradient(to right bottom, 
     rgba($color-secondary, 1), 
@@ -111,6 +129,7 @@
     -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 80% 100%, 20% 100%, 0 95%, 0 8%);
     clip-path: polygon(20% 0%, 80% 0%, 100% 8%, 100% 96%, 1000% 100%, 0% 100%, 0 95%, 0 8%);
 }
+
 
 .book {
     background-image: 

@@ -5,14 +5,6 @@
 .u-margin-bottom-medium{margin-bottom:4rem !important;}
 .u-margin-bottom-small{margin-bottom:1.5rem !important;}
 
-/* -------------MEDIA Queries -----------------*/
-    // 0 - 600?
-    @include respond(phone) {
-        .u-margin-bottom-big{margin-bottom:2rem !important;}
-        .u-margin-bottom-medium{margin-bottom:1rem !important;}
-        .u-margin-bottom-small{margin-bottom:.5rem !important;}
-    }
-
 .u-padding-left-big{padding-left:8rem !important;}
 .u-padding--left-medium{padding-left:4rem !important;}
 .u-padding--left-small{padding-left:1.5rem !important;}
@@ -25,3 +17,24 @@
 .u-padding-bottom-medium{padding-bottom: 4rem !important;}
 .u-padding-bottom-large{padding-bottom: 8rem !important;}
 
+
+    /* -------------MEDIA Queries -----------------*/
+    // 900 -1200?
+    @include respond(tab-l) {
+    .u-margin-bottom-big{margin-bottom:3rem !important;}
+    .u-margin-bottom-medium{margin-bottom:3.5rem !important;}
+    .u-margin-bottom-small{margin-bottom:2.5rem !important;}
+    }
+
+    //  600 - 900 ?
+    @include respond(tab-p) {
+        .u-margin-bottom-big{margin-bottom:2.5rem !important;}
+        .u-margin-bottom-medium{margin-bottom:2rem !important;}
+        .u-margin-bottom-small{margin-bottom:1.5rem !important;}
+    }
+    // 0 - 600?
+    @include respond(phone) {
+        .u-margin-bottom-big{margin-bottom:2rem !important;}
+        .u-margin-bottom-medium{margin-bottom:1.5rem !important;}
+        .u-margin-bottom-small{margin-bottom:.5rem !important;}
+    }

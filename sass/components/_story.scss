@@ -7,8 +7,6 @@
         }
 }
 
-
-
 .story{
     width:75%;
     margin: 0 auto;
@@ -25,12 +23,16 @@
     /* -------------MEDIA Queries -----------------*/
         // 0 - 600?
         @include respond(tab-p) {
-            width: 100vw;
+            width: 60vw;
             max-height: 100vh;
             -webkit-clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 0% 50%);
             clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 0% 50%);
             box-shadow: none;
             postion:absolute;
+        }
+        // 0 - 600?
+        @include respond(phone) {
+            width: 90vw;
         }
   
     & p {

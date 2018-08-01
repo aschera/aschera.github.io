@@ -775,12 +775,15 @@ a {
   /* -------------MEDIA Queries -----------------*/ }
   @media (max-width: 56.25em) {
     .story {
-      width: 100vw;
+      width: 60vw;
       max-height: 100vh;
       -webkit-clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 0% 50%);
       clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 100%, 0% 50%);
       box-shadow: none;
       postion: absolute; } }
+  @media (max-width: 37.5em) {
+    .story {
+      width: 90vw; } }
   .story p {
     color: #3E1A1C;
     /* -------------MEDIA Queries -----------------*/ }
@@ -1294,7 +1297,7 @@ header {
   transform: rotate(-135deg); }
 
 .section-about {
-  height: 110vh;
+  height: 150vh;
   background-color: #70CEC6;
   padding: 15rem 0;
   margin-top: -15vh;
@@ -1325,7 +1328,7 @@ header {
   /* -------------MEDIA Queries -----------------*/ }
   @media (max-width: 75em) {
     .section-features {
-      height: 110rem; } }
+      height: 145rem; } }
   @media (max-width: 56.25em) {
     .section-features {
       padding: 10rem 0;
